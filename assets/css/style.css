@@ -63,6 +63,7 @@ main h2{
 img{
     aspect-ratio: 7 / 10;
     width: 30%;
+    max-width: 500px;
     box-shadow: 0 0 15px 10px var(--yinmn-blue);
     border-radius: 5px;
 }
