@@ -51,19 +51,58 @@ main{
     justify-content: flex-start;
     align-items: center;
     width: 100vw;
-    height: calc(100vh - 150px);
-    gap: 50px;
+    height: calc(100vh - 50px);
+    gap: 44px;
 }
 
 main h2{
     text-align: center;
     color: var(--gunmetal);
+    font-weight: normal;
+}
+
+main h3{
+    text-align: center;
+    color: var(--gunmetal);
+    font-weight: normal;
+}
+
+main h3 a{
+    color: var(--powder-blue);
+    text-decoration: none;
+    font-weight: bold;
+    animation: blinking 2s linear infinite;
+}
+
+main h3 a::after{
+    content: "⬅";
+    position: relative;
+    left: 15px;
+    top: 1px;
+    animation: moving 1s ease-in-out infinite;
+    color: var(--burnt-sienna);
+}
+
+@keyframes moving {
+    from{
+        left: 15px;
+    }
+    50%{
+        left: 5px;
+    }
+    to{
+        left: 15px;
+    }
+}
+
+main h3 a:hover{
+    color: var(--burnt-sienna);
 }
 
 img{
     aspect-ratio: 7 / 10;
     width: 30%;
-    max-width: 500px;
+    max-width: 472px;
     box-shadow: 0 0 15px 10px var(--yinmn-blue);
     border-radius: 5px;
 }
@@ -80,6 +119,9 @@ img{
     }
     main h2{
         font-size: 0.9rem;
+    }
+    main h3{
+        font-size: 1rem;
     }
 }
 
