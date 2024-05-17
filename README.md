@@ -8,3 +8,6 @@
         <img src="./assets/512_512_light.png#gh-light-mode-only">
     </a>
 </p>
+
+![a](./assets/512_512_dark.jpg#gh-dark-mode-only)
+![b](./assets/512_512_light.png#gh-light-mode-only)
