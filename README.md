@@ -11,6 +11,9 @@
     </a>
 </p>
 
+
 <p align="center">
-    <a align="center" href="https://ataseng.github.io" target="_blank" rel="noopener noreferrer">Siteye Git</a>
+    <a href="https://ataseng.github.io" rel="noopener noreferrer" target="_blank">
+        <img src="https://img.shields.io/badge/Siteye-Git-00aab9?style=for-the-badge" alt="Siteye - Git">
+    </a>
 </p>
