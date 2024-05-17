@@ -14,6 +14,6 @@
 
 <p align="center">
     <a href="https://ataseng.github.io" rel="noopener noreferrer" target="_blank">
-        <img src="https://img.shields.io/badge/Siteye-Git-00aab9?style=for-the-badge" alt="Siteye - Git">
+        <img src="https://img.shields.io/badge/_-Erzurum-00aab9?style=for-the-badge" alt="Erzurum">
     </a>
 </p>
