@@ -3,11 +3,14 @@
 </h1>
 
 <p align="center">
-    <a href="https://ataseng.github.io/">
-        <img src="./assets/512_512_dark.jpg#gh-dark-mode-only">
-        <img src="./assets/512_512_light.png#gh-light-mode-only">
+    <a rel="noopener noreferrer" href="./assets/512_512_dark.jpg#gh-dark-mode-only" target="_blank">
+        <img alt="AtasengDark" src="./assets/512_512_dark.jpg#gh-dark-mode-only">
+    </a>
+    <a rel="noopener noreferrer" href="./assets/512_512_light.png#gh-light-mode-only" target="_blank">
+        <img alt="AtasengLight" src="./assets/512_512_light.png#gh-light-mode-only">
     </a>
 </p>
 
-![a](./assets/512_512_dark.jpg#gh-dark-mode-only)
-![b](./assets/512_512_light.png#gh-light-mode-only)
+<p align="center">
+    <a align="center" href="https://ataseng.github.io" target="_blank" rel="noopener noreferrer">Siteye Git</a>
+</p>
