@@ -6,9 +6,3 @@
         <img alt="AtasengLight" src="./assets/512_512_light.png#gh-light-mode-only">
     </a>
 </p>
-
-<p align="center">
-    <a href="https://ataseng.github.io" rel="noopener noreferrer" target="_blank">
-        <img src="https://img.shields.io/badge/_-Erzurum-00aab9?style=for-the-badge" alt="Erzurum">
-    </a>
-</p>
