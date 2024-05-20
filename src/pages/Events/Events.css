@@ -1,0 +1,17 @@
+section#events{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section#events .event-card{
+    
+}
+
+section#events .event-card img{
+    height: calc(100vh - var(--nav-height) - 84px);
+    border: 1px solid var(--rich-black);
+    border-radius: 4px;
+}

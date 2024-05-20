@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: hsla(0, 0%, 100%, 1);
+    --yinmn-blue: hsla(206, 48%, 31%, 1);
+    --cerulean: hsla(193, 100%, 31%, 1);
+    --slate-gray: hsla(205, 15%, 49%, 1);
+    --paynes-gray: hsla(207, 24%, 36%, 1);
+    --lapis-lazuli: hsla(201, 86%, 28%, 1);
+    --rich-black: hsla(208, 50%, 9%, 1);
+
+    --nav-height: 40px;
+}
+
+main{
+    position: absolute;
+    left: 0;
+    top: var(--nav-height);
+    width: 100vw;
+    height: calc(100vh - var(--nav-height));
+}
