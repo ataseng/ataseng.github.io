@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b3726532.css",
+    "main.js": "/static/js/main.577e152f.js",
+    "static/media/Odullu_Algoritma_Yarismasi.jpg": "/static/media/Odullu_Algoritma_Yarismasi.916f176235fc4b2d04c0.jpg",
+    "static/media/512_512.jpg": "/static/media/512_512.a8a0e93c01c6b1357b9c.jpg",
+    "static/media/ATASENG_64_64.ico": "/static/media/ATASENG_64_64.993e623d89e8ba974df1.ico",
+    "index.html": "/index.html",
+    "main.b3726532.css.map": "/static/css/main.b3726532.css.map",
+    "main.577e152f.js.map": "/static/js/main.577e152f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3726532.css",
+    "static/js/main.577e152f.js"
+  ]
+}
