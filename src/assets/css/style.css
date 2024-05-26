@@ -18,10 +18,21 @@
 }
 
 main{
+    position: absolute;
+    top: var(--nav-height);
     width: 100vw;
     height: calc(100vh - var(--nav-height));
     padding: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+section{
+    position: absolute;
+    top: 0;
+}
+
+section h2{
+    text-align: center;
 }
