@@ -1,0 +1,33 @@
+aside {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    height: calc(100vh - var(--nav-height));
+    width: var(--aside-width);
+    padding: 24px 0;
+    background-color: var(--yinmn-blue);
+}
+
+aside ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 20px;
+}
+
+aside ul li{
+    padding: 0 24px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+aside ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+aside ul li a:hover{
+    text-shadow: 0 0 5px white;
+}

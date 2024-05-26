@@ -14,12 +14,14 @@
     --rich-black: hsla(208, 50%, 9%, 1);
 
     --nav-height: 40px;
+    --aside-width: 280px;
 }
 
 main{
-    position: absolute;
-    left: 0;
-    top: var(--nav-height);
     width: 100vw;
     height: calc(100vh - var(--nav-height));
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

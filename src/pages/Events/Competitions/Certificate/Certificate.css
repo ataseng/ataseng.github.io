@@ -1,0 +1,11 @@
+.certificate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificate img{
+    width: 80%;
+    max-width: 1200px;
+    min-width: 300px;
+}
