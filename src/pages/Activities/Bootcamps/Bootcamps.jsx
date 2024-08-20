@@ -1,8 +1,8 @@
 import React from 'react'
-import './Bootcamps.css'
+
 const Bootcamps = () => {
   return (
-    <div>Bootcamps</div>
+    <div>Bootcamps Page</div>
   )
 }
 
