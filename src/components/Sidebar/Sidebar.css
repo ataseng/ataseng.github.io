@@ -1,0 +1,235 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #16222C; 
+    display: flex;
+}
+.sidebar {
+    width: 80px;
+    height: 100vh;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Light mode background */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .menu-item {
+    position: relative;
+}
+
+.sidebar .submenu {
+    display: none;
+    position: absolute;
+    top: -25px; 
+    left: 115px; 
+    width: 160px; 
+    background-color: rgba(255, 255, 255, 0.3); /* Light mode submenu background */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Taşmayı engelle */
+}
+
+.sidebar .menu-item:hover .submenu {
+    display: block; 
+}
+
+.sidebar .submenu a {    
+    color: #16222C; /* Light mode text color */
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.sidebar .submenu a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Light mode hover background */
+}
+
+.sidebar.dark-mode {
+    background-color: rgba(255, 255, 255, 0.1);  /* Dark mode background */
+    color: #fff;
+}
+
+.sidebar.dark-mode .submenu {
+    background-color: rgba(255, 255, 255, 0.1);  /* Dark mode submenu background */
+}
+
+.sidebar.dark-mode .submenu a {
+    color: #fff; /* Dark mode text color */
+}
+
+.sidebar.dark-mode .submenu a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Dark mode hover background */
+}
+
+.sidebar a {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+    color: #16222C; /* Light mode text color */
+    margin: 10px 0; 
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);  /* Light mode hover background */
+}
+
+
+.sidebar .icon {
+    font-size: 20px;
+    color: #16222C; /* Light mode ikon rengi */
+}
+
+/* Dark Mode için Metin ve İkon Renkleri */
+.sidebar.dark-mode a, .sidebar.dark-mode .icon {
+    color: #fff; /* Dark mode metin ve ikon rengi */
+}
+.sidebar .icon.moon-sun {
+    font-size: 30px; /* Boyutunu büyütmek için */
+    color: inherit; /* Metin rengi ile aynı olması için */
+    transition: none; /* Hover etkisini kaldırmak için */
+}
+
+.sidebar .icon.moon-sun:hover,
+.sidebar .icon.moon-sun:focus,
+.sidebar .icon.moon-sun:active {
+    background-color: transparent !important; /* Hover etkisini tamamen kaldır */
+    color: inherit; /* Metin rengini koru */
+}
+
+/* Hover etkisini kaldırmak için ek spesifiklik */
+.sidebar .icon.moon-sun:hover span,
+.sidebar .icon.moon-sun:focus span,
+.sidebar .icon.moon-sun:active span {
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+/* Etkinlikler kısmını hizalamak için */
+.sidebar .menu-item:nth-child(2) {
+    margin-left: -20px; /* Etkinlikler kısmını hizalamak için */
+}
+.hamburger-menu-icon {
+    display: none; /* Hide on larger screens */
+}
+.hamburger-menu {
+    display: none;
+}
+
+
+@media (max-width: 480px) {
+    /* Yan menüyü gizle */
+    .sidebar {
+        display: none;
+    }
+
+    /* Hamburger menüyü göster */
+    .hamburger-menu-icon {
+        display: block;
+        font-size: 40px;
+        color: #fff;
+        position: fixed;
+        top: 20px; 
+        right: 20px; 
+        cursor: pointer;
+        z-index: 1001; /* Menü üstünde kalması için */
+    }
+
+    .hamburger-menu-icon.open {
+        display: block;
+        color: #16222C;
+    }
+    
+    /* Hamburger menüyü gizle */
+    .hamburger-menu {
+        display: none;       
+    }
+
+    /* Menü açık olduğunda görünür hale gelir */
+    
+    .hamburger-menu.open {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #eee; /* Açık arka plan rengi */        
+        z-index: 1000; /* Ön planda kalması için */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+               
+    }    
+    .hamburger-menu.dark-mode.open {
+        background-color: #16222C; /* Açık arka plan rengi */  
+           
+    }  
+    
+    /* Menü öğeleri dikey olarak sıralanır */
+    .hamburger-menu .menu-item {
+        margin: 20px 0;
+        text-align: center;        
+    }
+
+    .hamburger-menu .menu-item .icon {
+        font-size: 25px;        
+    }
+
+    /* Submenu'yu gizle */
+    .hamburger-menu .submenu {
+        display: none;
+    }
+
+    /* Menü öğeleri için yazı rengi ve boyut */
+    .hamburger-menu .menu-item a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: inherit;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 10px; /* İçeriği biraz boşluk bırakır */    
+    }
+    .hamburger-menu.dark-mode .menu-item a {
+        color: #fff; /* Dark mode hamburger menü metin rengi */
+    }    
+
+    .hamburger-menu .menu-item a span {
+        padding: 10px; /* İçeriği biraz boşluk bırakır */    
+    }   
+
+    /* Moon ve Sun iconları için hover ve click etkileri */
+    .hamburger-menu .icon.moon-sun {
+        font-size: 30px; /* Boyutunu büyütmek için */
+        float: left;
+    }
+
+    .hamburger-menu .icon.moon-sun:focus,
+    .hamburger-menu .icon.moon-sun:active {
+        background-color: transparent !important; /* Hover etkisini tamamen kaldır */
+        color: inherit; /* Metin rengini koru */
+    }
+}
+
+
+
+
