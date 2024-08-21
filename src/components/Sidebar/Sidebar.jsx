@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Sidebar.css';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
+import { ThemeContext } from '../../context/ThemeContext';
 
-// Import icons
+// İkon importları
 import homeIcon from '@iconify-icons/tabler/home';
 import employeesIcon from '@iconify-icons/clarity/employee-group-solid';
 import trophyIcon from '@iconify-icons/mdi/trophy';
@@ -15,13 +16,10 @@ import sunIcon from '@iconify-icons/ph/sun';
 import menuIcon from '@iconify-icons/mdi/menu';
 import xIcon from '@iconify-icons/mdi/close';
 
-const Sidebar = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [MenuOpen, setMenuOpen] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+const Sidebar = () => {
+  const { themeName, toggleTheme } = useContext(ThemeContext);
+  const [MenuOpen, setMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMenuOpen(!MenuOpen);
@@ -30,7 +28,7 @@ const Sidebar = () => {
   return (
     <div className='container'>
       {/* Desktop Sidebar */}
-      <div className={`sidebar ${darkMode ? 'dark-mode' : ''}`}>
+      <div className={`sidebar ${themeName === 'dark' ? 'dark-mode' : ''}`}>
         <Link to="/home" onClick={MenuOpen ? toggleMobileMenu : null}>
           <Icon icon={homeIcon} className='icon' />
           <span>Anasayfa</span>
@@ -64,18 +62,18 @@ const Sidebar = () => {
           <Icon icon={employeesIcon} className='icon' />
           <span>Yapımcılar</span>
         </Link>
-        <div className="icon moon-sun" onClick={toggleDarkMode}>
-          <Icon icon={darkMode ? moonIcon : sunIcon} />
+        <div className="icon moon-sun" onClick={toggleTheme}>
+          <Icon icon={themeName === 'dark' ? sunIcon : moonIcon} />
         </div>
       </div>
 
       {/* Hamburger Menu Icon */}
       <div className={`hamburger-menu-icon ${MenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu}>
-        <Icon icon={MenuOpen ? xIcon : menuIcon} style={{ fontSize: '30px', color: darkMode ? '#fff' : '#16222C' }} />
+        <Icon icon={MenuOpen ? xIcon : menuIcon} style={{ fontSize: '30px', color: themeName === 'dark' ? '#fff' : '#16222C' }} />
       </div>
 
       {/* Hamburger Menu */}
-      <div className={`hamburger-menu ${MenuOpen ? 'open' : ''} ${darkMode ? 'dark-mode' : ''}`}>
+      <div className={`hamburger-menu ${MenuOpen ? 'open' : ''} ${themeName === 'dark' ? 'dark-mode' : ''}`}>
         <div className="menu-item">
           <Link to="/home" onClick={toggleMobileMenu}>
             <Icon icon={homeIcon} className='icon' />
@@ -112,8 +110,8 @@ const Sidebar = () => {
             <span>Yapımcılar</span>
           </Link>
         </div>
-        <div className="menu-item" onClick={toggleDarkMode}>
-          <Icon icon={darkMode ? sunIcon : moonIcon} style={{ fontSize: '30px', color: darkMode ? '#fff' : '#16222C' }} />
+        <div className="menu-item " onClick={toggleTheme}>
+          <Icon className='icon moon-sun' icon={themeName === 'dark' ? sunIcon : moonIcon} style={{ fontSize: '30px', color: themeName === 'dark' ? '#fff' : '#16222C' }} />
         </div>
       </div>
     </div>

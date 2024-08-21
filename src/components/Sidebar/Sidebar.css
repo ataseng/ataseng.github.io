@@ -2,16 +2,17 @@
     width: 100vw;
     height: 100vh;
     margin: 0;
-    background-color: #16222C; 
+    background-color: #686868; 
     display: flex;
 }
+
 .sidebar {
     width: 80px;
     height: 100vh;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.1); /* Light mode background */
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     position: fixed; 
     top: 0;
     left: 0;
@@ -92,17 +93,19 @@
     background-color: rgba(255, 255, 255, 0.1);  /* Light mode hover background */
 }
 
-
 .sidebar .icon {
     font-size: 20px;
-    color: #16222C; /* Light mode ikon rengi */
+    color: #16222C; /* Light mode icon color */
 }
 
 /* Dark Mode için Metin ve İkon Renkleri */
-.sidebar.dark-mode a, .sidebar.dark-mode .icon {
+.sidebar.dark-mode a, 
+.sidebar.dark-mode .icon {
     color: #fff; /* Dark mode metin ve ikon rengi */
 }
+
 .sidebar .icon.moon-sun {
+    margin-top: 40px;
     font-size: 30px; /* Boyutunu büyütmek için */
     color: inherit; /* Metin rengi ile aynı olması için */
     transition: none; /* Hover etkisini kaldırmak için */
@@ -127,13 +130,14 @@
 .sidebar .menu-item:nth-child(2) {
     margin-left: -20px; /* Etkinlikler kısmını hizalamak için */
 }
+
 .hamburger-menu-icon {
     display: none; /* Hide on larger screens */
 }
+
 .hamburger-menu {
     display: none;
 }
-
 
 @media (max-width: 480px) {
     /* Yan menüyü gizle */
@@ -154,7 +158,6 @@
     }
 
     .hamburger-menu-icon.open {
-        display: block;
         color: #16222C;
     }
     
@@ -164,7 +167,6 @@
     }
 
     /* Menü açık olduğunda görünür hale gelir */
-    
     .hamburger-menu.open {
         display: flex;
         position: fixed;
@@ -172,16 +174,14 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: #eee; /* Açık arka plan rengi */        
+        background-color: #eee; /* Light mode background */        
         z-index: 1000; /* Ön planda kalması için */
         flex-direction: column;
         align-items: center;
         justify-content: center; 
-               
     }    
     .hamburger-menu.dark-mode.open {
-        background-color: #16222C; /* Açık arka plan rengi */  
-           
+        background-color: #16222C; /* Dark mode background */
     }  
     
     /* Menü öğeleri dikey olarak sıralanır */
@@ -194,11 +194,6 @@
         font-size: 25px;        
     }
 
-    /* Submenu'yu gizle */
-    .hamburger-menu .submenu {
-        display: none;
-    }
-
     /* Menü öğeleri için yazı rengi ve boyut */
     .hamburger-menu .menu-item a {
         display: flex;
@@ -209,18 +204,21 @@
         text-decoration: none;
         padding: 10px; /* İçeriği biraz boşluk bırakır */    
     }
+
     .hamburger-menu.dark-mode .menu-item a {
         color: #fff; /* Dark mode hamburger menü metin rengi */
     }    
 
     .hamburger-menu .menu-item a span {
-        padding: 10px; /* İçeriği biraz boşluk bırakır */    
+        padding: 10px;  
     }   
 
-    /* Moon ve Sun iconları için hover ve click etkileri */
+    
     .hamburger-menu .icon.moon-sun {
-        font-size: 30px; /* Boyutunu büyütmek için */
-        float: left;
+        font-size: 40px; 
+        position: absolute;
+        top: 40px;
+        left: 40px;
     }
 
     .hamburger-menu .icon.moon-sun:focus,
@@ -229,7 +227,3 @@
         color: inherit; /* Metin rengini koru */
     }
 }
-
-
-
-
