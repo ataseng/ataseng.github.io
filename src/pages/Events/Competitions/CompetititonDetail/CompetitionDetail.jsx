@@ -5,10 +5,12 @@ const CompetitionDetail = () => {
   
   const {title} = useParams();
 
-  const formattedTitle = title.split('-').join(" ")
-  .split(' ')
+  const formattedTitle = title.split('-')
   .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
   .join(' ');
+
+  console.log(formattedTitle);
+  
 
   const competition = Data.find(item => item.title === formattedTitle);
 
