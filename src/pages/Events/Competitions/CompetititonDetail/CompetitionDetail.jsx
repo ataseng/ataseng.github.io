@@ -9,7 +9,6 @@ const CompetitionDetail = () => {
   .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
   .join(' ');
 
-  console.log(formattedTitle);
   
 
   const competition = Data.find(item => item.title === formattedTitle);
