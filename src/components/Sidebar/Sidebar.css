@@ -10,7 +10,7 @@
     width: 80px;
     height: 100vh;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.1); /* Light mode background */
+    background-color: rgba(110, 112, 114, 0.1); /* Light mode background */
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     position: fixed; 
@@ -30,9 +30,9 @@
     display: none;
     position: absolute;
     top: -25px; 
-    left: 115px; 
+    left: 120px; 
     width: 160px; 
-    background-color: rgba(255, 255, 255, 0.3); /* Light mode submenu background */
+    background-color: rgba(110, 112, 114, 0.1); /* Light mode submenu background */
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     flex-direction: column;
@@ -50,6 +50,7 @@
     text-decoration: none;
     display: flex;
     width: 100%;
+    margin: 0;
     justify-content: center;
     align-items: center;
     padding: 10px 0;
@@ -73,7 +74,7 @@
 }
 
 .sidebar.dark-mode .submenu a:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Dark mode hover background */
+    background-color: rgba(0, 0, 0, 0.1); /* Dark mode hover background */
 }
 
 .sidebar a {
@@ -90,7 +91,7 @@
 }
 
 .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.1);  /* Light mode hover background */
+    background-color: rgba(0, 0, 0, 0.1);  /* Light mode hover background */
 }
 
 .sidebar .icon {

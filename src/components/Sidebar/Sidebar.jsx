@@ -34,16 +34,16 @@ const Sidebar = () => {
           <span>Anasayfa</span>
         </Link>
         <div className="menu-item">
-          <Link to="/achievements" onClick={MenuOpen ? toggleMobileMenu : null}>
+          <Link to="/activities" onClick={MenuOpen ? toggleMobileMenu : null}>
             <Icon icon={trophyIcon} className='icon' />
             <span>Etkinlikler</span>
           </Link>
           <div className="submenu">
-            <Link to="/achievements/competitions" onClick={MenuOpen ? toggleMobileMenu : null}>Yarışmalar</Link>
-            <Link to="/achievements/trainings" onClick={MenuOpen ? toggleMobileMenu : null}>Eğitimler</Link>
-            <Link to="/achievements/career-days" onClick={MenuOpen ? toggleMobileMenu : null}>Kariyer Günleri</Link>
-            <Link to="/achievements/bootcamps" onClick={MenuOpen ? toggleMobileMenu : null}>Bootcamps</Link>
-            <Link to="/achievements/hackathons" onClick={MenuOpen ? toggleMobileMenu : null}>Hackathons</Link>
+            <Link to="/activities/competitions" onClick={MenuOpen ? toggleMobileMenu : null}>Yarışmalar</Link>
+            <Link to="/activities/trainings" onClick={MenuOpen ? toggleMobileMenu : null}>Eğitimler</Link>
+            <Link to="/activities/career-days" onClick={MenuOpen ? toggleMobileMenu : null}>Kariyer Günleri</Link>
+            <Link to="/activities/bootcamps" onClick={MenuOpen ? toggleMobileMenu : null}>Bootcamps</Link>
+            <Link to="/activities/hackathons" onClick={MenuOpen ? toggleMobileMenu : null}>Hackathons</Link>
           </div>
         </div>
         <Link to="/about" onClick={MenuOpen ? toggleMobileMenu : null}>
