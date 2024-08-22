@@ -13,7 +13,6 @@
         "time":"12.00"
     
     },
-    
     {
         "id":2,
         "label":[
@@ -26,7 +25,6 @@
         "location":"Atatürk üni TRSE-4",
         "date":"18/05/2024",
         "time":"12.00"
-    
     },
     {
         "id":3,
@@ -40,7 +38,5 @@
         "location":"Atatürk üni TRSE-3",
         "date":"20/05/2024",
         "time":"12.00"
-    
     }
-
 ]

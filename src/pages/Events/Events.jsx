@@ -1,11 +1,9 @@
-// src/pages/Activities/Activities.js
-import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function Activities() {
+function Events() {
   return (
     <div>
-      <h1>Activities</h1>
+      <h1>Events</h1>
       <nav>
         <ul>
           <li><Link to="yarismalar">Competitions</Link></li>
@@ -21,4 +19,4 @@ function Activities() {
   );
 }
 
-export default Activities;
+export default Events;

@@ -1,9 +1,9 @@
-import './About.css'
+import './About.css';
 
 const About = () => {
   return (
     <div>AboutPage</div>
   )
-}
+};
 
-export default About
+export default About;

@@ -1,10 +1,11 @@
-import './Home.css'
+import './Home.css';
+
 const Home = () => {
   return (
     <>
       HomePage
     </>
   )
-}
+};
 
-export default Home
+export default Home;
