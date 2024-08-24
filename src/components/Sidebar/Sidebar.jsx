@@ -9,24 +9,44 @@
  *
  * @returns {JSX.Element} A JSX element representing the Sidebar.
  */
-import React, { useContext, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Sidebar.css';
 import { Icon } from '@iconify/react';
-import { ThemeContext } from '../../context/ThemeContext';
 import menuData from './menu.json';
 import MenuItem from './MenuItem';
 import HamburgerMenu from './HamburgerMenu';
 
 const Sidebar = () => {
-  const { themeName, toggleTheme } = useContext(ThemeContext);
+  const [themeName, setThemeName] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const storedThemeName = localStorage.getItem('themeName');
+    if (storedThemeName) {
+      setThemeName(storedThemeName);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (themeName === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [themeName]);
+
+  const toggleTheme = () => {
+    const name = themeName === 'dark' ? '' : 'dark';
+    localStorage.setItem('themeName', name);
+    setThemeName(name);
+  };
 
   const toggleMobileMenu = () => {
     setMenuOpen(prevState => !prevState);
   };
 
   return (
-    <div className='container'>
+    <div>
       {/* Desktop Sidebar */}
       <div className={`sidebar ${themeName === 'dark' ? 'dark-mode' : ''}`}>
         <ul>
@@ -41,12 +61,12 @@ const Sidebar = () => {
         </div>
       </div>
 
+      {/* Mobile Hamburger Menu Icon */}
       <div className={`hamburger-menu-icon ${menuOpen ? 'open' : ''} ${themeName === 'dark' ? 'dark-mode' : ''}`} onClick={toggleMobileMenu}>
         <Icon icon={menuOpen ? 'mdi:close' : 'mdi:menu'} />
       </div>
 
       <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMobileMenu} toggleTheme={toggleTheme} themeName={themeName} />
-
     </div>
   );
 };
