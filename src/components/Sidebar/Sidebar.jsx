@@ -15,6 +15,7 @@ import { Icon } from '@iconify/react';
 import menuData from './menu.json';
 import MenuItem from './MenuItem';
 import HamburgerMenu from './HamburgerMenu';
+import Footer from '../Footer/Footer';
 
 const Sidebar = () => {
   const [themeName, setThemeName] = useState('');
@@ -67,6 +68,7 @@ const Sidebar = () => {
       </div>
 
       <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMobileMenu} toggleTheme={toggleTheme} themeName={themeName} />
+      <Footer themeName={themeName}/>
     </div>
   );
 };
