@@ -1,27 +1,58 @@
-.container {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background-color: #686868; 
-    display: flex;
+/* Sidebar Styling */
+body.dark-mode{
+    background-color: #16222C;
 }
-
 .sidebar {
-    width: 80px;
+    width: 100px;
     height: 100vh;
     text-align: center;
-    background-color: rgba(110, 112, 114, 0.1); /* Light mode background */
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    position: fixed; 
+    background-color: rgba(110, 112, 114, 0.1);
+    padding: 0px;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(30px);
 }
 
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar ul li {
+    width: 100%;
+    margin: 10px 0px;
+    position: relative;
+}
+
+.sidebar ul li a {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    padding: 10px 0px;
+    text-decoration: none;
+    color: #6e7072;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for links in the sidebar */
+.sidebar ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Submenu styling */
 .sidebar .menu-item {
     position: relative;
 }
@@ -29,24 +60,27 @@
 .sidebar .submenu {
     display: none;
     position: absolute;
-    top: -25px; 
-    left: 120px; 
-    width: 160px; 
-    background-color: rgba(110, 112, 114, 0.1); /* Light mode submenu background */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    top: -30px;
+    left: 100px;
+    width: 160px;
+    background-color: rgba(110, 112, 114, 0.1);
     z-index: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Taşmayı engelle */
+    overflow: hidden;
+    backdrop-filter: blur(30px);
+    border-radius: 0px 4px 4px 0px;
 }
 
+/* Show submenu on hover */
 .sidebar .menu-item:hover .submenu {
-    display: block; 
+    display: flex;
 }
 
-.sidebar .submenu a {    
-    color: #16222C; /* Light mode text color */
+/* Submenu links styling */
+.sidebar .submenu a {
+    color: #6e7072;
     text-decoration: none;
     display: flex;
     width: 100%;
@@ -54,120 +88,121 @@
     justify-content: center;
     align-items: center;
     padding: 10px 0;
+    transition: background-color 0.3s;
 }
 
+/* Hover effect for submenu links */
 .sidebar .submenu a:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Light mode hover background */
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
+/* Dark mode styling for the sidebar */
 .sidebar.dark-mode {
-    background-color: rgba(255, 255, 255, 0.1);  /* Dark mode background */
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
+.sidebar.dark-mode ul li a {
+    color: #fff;
+}
+
+.sidebar.dark-mode ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode styling for submenu */
 .sidebar.dark-mode .submenu {
-    background-color: rgba(255, 255, 255, 0.1);  /* Dark mode submenu background */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .sidebar.dark-mode .submenu a {
-    color: #fff; /* Dark mode text color */
+    color: #fff;
 }
 
 .sidebar.dark-mode .submenu a:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Dark mode hover background */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-.sidebar a {
-    display: flex;
-    flex-direction: column;
-    font-size: 18px;
-    padding: 10px;
-    text-decoration: none;
-    color: #16222C; /* Light mode text color */
-    margin: 10px 0; 
-    width: 100%;
-    text-align: center;
-    align-items: center;
-}
-
-.sidebar a:hover {
-    background-color: rgba(0, 0, 0, 0.1);  /* Light mode hover background */
-}
-
+/* Icon styling in the sidebar */
 .sidebar .icon {
     font-size: 20px;
-    color: #16222C; /* Light mode icon color */
+    color: #6e7072;
+    transition: color 0.3s, transform 0.3s;
 }
 
-/* Dark Mode için Metin ve İkon Renkleri */
-.sidebar.dark-mode a, 
+/* Hover effect for icons */
+.sidebar .icon:hover {
+    transform: scale(1.1);
+}
+
+/* Dark mode styling for icons in the sidebar */
+.sidebar.dark-mode a,
 .sidebar.dark-mode .icon {
-    color: #fff; /* Dark mode metin ve ikon rengi */
+    color: #fff;
 }
 
+/* Styling for moon and sun icons */
 .sidebar .icon.moon-sun {
     margin-top: 40px;
-    font-size: 30px; /* Boyutunu büyütmek için */
-    color: inherit; /* Metin rengi ile aynı olması için */
-    transition: none; /* Hover etkisini kaldırmak için */
+    font-size: 25px;
+    color: #6e7072;
+    transition: none;
 }
 
+/* Dark mode styling for moon and sun icons */
+.sidebar.dark-mode .icon.moon-sun {
+    color: #fff;
+}
+
+/* Remove hover background for moon and sun icons */
 .sidebar .icon.moon-sun:hover,
 .sidebar .icon.moon-sun:focus,
 .sidebar .icon.moon-sun:active {
-    background-color: transparent !important; /* Hover etkisini tamamen kaldır */
-    color: inherit; /* Metin rengini koru */
+    background-color: transparent !important;
 }
 
-/* Hover etkisini kaldırmak için ek spesifiklik */
+/* Ensure moon and sun icons don't change color on hover */
 .sidebar .icon.moon-sun:hover span,
 .sidebar .icon.moon-sun:focus span,
 .sidebar .icon.moon-sun:active span {
-    background-color: transparent !important;
-    color: inherit !important;
+    background-color: transparent;
+    color: inherit;
 }
 
-/* Etkinlikler kısmını hizalamak için */
-.sidebar .menu-item:nth-child(2) {
-    margin-left: -20px; /* Etkinlikler kısmını hizalamak için */
-}
-
+/* Hamburger menu icon styling for mobile */
 .hamburger-menu-icon {
-    display: none; /* Hide on larger screens */
+    display: none;
 }
 
+/* Mobile menu */
 .hamburger-menu {
     display: none;
 }
 
-@media (max-width: 480px) {
-    /* Yan menüyü gizle */
+/* Responsive styling for mobile devices */
+@media (max-width: 600px) {
     .sidebar {
         display: none;
     }
 
-    /* Hamburger menüyü göster */
+    /* Hamburger menu icon display and positioning */
     .hamburger-menu-icon {
         display: block;
         font-size: 40px;
-        color: #fff;
-        position: fixed;
-        top: 20px; 
-        right: 20px; 
-        cursor: pointer;
-        z-index: 1001; /* Menü üstünde kalması için */
-    }
-
-    .hamburger-menu-icon.open {
         color: #16222C;
-    }
-    
-    /* Hamburger menüyü gizle */
-    .hamburger-menu {
-        display: none;       
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1001;
     }
 
-    /* Menü açık olduğunda görünür hale gelir */
+    /* Dark mode styling for hamburger menu icon */
+    .hamburger-menu-icon.dark-mode {
+        color: #EEE;
+    }
+
+    /* Open state styling for the hamburger menu */
     .hamburger-menu.open {
         display: flex;
         position: fixed;
@@ -175,56 +210,76 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: #eee; /* Light mode background */        
-        z-index: 1000; /* Ön planda kalması için */
+        background-color: #EEE;
+        z-index: 1000;
         flex-direction: column;
         align-items: center;
-        justify-content: center; 
-    }    
+        justify-content: center;
+    }
+
+    /* Dark mode styling for the open hamburger menu */
     .hamburger-menu.dark-mode.open {
-        background-color: #16222C; /* Dark mode background */
-    }  
-    
-    /* Menü öğeleri dikey olarak sıralanır */
-    .hamburger-menu .menu-item {
-        margin: 20px 0;
-        text-align: center;        
+        background-color: #16222C;
     }
 
-    .hamburger-menu .menu-item .icon {
-        font-size: 25px;        
-    }
-
-    /* Menü öğeleri için yazı rengi ve boyut */
-    .hamburger-menu .menu-item a {
+    .hamburger-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        color: inherit;
+    }
+
+    .hamburger-menu ul li {
+        width: 100%;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .hamburger-menu ul li a {
+        display: flex;
+        align-items: center;
+        color: #16222C;
         font-size: 18px;
         text-decoration: none;
-        padding: 10px; /* İçeriği biraz boşluk bırakır */    
+        padding: 10px;
+        width: 100%;
+        justify-content: center;
+        transition: background-color 0.3s;
     }
 
-    .hamburger-menu.dark-mode .menu-item a {
-        color: #fff; /* Dark mode hamburger menü metin rengi */
-    }    
+    /* Dark mode styling for links in the hamburger menu */
+    .hamburger-menu.dark-mode ul li a {
+        color: #EEE;
+    }
 
-    .hamburger-menu .menu-item a span {
-        padding: 10px;  
-    }   
+    /* Icon styling in the open hamburger menu */
+    .hamburger-menu.open .icon {
+        display: block;
+        font-size: 25px;
+        margin: 10px;
+    }
 
-    
+    /* Moon and sun icon styling in the hamburger menu */
     .hamburger-menu .icon.moon-sun {
-        font-size: 40px; 
+        color: #16222C;
+        font-size: 35px;
         position: absolute;
-        top: 40px;
-        left: 40px;
+        top: 20px;
+        left: 20px;
     }
 
+    /* Dark mode styling for moon and sun icons in the hamburger menu */
+    .hamburger-menu.dark-mode .icon.moon-sun {
+        color: #EEE;
+    }
+
+    /* Prevent moon and sun icons from changing color on focus or active states */
     .hamburger-menu .icon.moon-sun:focus,
     .hamburger-menu .icon.moon-sun:active {
-        background-color: transparent !important; /* Hover etkisini tamamen kaldır */
-        color: inherit; /* Metin rengini koru */
+        background-color: transparent !important;
+        color: inherit;
     }
 }

@@ -1,51 +1,74 @@
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-// Tema sağlamak için context oluşturma
+/**
+ * ThemeContext provides the current theme and a function to toggle the theme.
+ *
+ * @context
+ * @property {string} themeName - The current theme name, either 'dark' or '' (light).
+ * @property {Function} toggleTheme - Function to toggle between light and dark themes.
+ */
 const ThemeContext = createContext();
 
+/**
+ * ThemeProvider component that wraps its children with ThemeContext.
+ *
+ * @component
+ * @param {Object} props - The props of the component.
+ * @param {React.ReactNode} props.children - The child components that will be wrapped by the ThemeProvider.
+ *
+ * @returns {JSX.Element} A JSX element that provides theme context to its children.
+ *
+ * @example
+ * // To use the ThemeContext:
+ * import { useContext } from 'react';
+ * import { ThemeContext } from './ThemeContext';
+ *
+ * const { themeName, toggleTheme } = useContext(ThemeContext);
+ */
 const ThemeProvider = ({ children }) => {
-  // Tema adını saklamak için state oluşturma
+
   const [themeName, setThemeName] = useState('');
 
-  // Component ilk render edildiğinde ve themeName değiştiğinde çalışacak useEffect
   useEffect(() => {
-    // LocalStorage'dan saklanan tema adını alıma
+    // Check if there is a stored theme preference in localStorage
     const storedThemeName = localStorage.getItem('themeName');
     if (storedThemeName) {
-      // Eğer tema adı varsa, state'i güncelleme
+      console.log('Tema tercihi mevcut:', storedThemeName);
+    } else {
+      console.log('Tema tercihi mevcut değil');
+    }
+
+    if (storedThemeName) {
       setThemeName(storedThemeName);
     } else {
-      // Yoksa, kullanıcının sistem tercihine göre tema adını belirleme
+      // Fallback to system preference
       const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       setThemeName(darkMediaQuery.matches ? 'dark' : '');
       
-      // Kullanıcı tema tercihini değiştirdiğinde state'i güncellemek için event listener ekleme
       darkMediaQuery.addEventListener('change', (e) => {
         setThemeName(e.matches ? 'dark' : '');
       });
     }
   }, []);
 
-  // Tema adını değiştirirken body elementinin sınıfını güncelleme
   useEffect(() => {
     if (themeName === 'dark') {
-      // Tema koyu ise body'ye 'dark-mode' sınıfını ekliyoruz
       document.body.classList.add('dark-mode');
     } else {
-      // Tema açık ise 'dark-mode' sınıfını kaldırıyoruz
       document.body.classList.remove('dark-mode');
     }
   }, [themeName]);
 
-  // Temayı değiştirmek için toggle fonksiyonu
+  /**
+   * Toggles the theme between light and dark mode.
+   */
   const toggleTheme = () => {
     const name = themeName === 'dark' ? '' : 'dark';
     localStorage.setItem('themeName', name);
     setThemeName(name);
   };
 
-  // Tema adını ve toggle fonksiyonunu context değeri olarak sağlama
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
       {children}
@@ -54,7 +77,7 @@ const ThemeProvider = ({ children }) => {
 };
 
 ThemeProvider.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export { ThemeProvider, ThemeContext };
