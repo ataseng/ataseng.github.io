@@ -1,0 +1,28 @@
+.education-btn{
+    border: none;
+    outline: none;
+    background: var(--turquoise);
+    color: #fff;
+    border-radius: 2px;
+    width: 77px;
+    height: 15px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: olor 0.5s ease, color 0.5s ease;
+}
+.education-btn:hover{
+    transition: 0.5s ease-in;
+    background: transparent;
+    border: 1px solid var(--turquoise);
+    color: var(--turquoise);
+}
+.dark .education-btn{
+    color: #000;
+}
+.dark .education-btn:hover{
+    transition: 0.5s ease-in;
+    background: var(--dark-slate);
+   
+    border: 1px solid var(--turquoise);
+    color: var(--turquoise);
+}

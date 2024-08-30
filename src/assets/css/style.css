@@ -24,7 +24,9 @@
     --section-list:17px;
 
 }
-
+body{
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
 .dark{
     background-color: var(--slate-blue);
 }

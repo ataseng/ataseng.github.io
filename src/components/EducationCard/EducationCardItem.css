@@ -1,0 +1,90 @@
+
+.educator-image img{
+    clip-path: polygon(0 0, 100% 0, 49% 100%, 0% 100%);
+
+
+
+
+    border-radius: 10px 0 0 10px;
+}
+.education-card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 17px;
+    margin-bottom: 20px;
+}
+.education-card-title{
+    font-size: 16px;
+    text-align: center;
+    color: var(--turquoise);
+}
+.education-content,
+.education-date,
+.education-location
+ {
+    display: flex;
+    align-items: center;
+    margin-left: -30px;
+}
+.education-content h4,
+.education-date h4,
+.education-location h4{
+    font-size: 14px;
+    flex-shrink: 0;
+    min-width: 100px;
+    color: var(--turquoise);
+}
+.education-content span,
+.education-date span,
+.education-last-date span,
+.education-location span{
+    font-size: 12px;  
+    transition: color 0.5s ease, color 0.5s ease; 
+  
+}
+.education-last-date{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.education-last-date{
+ position: absolute;
+ left: 20%;
+
+ bottom: 5px;
+    
+}
+.education-last-date h4{
+    font-size: 10px;
+    font-weight: bold;
+    transition: color 0.5s ease, color 0.5s ease; 
+
+}
+.education-last-date span{
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-family: monospace;
+    transition: color 0.5s ease, color 0.5s ease; 
+    font-style: italic;
+    color: rgb(116, 117, 117);
+}
+
+.education-button{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.dark .education-content span,
+.dark .education-date span,
+.dark .education-location span{
+    color: var(--light-gray);
+ 
+}
+.dark .education-last-date span{
+    color: gray;
+}
+.dark .education-last-date h4{
+    color: #fff;
+}
