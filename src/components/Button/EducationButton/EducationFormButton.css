@@ -1,0 +1,28 @@
+.education-form-btn{
+    border: none;
+    outline: none;
+    background: var(--turquoise);
+    color: #fff;
+    border-radius: 2px;
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: olor 0.5s ease, color 0.5s ease;
+}
+.education-form-btn:hover{
+    transition: 0.5s ease-in;
+    background: transparent;
+    border: 1px solid var(--turquoise);
+    color: var(--turquoise);
+}
+.dark .education-form-btn{
+    color: #000;
+}
+.dark .education-form-btn:hover{
+    transition: 0.5s ease-in;
+    background: var(--dark-slate);
+   
+    border: 1px solid var(--turquoise);
+    color: var(--turquoise);
+}
