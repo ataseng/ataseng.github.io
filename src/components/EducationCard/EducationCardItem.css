@@ -1,9 +1,6 @@
 
 .educator-image img{
-    clip-path: polygon(0 0, 100% 0, 49% 100%, 0% 100%);
-
-
-
+    clip-path: polygon(0 0, 100% 0, 46% 100%, 0 100%);
 
     border-radius: 10px 0 0 10px;
 }

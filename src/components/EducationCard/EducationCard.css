@@ -8,8 +8,7 @@
     width: 580px;
     height: 201px;
     background-color: var(--light-gray);
-    border-radius: 5px;
-    
+    border-radius: 10px; 
     position: relative;
     transition: background-color 0.5s ease, color 0.5s ease; 
  
