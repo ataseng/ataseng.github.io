@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import EducationCard from '../../components/EducationCard/EducationCard'
-import SearchFilter from '../../components/SearchFilter/SearchFilter'
+import SearchFilter from '../../components/EducationCard/EducationSearchFilter/SearchFilter'
 
 
 const EducationPage = () => {
+  const [filtered, setFiltered] = useState("")
   return (
     <>
      
-        <SearchFilter/>
-        <EducationCard/>
+        <SearchFilter setFiltered={setFiltered}/>
+        <EducationCard filtered={filtered}/>
      
        
     </>

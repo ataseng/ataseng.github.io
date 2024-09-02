@@ -11,7 +11,7 @@
     },
     {
         "id":2,
-        "title":"backend Eğitimi",
+        "title":"Backend Eğitimi",
         "image":"EducatorImage.jpg",
         "content":"Django, kullanıcı arayüzleri için güçlü bir python kütüphanesidir. Bileşenler oluşturun, durum yönetimi yapın ve dinamik uygulamalar geliştirin.",
         "date":"10/05/2024",
