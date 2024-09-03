@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import EducationCard from '../../components/EducationCard/EducationCard'
 import SearchFilter from '../../components/EducationCard/EducationSearchFilter/SearchFilter'
-import EducationSelectFilter from '../../components/EducationCard/EducationSearchFilter/EducationSelectFilter'
+import EducationSelectFilter from '../../components/EducationCard/EducationSelectFilter/EducationSelectFilter'
 
 
 const EducationPage = () => {
