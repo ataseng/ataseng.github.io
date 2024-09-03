@@ -4,13 +4,15 @@ import Data from './Data/EducationCardData.json';
 import EducationCardItem from './EducationCardItem';
 import EducationModal from './EducationModal/EducationModal';
 
-const EducationCard = ({filtered}) => {
+const EducationCard = ({filtered,select}) => {
     const [modalIsOpen, setmodalIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
  
-    const filteredData = Data.filter(item => 
-        item.title.toLowerCase().includes(filtered.toLowerCase())
-    )
+    const filteredData = Data.filter(item => {
+        const searchFilter = item.title.toLowerCase().includes(filtered.toLowerCase())
+        const selectFilter = select==="all" || (select==="active" && item.isActive) ||(select==="deactive" && !item.isActive)
+        return searchFilter && selectFilter
+    })
    
     return (
         <>
