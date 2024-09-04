@@ -9,7 +9,7 @@ const EducationCard = ({filtered,select}) => {
     const [selectedItem, setSelectedItem] = useState(null);
  
     const filteredData = Data.filter(item => {
-        const searchFilter = item.title.toLowerCase().includes(filtered.toLowerCase())
+        const searchFilter = item.title.toLowerCase().includes(filtered.toLowerCase()) || item.content.toLowerCase().includes(filtered.toLowerCase())
         const selectFilter = select==="all" || (select==="active" && item.isActive) ||(select==="deactive" && !item.isActive)
         return searchFilter && selectFilter
     })
