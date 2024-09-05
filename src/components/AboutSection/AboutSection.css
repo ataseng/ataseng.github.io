@@ -1,5 +1,5 @@
 .about-section {
-    background-color: var(--dark-slate);
+    background-color: var(--light-gray);
     width: 100%;
     height: auto; 
     display: flex;
@@ -7,7 +7,11 @@
     gap: 8%; 
     align-items: flex-start; 
     padding: 5% 0; 
+    transition: background-color 0.5s ease;
 
+}
+.dark .about-section{
+    background-color: var(--dark-slate);
 }
 
 .about-section .about-section-image img {
@@ -31,11 +35,14 @@
 .about-section .about-section-content .about-section-description p {
     font-size: var(--section-text);
     margin-bottom: 40px;
-    color: var(--pure-white);
+    color: var(--dark-slate);
     text-align: justify;
     line-height: 1.6rem;
+    transition: color 0.5s ease;
 }
-
+.dark .about-section .about-section-content .about-section-description p{
+    color: var(--pure-white);
+}
 .about-section .about-section-content .about-section-menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -52,7 +59,10 @@
 }
 
 .about-section .about-section-content .about-section-menu span {
-    color: var(--pure-white);
+    color: var(--dark-slate);
+    transition: color 0.5s ease;
 }
 
-
+.dark .about-section .about-section-content .about-section-menu span {
+    color: var(--pure-white);
+}

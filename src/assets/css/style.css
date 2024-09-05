@@ -24,3 +24,11 @@
     --section-list:17px;
 
 }
+.theme-btn{
+
+    position: fixed;
+    top: 0;
+}
+.theme-btn button{
+    padding: 6px 15px;
+}
