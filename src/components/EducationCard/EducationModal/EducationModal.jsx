@@ -37,9 +37,18 @@ const EducationModal = ({ modalIsOpen, setmodalIsOpen, selectedItem }) => {
         
     }
 
+    const handleClickOutside =(e) => {
+        
+        if(e.target.className === 'education-modal active')
+        {
+            setmodalIsOpen(false
+            )
+        }
+    }
+
     
     return (
-        <div className={`education-modal ${modalIsOpen ? 'active' : ''}`}>
+        <div onClick={handleClickOutside} className={`education-modal ${modalIsOpen ? 'active' : ''}`}>
             <div className="education-modal-container">
                 <div className="education-modal-title">
                 <p>{selectedItem ? selectedItem.title : 'Başlık Yok'}</p>
