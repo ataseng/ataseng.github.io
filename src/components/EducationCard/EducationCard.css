@@ -1,0 +1,55 @@
+.education-container{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap: 40px;
+   padding: 35px;
+}
+.education-card{
+    width: 580px;
+    height: 201px;
+    background-color: var(--light-gray);
+    border-radius: 10px; 
+    position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease; 
+ 
+}
+.education-card-wrap{
+    display: flex;
+    
+}
+.dark .education-card{
+    background-color: var(--dark-slate);
+}
+.error-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--light-gray);
+    width: 700px;
+    height: 400px;
+    color: #7a7a7a;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px rgba(199, 198, 198, 0.7);
+    transition: background-color 0.5s ease,box-shadow 0.5s ease;
+    
+}
+.error-search h3{
+    color: #000000;
+    font-size: 35px;
+    margin-bottom: 30px;
+    transition: color 0.5s ease
+}
+.dark .error-search{
+
+    background-color: var(--dark-slate);
+    box-shadow: 5px 5px 5px 5px rgba(15, 15, 15, 0.7)
+}
+
+.dark .error-search h3{
+    color: #fff;
+}

@@ -1,0 +1,83 @@
+[
+    {
+        "id":1,
+        "title":"Frontend Eğitimi",
+        "image":"EducatorImage.jpg",
+        "content":"React, kullanıcı arayüzleri için güçlü bir JavaScript kütüphanesidir. Bileşenler oluşturun, durum yönetimi yapın ve dinamik uygulamalar geliştirin.",
+        "date":"12/03/2023",
+        "location":"Erzurum / Ataturk Üniversitesi Mühendislik Fakültesi / C Blok Kat: 2 / TrsE2 Sınıfı",
+        "last":"12/03/2023",
+        "isActive":true
+    },
+    {
+        "id":2,
+        "title":"Backend Eğitimi",
+        "image":"EducatorImage.jpg",
+        "content":"Django, kullanıcı arayüzleri için güçlü bir python kütüphanesidir. Bileşenler oluşturun, durum yönetimi yapın ve dinamik uygulamalar geliştirin.",
+        "date":"10/05/2024",
+        "location":"Erzurum / Ataturk Üniversitesi Mühendislik Fakültesi / C Blok Kat: 2 / TrsE1 Sınıfı",
+        "last":"10/20/2024",
+        "isActive":true
+    },
+    {
+        "id":3,
+        "title":"Git ve Github Eğitimi",
+        "image":"EducatorImage.jpg",
+        "content":"Git, versiyon kontrolü için güçlü bir araçtır. Değişiklikleri izleyin, dallar oluşturun ve projeleri yönetin.",
+        "date":"01/06/2022",
+        "location":"Erzurum / Ataturk Üniversitesi Mühendislik Fakültesi / C Blok Kat: 2 / D-14 Sınıfı",
+        "last":"01/20/2022",
+        "isActive":false
+    },
+    {
+        "id":4,
+        "title":"Figma Eğitimi",
+        "image":"EducatorImage.jpg",
+        "content":"Figma, tasarım ve prototipleme için güçlü bir araçtır. İşbirliği yapın, prototipler oluşturun ve tasarımlarınızı paylaşın.",
+        "date":"20/11/2024",
+        "location":"Erzurum / Ataturk Üniversitesi Mühendislik Fakültesi / C Blok Kat: 2 / D-16 Sınıfı",
+        "last":"12/03/2023",
+        "isActive":true
+    },
+    {
+        "id":5,
+        "title":"UML Eğitimi",
+        "image":"EducatorImage.jpg",
+        "content":"UML, yazılım tasarımı için güçlü bir modelleme dilidir. Diyagramlar oluşturun, sistem analizleri yapın ve projelerinizi görselleştirin.",
+        "date":"03/05/2021",
+        "location":"Erzurum / Ataturk Üniversitesi Mühendislik Fakültesi / C Blok Kat: 2 / Trs1 Sınıfı",
+        "last":"03/13/2021",
+        "isActive":false
+    },
+    {
+        "id":6,
+        "title":"PostgreSql Eğitimi",
+        "image":"EducatorImage.jpg",
+        "content":"PostgreSQL, veri yönetimi için güçlü bir veritabanı sistemidir. Tablo oluşturun, sorgular yazın ve verilerinizi yönetin.",
+        "date":"10/25/2026",
+        "location":"Erzurum / Ataturk Üniversitesi Mühendislik Fakültesi / C Blok Kat: 2 / Trs1 Sınıfı",
+        "last":"10/27/2026",
+        "isActive":true
+    },
+    {
+        "id":7,
+        "title":"PostgreSql Eğitimi",
+        "image":"EducatorImage.jpg",
+        "content":"PostgreSQL, veri yönetimi için güçlü bir veritabanı sistemidir. Tablo oluşturun, sorgular yazın ve verilerinizi yönetin.",
+        "date":"10/25/2026",
+        "location":"Erzurum / Ataturk Üniversitesi Mühendislik Fakültesi / C Blok Kat: 2 / Trs1 Sınıfı",
+        "last":"10/27/2026",
+        "isActive":true
+    },
+    {
+        "id":8,
+        "title":"PostgreSql Eğitimi",
+        "image":"EducatorImage.jpg",
+        "content":"PostgreSQL, veri yönetimi için güçlü bir veritabanı sistemidir. Tablo oluşturun, sorgular yazın ve verilerinizi yönetin.",
+        "date":"10/25/2026",
+        "location":"Erzurum / Ataturk Üniversitesi Mühendislik Fakültesi / C Blok Kat: 2 / Trs1 Sınıfı",
+        "last":"10/27/2026",
+        "isActive":true
+    }
+   
+]

@@ -24,10 +24,13 @@
     --section-list:17px;
 
 }
-.theme-btn{
-    position: fixed;
-    top: 0;
+
+body{
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
-.theme-btn button{
-    padding: 6px 15px;
+.dark{
+    background-color: var(--slate-blue);
+}
+.light{
+    background-color: var(--pure-white);
 }
