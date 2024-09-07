@@ -1,5 +1,33 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    
+}
+:root{
+    /* Color Palatte */
+
+    --dark-slate:#16222C;
+    --slate-blue:#293C4D;
+    --pure-white:#ffff;
+    --footer-text:#ACA6A6;
+    --light-gray:#eeee;
+    --turquoise: #00A9B8;
+    --home-text:#CACACA;
+    --footer-icon:#ACA6A6;
+
+    /* HomePage font size */
+    --home-title:32px;
+    --section-title:45px;
+    --section-text:20px;
+    --section-list:17px;
+
+}
+.theme-btn{
+    position: fixed;
+    top: 0;
+}
+.theme-btn button{
+    padding: 6px 15px;
 }

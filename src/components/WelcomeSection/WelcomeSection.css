@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Numans&display=swap');
+
+.welcome-section {
+    height: 100vh;
+    background-image: url("../../assets/images/background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 5%; 
+}
+
+.welcome-logo img {
+
+    max-width: 344px; 
+}
+
+.welcome-description {
+    font-size: var(--home-title);
+    font-family: "Numans",sans-serif;
+    text-align: center;
+    width: 60%;
+    color: var(--home-text);
+    margin-top: 60px;
+}
+

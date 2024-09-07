@@ -1,7 +1,15 @@
+import './Home.css';
+
+import AboutSection from '../../components/AboutSection/AboutSection';
+import WelcomeSection from '../../components/WelcomeSection/WelcomeSection';
+
 const Home = () => {
   return (
-    <>Home</>
-  )
+    <>
+      <WelcomeSection/>
+      <AboutSection />
+    </>
+  );
 }
 
-export default Home
+export default Home;
