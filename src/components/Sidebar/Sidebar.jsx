@@ -1,5 +1,16 @@
+
+import React, { useState, useEffect } from 'react';
+import './Sidebar.css';
+import { Icon } from '@iconify/react';
+import menuData from './menu.json';
+import MenuItem from './MenuItem';
+import HamburgerMenu from './HamburgerMenu';
+import MainLayout from '../../layouts/MainLayout';
 /**
  * Sidebar component that displays a navigation menu with a theme toggle.
+ *
+ * This component renders a sidebar with a list of menu items and an icon to toggle the theme.
+ * It also handles the opening and closing of a mobile hamburger menu.
  *
  * @component
  * @example
@@ -9,13 +20,6 @@
  *
  * @returns {JSX.Element} A JSX element representing the Sidebar.
  */
-import React, { useState, useEffect } from 'react';
-import './Sidebar.css';
-import { Icon } from '@iconify/react';
-import menuData from './menu.json';
-import MenuItem from './MenuItem';
-import HamburgerMenu from './HamburgerMenu';
-import Footer from '../Footer/Footer';
 
 const Sidebar = () => {
   const [themeName, setThemeName] = useState('');
@@ -47,6 +51,7 @@ const Sidebar = () => {
   };
 
   return (
+    <MainLayout themeName={themeName}>
     <div>
       {/* Desktop Sidebar */}
       <div className={`sidebar ${themeName === 'dark' ? 'dark-mode' : ''}`}>
@@ -68,8 +73,9 @@ const Sidebar = () => {
       </div>
 
       <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMobileMenu} toggleTheme={toggleTheme} themeName={themeName} />
-      <Footer themeName={themeName}/>
+      
     </div>
+    </MainLayout>
   );
 };
 
