@@ -1,0 +1,72 @@
+/* Footer.css */
+.footer {
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #eee;
+}
+
+.footer.dark-mode {
+    background-color: #16222c;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logos {
+    display: flex;
+    margin-left: 8%;
+}
+
+.footer-logo-ataseng {
+    margin: 65px 15px;
+    height: 70px;
+}
+
+.footer-logo-university {
+    margin: 0px;
+    height: 200px;
+}
+
+.footer-icons {
+    margin-bottom: 10px;
+    color: #ACA6A6;
+    align-items: center;
+}
+
+
+
+.footer-icon {
+    margin: 0 10px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    border: 1px solid #ACA6A6;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    margin: 5px 20px;
+    color: #ACA6A6;
+    text-decoration: none;
+    font-size: 14px
+}
+
+.footer-links.dark-mode a {
+    color: #eee;
+    
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

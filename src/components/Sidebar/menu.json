@@ -1,0 +1,40 @@
+[
+    {
+      "name": "Anasayfa",
+      "icon": "tabler:home-filled",
+      "link": "/home"
+    },
+    {
+      "name": "Etkinlikler",
+      "icon": "solar:cup-bold",
+      "link": "/activities",
+      "submenu": [
+        { "name": "Yarışmalar", "link": "/activities/competitions" },
+        { "name": "Eğitimler", "link": "/activities/trainings" },
+        { "name": "Kariyer Günleri", "link": "/activities/career-days" },
+        { "name": "Bootcamps", "link": "/activities/bootcamps" },
+        { "name": "Hackathons", "link": "/activities/hackathons" }
+      ]
+    },
+    {
+      "name": "Hakkımızda",
+      "icon": "mdi:about",
+      "link": "/about"
+    },
+    {
+      "name": "İletişim",
+      "icon": "fontisto:phone",
+      "link": "/contact"
+    },
+    {
+      "name": "Ekibimiz",
+      "icon": "ri:team-fill",
+      "link": "/team"
+    },
+    {
+      "name": "Yapımcılar",
+      "icon": "clarity:employee-group-solid",
+      "link": "/account-group"
+    }
+  ]
+  
