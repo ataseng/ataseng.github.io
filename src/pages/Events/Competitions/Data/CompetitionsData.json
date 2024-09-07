@@ -1,0 +1,42 @@
+[
+    {
+        "id":1,
+        "label":[
+            "yarışma",
+            "ödüllü",
+            "yüzyüze"
+        ], 
+        "title":"Geleneksel Algoritma Yarışması",
+        "content":"lorem lorem loreem lorem",
+        "location":"Atatürk üni TRSE-2",
+        "date":"12/05/2024",
+        "time":"12.00"
+    
+    },
+    {
+        "id":2,
+        "label":[
+            "yarışma",
+            "ödüllü",
+            "online"
+        ], 
+        "title":"Geleneksel Algoritma Yarışması 2",
+        "content":"lorem lorem loreem lorem",
+        "location":"Atatürk üni TRSE-4",
+        "date":"18/05/2024",
+        "time":"12.00"
+    },
+    {
+        "id":3,
+        "label":[
+            "yarışma",
+            "sertifikalı",
+            "yüzyüze"
+        ], 
+        "title":"Geleneksel Algoritma Yarışması 3",
+        "content":"lorem lorem loreem lorem",
+        "location":"Atatürk üni TRSE-3",
+        "date":"20/05/2024",
+        "time":"12.00"
+    }
+]

@@ -1,4 +1,3 @@
-
 import './Team.css';
 import CardList from '../../components/TeamCard/CardList'; 
 import { Icon } from '@iconify/react';
