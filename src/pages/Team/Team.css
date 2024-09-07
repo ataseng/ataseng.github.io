@@ -1,0 +1,265 @@
+.team-page {
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered heading for the team page */
+.team-page h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00A9B8; 
+}
+
+/* Flexbox for adding lines on each side of the header */
+.header-with-lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0; 
+    gap: 20px; 
+}
+.header-with-lines .line {
+    flex-grow: 0.1;
+    width: 80px;
+    height: 2px; 
+    background-color: #00A9B8; 
+}
+.header-with-lines h1 {
+    margin: 0 10px; 
+    font-size: 2.5rem;
+    color: #00A9B8;
+    text-align: center;
+}
+
+/* About section styles */
+.about {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    align-items: center;
+    padding: 20px;
+}
+
+.about h2 {
+    color: #00A9B8;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-right: 10%;
+}
+
+/* Flexbox layout for about section */
+.about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.about-foto {
+    flex: 1;
+    padding-right: 20px;
+    align-self: center; 
+}
+
+/* Image styling for about section */
+.about-foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    align-items: center;
+}
+
+.about-contents {
+    flex: 2;
+    padding-left: 20px;
+}
+
+/* Text styling for about section */
+.about-contents p {
+    text-indent: 20px;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Join team conditions layout */
+.joinTeamConditions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.joinTeamConditions-contents {
+    flex: 2;
+    padding-right: 20px;
+}
+
+/* Heading styling for join team conditions */
+.joinTeamConditions-contents h2 {
+    color: #00A9B8;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.joinTeamConditions-contents ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* List item styling with icons for join team conditions */
+.joinTeamConditions-contents li {
+    color: #000;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.joinTeamConditions-contents li svg {
+    color: #00A9B8;
+    margin-right: 10px;
+}
+
+.joinTeamConditions-foto {
+    flex: 1;
+    padding-left: 20px;
+    align-self: center; 
+}
+
+/* Image styling for join team conditions */
+.joinTeamConditions-foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Join team section styles */
+.joinTeam {
+    margin: 50px 0;
+    text-align: center;
+    background-color: #eee;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.joinTeam h2 {
+    margin-bottom: 20px;
+    color: #00A9B8;
+    text-align: center;
+}
+
+/* Flexbox for join team section contents */
+.joinTeam-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    float: left;
+    width: 50%;
+    align-items: center; 
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Image styling for join team section */
+.joinTeam img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Text styling for join team section */
+.joinTeam p {
+    text-indent: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #000;
+    width: 85%;
+    max-width: 700px; 
+    text-align: left;
+}
+
+/* Dark mode styles */
+.team-page.dark-mode {
+    background-color: #283C4D;
+}
+.team.dark-mode {
+    background-color: #283C4D;
+}
+.about.dark-mode {
+    background-color: #16222c;
+}
+.about.dark-mode p {
+    color: #fff;
+}
+.joinTeamConditions.dark-mode {
+    background-color: #283C4D;
+}
+.joinTeamConditions-contents.dark-mode li {
+    color: #fff;
+}
+.joinTeam.dark-mode {
+    background-color: #16222c;
+}
+.joinTeam.dark-mode p {
+    color: #fff;
+}
+
+/* Responsive styles for mobile view */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-foto {
+        justify-content: center;
+        margin: 6%;
+        padding-bottom: 20px;
+    }
+
+    .about-contents {
+        padding-left: 0;
+    }
+
+    .joinTeamConditions {
+        flex-direction: column;
+    }
+
+    .joinTeamConditions-contents {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .joinTeamConditions-foto {
+        justify-content: center;
+        display: none;
+    }
+
+    .joinTeamConditions h2 {
+        text-align: center;
+    }
+
+    .joinTeamConditions ul {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .joinTeamConditions li {
+        text-align: left;
+    }
+
+    .joinTeam-contents {
+        width: 100%;
+    }
+}
