@@ -16,11 +16,6 @@ const EducationCard = ({filtered,select}) => {
    
     return (
         <>
-            <EducationModal 
-                modalIsOpen={modalIsOpen} 
-                setmodalIsOpen={setmodalIsOpen}
-                selectedItem={selectedItem} 
-            /> 
             <div className="education-container">
                 {
                    filteredData.length !== 0 ?  

@@ -7,14 +7,14 @@ import Team from './pages/Team/Team';
 import Contact from "./pages/Contact/Contact";
 import Events from "./pages/Events/Events";
 import Competitions from "./pages/Events/Competitions/Competitions";
-import Education from './pages/Events/Educations/Educations'
+import Educations from './pages/Events/Educations/Educations'
 import Bootcamps from './pages/Events/Bootcamps/Bootcamps'
 import Hackathons from './pages/Events/Hackathons/Hackathons'
 import CareerDays from "./pages/Events/CareerDays/CareerDays";
 import CompetitionDetail from "./pages/Events/Competitions/CompetititonDetail/CompetitionDetail";
 import BootcampsDetail from "./pages/Events/Bootcamps/BootcampsDetail/BootcampsDetail";
 import CareerDaysDetail from './pages/Events/CareerDays/CarrerDaysDetail/CareerDaysDetail'
-import EducationDetail from "./pages/Events/Educations/EducationDetail/EducationDetail";
+// import EducationDetail from "./pages/Events/Educations/EducationDetail/EducationDetail";
 import HackathonsDetail from "./pages/Events/Hackathons/HackathonsDetail/HackathonsDetail";
 
 
@@ -36,8 +36,8 @@ function App() {
             <Route path="/etkinlikler/yarismalar" element={<Competitions />} />
             <Route path="/etkinlikler/yarismalar/:title" element={<CompetitionDetail />} />
 
-            <Route path="/etkinlikler/egitimler" element={<Education/>} />
-            <Route path="/etkinlikler/egitimler/:title" element={<EducationDetail/>} />
+            <Route path="/etkinlikler/egitimler" element={<Educations/>} />
+            {/* <Route path="/etkinlikler/egitimler/:title" element={<EducationDetail/>} /> */}
 
             <Route path="/etkinlikler/bootcamps" element={<Bootcamps/>} />
             <Route path="/etkinlikler/bootcamps/:title" element={<BootcampsDetail/>} />

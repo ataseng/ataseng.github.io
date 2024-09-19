@@ -4,7 +4,9 @@ import Footer from '../components/Footer/Footer';
 const MainLayout = ({ themeName, children }) => { 
   return (
     <>
-      {children}
+        <main>
+            {children}
+        </main>
       <Footer themeName={themeName} />
     </>
   );
