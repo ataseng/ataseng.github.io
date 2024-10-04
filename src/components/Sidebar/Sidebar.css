@@ -15,6 +15,7 @@ body.dark-mode{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+   
     backdrop-filter: blur(30px);
     z-index: 1001;
 }
@@ -98,29 +99,29 @@ body.dark-mode{
 }
 
 /* Dark mode styling for the sidebar */
-.sidebar.dark-mode {
+.dark .sidebar{
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
-.sidebar.dark-mode ul li a {
+.dark .sidebar ul li a {
     color: #fff;
 }
 
-.sidebar.dark-mode ul li a:hover {
+.dark .sidebar ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Dark mode styling for submenu */
-.sidebar.dark-mode .submenu {
+.sidebar .submenu {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.sidebar.dark-mode .submenu a {
+.dark  .sidebar.submenu a {
     color: #fff;
 }
 
-.sidebar.dark-mode .submenu a:hover {
+.dark .sidebar .submenu a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -137,9 +138,10 @@ body.dark-mode{
 }
 
 /* Dark mode styling for icons in the sidebar */
-.sidebar.dark-mode a,
-.sidebar.dark-mode .icon {
+.dark .sidebar a,
+.dark .sidebar .icon {
     color: #fff;
+    cursor: pointer;
 }
 
 /* Styling for moon and sun icons */
@@ -151,7 +153,7 @@ body.dark-mode{
 }
 
 /* Dark mode styling for moon and sun icons */
-.sidebar.dark-mode .icon.moon-sun {
+.dark .sidebar .icon.moon-sun {
     color: #fff;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutSection.css'
 import aboutSection from '../../assets/images/aboutSection.jpg'
-import { MdStars } from "react-icons/md";
+import { Icon } from '@iconify/react/dist/iconify.js';
 const AboutSection = () => {
   return (
     <>
@@ -19,10 +19,10 @@ const AboutSection = () => {
                  networking ve tanıtım <br /> ekipleriyle ana yapısını oluşturan en aktif ve etkin kulüplerden biridir...</p>
             </div>
             <ul className="about-section-menu">
-              <li><MdStars/><span>Etkinliklerimiz</span></li>
-              <li><MdStars/><span>İletişim</span></li>
-              <li><MdStars/><span>Ekibimiz</span></li>
-              <li><MdStars/><span>Bize katılın</span></li>
+              <li><Icon icon="material-symbols:stars" /><span>Etkinliklerimiz</span></li>
+              <li><Icon icon="material-symbols:stars" /><span>İletişim</span></li>
+              <li><Icon icon="material-symbols:stars" /><span>Ekibimiz</span></li>
+              <li><Icon icon="material-symbols:stars" /><span>Bize katılın</span></li>
               
             </ul>
             

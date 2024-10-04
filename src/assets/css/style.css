@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     list-style: none;
     
 }
@@ -33,4 +32,9 @@ body{
 }
 .light{
     background-color: var(--pure-white);
+}
+main{
+    margin-left: 100px;
+    width: calc(100%-100px);
+    
 }

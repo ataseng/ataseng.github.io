@@ -3,16 +3,16 @@
     padding: 20px;
     text-align: center;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    background-color: #eee;
+    width: 100%;
+   
+    background-color: #fff;
+    transition: background-color 0.5s ease;
 }
 
 /* Dark mode styles */
-.footer.dark-mode {
-    background-color: #16222c;
-}
+.dark .footer{
+   background-color: var(--dark-slate);
+} 
 
 /* Footer content layout */
 .footer-content {

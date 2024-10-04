@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router";
-import Sidebar from './components/Sidebar/Sidebar';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Credits from "./pages/Credits/Credits";
@@ -22,7 +21,7 @@ function App() {
   
   return (
     <>
-        <Sidebar />
+
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/hakkimizda" element={<About />} />
