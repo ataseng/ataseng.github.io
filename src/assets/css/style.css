@@ -34,7 +34,9 @@ body{
     background-color: var(--pure-white);
 }
 main{
+  width: 100%;
+}
+.sidebar-margin{
     margin-left: 100px;
     width: calc(100%-100px);
-    
 }

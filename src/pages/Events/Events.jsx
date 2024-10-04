@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 
 function Events() {
   return (
+    <div className="sidebar-margin">
+
     <div>
       <h1>Events</h1>
       <nav>
@@ -15,6 +17,7 @@ function Events() {
       </nav>
      
       
+    </div>
     </div>
   );
 }

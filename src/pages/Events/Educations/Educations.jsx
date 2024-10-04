@@ -9,9 +9,11 @@ const Educations = () => {
   const [select, setSelect] = useState("all")
   return (
     <>
+      <div className="sidebar-margin">
         <EducationSelectFilter select={select} setSelect={setSelect}/>
         <SearchFilter setFiltered={setFiltered}/>
         <EducationCard select={select} filtered={filtered}/>
+      </div>
      
        
     </>
