@@ -23,7 +23,7 @@ function App() {
     <>
 
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/anasayfa" element={<Home />} />
             <Route path="/hakkimizda" element={<About />} />
             <Route path="/emegi-gecenler" element={<Credits />} />
             <Route path="/takim" element={<Team />} />

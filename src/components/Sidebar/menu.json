@@ -2,39 +2,39 @@
     {
       "name": "Anasayfa",
       "icon": "tabler:home-filled",
-      "link": "/home"
+      "link": "/anasayfa"
     },
     {
       "name": "Etkinlikler",
       "icon": "solar:cup-bold",
-      "link": "/activities",
+      "link": "/etkinlikler",
       "submenu": [
-        { "name": "Yarışmalar", "link": "/activities/competitions" },
-        { "name": "Eğitimler", "link": "/activities/trainings" },
-        { "name": "Kariyer Günleri", "link": "/activities/career-days" },
-        { "name": "Bootcamps", "link": "/activities/bootcamps" },
-        { "name": "Hackathons", "link": "/activities/hackathons" }
+        { "name": "Yarışmalar", "link": "/etkinlikler/yarismalar" },
+        { "name": "Eğitimler", "link": "/etkinlikler/egitimler" },
+        { "name": "Kariyer Günleri", "link": "/etkinlikler/kariyer-gunleri" },
+        { "name": "Bootcamps", "link": "/etkinlikler/bootcamps" },
+        { "name": "Hackathons", "link": "/etkinlikler/hackathons" }
       ]
     },
     {
       "name": "Hakkımızda",
       "icon": "mdi:about",
-      "link": "/about"
+      "link": "/hakkimizda"
     },
     {
       "name": "İletişim",
       "icon": "fontisto:phone",
-      "link": "/contact"
+      "link": "/iletisim"
     },
     {
       "name": "Ekibimiz",
       "icon": "ri:team-fill",
-      "link": "/team"
+      "link": "/takim"
     },
     {
       "name": "Yapımcılar",
       "icon": "clarity:employee-group-solid",
-      "link": "/account-group"
+      "link": "/emegi-gecenler"
     }
   ]
   
