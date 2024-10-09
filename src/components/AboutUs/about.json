@@ -1,0 +1,30 @@
+[
+    {
+        "first":{
+            
+            "id":1,
+            "title":"Biz Kimiz",
+            "text":"Biz Kimiz ATASENG Kulübü, Atatürk Üniversitesi Yazılım Mühendisliği öğrencileri tarafından 2023 yılında kurulmuş dinamik, yenilikçi ve hızla büyüyen bir öğrenci topluluğudur. Kulübümüz, yazılım mühendisliği alanında hem teorik hem de pratik bilgi ve deneyim paylaşımını teşvik ederek, öğrencilerin akademik ve profesyonel gelişimlerine katkıda bulunmayı amaçlamaktadır. Her geçen gün gelişen teknoloji dünyasında, ATASENG Kulübü üyeleri olarak sadece yazılım geliştirmenin ötesinde, sektörün gereksinimlerine cevap verebilecek donanımlı bireyler yetiştirmeyi hedefliyoruz. Bu doğrultuda kulübümüz, yazılım dünyasında öncü bireyler yetiştirme misyonunu benimsemiş olup, yaratıcı düşünme, problem çözme ve takım çalışması gibi önemli becerileri geliştirmeye odaklanmaktadır. Kulübümüz, çeşitli yazılım projeleri, yarışmalar, hackathonlar, seminerler ve atölye çalışmaları düzenleyerek üyelerimize zengin öğrenme fırsatları sunmaktadır.  ",
+            "images":"firstSection.jpg"
+        },
+        "second": {
+            "id": 2,
+            "title": "Misyonumuz",
+            "text": "Yazılım mühendisliği alanında farkındalık yaratmak ve bu alanda kariyer yapmak isteyen öğrencilere yol göstermek. Öğrenciler arasında bilgi paylaşımını ve iş birliğini teşvik ederek, kolektif öğrenme ve dayanışma kültürü oluşturmak. Yenilikçi projeler ve etkinlikler düzenleyerek, öğrencilerin sektöre yönelik hazırlıklarını desteklemek ve mesleki yeterliliklerini artırmak. Bu süreçte, öğrencilere teknik becerilerin yanı sıra soft skill geliştirme fırsatları sunarak, onların daha donanımlı bireyler olmalarını sağlıyoruz. Teknolojinin hızla geliştiği dünyada, öğrencilerimize en güncel bilgi ve uygulama imkanlarını sunarak, onları geleceğin yazılım mühendisleri olarak hazırlamak. Amacımız, her öğrencinin potansiyelini keşfetmesine ve kariyerinde başarılı olmasına katkıda bulunmaktır.",
+            "images": "secondSection.jpg"
+        },
+        "third":{
+            "id":3,
+            "title":"Misyonumuz",
+            "text":" Yazılım mühendisliği alanında farkındalık yaratmak ve bu alanda kariyer yapmak isteyen öğrencilere yol göstermek. Öğrenciler arasında bilgi paylaşımını ve iş birliğini teşvik ederek, kolektif öğrenme ve dayanışma kültürü oluşturmak. Yenilikçi projeler ve etkinlikler düzenleyerek, öğrencilerin sektöre yönelik hazırlıklarını desteklemek ve mesleki yeterliliklerini artırmak. Teknolojinin hızla geliştiği dünyada, öğrencilerimize en güncel bilgi ve uygulama imkanlarını sunarak, onları geleceğin yazılım mühendisleri olarak hazırlamak. Vizyonumuz",
+            "images":"thirdSection.jpg"
+        },
+        
+        "fourth":{
+            "id":4,
+            "title":"Üyelik",
+            "text":" ATASENG Kulübü'ne üye olarak, çeşitli etkinliklerimize katılabilir ve projelerimizde aktif rol alabilirsiniz. Üyelik sürecimiz oldukça basit ve tüm Yazılım Mühendisliği öğrencilerine açıktır. Üyelik başvurusu için gerekli bilgileri kulüp temsilcilerimizden veya iletişim sayfamızdan edinebilirsiniz. Üyelerimiz, düzenlediğimiz etkinliklerde indirimlerden faydalanabilir ve kulübün sunduğu özel fırsatlardan yararlanabilirler.",        
+            "images":"fourthSection.jpg"
+        }
+    }
+]

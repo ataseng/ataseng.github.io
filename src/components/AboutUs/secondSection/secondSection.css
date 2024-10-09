@@ -1,0 +1,44 @@
+.second-content{
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    
+}
+.secondImage{
+    margin-top: 219px;
+    margin-right: 100px;
+}
+.secondImage img{
+    border-radius: 15px;
+}
+
+.secondText{
+    margin-top: 219px;
+
+    
+}
+
+.secondText .secondHeader{
+    color: var(--turquoise);
+    font-size: 35px;
+  
+   
+}
+
+.secondText ul{
+    line-height: 1.8rem;
+    font-size: 19px;
+    margin-top: 30px;
+    text-align: justify;
+    width: 80%;
+    transition: color 1s ease;
+    
+}
+
+.dark .secondText ul{
+    color: #fff;
+}
+.secondText ul li{
+    margin-bottom: 20px;
+}
