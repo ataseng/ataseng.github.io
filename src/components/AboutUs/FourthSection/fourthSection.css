@@ -1,0 +1,48 @@
+.fourth-content{
+    padding: 35px;    
+    display: flex;
+    justify-content: space-between;
+    gap: 55px;
+    
+}
+.fourthImage{
+    margin-top: 50px;
+    margin-right: 100px;
+}
+.fourthImage img{
+    border-radius: 15px;
+    width: 450px;
+    height: 350px;
+}
+
+
+.fourthText .fourthHeader{
+    color: var(--turquoise);
+    font-size: 35px;  
+}
+
+.fourthText{
+    margin-top: 50px;
+    margin-left: 10px;
+   
+    
+}
+
+.fourthText .fourthHeader{
+    color: var(--turquoise);
+    font-size: 35px;
+   
+}
+
+.fourthText p{
+    line-height: 1.8rem;
+    font-size: 19px;
+    margin-top: 20px;
+    text-align: justify;
+    width: 60%;
+    transition: color 1s ease;
+    
+}
+.dark .fourthText p{
+    color: #fff;
+}

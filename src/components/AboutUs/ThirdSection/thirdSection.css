@@ -1,45 +1,43 @@
-.second-content{
+
+
+.third-content{
     margin-left: 50px;
     display: flex;
     justify-content: space-between;
     height: 100vh;
     
 }
-.secondImage{
+.thirdImage  {
     margin-top: 219px;
-    margin-right: 120px;
 }
-.secondImage img{
+
+.thirdImage img{
     border-radius: 15px;
+
+  
 }
-
-.secondText{
+.thirdText{
     margin-top: 219px;
-    margin-left: 30px;
-
+    margin-left: 150px;
     
 }
 
-.secondText .secondHeader{
+.thirdText .thirdHeader{
     color: var(--turquoise);
     font-size: 35px;
-  
    
 }
 
-.secondText ul{
-    line-height: 1.8rem;
+.thirdText p{
+    line-height: 1.9rem;
     font-size: 19px;
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: justify;
     width: 80%;
     transition: color 1s ease;
     
 }
-
-.dark .secondText ul{
+.dark .thirdText p{
     color: #fff;
 }
-.secondText ul li{
-    margin-bottom: 20px;
-}
+
