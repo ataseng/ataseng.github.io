@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"Karen Jones",
+        "departmant":"Yazılım Mühendisliği",
+        "grade":"3.Sınıf",
+        "clubPosition":"Kulüp Başkanı"
+        
+    },
+    {
+        "id":2,
+        "name":"Sadie Adler",
+        "departmant":"Bilgisayar Mühendisliği",
+        "grade":"4.Sınıf",
+        "clubPosition":"Kulüp Yardımcısı"
+    },
+    {
+        "id":3,
+        "name":"Arthur Morgan",
+        "departmant":"Yazılım Mühendisliği",
+        "grade":"2.Sınıf",
+        "clubPosition":"Kulüp Saymanı"
+    },
+    {
+        "id":4,
+        "name":"John Marston",
+        "departmant":"Bilgisayar Mühendisliği",
+        "grade":"1.Sınıf",
+        "clubPosition":"Kulüp Danışmanı"
+    }
+
+]

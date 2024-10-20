@@ -1,0 +1,119 @@
+.team-section{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px;
+    height: 700px;
+}
+.team-section-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.team-section-title h2{
+    color: var(--turquoise);
+    font-weight: 300;
+    text-align: center;
+    font-size: var(--section-title);
+}
+
+.left-line,
+.right-line{
+    width: 200px;
+    height: 2px;
+    background-color: var(--turquoise);
+}
+.team-section-card{
+
+    width: 230px;
+    border-radius: 10px;
+    margin-top: 30px;
+    height: 290px;
+    box-shadow: 5px 5px 5px 5px rgba(22, 22, 22, 0.4);
+    background-color: var(--light-gray);
+    transition: background-color 1s ease;
+}
+
+.dark .team-section-card{
+    background-color: var(--dark-slate);
+}
+
+.team-section-card .person-image img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.team-section-card .person-image{
+
+    display: flex;  
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.team-section-card .person-name{
+    text-align: center;
+    margin-top: 20px;
+    color: var(--turquoise);
+    font-size: 17px;
+    font-weight: bold;
+}
+.departmant-info{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.departmant-info .departmant{
+    letter-spacing: 0.1rem;
+    color: var(--dark-slate);
+    transition: color 1s ease;
+}
+.dark .departmant-info .departmant{
+    color: #fff;
+}
+
+.departmant-info .grade{
+    color: rgb(161, 159, 159);
+}
+
+.club-positions{
+    margin-top: 25px;
+    color: var(--turquoise);
+    text-align: center;
+    letter-spacing: 3px;
+}
+.team-section-card-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.team-section-link{
+    margin-top: 50px;
+    font-size: 18px;
+}
+.team-section-link a{
+    color: rgb(185, 183, 183);
+    text-decoration: none;
+    transition: color 1s ease;
+}
+.team-section-link span{
+    color: var(--dark-slate);
+    font-weight: bold;
+    transition: color 1s ease;
+    
+}
+.dark .team-section-link a{
+    color: #706d6d;
+    
+    
+}
+.dark .team-section-link span{
+    color: #fff;
+}
