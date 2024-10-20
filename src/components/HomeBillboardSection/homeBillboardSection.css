@@ -1,0 +1,141 @@
+.billboard-section {
+    padding: 35px;
+
+
+}
+
+
+.billboard-section .billboard-title h2 {
+    color: var(--turquoise);
+    font-weight: 300;
+    text-align: center;
+    font-size: var(--section-title);
+}
+
+.billboard-description {
+    font-size: var(--section-text);
+    line-height: 2rem;
+    text-align: center;
+    word-spacing: 0.5rem;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-slate);
+    transition: color 1s ease;
+}
+
+.dark .billboard-description {
+    color: #fff;
+}
+.billboard-description p {
+    width: 70%;
+}
+
+.billboard-visual {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 70px;
+    position: relative;
+    flex-direction: column;
+
+}
+
+.top-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.top-right-line {
+    width: 198px;
+    height: 2px;
+
+}
+.top-left-line{
+    width: 206px;
+    height: 2px;
+    background-color: var(--turquoise);
+}
+.top-center-line {
+    z-index: 2;
+    width: 200px;
+    height: 2px;
+    background-color: var(--turquoise);
+}
+
+.top-right-line {
+
+    z-index: 3;
+    background-color: var(--turquoise);
+}
+
+.hook-icon-left,
+.hook-icon-right {
+    transform: rotate(180deg);
+    position: absolute;
+    font-size: 40px;
+    color: #000;
+    transition: color 1s ease;
+}
+
+.dark .hook-icon-left,
+.dark .hook-icon-right{
+    color: #fff;
+}
+
+.hook-icon-left {
+    left: 30%;
+    z-index: 1;
+    top: -8px;
+}
+
+.hook-icon-right {
+    right: 29.5%;
+    z-index: 2;
+    top: -8px;
+}
+
+.first {
+    margin-top: 10px;
+}
+
+.board {
+    background-color: var(--turquoise);
+    min-width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 5px;
+
+    margin-right: 6px;
+    color: #fff;
+
+}
+
+.divider-line {
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+    width: 34%;
+    margin-right: 6px;
+    height: 20px;
+    transition: color 1s ease;
+    transition: border-right 1s ease,border-left 1s ease;
+}
+
+.dark .divider-line{
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+
+.divider-line.disable
+{
+    display: none;
+}
