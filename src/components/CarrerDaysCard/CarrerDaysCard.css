@@ -1,0 +1,25 @@
+.carrer-days-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+    margin-left: 150px;
+    gap: 20px;
+    
+    padding: 35px;
+ }
+ .carrer-days-card{
+     width: 580px;
+     height: 201px;
+     background-color: var(--light-gray);
+     border-radius: 10px; 
+     position: relative;
+     transition: background-color 0.5s ease, color 0.5s ease; 
+  
+ }
+ .carrer-days-card-wrap{
+     display: flex;
+     
+ }
+ .dark .carrer-days-card{
+     background-color: var(--dark-slate);
+ }
+

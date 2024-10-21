@@ -10,6 +10,8 @@ const EducationModal = ({ modalIsOpen, setmodalIsOpen, selectedItem }) => {
         Phone:"",
         Email:""
     })
+   
+    
     const [formSubmit, setFormSubmit] = useState(null)
 
     const handleChange = (e) => {
