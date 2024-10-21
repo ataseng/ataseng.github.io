@@ -8,6 +8,7 @@ import HomeBillboardSection from '../../components/HomeBillboardSection/HomeBill
 import HomeTeamSection from '../../components/HomeTeamSection/HomeTeamSection';
 import HomeDiscordSection from '../../components/HomeDiscordSection/HomeDiscordSection';
 import HomeFeedBackSection from '../../components/HomeFeedBackSection/HomeFeedBackSection';
+import HomeManagementSection from '../../components/HomeManagementSection/HomeManagementSection';
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <HomeTeamSection/>
       <HomeDiscordSection/>
       <HomeFeedBackSection/>
+      <HomeManagementSection/>
     </>
   );
 }

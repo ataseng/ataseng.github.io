@@ -1,0 +1,141 @@
+.management-section{
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-gray);
+    height: 600px;
+    transition: background-color 1s ease;
+  
+}
+
+.dark .management-section{
+    background-color: var(--slate-blue);
+}
+
+.management-side{
+    width: 55%;
+ 
+
+}
+.management-section .management-side .management-title h2{
+    font-size: var(--section-title);
+    color: var(--turquoise);
+    font-weight: 300;
+}
+
+.management-section .management-side .management-description{
+    margin-top: 20px;
+    font-size: 18px;
+    max-width: 90%;
+    text-align: left;
+    transition: color 1s ease;
+    line-height: 1.5rem;
+    overflow-wrap: break-word; 
+    padding-right: 10px; 
+}
+
+.dark .management-section .management-side .management-description{
+    color: #fff;
+}
+
+.form-content{
+    padding: 35px;
+    background-color: var(--pure-white);
+
+    transition: background-color 1s ease;
+    border-radius: 5px;
+
+
+}
+
+.dark .form-content{
+    background-color: var(--dark-slate);
+}
+
+.form-side .input{
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  
+
+}
+
+.form-side input{
+    border-top: none;
+    border-left: none;
+    background-color: transparent;
+    border-right: none;
+    height: 2px;
+    border-bottom: 1px solid var(--turquoise);
+    outline: none;
+    flex: 1;
+    width: 350px;
+
+    margin-bottom: 40px;
+}
+
+.managament-section-btn{
+    text-align: center;
+    
+}
+.managament-section-btn button{
+    border: 2px solid var(--light-gray);
+    color: var(--turquoise);
+    width: 150px;
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    transition:  border 1s ease;
+    
+}
+
+.dark .managament-section-btn button{
+    border:  2px solid var(--slate-blue);
+}
+
+.sponsor-part{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--light-gray);
+    transition: background-color 1s ease,color 1s ease;
+}
+.dark .sponsor-part{
+    background-color: var(--slate-blue);
+    color: #e2dfdf;
+}
+.description-side{
+    width: 40%;
+    margin-left: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    line-height: 1.7;
+    
+    text-align: justify;
+
+}
+
+.sponsor-image-side {
+    background: url(../../assets/images/sponsorSection.jpg) no-repeat center;
+    width: 49%;
+    height: 300px;
+}
+.visit-github-link{
+    margin-top: 30px;
+}
+.visit-github-link a{
+    border: 1px solid var(--turquoise);
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(163, 161, 161);
+    text-decoration: none;
+    
+}
