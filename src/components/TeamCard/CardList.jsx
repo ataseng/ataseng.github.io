@@ -17,7 +17,7 @@ import lightThemeLogo from '../../assets/images/atasengLogo_dark.png';
 
 const CardList = () => {
     const [cardsData, setCardsData] = useState([]);
-
+    
     useEffect(() => {
 
         const updatedCardsData = cardsDataJson.map(card => ({

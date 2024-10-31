@@ -3,13 +3,11 @@ import CardList from '../../components/TeamCard/CardList';
 import { Icon } from '@iconify/react';
 import teamFoto_1 from '../../assets/images/team_sections_1.jpg';
 import teamFoto_2 from '../../assets/images/team_sections_2.jpg';
-import logoLightTheme from '../../assets/images/atasengLogo_dark.png';
-import logoDarkTheme from '../../assets/images/atasengLogo_white.png';
 import JoinTeamForm from '../../components/Form/JoinTeamForm/JoinTeamForm';
 
+
 const Team = () => {
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    const logoSrc = isDarkMode === 'dark-mode' ? logoDarkTheme : logoLightTheme;
+
   return (
     <div className="team-page ">
         <div className='team'>
@@ -17,20 +15,17 @@ const Team = () => {
                 <span className="line"></span>
                 <h1>Ekibimiz</h1>
                 <span className="line"></span>
-        </div>
-
+            </div>
             <CardList />
         </div>
-
+        
         <div className='about'>
             <h2>Ekibimiz Hakkında</h2>
             <div className='about-container'>
                 <div className='about-foto'>                
                     <img src={teamFoto_1} alt="" />
-                </div>
-                
-                <div className='about-contents'>
-                
+                </div>                
+                <div className='about-contents'>                
                 <p>Başkan, ekibin lideri olarak tüm operasyonları yönetir ve 
                 organizasyonun genel vizyonunu ve misyonunu belirler.
                 Stratejik hedeflerin gerçekleştirilmesi için gerekli adımları 
@@ -78,14 +73,14 @@ const Team = () => {
                     </ul>
             </div>
             <div className='joinTeamConditions-foto'>                
-                <img src={teamFoto_2} alt="" />
+                <img src={teamFoto_2} alt=''/>
             </div>
         </div>
 
         <div className='joinTeam '>
             <h2>Yönetim Ekibimize Katılmak İster Misiniz?</h2>
             <div className='joinTeam-contents'>
-                <img src={logoSrc} alt="" />
+                <div className='team-logo'></div>
                 <p>
                 Ekibimizin bir parçası olarak, dinamik ve yenilikçi 
                 bir ortamda çalışma fırsatını yakalayabilirsiniz. 

@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
 import { Icon } from '@iconify/react';
 import menuData from './menu.json';
@@ -23,17 +23,12 @@ import HamburgerMenu from './HamburgerMenu';
 const Sidebar = ({setTheme,theme}) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
-
-
-
-
   
   const toggleMobileMenu = () => {
     setMenuOpen(prevState => !prevState);
   };
 
   return (
-
     <div>
       {/* Desktop Sidebar */}
       <div className={`sidebar ${theme === 'dark' ? 'dark-mode' : ''}`}>
@@ -54,8 +49,8 @@ const Sidebar = ({setTheme,theme}) => {
         <Icon icon={menuOpen ? 'mdi:close' : 'mdi:menu'} />
       </div>
 
-      <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMobileMenu}  theme={theme} />
-      
+      <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMobileMenu}  theme={theme} />  
+          
     </div>
 
   );

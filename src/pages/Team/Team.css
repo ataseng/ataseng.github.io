@@ -173,9 +173,14 @@
 }
 
 /* Image styling for join team section */
-.joinTeam img {
-    max-width: 150px;
-    margin-bottom: 20px;
+.team-logo {
+    width: 150px;
+    height: 150px;
+    background-image: url(../../assets/images/atasengLogo_dark.png); /* Sadece arka plan resmi */
+    background-size: contain; /* Resmi tam sığdır */
+    background-repeat: no-repeat; /* Tekrar etmesin */
+    background-position: center; /* Ortala */
+    transition: background-image 1s ease; /* Arka plan resmi geçişi */
 }
 
 /* Text styling for join team section */
@@ -190,32 +195,41 @@
     text-align: left;
 }
 
-/* Dark mode styles */
-.team-page.dark-mode {
-    background-color: #283C4D;
-}
-.team.dark-mode {
-    background-color: #283C4D;
-}
-.about.dark-mode {
-    background-color: #16222c;
-}
-.about.dark-mode p {
-    color: #fff;
-}
-.joinTeamConditions.dark-mode {
-    background-color: #283C4D;
-}
-.joinTeamConditions-contents.dark-mode li {
-    color: #fff;
-}
-.joinTeam.dark-mode {
-    background-color: #16222c;
-}
-.joinTeam.dark-mode p {
-    color: #fff;
-}
 
+/* Dark mode styles */
+.dark .team-page {
+    background-color: #283C4D;
+}
+.dark .team {
+    background-color: #283C4D;
+}
+.dark .about {
+    background-color: #16222c;
+}
+.dark .about p {
+    color: #fff;
+}
+.dark .joinTeamConditions {
+    background-color: #283C4D;
+}
+.dark .joinTeamConditions-contents li {
+    color: #fff;
+}
+.dark .joinTeam{
+    background-color: #16222c;
+}
+.dark .joinTeam p {
+    color: #fff;
+}
+.dark .team-logo{
+    width: 150px;
+    height: 150px;
+    background: url(../../assets/images/atasengLogo_white.png);
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    transition: background-image 1s ease; 
+}
 /* Responsive styles for mobile view */
 @media screen and (max-width: 768px) {
     .about-container {

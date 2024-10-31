@@ -19,12 +19,11 @@ import { Icon } from '@iconify/react';
  */
 
 const Card = ({ image, darkThemeLogo , lightThemeLogo, name, department, role, links }) => {
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    const logoSrc = isDarkMode === 'dark-mode' ? darkThemeLogo : lightThemeLogo;
-    console.log('darkThemelogo:', darkThemeLogo);
-    console.log('lightThemelogo:', lightThemeLogo);
-    console.log('logoSrc:', logoSrc);
-  return (
+    
+    const isDarkMode = document.body.classList.contains('dark');
+    const logoSrc = isDarkMode ? darkThemeLogo : lightThemeLogo;
+        
+  return(
     <div className="card">
       <img src={image} alt={name} className="card-image" />
       <img src={logoSrc} alt={name} className="card-logo"></img>
@@ -34,7 +33,6 @@ const Card = ({ image, darkThemeLogo , lightThemeLogo, name, department, role, l
             <p>{department}</p>
             <p>{role}</p>
         </div>
-
         <div className="card-links">
           {links.map((link, index) => (
             <a key={index} href={link.href}>

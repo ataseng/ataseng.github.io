@@ -31,9 +31,13 @@
   .card-content{
     display: flex;
     align-items: center; 
-    flex-direction: column;   
+    flex-direction: column;  
+    line-height: 1.5em; 
     margin-top: 20px; 
 
+  }
+  .card-links{
+    padding: 15px;
   }
   .card-links a {
     margin-bottom: 25px;
@@ -43,14 +47,15 @@
   }
   /*dark mode*/
 
-  .card.dark-mode{
+  .dark .card{
     background-color: #16222c;
   }
-  .card.dark-mode p{
+  .dark .card p{
     color:#fff;
   }
-  .card-links.dark-mode a {
+  .dark .card-links a {
     color: #fff;
   }
+
 
   

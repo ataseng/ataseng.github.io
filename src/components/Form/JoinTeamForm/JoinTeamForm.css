@@ -37,10 +37,10 @@
 .joinTeamForm button:hover {
     background-color: #007c8a;
 }
-.joinTeamForm.dark-mode{
+.dark .joinTeamForm{
     background-color: #283C4D;
 }
-.joinTeamForm.dark-mode input {
+.dark .joinTeamForm input {
     background-color: #283C4D;
     border-bottom: 1px solid #00A9B8;
     font-size: 1rem;
@@ -50,6 +50,6 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin: 0; 
 }
 }
