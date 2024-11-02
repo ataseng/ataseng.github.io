@@ -1,0 +1,123 @@
+.contact-page {
+    text-align: center;
+    padding: 120px;
+  }  
+  h2 {
+    font-size: 24px;
+    color: #00A9B8;
+    margin-bottom: 20px; 
+  }  
+  .line-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }  
+  .line {
+    flex-grow: 1;
+    border-top: 1px solid #00A9B8; 
+    margin: 0 50px; 
+  }  
+  .contact-form-map {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }  
+  .contact-form {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+  }
+  .input:focus {
+    outline: none; 
+  }
+  .contact-form-row {
+    display: flex;
+    gap: 10px; 
+  }  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #00A9B8;
+    border-radius: 2px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .contact-form textarea{
+    height: 75px;
+  }
+  
+  .contact-form-row input:focus {
+    width: 100%;
+  }
+  
+  .contact-form button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #00A9B8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .map {
+    width: 50%;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #00A9B8;
+  }
+  .icon-1 {
+    color: #00A9B8;
+    font-size: 35px;
+  }
+  .icon-2 {
+    color: #ddd;
+    font-size: 18px;
+    margin: 3px;
+  }
+  
+  .info-item {
+    text-align: center;
+    width: 20%;
+    padding: 0 30px;
+    margin-bottom: 20px;
+  }
+  
+  .info-item:not(:last-child) {
+    border-right: 1px solid #00A9B8;
+  }  
+  
+  .info-item i {
+    font-size: 24px;
+    color: #00A9B8;
+  }
+  
+  .info-item p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .info-item a {
+    color: #00A9B8;
+    text-decoration: none;
+  }
+  .dark .contact-form input,
+  .dark .contact-form textarea {
+    color: #fff;
+    background-color: #16222c;
+  }
+  .dark .contact-form input:focus,
+  .dark .contact-form textarea:focus{
+    background-color: #16222c;
+  }
+  .dark .info-item p{
+    color: #fff;
+  }
