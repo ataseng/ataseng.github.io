@@ -1,0 +1,130 @@
+.bootcamps-card{
+    background-color: var(--light-gray);
+    width: 278px;
+    height: 450px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+
+.dark .bootcamps-card{
+    background-color: var(--dark-slate);
+}
+
+.bootcamps-card-image img{
+    border-radius: 15px 15px 0 0 ;
+}
+
+.bootcamps-card-label ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.bootcamps-card-label li{
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 1s ease;
+    background-color: var(--turquoise);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.dark .bootcamps-card-label li {
+    background-color: var(--slate-blue);
+}
+
+.bootcamps-card-title h3{
+    color: var(--turquoise);
+    margin-left: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.bootcamps-card-description{
+    margin-top: 20px;
+    margin-left: 15px;
+    text-align: justify;
+    transition: color 1s ease;
+    width: 90%;
+    color: var(--dark-slate);
+    font-size: 15px;
+}
+
+.dark .bootcamps-card-description{
+    color: var(--light-gray);
+}
+.bootcamps-card-info{
+    margin-top: 20px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: color 1s ease;
+    gap: 5px;
+
+}
+
+
+.dark .bootcamps-card-info{
+    color: var(--light-gray);
+}
+.bootcamps-card-info-icon{
+    color: var(--turquoise);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.bootcamps-card-info-location{
+    width: 80%;
+}
+
+
+
+.bootcamps-card-info-location,
+.bootcamps-card-info-date,
+.bootcamps-card-info-time{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.bootcamps-card-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    
+    outline: none;
+}
+
+.bootcamps-card-button p{
+    background-color: var(--turquoise);
+    min-width: 90px;
+    transition: background-color 1s ease,border 1s ease,color 1s ease;
+    text-align: center;
+    padding: 5px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    
+    color: var(--pure-white);
+    cursor: pointer;
+  
+}
+
+
+.bootcamps-card-button p:hover{
+    background-color: transparent;
+    color: var(--dark-slate);
+    border: 1px solid var(--turquoise);
+}
+
+.dark  .bootcamps-card-button p:hover{
+    color: var(--light-gray);
+}
