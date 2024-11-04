@@ -1,0 +1,45 @@
+.team-section {
+    margin: 0;
+    padding-left: 120px;
+    background-color: #ddd;
+}
+.team-section-reverse{
+    background-color: #fff;
+}
+.team-title {
+    display: flex;
+    flex-direction: column;
+    background-color: #00A9B8;
+    border-radius: 0 0 12px 12px;
+    margin: 0 0 10px 10px;
+    width: 100%;
+    max-width: 180px;
+}
+
+.team-title .line-dashed {
+    position: relative;    
+    border-style: dashed;
+    width: 100%;
+    max-width: 175px;
+    height: 0px;
+    color: #fff;
+    top: 30px;
+    background-color: var();
+} 
+
+.team-title h3 {
+    color: white;
+    padding: 8px;
+    font-size: 1.1rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+.dark .team-section{
+    background-color: #16222c;
+}
+.dark .team-section-reverse{
+    background-color: #283c4d;
+}
