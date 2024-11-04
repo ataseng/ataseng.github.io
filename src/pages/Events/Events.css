@@ -1,0 +1,90 @@
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 100px;
+    padding: 35px;
+    margin-left: 100px;
+}
+
+.event-card {
+    background-color: var(--light-gray);
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    padding: 35px;
+    width: 200px;
+    transition: background-color 1s ease,transform 1s ease;
+    transform: translateY(0);
+}
+
+.event-card:hover{
+    transform: translateY(-20px);
+    transition: 0.5s all;
+    
+}
+
+.dark .event-card {
+    background-color: var(--dark-slate);
+}
+
+.event-card:nth-child(4) {
+    grid-column: 1/2;
+    justify-self: flex-end;
+}
+
+
+.event-card:nth-child(5) {
+    grid-column: 2/3;
+    justify-self: flex-end;
+}
+
+.event-card-icon {
+    font-size: 50px;
+    text-align: center;
+    color: var(--turquoise);
+}
+
+
+
+.event-card-title h3 {
+    font-size: 25px;
+    text-align: center;
+    color: var(--turquoise);
+}
+
+.event-card-description p {
+    font-size: 14px;
+    margin-top: 20px;
+    transition: color 1s ease;
+    text-align: justify;
+}
+
+.dark .event-card-description {
+    color: var(--light-gray);
+}
+
+.event-card-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.event-card-button p {
+    border: 1px solid transparent;
+    transition: background-color 1s ease, color 1s ease;
+    background-color: var(--turquoise);
+    color: var(--pure-white);
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.dark .event-card-button p {
+    color: var(--dark-slate);
+}
+
+.event-card-button p:hover {
+    background-color: transparent;
+    border: 1px solid var(--turquoise);
+    color: var(--turquoise);
+}

@@ -1,0 +1,41 @@
+[
+    {
+        "id":1,
+        "title":"Yarışmalar",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo odit atque cupiditate ut tempore hic, asperiores explicabo! Doloribus repellat voluptatem deleniti neque aliquid excepturi atque voluptatum, aspernatur libero perspiciatis? lreom skaoıl rals efnalar koastaios.ceo oslamsk cossda",
+        "icon":"solar:cup-bold",
+        "url":"yarismalar"
+    },
+    {
+        "id":2,
+        "title":"Eğitimler",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo odit atque cupiditate ut tempore hic, asperiores explicabo! Doloribus repellat voluptatem deleniti neque aliquid excepturi atque voluptatum, aspernatur libero perspiciatis ? lreom skaoıl rals efnalar koastaios.ceo oslamsk cossda",
+        "icon":"mdi:education-outline",
+        "url":"egitimler"
+    },
+    {
+        "id":3,
+        "title":"Kariyer Günleri",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo odit atque cupiditate ut tempore hic, asperiores explicabo! Doloribus repellat voluptatem deleniti neque aliquid excepturi atque voluptatum, aspernatur libero perspiciatis? lreom skaoıl rals efnalar koastaios.ceo oslamsk cossda",
+        "icon":"streamline:target",
+        "url":"kariyer-gunleri"
+    },
+    {
+        "id":4,
+        "title":"Bootcamps",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo odit atque cupiditate ut tempore hic, asperiores explicabo! Doloribus repellat voluptatem deleniti neque aliquid excepturi atque voluptatum, aspernatur libero perspiciatis? lreom skaoıl rals efnalar koastaios.ceo oslamsk cossda",
+        "icon":"tdesign:rocket",
+        "url":"bootcamps"
+    },
+    
+    {
+        "id":5,
+        "title":"Hackathons",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo odit atque cupiditate ut tempore hic, asperiores explicabo! Doloribus repellat voluptatem deleniti neque aliquid excepturi atque voluptatum, aspernatur libero perspiciatis? lreom skaoıl rals efnalar koastaios.ceo oslamsk cossda",
+        "icon":"fluent:brain-circuit-20-filled",
+        "url":"hackathons"
+    }
+
+    
+  
+]

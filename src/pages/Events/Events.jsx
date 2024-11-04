@@ -1,23 +1,39 @@
 import { Link } from 'react-router-dom';
+import './Events.css'
+import Data from './Data.json'
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 function Events() {
+
+  
+  
   return (
     <div className="sidebar-margin">
+        <div className="event-container">
+              {
+                Data.map((item,key) => (
+                  <div key={key} className="event-card">
 
-    <div>
-      <h1>Events</h1>
-      <nav>
-        <ul>
-          <li><Link to="yarismalar">Competitions</Link></li>
-          <li><Link to="egitimler">Education</Link></li>
-          <li><Link to="bootcamps">Bootcamps</Link></li>
-          <li><Link to="hackathons">Hackathons</Link></li>
-          <li><Link to="kariyer-gunleri">Career Days</Link></li>
-        </ul>
-      </nav>
-     
+                  <div className="event-card-icon">
+                    <Icon icon={item.icon} />
+                  </div>
       
-    </div>
+                  <div className="event-card-title">
+                      <h3>{item.title}</h3>
+                  </div>
+      
+                  <div className="event-card-description">
+                      <p>{item.description}</p>
+                  </div>
+      
+                  <div className="event-card-button">
+                    <Link style={{textDecoration:"none"}} to={item.url}><p>Detayları Gör</p></Link>
+                  </div>
+      
+                </div>
+                ))
+              }
+        </div>
     </div>
   );
 }
