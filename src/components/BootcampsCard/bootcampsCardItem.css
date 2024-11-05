@@ -128,3 +128,99 @@
 .dark  .bootcamps-card-button p:hover{
     color: var(--light-gray);
 }
+
+
+.modal{
+    position: relative;
+    width: 756px;
+    height: 800px;
+    border: none;
+    outline: none;
+    background: var(--light-gray);
+    box-shadow: 0 0 15px rgba(#000,.15);
+    border-radius: 15px;
+    padding: 50px;
+    transition: background-color 1s ease;
+}
+
+.dark .modal{
+    background-color: var(--dark-slate);
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bootcamps-modal-cls-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;   
+    border: none;
+    outline: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--turquoise);
+   
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.form-container input{
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 15px;
+    
+}
+
+.dark .form-container input{
+
+    
+}
+.bootmcaps-modal-title h3{
+    text-align: center;
+    color: var(--turquoise);   
+    font-size: 35px;
+    font-weight: 300;
+
+}
+.bootcamps-modal-btn{
+    text-align: center;
+    margin-top: 10%;
+}
+.bootcamps-modal-btn button{
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--turquoise);
+    height: 40px;
+    width: 256px;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 1s ease,color 1s ease,border 1s ease;
+}
+
+.dark  .bootcamps-modal-btn button:hover{
+    color: var(--pure-white);
+}
+.bootcamps-modal-btn button:hover{
+    border: 1px solid var(--turquoise);
+    color: var(--dark-slate);
+    background-color: transparent;
+}

@@ -1,23 +1,23 @@
-.education-modal 
-{ 
-    position: absolute;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0;
+.education-modal {
+    position: fixed; 
+    z-index: 999; 
+    pointer-events: auto;
+    opacity: 0; 
     display: flex;
     justify-content: center; 
     align-items: center; 
     width: 100vw;
     height: 100vh;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
     left: 0;
-    transition: opacity 0.5s ease,
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.5s ease;
 }
-.education-modal.active  {
-   opacity: 1;
-   pointer-events: auto;
+
+.education-modal.active {
+    opacity: 1; 
 }
+
 .education-modal-container{
     position: relative;
     padding: 25px;
