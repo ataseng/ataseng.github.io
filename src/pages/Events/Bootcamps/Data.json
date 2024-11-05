@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "title":"Algoritma Yarışması",
+        "title":"Algoritma Patikası",
         "label":[
             "Yarışma",
             "Ödüllü",
@@ -15,7 +15,7 @@
     },
     {
         "id":2,
-        "title":"Siber Güvenlik Savaşları",
+        "title":"Web3 Eğitimi",
         "label":[
             "Yarışma",
             "Ödüllü",
@@ -29,7 +29,7 @@
     },
     {
         "id":3,
-        "title":"Tasarım Yarışması",
+        "title":"Git ve Github Eğitimi",
         "label":[
             "Yarışma",
             "Sertifikalı",
@@ -43,7 +43,7 @@
     },
     {
         "id":4,
-        "title":"Klavye Savaşları",
+        "title":"JS Eğitimi",
         "label":[
             "Yarışma",
             "Ödüllü",
