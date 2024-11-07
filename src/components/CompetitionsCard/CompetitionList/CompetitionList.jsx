@@ -43,7 +43,9 @@ const CompetitionList = () => {
                         <CompetitionsCard key={item.id} data={item} />
                     ))
                 ) : (
-                    <p>Gösterilecek yarışma bulunmamaktadır.</p>
+                    <div className='result'>
+                        <p>Gösterilecek yarışma bulunmamaktadır.</p>
+                    </div>
                 )}
             </div>
             <Pagination totalPages={totalPageCount} currentPage={currentPage} paginate={paginate} />

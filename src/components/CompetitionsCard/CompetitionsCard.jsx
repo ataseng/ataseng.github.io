@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import './CompetitionsCard.css';
 import { Icon } from '@iconify/react';
+import CompetitionForm from '../CompetitionsCard/CompetitionForm/CompetitionForm';
 
 const CompetitionsCard = ({ data }) => {
+    const [isFormOpen, setIsFormOpen] = useState(false);
+
+    const handleButtonClick = () => {
+        if (data.status === 'active') {
+            setIsFormOpen(true);
+        } else {
+            alert("Sonuçlar sayfasına yönlendirileceksiniz.");
+        }
+    };
+
+    const handleCloseForm = () => {
+        setIsFormOpen(false);
+    };
+
     return (
         <div className="card">
             <img src={data.image} alt={data.title || 'No Title'} className="card-image" />
@@ -31,7 +47,14 @@ const CompetitionsCard = ({ data }) => {
                     </div>
                 </div>
             </div>
-            <button className="card-button">{data.status === 'active' ? 'Sonuçlar' : 'Kayıt'}</button>
+            <button className="card-button" onClick={handleButtonClick}>
+                {data.status === 'active' ? 'Kayıt' : 'Sonuçlar'}
+            </button>
+
+            {isFormOpen && ReactDOM.createPortal(
+                <CompetitionForm onClose={handleCloseForm} />,
+                document.getElementById('modal-root')
+            )}
         </div>
     );
 };

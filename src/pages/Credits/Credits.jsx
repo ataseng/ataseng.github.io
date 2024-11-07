@@ -2,7 +2,7 @@ import './Credits.css';
 
 const Credits = () => {
   return (
-    <div>CreditPagee</div>
+    <div>CreditPage</div>
   )
 };
 
