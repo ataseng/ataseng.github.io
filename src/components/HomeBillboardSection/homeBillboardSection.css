@@ -1,20 +1,31 @@
-.billboard-section {
-    
-    padding: 35px;
+.billboard-section{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.billboard-content {
+    position: relative;
+    top: 0;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    height: 100%;
+    padding: 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    gap: 40px;
     transition: background-color 1s ease;
 }
 
-.dark .billboard-section{
+.dark .billboard-content{
     background-color: var(--dark-slate);
 }
 
-.billboard-section .billboard-title h2 {
-    margin-top: 100px;
+.billboard-content .billboard-title h2 {
     color: var(--turquoise);
     font-weight: 300;
     text-align: center;
@@ -39,6 +50,7 @@
 }
 .billboard-description p {
     width: 70%;
+    padding-bottom: 0 !important;
 }
 
 .billboard-visual {
@@ -46,11 +58,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 70px;
     position: relative;
     flex-direction: column;
-
+    margin-top: 24px;
 }
 
 .top-line {
@@ -63,7 +73,6 @@
 .top-right-line {
     width: 198px;
     height: 2px;
-
 }
 .top-left-line{
     width: 206px;
@@ -78,7 +87,6 @@
 }
 
 .top-right-line {
-
     z-index: 3;
     background-color: var(--turquoise);
 }
@@ -147,4 +155,73 @@
 .divider-line.disable
 {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .billboard-content .billboard-title h2{
+        font-size: 32px;
+    }
+    .billboard-description{
+        font-size: 16px;
+    }
+
+    .board{
+        font-size: 14px;
+    }
+
+    .top-right-line {
+        width: 100px;
+    }
+    .top-left-line{
+        width: 108px;
+    }
+    .top-center-line {
+        width: 102px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .billboard-content{
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .billboard-content{
+        gap: 12px;
+    }
+    .billboard-content .billboard-title h2{
+        font-size: 28px;
+    }
+    .billboard-description{
+        font-size: 14px;
+    }
+
+    .board{
+        font-size: 12px;
+        min-width: 180px;
+    }
+
+    .hook-icon-left {
+        left: 34%;
+    }
+    
+    .hook-icon-right {
+        right: 34%;
+    }
+
+    .divider-line{
+        width: 25%;
+    }
+
+    .top-right-line {
+        width: 64px;
+    }
+    .top-left-line{
+        width: 72px;
+    }
+    .top-center-line {
+        width: 66px;
+    }
 }

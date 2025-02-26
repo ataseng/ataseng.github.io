@@ -1,28 +1,46 @@
 .about-section {
+    position: relative;
+    top: 0;
+    left: 0;
     background-color: var(--light-gray);
     width: 100%;
-    height: auto; 
-    display: flex;
-    justify-content: center;
-    gap: 8%; 
-    align-items: flex-start; 
-    padding: 5% 0; 
+    height: 100vh; 
     transition: background-color 0.5s ease;
-
 }
+
 .dark .about-section{
     background-color: var(--dark-slate);
 }
 
-.about-section .about-section-image img {
-    border-radius: 10px;
-    width: 100%;
-    max-width: 500px; 
+.about-section .about-section-content {
+    position: relative;
+    top: 0;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    gap: 40px;
 }
 
-.about-section .about-section-content {
-    width: 100%;
-    max-width: 600px; 
+.about-section .about-section-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.about-section .about-section-image img {
+    border-radius: 10px;
+    width: clamp(300px, 100%, 520px);
+    max-width: 520px; 
+}
+
+.about-section .about-section-inner-content{
+    width: 50%;
+    max-width: 600px;
 }
 
 .about-section .about-section-content .about-section-title h2 {
@@ -65,4 +83,35 @@
 
 .dark .about-section .about-section-content .about-section-menu span {
     color: var(--pure-white);
+}
+
+
+@media screen and (max-width:1200px) {
+    .about-section .about-section-content .about-section-title h2{
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+    .about-section .about-section-content .about-section-description p{
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .about-section-inner-content .about-section-menu span{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .about-section .about-section-content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .about-section .about-section-content{
+        left: 0;
+        width: 100%;
+    }
 }

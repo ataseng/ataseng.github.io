@@ -4,6 +4,7 @@ import image from '../../assets/images/bootcamps-Image.jpg'
 import { Icon } from '@iconify/react'
 import Modal from 'react-modal';
 const BootcampsCardItem = ({ item }) => {
+
   const [modalIsOpen, setmodalIsOpen] = useState(false)
 
   const [data, setData] = useState({
@@ -95,7 +96,6 @@ const BootcampsCardItem = ({ item }) => {
         
             </div>
       </div>
-
           
             <Modal
               isOpen={modalIsOpen}

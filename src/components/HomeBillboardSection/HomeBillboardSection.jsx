@@ -11,8 +11,8 @@ const HomeBillboardSection = () => {
   return (
 
     <>
-      <div className="sidebar-margin">
-        <div className="billboard-section">
+      <div className="billboard-section">
+        <div className="billboard-content">
           <div className="billboard-title">
             <h2>{Data[0].title}</h2>
           </div>

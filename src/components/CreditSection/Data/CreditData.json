@@ -5,7 +5,7 @@
             "role": "Proje Yöneticisi",
             "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://via.placeholder.com/400x500"
+            "imageUrl": "https://placehold.co/400"
         }
     ],
     "webEkibi": [
@@ -14,14 +14,14 @@
             "role": "Frontend Developer",
             "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://via.placeholder.com/400x500"
+            "imageUrl": "https://placehold.co/400"
         },
         {
             "name": "Ayşe Kaya",
             "role": "Frontend Developer",
             "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://via.placeholder.com/400x500"
+            "imageUrl": "https://placehold.co/400"
             
         }
     ],
@@ -31,14 +31,14 @@
             "role": "Tasarımcı",
             "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://via.placeholder.com/400x500"            
+            "imageUrl": "https://placehold.co/400"            
         },
         {
             "name": "Zeynep Yılmaz",
             "role": "Logo Tasarımcısı",
             "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://via.placeholder.com/400x500"
+            "imageUrl": "https://placehold.co/400"
         }
     ],
     "apiEkibi": [
@@ -47,7 +47,7 @@
             "role": "Logo Tasarımcısı",
             "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://via.placeholder.com/400x500"
+            "imageUrl": "https://placehold.co/400"
         }
     ],
     "mobilEkibi": [

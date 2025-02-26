@@ -3,7 +3,7 @@ body.dark-mode{
     background-color: #16222C;
 }
 .sidebar {
-    width: 100px;
+    width: var(--sidebar-width);
     height: 100vh;
     text-align: center;
     background-color: rgba(110, 112, 114, 0.1);
@@ -15,7 +15,6 @@ body.dark-mode{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-   
     backdrop-filter: blur(30px);
     z-index: 1001;
 }
@@ -114,7 +113,7 @@ body.dark-mode{
 
 /* Dark mode styling for submenu */
 .sidebar .submenu {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .dark  .sidebar.submenu a {

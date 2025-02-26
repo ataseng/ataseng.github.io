@@ -1,7 +1,5 @@
 import './Home.css';
 
-
-
 import AboutSection from '../../components/AboutSection/AboutSection';
 import WelcomeSection from '../../components/WelcomeSection/WelcomeSection';
 import HomeBillboardSection from '../../components/HomeBillboardSection/HomeBillboardSection';
@@ -13,7 +11,6 @@ import HomeManagementSection from '../../components/HomeManagementSection/HomeMa
 const Home = () => {
   return (
     <>
-     
       <WelcomeSection/>
       <AboutSection />
       <HomeBillboardSection/>

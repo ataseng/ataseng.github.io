@@ -6,19 +6,25 @@
     background-size: cover;
     background-position: center;
     width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .welcome-content {
+    position: relative;
+    top: 0;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 0 5%; 
+    padding: 0;
 }
 
 .welcome-logo img {
-
     max-width: 344px; 
 }
 
@@ -31,3 +37,20 @@
     margin-top: 60px;
 }
 
+@media screen and (max-width: 800px){
+    .welcome-logo img {
+        max-width: 200px; 
+    }
+
+    .welcome-description{
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .welcome-content{
+        left: 0;
+        width: 100%;
+    }
+}

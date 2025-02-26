@@ -1,13 +1,24 @@
-.discord-section {
+.discord-section{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.discord-content {
+
   position: relative;
+  top: 0;
+  left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 600px;
 }
 
-
-.discord-section::after {
+.discord-content::after {
   content: '';
   position: absolute;
   top: 0;
@@ -21,7 +32,7 @@
 }
 
 
-.discord-section::before {
+.discord-content::before {
   content: '';
   position: absolute;
   top: 0;
@@ -33,14 +44,14 @@
   background-color: #919AF2;
 }
 
-.dark  .discord-section::after {
+.dark  .discord-content::after {
   background-color: var(--slate-blue);
 }
-.dark  .discord-section::before {
+.dark  .discord-content::before {
   background-color: #5865F2;
 }
 
-.discord-section-leftSide {
+.discord-content-leftSide {
   position: relative;
   width: 50%;
   display: flex;
@@ -51,14 +62,14 @@
   margin-left: 70px;
 }
 
-.discord-section-leftSide .left-side-title {
+.discord-content-leftSide .left-side-title {
   font-size: 25px;
   font-weight: 300;
   color: var(--turquoise);
   letter-spacing: 1px;
 }
 
-.discord-section-leftSide .left-side-description {
+.discord-content-leftSide .left-side-description {
   text-align: center;
   margin-top: 20px;
   font-size: 18px;
@@ -66,11 +77,11 @@
   transition: color 1s ease;
 }
 
-.dark .discord-section-leftSide .left-side-description{
+.dark .discord-content-leftSide .left-side-description{
   color: #fff;
 }
 
-.discord-section-rightSide{
+.discord-content-rightSide{
   position: relative;
   width: 60%;
   display: flex;
@@ -84,14 +95,14 @@
   
 }
 
-.discord-section-rightSide .discord-icon
+.discord-content-rightSide .discord-icon
 {
   margin-left: 200px;
 
   font-size: 150px;
 }
 
-.discord-section-rightSide .rightSide-title{
+.discord-content-rightSide .rightSide-title{
   font-size: 25px;
   display: flex;
   justify-content: center;
@@ -103,7 +114,7 @@
   
 }
 
-.discord-section-rightSide .rightSide-title span{
+.discord-content-rightSide .rightSide-title span{
   font-size: 30px;
   height: 25px;
 }

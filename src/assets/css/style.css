@@ -1,9 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-   
-    
+    box-sizing: border-box;
 }
+
 :root{
     /* Color Palatte */
 
@@ -22,6 +22,8 @@
     --section-text:20px;
     --section-list:17px;
 
+    --sidebar-width:100px;
+
 }
 
 body{
@@ -38,5 +40,5 @@ main{
 }
 .sidebar-margin{
     margin-left: 100px;
-    width: calc(100%-100px);
+    width: calc(100% - 100px);
 }

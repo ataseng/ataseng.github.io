@@ -23,10 +23,6 @@ import HamburgerMenu from './HamburgerMenu';
 const Sidebar = ({setTheme,theme}) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
-
-
-
-
   
   const toggleMobileMenu = () => {
     setMenuOpen(prevState => !prevState);
