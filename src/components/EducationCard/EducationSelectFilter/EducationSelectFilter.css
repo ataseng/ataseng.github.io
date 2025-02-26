@@ -1,64 +1,64 @@
 .selectFilter{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 200px;
+  height: 30px;
+  background-color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  border-radius: 3px 3px 0 0;
+     list-style: none;
+  cursor: pointer;
+}
+.option ul li{
+    list-style: none;
+}
+.select i{
     position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 200px;
-    height: 30px;
+    top: 3px;
+    right: 3px;
+    border: none;
+    outline: none;
+    font-size: 25px;
+}
+.dark .selectFilter{
+    background-color: var(--dark-slate) ;
+    color: var(--pure-white);
+}
+.option{
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
     background-color: var(--light-gray);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.5s ease, color 0.5s ease;
-    border-radius: 3px 3px 0 0;
-       list-style: none;
+    transition: background-color 0.5s ease, color 0.5s ease,opacity 0.5s ease;
+    width: 184px;
+ 
+    padding:8px;
+    top: 13%;;
+    border-radius: 0 0 3px 3px ;
+    left: 10%;
+
+}
+.option.active{
+    pointer-events: auto;
+    opacity: 1;
+  
+}
+.option ul li {
+    margin-bottom: 20px;
     cursor: pointer;
-  }
-  .option ul li{
-      list-style: none;
-  }
-  .select i{
-      position: absolute;
-      top: 3px;
-      right: 3px;
-      border: none;
-      outline: none;
-      font-size: 25px;
-  }
-  .dark .selectFilter{
-      background-color: var(--dark-slate) ;
-      color: var(--pure-white);
-  }
-  .option{
-      z-index: 2;
-      opacity: 0;
-      pointer-events: none;
-      position: absolute;
-      background-color: var(--light-gray);
-      transition: background-color 0.5s ease, color 0.5s ease,opacity 0.5s ease;
-      width: 184px;
-   
-      padding:8px;
-      top: 13%;;
-      border-radius: 0 0 3px 3px ;
-      left: 10%;
-  
-  }
-  .option.active{
-      pointer-events: auto;
-      opacity: 1;
-    
-  }
-  .option ul li {
-      margin-bottom: 20px;
-      cursor: pointer;
-      text-align: center;
-      transition: box-shadow 0.5s ease;
-  }
-  
-  .option ul li:hover {
-      box-shadow: inset 0 -1px 0 var(--turquoise); 
-  }
-  .dark .option {
-      background-color: var(--dark-slate);
-      color: #fff;
-  }
+    text-align: center;
+    transition: box-shadow 0.5s ease;
+}
+
+.option ul li:hover {
+    box-shadow: inset 0 -1px 0 var(--turquoise); 
+}
+.dark .option {
+    background-color: var(--dark-slate);
+    color: #fff;
+}

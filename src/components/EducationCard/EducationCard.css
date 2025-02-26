@@ -21,6 +21,7 @@
 .dark .education-card{
     background-color: var(--dark-slate);
 }
+
 .error-container
 {
     display: flex;
@@ -28,8 +29,7 @@
     align-items: center;
     height: 100vh;
     margin-left: 150px;
-
-    
+    /* margin: 10px auto; */
 }
 .error-search{
     display: flex;

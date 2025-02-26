@@ -1,0 +1,87 @@
+
+.educator-image img{
+    clip-path: polygon(0 0, 100% 0, 46% 100%, 0 100%);
+
+    border-radius: 10px 0 0 10px;
+}
+.carrer-days-card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 17px;
+    margin-bottom: 20px;
+}
+.carrer-days-card-title{
+    font-size: 16px;
+    text-align: center;
+    color: var(--turquoise);
+}
+.carrer-days-content,
+.carrer-days-date,
+.carrer-days-location
+ {
+    display: flex;
+    align-items: center;
+    margin-left: -30px;
+}
+.carrer-days-content h4,
+.carrer-days-date h4,
+.carrer-days-location h4{
+    font-size: 14px;
+    flex-shrink: 0;
+    min-width: 100px;
+    color: var(--turquoise);
+}
+.carrer-days-content span,
+.carrer-days-date span,
+.carrer-days-last-date span,
+.carrer-days-location span{
+    font-size: 12px;  
+    transition: color 0.5s ease, color 0.5s ease; 
+  
+}
+.carrer-days-last-date{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.carrer-days-last-date{
+ position: absolute;
+ left: 20%;
+
+ bottom: 5px;
+    
+}
+.carrer-days-last-date h4{
+    font-size: 10px;
+    font-weight: bold;
+    transition: color 0.5s ease, color 0.5s ease; 
+
+}
+.carrer-days-last-date span{
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-family: monospace;
+    transition: color 0.5s ease, color 0.5s ease; 
+    font-style: italic;
+    color: rgb(116, 117, 117);
+}
+
+.carrer-days-button{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.dark .carrer-days-content span,
+.dark .carrer-days-date span,
+.dark .carrer-days-location span{
+    color: var(--light-gray);
+ 
+}
+.dark .carrer-days-last-date span{
+    color: gray;
+}
+.dark .carrer-days-last-date h4{
+    color: #fff;
+}

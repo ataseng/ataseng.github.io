@@ -1,12 +1,16 @@
 import React from 'react';
 import './EducationButton.css';
+import EducationModal from '../../EducationCard/EducationModal/EducationModal';
 
 const EducationButton = ({ item,setmodalIsOpen,setSelectedItem }) => {
+
+  
   const handleClick=() => {
 
     if(item.isActive){
       setSelectedItem(item)
       setmodalIsOpen(true)
+
     }
 
 
