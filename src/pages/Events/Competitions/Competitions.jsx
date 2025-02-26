@@ -1,5 +1,6 @@
 import './Competitions.css';
-import Data from './Data/CompetitionsData.json';
+import Data from '../../../components/CompetitionsCard/Data/CompetitionsData.json';
+import CompetitionList from '../../../components/CompetitionsCard/CompetitionList/CompetitionList'
 import { Link } from 'react-router-dom';
 
 
@@ -10,11 +11,13 @@ const Competitions = () => {
 
     return (
         <>
-            {
+            {/* {
                 Data.map((item, key) => (
                     <Link to={`${formatTitle(item.title)}`} key={key} style={{ display: "flex", textDecoration: "none" }}>{item.title}</Link>
                 ))
-            }
+               
+            } */}
+             <CompetitionList />
         </>
     )
 }

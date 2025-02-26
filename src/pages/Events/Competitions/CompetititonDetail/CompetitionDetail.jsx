@@ -1,5 +1,5 @@
 import { useParams } from 'react-router'
-import Data from '../Data/CompetitionsData.json'
+import Data from '../../../../components/CompetitionsCard/Data/CompetitionsData.json'
 
 const CompetitionDetail = () => {
   
