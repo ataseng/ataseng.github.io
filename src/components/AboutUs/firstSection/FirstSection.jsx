@@ -2,6 +2,8 @@ import React from 'react';
 import Data from '../about.json';
 import './firstSection.css';
 import SecondSection from '../secondSection/SecondSection';
+import ThirdSection from '../ThirdSection/ThirdSection';
+import FourthSection from '../FourthSection/FourthSection';
 
 const FirstSection = () => {
 
@@ -19,7 +21,7 @@ const FirstSection = () => {
                 alt={item.first.title} 
               />
               </div>
-              <div className="firsText">
+              <div className="firstText">
                 <div className="firstHeader">
                   <h3>{item.first.title}</h3>
                 </div>
@@ -31,6 +33,15 @@ const FirstSection = () => {
             <div key={index} className="secondSection">
                 <SecondSection item={item}/>
             </div>
+
+            <div  key={index} className="thirdSection">
+              <ThirdSection item={item} />
+            </div>
+
+            <div  key={index} className="fourthSection">
+              <FourthSection item={item} />
+            </div>
+
           </>
         ))
 

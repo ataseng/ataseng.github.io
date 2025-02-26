@@ -8,12 +8,29 @@
     transition: background-color 1s ease; 
 }
 
+.thirdSection{
+    background-color: var(--pure-white);
+    transition: background-color 1s ease; 
+}
+.fourthSection{
+    background-color: var(--light-gray);
+    transition: background-color 1s ease; 
+}
+
+
 .dark .firstSection{
     background-color: var(--dark-slate);
 }
 .dark .secondSection{
     background-color: var(--blue-slate);
 }
+.dark .thirdSection{
+    background-color: var(--dark-slate);
+}
+.dark .fourthSection{
+    background-color: var(--blue-slate);
+}
+
 
 
 
@@ -34,19 +51,19 @@
 
   
 }
-.firsText{
+.firstText{
     margin-top: 219px;
-    margin-left: 150px;
+    margin-left: 140px;
     
 }
 
-.firsText .firstHeader{
+.firstText .firstHeader{
     color: var(--turquoise);
     font-size: 35px;
    
 }
 
-.firsText p{
+.firstText p{
     line-height: 1.8rem;
     font-size: 19px;
     margin-top: 20px;
@@ -55,7 +72,7 @@
     transition: color 1s ease;
     
 }
-.dark .firsText p{
+.dark .firstText p{
     color: #fff;
 }
 

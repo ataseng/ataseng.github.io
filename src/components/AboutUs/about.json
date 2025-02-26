@@ -15,15 +15,15 @@
         },
         "third":{
             "id":3,
-            "title":"Misyonumuz",
-            "text":" Yazılım mühendisliği alanında farkındalık yaratmak ve bu alanda kariyer yapmak isteyen öğrencilere yol göstermek. Öğrenciler arasında bilgi paylaşımını ve iş birliğini teşvik ederek, kolektif öğrenme ve dayanışma kültürü oluşturmak. Yenilikçi projeler ve etkinlikler düzenleyerek, öğrencilerin sektöre yönelik hazırlıklarını desteklemek ve mesleki yeterliliklerini artırmak. Teknolojinin hızla geliştiği dünyada, öğrencilerimize en güncel bilgi ve uygulama imkanlarını sunarak, onları geleceğin yazılım mühendisleri olarak hazırlamak. Vizyonumuz",
+            "title":"Vizyonumuz",
+            "text":"ATASENG Kulübü, Türkiye'nin ve dünyanın en önde gelen yazılım mühendisliği öğrenci topluluklarından biri olmayı hedeflemektedir. Vizyonumuz, yazılım mühendisliği öğrencilerinin global ölçekte rekabet edebilir bilgi ve becerilere sahip olmasını sağlamaktır. Bu doğrultuda, öğrencilerimize çeşitli eğitim programları, projeler ve etkinlikler sunarak, onların profesyonel ve kişisel gelişimlerine katkıda bulunuyoruz. Aynı zamanda, üyelerimizin yenilikçi düşünme becerilerini ve problem çözme yeteneklerini geliştirmeyi, onları teknoloji dünyasındaki en son trendlerle tanıştırmayı amaçlıyoruz. Vizyonumuzun bir diğer önemli parçası da, yazılım mühendisliği alanında liderlik potansiyeli taşıyan öğrencilerin kariyer yollarını şekillendirirken onlara rehberlik etmek ve sektörle daha güçlü bağlar kurmalarını sağlamaktır. Bu misyonla, ATASENG Kulübü, sadece bir topluluk olmanın ötesine geçerek, öğrencilerin kariyerlerinde sağlam bir temel oluşturmalarına yardımcı olmayı ve yazılım dünyasında fark yaratmalarını desteklemeyi hedeflemektedir.",
             "images":"thirdSection.jpg"
         },
         
         "fourth":{
             "id":4,
             "title":"Üyelik",
-            "text":" ATASENG Kulübü'ne üye olarak, çeşitli etkinliklerimize katılabilir ve projelerimizde aktif rol alabilirsiniz. Üyelik sürecimiz oldukça basit ve tüm Yazılım Mühendisliği öğrencilerine açıktır. Üyelik başvurusu için gerekli bilgileri kulüp temsilcilerimizden veya iletişim sayfamızdan edinebilirsiniz. Üyelerimiz, düzenlediğimiz etkinliklerde indirimlerden faydalanabilir ve kulübün sunduğu özel fırsatlardan yararlanabilirler.",        
+            "text":" ATASENG Kulübü'ne üye olarak, çeşitli etkinliklerimize katılabilir ve projelerimizde aktif rol alabilirsiniz. Üyelik sürecimiz oldukça basit ve tüm Yazılım Mühendisliği öğrencilerine açıktır. / Üyelik başvurusu için gerekli bilgileri kulüp temsilcilerimizden veya iletişim sayfamızdan edinebilirsiniz. Üyelerimiz, düzenlediğimiz etkinliklerde indirimlerden faydalanabilir ve kulübün sunduğu özel fırsatlardan yararlanabilirler.",        
             "images":"fourthSection.jpg"
         }
     }
