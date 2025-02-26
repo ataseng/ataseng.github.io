@@ -27,9 +27,7 @@ const MainLayout = ({ children }) => {
         <Sidebar theme={theme} setTheme={setTheme}/>
         
         <main>
-
-            {children}
-       
+            {children}       
         </main>
         <Footer theme={theme}  />
     </>

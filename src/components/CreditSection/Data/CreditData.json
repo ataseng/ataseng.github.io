@@ -1,0 +1,71 @@
+{
+    "yönetici": [
+        {
+            "name": "Osman Durdağ",
+            "role": "Proje Yöneticisi",
+            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "https://via.placeholder.com/400x500"
+        }
+    ],
+    "webEkibi": [
+        {
+            "name": "Mehmet Demir",
+            "role": "Frontend Developer",
+            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "https://via.placeholder.com/400x500"
+        },
+        {
+            "name": "Ayşe Kaya",
+            "role": "Frontend Developer",
+            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "https://via.placeholder.com/400x500"
+            
+        }
+    ],
+    "tasarımEkibi": [
+        {
+            "name": "Zeynep Yılmaz",
+            "role": "Tasarımcı",
+            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "https://via.placeholder.com/400x500"            
+        },
+        {
+            "name": "Zeynep Yılmaz",
+            "role": "Logo Tasarımcısı",
+            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "https://via.placeholder.com/400x500"
+        }
+    ],
+    "apiEkibi": [
+        {
+            "name": "Zeynep Yılmaz",
+            "role": "Logo Tasarımcısı",
+            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "https://via.placeholder.com/400x500"
+        }
+    ],
+    "mobilEkibi": [
+        {
+            "name": "Zeynep Yılmaz",
+            "role": "Logo Tasarımcısı",
+            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "https://via.placeholder.com/400x500"
+        }
+    ],
+    "logoTasarımcısı": [
+        {
+            "name": "Zeynep Yılmaz",
+            "role": "Logo Tasarımcısı",
+            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "https://via.placeholder.com/400x500"
+        }
+    ]
+}
