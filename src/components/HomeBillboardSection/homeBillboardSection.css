@@ -106,13 +106,13 @@
 }
 
 .hook-icon-left {
-    left: 30%;
+    left: 179px;
     z-index: 1;
     top: -8px;
 }
 
 .hook-icon-right {
-    right: 29.5%;
+    right: 179px;
     z-index: 2;
     top: -8px;
 }
@@ -123,7 +123,7 @@
 
 .board {
     background-color: var(--turquoise);
-    min-width: 220px;
+    min-width: 360px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,6 +185,11 @@
         width: 100%;
         left: 0;
     }
+
+    .billboard-description p{
+        width: 75%;
+        text-align: justify;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -204,11 +209,11 @@
     }
 
     .hook-icon-left {
-        left: 34%;
+        left: 206px;
     }
     
     .hook-icon-right {
-        right: 34%;
+        right: 206px;
     }
 
     .divider-line{

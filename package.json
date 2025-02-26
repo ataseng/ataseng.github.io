@@ -1,6 +1,6 @@
 {
-  "name": "ataseng.github.io",
-  "homepage": "https://ataseng.github.io",
+  "name": "ataseng",
+  "homepage": "https://ataseng.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -131,7 +131,7 @@
     color: #706d6d;
 }
 .dark .home-team-content-link span{
-    color: #fff;
+    /* color: #fff; */
 }
 
 @media screen and (max-width:800px) {
@@ -183,6 +183,7 @@
 
     .home-team-content-card-wrap{
         padding: 20px 0;
+        width: 75%;
     }
 
     .home-team-content-link{
