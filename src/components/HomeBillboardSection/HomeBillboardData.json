@@ -1,0 +1,28 @@
+[
+    {
+       
+        "title":"Sizi Geliştirecek Eğitimler",
+        "description":"Kulübümüzde düzenlediğimiz eğitimler, ödüllü yarışmalar ve bootcamp'lerle üyelerimize kendilerini geliştirme fırsatı sunuyoruz. Bu etkinlikler, bilgi seviyelerini artırmak, pratik yapma imkânı sağlamak ve rekabetçi bir ortamda kendilerini test etmek için harika fırsatlar sunar.",
+        "billboardElements":[
+            {
+                "id":1,
+                "name":"Ödüllü Yarışmalar"
+
+            },
+            {
+                "id":2,
+                "name":"Bootcamp"
+            },
+            {
+                "id":3,
+                "name":"Kariyer Günleri"
+            },
+            
+            {
+                "id":4,
+                "name":"Eğitimler"
+            }
+
+        ]
+    }
+]
