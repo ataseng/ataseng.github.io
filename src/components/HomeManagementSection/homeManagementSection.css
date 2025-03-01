@@ -202,25 +202,36 @@
 }
 
 @media screen and (max-width:800px) {
+
+    .management-content{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .management-side{
+        width: 90%;
+    }
+
     .form-content{
+        width: 90%;
         padding: 8px;
     }
     
     .management-content .management-side .management-title h2{
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .dark .management-content .management-side .management-description{
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .form-side input{
         width: 100%;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .managament-section-btn button{
-        font-size: 10px;
+        font-size: 14px;
     }
 }
 
@@ -232,18 +243,9 @@
         justify-content: center;
         gap: 24px;
     }
-
-    .management-side,
-    .form-content{
-        width: 75%;
-    }
 }
 
 @media screen and (max-width:400px) {
-    .management-side,
-    .form-content{
-        width: 90%;
-    }
 
     .management-content .management-side .management-title h2{
         font-size: 16px;

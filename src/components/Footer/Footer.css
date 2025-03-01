@@ -1,12 +1,12 @@
 /* Footer container styles */
 .footer {
-    padding: 20px;
     text-align: center;
- 
-
-   
     background-color: #fff;
     transition: background-color 0.5s ease;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 /* Dark mode styles */
@@ -18,40 +18,47 @@
 .footer-content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 40px;
+    position: relative;
+    top: 0;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    padding: 20px;
 }
 
 /* Logos container */
 .footer-logos {
     display: flex;
-    margin-left: 8%;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
 }
 
 /* Ataseng logo styles */
 .footer-logo-ataseng {
-    margin: 65px 15px;
-    height: 70px;
+    height: 72px;
 }
 
 /* University logo styles */
 .footer-logo-university {
-    margin: 0;
-    height: 200px;
+    height: 72px;
 }
 
 /* Icons container */
 .footer-icons {
-    margin-bottom: 10px;
     color: #ACA6A6;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 40px;
 }
 
 /* Individual icon styles */
 .footer-icon {
-    margin: 0 10px;
     font-size: 24px;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
 /* Links container */
@@ -79,4 +86,26 @@
 /* Link hover effect */
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width:600px) {
+    .footer-content {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .footer-logo-ataseng {
+        height: 40px;
+    }
+    
+    /* University logo styles */
+    .footer-logo-university {
+        height: 40px;
+    }
+
+    .footer-icon {
+        font-size: 16px;
+    }
 }

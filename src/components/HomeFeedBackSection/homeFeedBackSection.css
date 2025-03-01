@@ -132,33 +132,43 @@
 
 
 @media screen and (max-width:800px) {
+
+    .feedback-content{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .feedback{
+        width: 90%;
+    }
+
+    .text-side{
+        width: 90%;
+    }
+
     .text-side .text-side-title h2{
-        font-size: 32px;
-    }
-
-    .dark .text-side .text-side-description{
-        font-size: 16px;
-    }
-
-    .feedback-title h2{
-        font-size: 32px;
-    }
-
-    .feedback .feedback-star{
         font-size: 24px;
     }
 
+    .dark .text-side .text-side-description{
+        font-size: 14px;
+    }
+
+    .feedback-title h2{
+        font-size: 24px;
+    }
+
+    .feedback .feedback-star{
+        font-size: 20px;
+    }
+
     .feedback-message textarea{
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .feedback-submit-btn button{
         width: 100px;
         height: 32px;
-    }
-
-    .text-side .text-side-title h2{
-        font-size: 32px;
     }
 }
 
@@ -169,11 +179,6 @@
         left: 0;
         flex-direction: column;
         justify-content: space-evenly;
-    }
-
-    .feedback,
-    .text-side {
-        width: 75%;
     }
 
     .feedback .feedback-star{
@@ -225,10 +230,6 @@
 
 
 @media screen and (max-width:400px) {
-    .feedback,
-    .text-side {
-        width: 90%;
-    }
 
     .dark .text-side .text-side-description{
         font-size: 12px;

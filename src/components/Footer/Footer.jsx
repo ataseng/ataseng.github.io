@@ -13,7 +13,7 @@ import universityLogoDark from '../../assets/images/universityLogo-darkTheme.png
  * @returns {JSX.Element} - Returns the Footer component.
  */
 
-const Footer = ({ theme}) => {
+const Footer = ({ theme }) => {
 
     const logoSrc = theme=== 'dark' ? universityLogoDark : universityLogo;
 
@@ -33,7 +33,7 @@ const Footer = ({ theme}) => {
                     <Icon icon="mdi:twitter" className="footer-icon" />
                     <Icon icon="mdi:youtube" className="footer-icon" />
                 </div>
-                <div className={`footer-links ${theme=== 'dark' ? 'dark-mode' : ''}`}>
+                {/* <div className={`footer-links ${theme=== 'dark' ? 'dark-mode' : ''}`}>
                     <a href="/">Projemiz</a>
                     <a href="/">Ekibimiz</a>
                     <a href="/">İletişim</a>
@@ -41,7 +41,7 @@ const Footer = ({ theme}) => {
                     <a href="/">Etkinlikler</a>
                     <a href="/">Kayıt Ol</a>
                     <a href="/">Hizmetlerimiz</a>
-                </div>
+                </div> */}
             </div>
         </footer>
     );

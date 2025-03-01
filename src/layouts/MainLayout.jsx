@@ -14,8 +14,8 @@ const MainLayout = ({ children }) => {
       document.body.classList.remove(previousTheme)
     }
     if(newTheme){
-      document.body.classList.add(newTheme)
-      localStorage.setItem("theme",newTheme)
+      document.body.classList.add(newTheme);
+      localStorage.setItem("theme", newTheme);
     }
   }
 
@@ -29,7 +29,7 @@ const MainLayout = ({ children }) => {
         <main>
             {children}       
         </main>
-        <Footer theme={theme}  />
+        <Footer theme={theme} />
     </>
   );
 }

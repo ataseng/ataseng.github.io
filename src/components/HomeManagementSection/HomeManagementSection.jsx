@@ -41,7 +41,7 @@ const HomeManagementSection = () => {
             <div className="management-content">
                 <div className="management-side">
                     <div className="management-title">
-                        <h2>Yönetim Ekibinde Yer Almak İster misiniz ?</h2>
+                        <h2>Yönetim Ekibinde Yer Almak İster Misiniz?</h2>
                     </div>
                     <div className="management-description">
                         Değerli Üyelerimiz,<br />
@@ -52,7 +52,8 @@ const HomeManagementSection = () => {
 
                         Sizleri aramızda görmek, kulübümüzün geleceği için büyük bir adım olacaktır. Yönetim ekibine katılma isteğinizi, birlikte daha büyük başarılar elde etme hedefinizi bizlerle paylaşmanızı bekliyoruz.
 
-                        Teşekkür ederiz!            </div>
+                        Teşekkür ederiz!
+                    </div>
                 </div>
                 <div className="form-content">
                     <div className="form-side">
