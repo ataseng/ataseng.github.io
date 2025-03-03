@@ -3,6 +3,7 @@ import logo from '../../assets/images/logo2.png';
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 const WelcomeSection = () => {
+    
     return (
         <div className="welcome-section">
             <div className="welcome-content">
@@ -11,8 +12,7 @@ const WelcomeSection = () => {
                 </div>
                 <div className="welcome-description">
                     <p>
-                        Teknolojiye yön veren yenilikçi zihinlerin buluşma noktası.
-                        Ataseng Kulübü'ne katılın, geleceği birlikte kodlayalım.
+                        Teknolojiye yön veren yenilikçi zihinlerin buluşma noktası. Ataseng Kulübü'ne katılın, geleceği birlikte kodlayalım.
                     </p>
                 </div>
                 <a className='arrow-down' href="#about-section">
