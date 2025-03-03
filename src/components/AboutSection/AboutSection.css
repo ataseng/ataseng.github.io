@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    padding: 36px;
     gap: 40px;
 }
 
@@ -34,7 +34,7 @@
 
 .about-section .about-section-image img {
     border-radius: 10px;
-    width: clamp(240px, 100%, 520px);
+    width: clamp(200px, 100%, 520px);
     max-width: 520px; 
 }
 
@@ -87,25 +87,16 @@
 
 
 @media screen and (max-width:1200px) {
-    .about-section .about-section-content .about-section-title h2{
-        font-size: 32px;
-        margin-bottom: 32px;
-    }
-    .about-section .about-section-content .about-section-description p{
-        font-size: 16px;
-        margin-bottom: 0;
+    
+    .about-section{
+        height: unset;
     }
 
-    .about-section-inner-content .about-section-menu span{
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width:800px) {
     .about-section .about-section-content{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 36px 0;
     }
 
     .about-section .about-section-image{
@@ -117,18 +108,26 @@
     }
 }
 
+@media screen and (max-width:800px) {
+    .about-section .about-section-content{
+        gap: 80px;
+    }
+}
+
 @media screen and (max-width:600px) {
     .about-section .about-section-content{
         left: 0;
         width: 100%;
     }
 
+    .about-section .about-section-content .about-section-menu{
+        margin-bottom: 0;
+    }
 }
 
 @media screen and (max-width:400px) {
     .about-section .about-section-content .about-section-menu{
         display: flex;
         flex-direction: column;
-
     }
 }

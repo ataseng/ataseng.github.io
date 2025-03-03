@@ -36,7 +36,7 @@
     font-weight: 300;
     text-align: center;
     font-size: var(--section-title);
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .left-line,
@@ -122,12 +122,13 @@
 }
 .home-team-content-link{
     margin-top: 50px;
-    font-size: 18px;
+    text-align: center;
 }
 .home-team-content-link a{
     color: rgb(185, 183, 183);
     text-decoration: none;
     transition: color 1s ease;
+    font-size: var(--section-text);
 }
 .home-team-content-link span{
     color: #00a9b8;
@@ -142,18 +143,24 @@
     .left-line, .right-line{
         width: 100px;
     }
-    
-    .home-team-content-title h2{
-        font-size: 24px;
-    }
 
+    .home-team-content{
+        padding: 36px 0;
+        justify-content: space-evenly;
+    }
+    
     .home-team-content-card-wrap{
         width: 90%;
     }
 
+    .home-team-content-link{
+        width: 90%;
+        margin-top: 20px;
+    }
+
     .home-team-content-card{
-        width: 160px;
-        height: 200px;
+        width: 200px;
+        height: 220px;
     }
 
     .home-team-content-card .person-image img{
@@ -162,13 +169,13 @@
     }
 
     .home-team-content-card .person-name{
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .departmant-info .departmant,
     .departmant-info .grade,
     .club-positions{
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .club-positions{
@@ -180,6 +187,7 @@
     .home-team-content-card .departmant-info{
         margin-top: 16px;
     }
+
 }
 
 @media screen and (max-width:600px) {
@@ -191,47 +199,30 @@
 
     .home-team-content-card-wrap{
         padding: 20px 0;
-    }
-
-    .home-team-content-link{
-        font-size: 12px;
-        text-align: center;
-    }
-}
-
-@media screen and (max-width:400px) {
-    .left-line, .right-line{
-        width: 60px;
-    }
-    
-    .home-team-content-title h2{
-        font-size: 20px;
+        gap: 12px;
     }
 
     .home-team-content-card{
-        width: 120px;
-        height: 164px;
+        width: 160px;
+        height: 180px;
     }
 
     .home-team-content-card .person-image img{
-        width: 44px;
-        height: 44px;
+        width: 52px;
+        height: 52px;
     }
 
     .home-team-content-card .person-name{
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .departmant-info .departmant,
     .departmant-info .grade,
     .club-positions{
-        font-size: 9px;
+        font-size: 12px;
     }
 
-    .club-positions{
-        margin-top: 12px;
-    }
-
+    .club-positions,
     .home-team-content-card .person-image,
     .home-team-content-card .person-name,
     .home-team-content-card .departmant-info{
@@ -244,6 +235,13 @@
     }
 
     .home-team-content-link{
-        font-size: 10px;
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width:400px) {
+    .left-line, .right-line{
+        width: 40px;
     }
 }

@@ -130,10 +130,9 @@
     align-items: center;
     height: 40px;
     border-radius: 5px;
-
+    font-size: 16px;
     margin-right: 6px;
     color: #fff;
-
 }
 
 .divider-line {
@@ -158,16 +157,26 @@
     display: none;
 }
 
-@media screen and (max-width: 800px) {
-    .billboard-content .billboard-title h2{
-        font-size: 24px;
+@media screen and (max-width: 1200px) {
+    .billboard-section{
+        height: unset;
     }
-    .billboard-description{
-        font-size: 14px;
+    
+    .billboard-description p{
+        width: 90%;
     }
+}
 
+@media screen and (max-width: 800px) {
+    .billboard-section .billboard-content{
+        padding: 36px 0;
+        justify-content: flex-start;
+        gap: 24px;
+    }
+    
     .billboard-visual{
         width: 400px;
+        margin-top: 40px;
     }
 
     .hook-icon-left{
@@ -256,16 +265,6 @@
 }
 
 @media screen and (max-width: 400px) {
-    .billboard-content{
-        gap: 12px;
-    }
-    .billboard-content .billboard-title h2{
-        font-size: 28px;
-    }
-    .billboard-description{
-        font-size: 14px;
-    }
-
     .board{
         font-size: 12px;
         min-width: 180px;

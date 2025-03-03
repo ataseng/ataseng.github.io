@@ -47,6 +47,11 @@
 /* Hover effect for links in the sidebar */
 .sidebar ul li a:hover {
     background-color: rgba(0, 0, 0, 0.2);
+    color: var(--light-gray);
+}
+
+.sidebar ul li .menu-item a:hover svg{
+    color: var(--light-gray);
 }
 
 /* Submenu styling */
@@ -54,7 +59,7 @@
     position: relative;
 }
 
-.sidebar .submenu {
+.sidebar ul li .menu-item .submenu {
     display: none;
     position: absolute;
     top: -30px;
@@ -71,12 +76,12 @@
 }
 
 /* Show submenu on hover */
-.sidebar .menu-item:hover .submenu {
+.sidebar ul li .menu-item:hover .submenu {
     display: flex;
 }
 
 /* Submenu links styling */
-.sidebar .submenu a {
+.sidebar ul li .menu-item:hover .submenu a {
     color: #6e7072;
     text-decoration: none;
     display: flex;
@@ -89,7 +94,7 @@
 }
 
 /* Hover effect for submenu links */
-.sidebar .submenu a:hover {
+.sidebar ul li .menu-item:hover .submenu a:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -99,7 +104,7 @@
     color: #fff;
 }
 
-.dark .sidebar .submenu{
+.dark .sidebar ul li .menu-item:hover .submenu{
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
 }
@@ -113,15 +118,15 @@
 }
 
 /* Dark mode styling for submenu */
-.sidebar .submenu {
+.sidebar ul li .menu-item:hover .submenu {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-.dark  .sidebar.submenu a {
+.dark  .sidebar ul li .menu-item:hover .submenu a {
     color: #fff;
 }
 
-.dark .sidebar .submenu a:hover {
+.dark .sidebar ul li .menu-item:hover .submenu a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 

@@ -46,7 +46,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 5px;
-    font-size: 40px;
+    font-size: var(--feedback-star);
     color: var(--turquoise);
     margin-top: 20px;
     cursor: pointer;
@@ -66,10 +66,10 @@
     border: 1px solid var(--turquoise);
     outline: none;
     border-radius: 5px;
-    font-size: 15px;
     background-color: var(--light-gray);
     transition: background-color 1s ease;
     resize: none;
+    font-size: var(--section-text);
 }
 
 .dark .feedback-message textarea{
@@ -88,6 +88,7 @@
     color: var(--pure-white);
     cursor: pointer;
     transition: background-color 1s ease,color 1s ease,border 1s ease;
+    font-size: var(--section-text);
 }
 
 .feedback-submit-btn button:hover{
@@ -119,7 +120,7 @@
 {
     text-align: justify;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: var(--section-text);
     line-height: 1.5rem;
     overflow-wrap: break-word; 
     transition: color 1s ease;
@@ -133,12 +134,10 @@
     padding-bottom: 0;
 }
 
-
-@media screen and (max-width:800px) {
-
+@media screen and (max-width:1200px) {
     .feedback-content{
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
     }
 
     .feedback{
@@ -148,27 +147,13 @@
     .text-side{
         width: 90%;
     }
+}
 
-    .text-side .text-side-title h2{
-        font-size: 24px;
+@media screen and (max-width:800px) {
+    .feedback-section .feedback-content{
+        padding: 36px 0;
     }
-
-    .text-side .text-side-description{
-        font-size: 14px;
-    }
-
-    .feedback-title h2{
-        font-size: 24px;
-    }
-
-    .feedback .feedback-star{
-        font-size: 20px;
-    }
-
-    .feedback-message textarea{
-        font-size: 14px;
-    }
-
+    
     .feedback-submit-btn button{
         width: 100px;
         height: 32px;
@@ -180,8 +165,6 @@
     .feedback-content{
         width: 100%;
         left: 0;
-        flex-direction: column;
-        justify-content: space-evenly;
     }
 
     .feedback .feedback-star{
@@ -205,20 +188,7 @@
     }
 
     .feedback-title h2{
-        font-size: 24px;
         margin-bottom: 8px;
-    }
-
-    .text-side .text-side-title h2{
-        font-size: 24px;
-    }
-
-    .feedback .feedback-star{
-        font-size: 16px;
-    }
-
-    .feedback-message textarea{
-        font-size: 10px;
     }
 
     .feedback-submit-btn button{
@@ -230,25 +200,8 @@
 
 @media screen and (max-width:400px) {
 
-    .text-side .text-side-description{
-        font-size: 12px;
-    }
-
-    .feedback-title h2{
-        font-size: 16px;
-    }
-
     .text-side .text-side-title h2{
-        font-size: 16px;
         margin-bottom: 4px;
-    }
-
-    .feedback .feedback-star{
-        font-size: 12px;
-    }
-
-    .feedback-message textarea{
-        font-size: 10px;
     }
 
     .feedback-submit-btn button{

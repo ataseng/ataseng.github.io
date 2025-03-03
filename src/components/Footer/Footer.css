@@ -48,11 +48,15 @@
 
 /* Icons container */
 .footer-icons {
-    color: #ACA6A6;
+    color: var(--dark-slate);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
+}
+
+.dark .footer-icons{
+    color: var(--footer-text);
 }
 
 /* Individual icon styles */
@@ -61,9 +65,25 @@
     cursor: pointer;
 }
 
+.footer-icon.instagram:hover{
+    color: #F56040;
+}
+
+.footer-icon.twitter:hover{
+    color: #1DA1F2;
+}
+
+.footer-icon.github:hover{
+    color: #2dba4e;
+}
+
+.footer-icon.youtube:hover{
+    color: #FF0000;
+}
+
 /* Links container */
 .footer-links {
-    border: 1px solid #ACA6A6;
+    border: 1px solid var(--footer-text);
     margin: 0 100px;
     display: flex;
     justify-content: center;
@@ -73,7 +93,7 @@
 /* Link styles */
 .footer-links a {
     margin: 5px 20px;
-    color: #ACA6A6;
+    color: var(--footer-text);
     text-decoration: none;
     font-size: 14px;
 }
@@ -107,5 +127,9 @@
 
     .footer-icon {
         font-size: 16px;
+    }
+
+    .footer-logos{
+        gap: 20px;
     }
 }

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -18,11 +19,13 @@
 
     /* HomePage font size */
     --home-title:32px;
-    --section-title:45px;
+    --section-title:40px;
     --section-text:20px;
-    --section-list:17px;
+    --section-list:16px;
 
     --sidebar-width:100px;
+
+    --feedback-star: 40px;
 
 }
 
@@ -41,4 +44,52 @@ main{
 .sidebar-margin{
     margin-left: 100px;
     width: calc(100% - 100px);
+}
+
+@media screen and (max-width:1200px) {
+    :root{
+        /* HomePage font size */
+        --home-title:28px;
+        --section-title:36px;
+        --section-text:16px;
+        --section-list:16px;
+
+        --feedback-star: 32px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    :root{
+        /* HomePage font size */
+        --home-title:20px;
+        --section-title:28px;
+        --section-text:14px;
+        --section-list:14px;
+
+        --feedback-star: 24px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    :root{
+        /* HomePage font size */
+        --home-title:18px;
+        --section-title:24px;
+        --section-text:12px;
+        --section-list:12px;
+
+        --feedback-star: 20px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    :root{
+        /* HomePage font size */
+        --home-title:14px;
+        --section-title:16px;
+        --section-text:10px;
+        --section-list:10px;
+
+        --feedback-star: 20px;
+    }
 }

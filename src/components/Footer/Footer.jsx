@@ -1,9 +1,11 @@
 import React from 'react';
 import './Footer.css';
 import { Icon } from '@iconify/react';
-import atasengLogo from '../../assets/images/atasengLogo.png'; 
+import atasengDark from '../../assets/images/ataseng_dark.png';
+import atasengLight from '../../assets/images/ataseng_light.png';
+
 import universityLogo from '../../assets/images/universityLogo.png'; 
-import universityLogoDark from '../../assets/images/universityLogo-darkTheme.png'; 
+import universityLogoDark from '../../assets/images/universityLogo-darkTheme.png';
 
 /**
  * Footer component that displays information and logos at the bottom of the page.
@@ -15,23 +17,24 @@ import universityLogoDark from '../../assets/images/universityLogo-darkTheme.png
 
 const Footer = ({ theme }) => {
 
-    const logoSrc = theme=== 'dark' ? universityLogoDark : universityLogo;
+    const logoSrc = theme === 'dark' ? universityLogoDark : universityLogo;
+    const atasengSrc = theme === 'dark' ? atasengDark : atasengLight;
 
     return (
         <footer className={`footer ${theme=== 'dark' ? 'dark-mode' : ''}`}>
             <div className="footer-content">
                 <div className="footer-logos">
                     
-                    <img src={atasengLogo} alt="Ataseng Logo" className="footer-logo-ataseng" />
+                    <img src={atasengSrc} alt="Ataseng Logo" className="footer-logo-ataseng" />
                     
                     <img src={logoSrc} alt="University Logo" className="footer-logo-university" />
                 </div>
                 <div className={`footer-icons ${theme=== 'dark' ? 'dark-mode' : ''}`}>
                     
-                    <Icon icon="mdi:instagram" className="footer-icon" />
-                    <Icon icon="mdi:github" className="footer-icon" />
-                    <Icon icon="mdi:twitter" className="footer-icon" />
-                    <Icon icon="mdi:youtube" className="footer-icon" />
+                    <Icon icon="mdi:instagram" className="footer-icon instagram" />
+                    <Icon icon="mdi:github" className="footer-icon github" />
+                    <Icon icon="mdi:twitter" className="footer-icon twitter" />
+                    <Icon icon="mdi:youtube" className="footer-icon youtube" />
                 </div>
                 {/* <div className={`footer-links ${theme=== 'dark' ? 'dark-mode' : ''}`}>
                     <a href="/">Projemiz</a>

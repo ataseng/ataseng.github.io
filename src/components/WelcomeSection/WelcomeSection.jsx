@@ -1,6 +1,7 @@
-import React from 'react'
-import './WelcomeSection.css'
-import logo from '../../assets/images/logo.png'
+import './WelcomeSection.css';
+import logo from '../../assets/images/logo2.png';
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+
 const WelcomeSection = () => {
     return (
         <div className="welcome-section">
@@ -14,6 +15,9 @@ const WelcomeSection = () => {
                         Ataseng Kulübü'ne katılın, geleceği birlikte kodlayalım.
                     </p>
                 </div>
+                <a className='arrow-down' href="#about-section">
+                    <MdKeyboardDoubleArrowDown/>
+                </a>
             </div>
         </div>
     )

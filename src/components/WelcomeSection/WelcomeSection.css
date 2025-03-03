@@ -9,6 +9,11 @@
     position: relative;
     top: 0;
     left: 0;
+    user-select: none;
+}
+
+.dark .welcome-section{
+    filter: contrast(1.5);
 }
 
 .welcome-content {
@@ -25,7 +30,8 @@
 }
 
 .welcome-logo img {
-    max-width: 344px; 
+    max-width: 344px;
+    filter: drop-shadow(0px 0px 1px white);
 }
 
 .welcome-description {
@@ -34,20 +40,50 @@
     text-align: center;
     width: 60%;
     color: var(--home-text);
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .welcome-description p{
     padding-bottom: 0 !important;
+    filter: drop-shadow(0px 0px 0px white);
+}
+
+.welcome-content .arrow-down{
+    position: relative;
+    top: 72px;
+    color: var(--home-text);
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 20px white);
+}
+
+.welcome-content .arrow-down svg{
+    animation: topDown 1s linear infinite;
+    filter: drop-shadow(0px 0px 5px white);
+    font-size: 72px;
+}
+
+@keyframes topDown {
+    from{
+        position: relative;
+        top: -10px;
+    }
+    to{
+        position: relative;
+        top: 10px;
+    }
 }
 
 @media screen and (max-width: 800px){
     .welcome-logo img {
         max-width: 200px; 
     }
-
-    .welcome-description{
-        font-size: 16px;
+    .welcome-content .arrow-down svg{
+        font-size: 36px;
     }
 }
 
@@ -56,5 +92,12 @@
     .welcome-content{
         left: 0;
         width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 400px){
+    .welcome-logo img {
+        max-width: 160px; 
     }
 }

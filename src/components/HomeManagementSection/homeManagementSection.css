@@ -39,11 +39,11 @@
 
 .management-content .management-side .management-description{
     margin-top: 20px;
-    font-size: 18px;
     text-align: left;
     transition: color 1s ease;
     line-height: 1.5rem;
     text-align: justify;
+    font-size: var(--section-text);
 }
 
 .dark .management-content .management-side .management-description{
@@ -102,7 +102,7 @@
     background-color: transparent;
     outline: none;
     width: 75%;
-    font-size: 16px;
+    font-size: var(--section-text);
     color: var(--dark-slate);
 }
 
@@ -125,6 +125,7 @@
     color: var(--pure-white);
     cursor: pointer;
     transition: background-color 1s ease,color 1s ease,border 1s ease;
+    font-size: var(--section-text);
 }
 
 .managament-section-btn button:hover{
@@ -178,27 +179,6 @@
 }
 
 @media screen and (max-width:1200px) {
-    .management-content .management-side .management-title h2{
-        font-size: 32px;
-    }
-
-    .form-side input{
-        font-size: 12px;
-    }
-
-    .form-side form .input-area{
-        gap: 32px;
-    }
-
-    .managament-section-btn button{
-        width: 100px;
-        height: 32px;
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width:800px) {
-
     .management-content{
         flex-direction: column;
         justify-content: space-evenly;
@@ -210,25 +190,27 @@
 
     .form-content{
         width: 90%;
-        padding: 8px;
     }
-    
-    .management-content .management-side .management-title h2{
-        font-size: 24px;
+}
+
+@media screen and (max-width:800px) {
+    .management-section .management-content{
+        padding: 36px 0;
     }
 
-    .management-content .management-side .management-description{
-        font-size: 14px;
+    .form-side form .input-area{
+        gap: 32px;
     }
 
     .form-side input{
         width: 100%;
-        font-size: 14px;
     }
 
     .managament-section-btn button{
-        font-size: 14px;
+        width: 100px;
+        height: 32px;
     }
+
 }
 
 @media screen and (max-width:600px) {
@@ -243,20 +225,7 @@
 
 @media screen and (max-width:400px) {
 
-    .management-content .management-side .management-title h2{
-        font-size: 16px;
-    }
-
-    .management-content .management-side .management-description{
-        font-size: 8px;
-    }
-
-    .form-side input{
-        font-size: 8px;
-    }
-
     .managament-section-btn button{
-        font-size: 8px;
         width: 80px;
         height: 24px;
     }

@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 const AboutSection = () => {
     return (
         <>
-            <div className="about-section">
+            <div id='about-section' className="about-section">
                 <div className="about-section-content">
                     <div className="about-section-image">
                         <img src={aboutSection} alt="img" />
