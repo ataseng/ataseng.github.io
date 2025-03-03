@@ -28,6 +28,10 @@ const Sidebar = ({setTheme,theme}) => {
     setMenuOpen(prevState => !prevState);
   };
 
+  const toggleTheme = () => {
+    setTheme(theme==='dark' ? 'light' : 'dark');
+  }
+
   return (
 
     <div>
@@ -50,7 +54,7 @@ const Sidebar = ({setTheme,theme}) => {
         <Icon icon={menuOpen ? 'mdi:close' : 'mdi:menu'} />
       </div>
 
-      <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMobileMenu}  theme={theme} />
+      <HamburgerMenu isOpen={menuOpen} toggleMenu={toggleMobileMenu} theme={theme} toggleTheme={toggleTheme}/>
       
     </div>
 

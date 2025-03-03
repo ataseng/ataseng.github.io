@@ -20,7 +20,7 @@ const HamburgerMenu = ({ isOpen, toggleMenu, toggleTheme, themeName }) => {
   return (
     <div className={`hamburger-menu ${isOpen ? 'open' : ''} ${themeName === 'dark' ? 'dark-mode' : ''}`}>
       <div className="icon moon-sun" onClick={toggleTheme}>
-        <Icon icon={themeName === 'dark' ? 'ph:sun' : 'ph:moon'} />
+        <Icon icon={themeName === 'dark' ? 'ph:sun' : 'ph:moon'} cursor={"pointer"}/>
       </div>
       <ul>
         {menuData.map((item, index) => (

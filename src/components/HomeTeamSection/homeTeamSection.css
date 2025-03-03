@@ -4,6 +4,11 @@
     left: 0;
     height: 100vh;
     width: 100%;
+    background-color: var(--light-gray);
+}
+
+.dark .home-team-section{
+    background-color: var(--slate-blue);
 }
 
 .home-team-content{
@@ -18,12 +23,14 @@
     flex-direction: column;
     padding: 36px;
 }
+
 .home-team-content-title{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
+
 .home-team-content-title h2{
     color: var(--turquoise);
     font-weight: 300;
@@ -100,7 +107,7 @@
     transition: color 1s ease;
 }
 .dark .departmant-info .departmant{
-    color: #fff;
+    color: var(--pure-white);
 }
 
 .departmant-info .grade{
@@ -129,9 +136,6 @@
 }
 .dark .home-team-content-link a{
     color: #706d6d;
-}
-.dark .home-team-content-link span{
-    /* color: #fff; */
 }
 
 @media screen and (max-width:800px) {

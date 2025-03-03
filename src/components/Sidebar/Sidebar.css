@@ -1,7 +1,3 @@
-/* Sidebar Styling */
-body.dark-mode{
-    background-color: #16222C;
-}
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
@@ -103,6 +99,11 @@ body.dark-mode{
     color: #fff;
 }
 
+.dark .sidebar .submenu{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+}
+
 .dark .sidebar ul li a {
     color: #fff;
 }
@@ -129,10 +130,11 @@ body.dark-mode{
     font-size: 20px;
     color: #6e7072;
     transition: color 0.3s, transform 0.3s;
+    cursor: pointer;
 }
 
 /* Hover effect for icons */
-.sidebar .icon:hover {
+.sidebar li:hover .icon{
     transform: scale(1.1);
 }
 
@@ -140,15 +142,27 @@ body.dark-mode{
 .dark .sidebar a,
 .dark .sidebar .icon {
     color: #fff;
-    cursor: pointer;
 }
 
 /* Styling for moon and sun icons */
 .sidebar .icon.moon-sun {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 25px;
     color: #6e7072;
     transition: none;
+    width: 100%;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .icon.moon-sun:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark .icon.moon-sun:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Dark mode styling for moon and sun icons */
@@ -156,20 +170,18 @@ body.dark-mode{
     color: #fff;
 }
 
-/* Remove hover background for moon and sun icons */
-.sidebar .icon.moon-sun:hover,
+/* .sidebar .icon.moon-sun:hover,
 .sidebar .icon.moon-sun:focus,
 .sidebar .icon.moon-sun:active {
     background-color: transparent !important;
 }
 
-/* Ensure moon and sun icons don't change color on hover */
 .sidebar .icon.moon-sun:hover span,
 .sidebar .icon.moon-sun:focus span,
 .sidebar .icon.moon-sun:active span {
     background-color: transparent;
     color: inherit;
-}
+} */
 
 /* Hamburger menu icon styling for mobile */
 .hamburger-menu-icon {
@@ -191,7 +203,7 @@ body.dark-mode{
     .hamburger-menu-icon {
         display: block;
         font-size: 40px;
-        color: #16222C;
+        color: var(--dark-slate);
         position: fixed;
         top: 20px;
         right: 20px;
@@ -220,8 +232,8 @@ body.dark-mode{
     }
 
     /* Dark mode styling for the open hamburger menu */
-    .hamburger-menu.dark-mode.open {
-        background-color: #16222C;
+    .dark .hamburger-menu.open {
+        background-color: var(--dark-slate);
     }
 
     .hamburger-menu ul {
@@ -243,7 +255,7 @@ body.dark-mode{
     .hamburger-menu ul li a {
         display: flex;
         align-items: center;
-        color: #16222C;
+        color: var(--dark-slate);
         font-size: 18px;
         text-decoration: none;
         padding: 10px;
@@ -253,7 +265,7 @@ body.dark-mode{
     }
 
     /* Dark mode styling for links in the hamburger menu */
-    .hamburger-menu.dark-mode ul li a {
+    .dark .hamburger-menu ul li a {
         color: #EEE;
     }
 
@@ -266,22 +278,19 @@ body.dark-mode{
 
     /* Moon and sun icon styling in the hamburger menu */
     .hamburger-menu .icon.moon-sun {
-        color: #16222C;
+        color: var(--dark-slate);
         font-size: 35px;
         position: absolute;
         top: 20px;
         left: 20px;
     }
 
-    /* Dark mode styling for moon and sun icons in the hamburger menu */
-    .hamburger-menu.dark-mode .icon.moon-sun {
-        color: #EEE;
+    .hamburger-menu .icon.moon-sun:hover{
+        background-color: transparent;
     }
 
-    /* Prevent moon and sun icons from changing color on focus or active states */
-    .hamburger-menu .icon.moon-sun:focus,
-    .hamburger-menu .icon.moon-sun:active {
-        background-color: transparent !important;
-        color: inherit;
+    /* Dark mode styling for moon and sun icons in the hamburger menu */
+    .dark .hamburger-menu .icon.moon-sun {
+        color: #EEE;
     }
 }

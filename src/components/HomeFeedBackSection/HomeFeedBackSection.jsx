@@ -38,6 +38,7 @@ const HomeFeedBackSection = () => {
                             {
                                 [1, 2, 3, 4, 5].map((item, index) => (
                                     <span
+                                        key={`feedback_star_${index}`}
                                         className={clickedStar >= item ? 'active' : '' || hoveredStar >= item ? 'active' : ''}
                                         onMouseEnter={() => handleMouseEnter(item)}
                                         onMouseLeave={handleMouseLeave}

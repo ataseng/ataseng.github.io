@@ -6,7 +6,7 @@ const MainLayout = ({ children }) => {
   
   const getStoredTheme = localStorage.getItem("theme") || ""
   
-  const [theme, setTheme] = useState(getStoredTheme)
+  const [theme, setTheme] = useState(getStoredTheme);
 
   const changeTheme = (newTheme) => {
     const previousTheme = localStorage.getItem("theme")
@@ -20,8 +20,9 @@ const MainLayout = ({ children }) => {
   }
 
   useEffect(() => {
-    changeTheme(theme)
-  },[theme])
+    changeTheme(theme);
+  }, [theme]);
+
   return (
     <>
         <Sidebar theme={theme} setTheme={setTheme}/>
