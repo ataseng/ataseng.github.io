@@ -27,7 +27,7 @@ const HomeFeedBackSection = () => {
         setfeedBack("")
     }
     return (
-        <div className="feedback-section">
+        <div id='feedback-section' className="feedback-section">
             <div className="feedback-content">
                 <div className="feedback">
                     <div className="feedback-title">

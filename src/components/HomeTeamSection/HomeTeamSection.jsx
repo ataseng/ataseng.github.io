@@ -4,7 +4,7 @@ import PersonImage from '../../assets/images/personImage.jpg'
 import Data from './HomeTeam.json'
 const HomeTeamSection = () => {
     return (
-        <div className="home-team-section">
+        <div id='home-team-section' className="home-team-section">
             <div className="home-team-content">
                 <div className="home-team-content-title">
                     <div className="left-line"></div>

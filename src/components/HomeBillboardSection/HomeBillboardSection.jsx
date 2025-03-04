@@ -10,7 +10,7 @@ const HomeBillboardSection = () => {
   return (
 
     <>
-      <div className="billboard-section">
+      <div id='billboard-section' className="billboard-section">
         <div className="billboard-content">
           <div className="billboard-title">
             <h2>{Data?.title}</h2>

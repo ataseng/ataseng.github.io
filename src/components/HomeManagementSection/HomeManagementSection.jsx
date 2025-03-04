@@ -37,7 +37,7 @@ const HomeManagementSection = () => {
         }
     }
     return (
-        <div className="management-section">
+        <div id='management-section' className="management-section">
             <div className="management-content">
                 <div className="management-side">
                     <div className="management-title">
