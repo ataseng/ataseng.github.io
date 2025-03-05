@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './AboutSection.css'
 import aboutSection from '../../assets/images/aboutSection.jpg'
 import { Icon } from '@iconify/react/dist/iconify.js';
-const AboutSection = () => {
+
+const AboutSection = forwardRef((_, ref) => {
+    
     return (
         <>
-            <div id='about-section' className="about-section">
+            <div ref={ref} id='about-section' className="about-section">
                 <div className="about-section-content">
                     <div className="about-section-image">
                         <img src={aboutSection} alt="img" />
@@ -29,6 +31,6 @@ const AboutSection = () => {
             </div>
         </>
     )
-}
+});
 
 export default AboutSection

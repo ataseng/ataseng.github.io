@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import './homeBillboardSection.css';
 import Data from './HomeBillboardData.json';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import HomeBilboardElement from './HomeBilboardElement';
 
-const HomeBillboardSection = () => {
+const HomeBillboardSection = forwardRef((_, ref) => {
   const boardLength = Data?.billboardElements?.length
   
   return (
 
     <>
-      <div id='billboard-section' className="billboard-section">
+      <div ref={ref} id='billboard-section' className="billboard-section">
         <div className="billboard-content">
           <div className="billboard-title">
             <h2>{Data?.title}</h2>
@@ -48,6 +48,6 @@ const HomeBillboardSection = () => {
       </div>
     </>
   );
-};
+});
 
 export default HomeBillboardSection;

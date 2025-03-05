@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './homeTeamSection.css'
 import PersonImage from '../../assets/images/personImage.jpg'
 import Data from './HomeTeam.json'
-const HomeTeamSection = () => {
+const HomeTeamSection = forwardRef((_, ref) => {
     return (
-        <div id='home-team-section' className="home-team-section">
+        <div ref={ref} id='home-team-section' className="home-team-section">
             <div className="home-team-content">
                 <div className="home-team-content-title">
                     <div className="left-line"></div>
@@ -46,6 +46,6 @@ const HomeTeamSection = () => {
             </div>
         </div>
     )
-}
+});
 
 export default HomeTeamSection

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import './homeManagementSection.css'
 
 
-const HomeManagementSection = () => {
+const HomeManagementSection = forwardRef((_, ref) => {
     const [formData, setformData] = useState(
         {
             fullname: "",
@@ -37,7 +37,7 @@ const HomeManagementSection = () => {
         }
     }
     return (
-        <div id='management-section' className="management-section">
+        <div ref={ref} id='management-section' className="management-section">
             <div className="management-content">
                 <div className="management-side">
                     <div className="management-title">
@@ -89,6 +89,6 @@ const HomeManagementSection = () => {
 
         </div>
     )
-}
+});
 
 export default HomeManagementSection

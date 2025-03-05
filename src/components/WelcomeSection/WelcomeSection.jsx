@@ -1,10 +1,11 @@
 import './WelcomeSection.css';
 import logo from '../../assets/images/logo2.png';
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import { forwardRef } from "react";
 
-const WelcomeSection = ( { ref }) => {
+const WelcomeSection = forwardRef((_, ref) => {
     return (
-        <div id='welcome-section' className="welcome-section">
+        <div ref={ref} id='welcome-section' className="welcome-section">
             <div className="welcome-content">
                 <div className="welcome-logo">
                     <img src={logo} alt="Ataseng Logo" />
@@ -19,7 +20,7 @@ const WelcomeSection = ( { ref }) => {
                 </a>
             </div>
         </div>
-    )
-}
+    );
+});
 
 export default WelcomeSection

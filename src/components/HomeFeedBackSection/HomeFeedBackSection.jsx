@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import './homeFeedBackSection.css'
 import { Icon } from '@iconify/react/dist/iconify.js'
-const HomeFeedBackSection = () => {
+const HomeFeedBackSection = forwardRef((_, ref) => {
 
     const [hoveredStar, setHoveredStar] = useState(0)
     const [clickedStar, setClickedStar] = useState(0)
@@ -27,7 +27,7 @@ const HomeFeedBackSection = () => {
         setfeedBack("")
     }
     return (
-        <div id='feedback-section' className="feedback-section">
+        <div ref={ref} id='feedback-section' className="feedback-section">
             <div className="feedback-content">
                 <div className="feedback">
                     <div className="feedback-title">
@@ -86,6 +86,6 @@ const HomeFeedBackSection = () => {
             </div>
         </div>
     )
-}
+});
 
 export default HomeFeedBackSection

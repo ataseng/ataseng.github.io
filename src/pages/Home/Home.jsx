@@ -11,50 +11,78 @@ import { useEffect, useRef } from 'react';
 
 const Home = () => {
 
+    const welcomeSectionRef = useRef(null);
+    const aboutSectionRef = useRef(null);
+    const homeBillboardSectionRef = useRef(null);
+    const homeTeamSectionRef = useRef(null);
+    const homeFeedbackSectionRef = useRef(null);
+    const homeManagementSectionRef = useRef(null);
+
     useEffect(() => {
         fetch("https://ataseng.com/api/get_welcome_text.php")
         .then(res => res.json())
         .then(data => {
             if(data.message === "success"){
-                
+                console.log(data)
             }
             else{
 
             }
         });
+
     }, []);
 
-    var firstsec = document.getElementById('welcome-section');
-    var secondsec = document.getElementById('about-section');
-    var lastScrollTop = 0;
+    let lastScrollTop = 0;
     window.onscroll = function(){
-        var st = window.pageYOffset || document.documentElement.scrollTop; 
+        var st = window.pageYOffset || document.documentElement.scrollTop;
         if (st > lastScrollTop){
-            secondsec?.scrollIntoView({behavior: "smooth"});
+            if (st <= aboutSectionRef.current.offsetTop) {
+                aboutSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st <= homeBillboardSectionRef.current.offsetTop){
+                homeBillboardSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st <= homeTeamSectionRef.current.offsetTop){
+                homeTeamSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st <= homeFeedbackSectionRef.current.offsetTop){
+                homeFeedbackSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st <= homeManagementSectionRef.current.offsetTop){
+                homeManagementSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
         } else {
-            firstsec?.scrollIntoView({behavior: "smooth"});
+            if(st >= homeManagementSectionRef.current.offsetTop){
+                homeManagementSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st >= homeFeedbackSectionRef.current.offsetTop){
+                homeFeedbackSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st >= homeTeamSectionRef.current.offsetTop){
+                homeTeamSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st >= homeBillboardSectionRef.current.offsetTop){
+                homeBillboardSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st >= aboutSectionRef.current.offsetTop){
+                aboutSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
+            else if(st >= welcomeSectionRef.current.offsetTop){
+                welcomeSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            }
         }
-        lastScrollTop = st <= 0 ? 0 : st; 
+        lastScrollTop = st <= 0 ? 0 : st;
     };
-
-    const welcomeSection = useRef(null);
-    const aboutSection = useRef(null);
-    const homeBillboardSection = useRef(null);
-    const homeTeamSection = useRef(null);
-    const homeFeedbackSection = useRef(null);
-    const homeManagementSection = useRef(null);
-
-    console.log(welcomeSection.current);
 
   return (
     <>
-      <WelcomeSection ref={welcomeSection}/>
-      <AboutSection ref={aboutSection}/>
-      <HomeBillboardSection ref={homeBillboardSection}/>
-      <HomeTeamSection ref={homeTeamSection}/>
+      <WelcomeSection ref={welcomeSectionRef}/>
+      <AboutSection ref={aboutSectionRef}/>
+      <HomeBillboardSection ref={homeBillboardSectionRef}/>
+      <HomeTeamSection ref={homeTeamSectionRef}/>
       {/* <HomeDiscordSection/> */}
-      <HomeFeedBackSection ref={homeFeedbackSection}/>
-      <HomeManagementSection ref={homeManagementSection}/>
+      <HomeFeedBackSection ref={homeFeedbackSectionRef}/>
+      <HomeManagementSection ref={homeManagementSectionRef}/>
     </>
   );
 }
