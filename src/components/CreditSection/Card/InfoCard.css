@@ -77,13 +77,6 @@
     width: 80px;
 }
 
-
-
-p:last-of-type {
-    padding-bottom: 38px;
-
-}
-
 .line-dashed {
     border-bottom: 1px dashed #00a9b8;
     margin-top: 10px;

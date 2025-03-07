@@ -19,7 +19,7 @@ const Home = () => {
     const homeManagementSectionRef = useRef(null);
 
     useEffect(() => {
-        fetch("https://ataseng.com/api/get_welcome_text.php")
+        fetch("https://ataseng.com/api/get_homepage_content.php")
         .then(res => res.json())
         .then(data => {
             if(data.message === "success"){
@@ -34,43 +34,44 @@ const Home = () => {
 
     let lastScrollTop = 0;
     window.onscroll = function(){
-        var st = window.pageYOffset || document.documentElement.scrollTop;
+        var st = window.pageYOffset || document?.documentElement?.scrollTop;
         if (st > lastScrollTop){
-            if (st <= aboutSectionRef.current.offsetTop) {
-                aboutSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+            if (st <= aboutSectionRef?.current?.offsetTop) {
+                aboutSectionRef?.current?.scrollIntoView({behavior: "smooth", block: "start"});
             }
-            else if(st <= homeBillboardSectionRef.current.offsetTop){
-                homeBillboardSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-            else if(st <= homeTeamSectionRef.current.offsetTop){
-                homeTeamSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-            else if(st <= homeFeedbackSectionRef.current.offsetTop){
-                homeFeedbackSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-            else if(st <= homeManagementSectionRef.current.offsetTop){
-                homeManagementSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-        } else {
-            if(st >= homeManagementSectionRef.current.offsetTop){
-                homeManagementSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-            else if(st >= homeFeedbackSectionRef.current.offsetTop){
-                homeFeedbackSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-            else if(st >= homeTeamSectionRef.current.offsetTop){
-                homeTeamSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-            else if(st >= homeBillboardSectionRef.current.offsetTop){
-                homeBillboardSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-            else if(st >= aboutSectionRef.current.offsetTop){
-                aboutSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
-            else if(st >= welcomeSectionRef.current.offsetTop){
-                welcomeSectionRef.current.scrollIntoView({behavior: "smooth", block: "start"});
-            }
+            // else if(st <= homeBillboardSectionRef.current.offsetTop){
+            //     homeBillboardSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+            // }
+            // else if(st <= homeTeamSectionRef.current.offsetTop){
+            //     homeTeamSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+            // }
+            // else if(st <= homeFeedbackSectionRef.current.offsetTop){
+            //     homeFeedbackSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+            // }
+            // else if(st <= homeManagementSectionRef.current.offsetTop){
+            //     homeManagementSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+            // }
         }
+        // else {
+        //     if(st >= homeManagementSectionRef.current.offsetTop){
+        //         homeManagementSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+        //     }
+        //     else if(st >= homeFeedbackSectionRef.current.offsetTop){
+        //         homeFeedbackSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+        //     }
+        //     else if(st >= homeTeamSectionRef.current.offsetTop){
+        //         homeTeamSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+        //     }
+        //     else if(st >= homeBillboardSectionRef.current.offsetTop){
+        //         homeBillboardSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+        //     }
+        //     else if(st >= aboutSectionRef.current.offsetTop){
+        //         aboutSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+        //     }
+        //     else if(st >= welcomeSectionRef.current.offsetTop){
+        //         welcomeSectionRef.current.scrollIntoView({behavior: "smooth", block: "end"});
+        //     }
+        // }
         lastScrollTop = st <= 0 ? 0 : st;
     };
 

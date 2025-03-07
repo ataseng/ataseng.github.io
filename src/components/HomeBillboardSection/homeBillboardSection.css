@@ -3,7 +3,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
     background-color: #fff;
 }
 
@@ -22,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     transition: background-color 1s ease;
 }
 
@@ -31,6 +30,7 @@
     font-weight: 300;
     text-align: center;
     font-size: var(--section-title);
+    margin: 0;
 }
 
 .billboard-description {
@@ -265,6 +265,12 @@
 }
 
 @media screen and (max-width: 400px) {
+    .billboard-section .billboard-content{
+        padding: 36px 0;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+    
     .board{
         font-size: 12px;
         min-width: 180px;

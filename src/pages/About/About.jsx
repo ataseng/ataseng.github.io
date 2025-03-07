@@ -1,12 +1,84 @@
-import FirstSection from '../../components/AboutUs/firstSection/FirstSection';
 import './About.css';
 
 const About = () => {
-  return (
-    <div className="sidebar-margin">
-      <FirstSection/>
-    </div>
-  )
+    return (
+        <>
+            <section>
+                <div className="section-content">
+                    <div className="image-content">
+                        <img
+                            src={require(`../../assets/images/firstSection.jpg`)}
+                            alt={"Biz Kimiz"}
+                        />
+                    </div>
+
+                    <div className="text-content">
+                        <h2>Biz Kimiz</h2>
+                        <p>Biz Kimiz ATASENG Kulübü, Atatürk Üniversitesi Yazılım Mühendisliği öğrencileri tarafından 2023 yılında kurulmuş dinamik, yenilikçi ve hızla büyüyen bir öğrenci topluluğudur. Kulübümüz, yazılım mühendisliği alanında hem teorik hem de pratik bilgi ve deneyim paylaşımını teşvik ederek, öğrencilerin akademik ve profesyonel gelişimlerine katkıda bulunmayı amaçlamaktadır. Her geçen gün gelişen teknoloji dünyasında, ATASENG Kulübü üyeleri olarak sadece yazılım geliştirmenin ötesinde, sektörün gereksinimlerine cevap verebilecek donanımlı bireyler yetiştirmeyi hedefliyoruz. Bu doğrultuda kulübümüz, yazılım dünyasında öncü bireyler yetiştirme misyonunu benimsemiş olup, yaratıcı düşünme, problem çözme ve takım çalışması gibi önemli becerileri geliştirmeye odaklanmaktadır. Kulübümüz, çeşitli yazılım projeleri, yarışmalar, hackathonlar, seminerler ve atölye çalışmaları düzenleyerek üyelerimize zengin öğrenme fırsatları sunmaktadır.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div className="section-content">
+                    <div className="text-content">
+                        <h2>Misyonumuz</h2>
+                        <ul>
+                            {
+
+                                "Yazılım mühendisliği alanında farkındalık yaratmak ve bu alanda kariyer yapmak isteyen öğrencilere yol göstermek. Öğrenciler arasında bilgi paylaşımını ve iş birliğini teşvik ederek, kolektif öğrenme ve dayanışma kültürü oluşturmak. Yenilikçi projeler ve etkinlikler düzenleyerek, öğrencilerin sektöre yönelik hazırlıklarını desteklemek ve mesleki yeterliliklerini artırmak. Bu süreçte, öğrencilere teknik becerilerin yanı sıra soft skill geliştirme fırsatları sunarak, onların daha donanımlı bireyler olmalarını sağlıyoruz. Teknolojinin hızla geliştiği dünyada, öğrencilerimize en güncel bilgi ve uygulama imkanlarını sunarak, onları geleceğin yazılım mühendisleri olarak hazırlamak. Amacımız, her öğrencinin potansiyelini keşfetmesine ve kariyerinde başarılı olmasına katkıda bulunmaktır.".split(".").map((sentence, index) => (
+                                    sentence.trim() !== '' && <li key={index}>{sentence.trim()}</li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                    <div className="image-content">
+                        <img
+                            src={require(`../../assets/images/secondSection.jpg`)}
+                            alt="Misyonumuz"
+                        />
+                    </div>
+
+                </div>
+            </section>
+
+            <section>
+                <div className="section-content third-content">
+                    <div className="image-content">
+                        <img
+                            src={require(`../../assets/images/thirdSection.jpg`)}
+                            alt="Vizyonumuz"
+                        />
+                    </div>
+
+                    <div className="text-content">
+                        <h2>Vizyonumuz</h2>
+                        <p>ATASENG Kulübü, Türkiye'nin ve dünyanın en önde gelen yazılım mühendisliği öğrenci topluluklarından biri olmayı hedeflemektedir. Vizyonumuz, yazılım mühendisliği öğrencilerinin global ölçekte rekabet edebilir bilgi ve becerilere sahip olmasını sağlamaktır. Bu doğrultuda, öğrencilerimize çeşitli eğitim programları, projeler ve etkinlikler sunarak, onların profesyonel ve kişisel gelişimlerine katkıda bulunuyoruz. Aynı zamanda, üyelerimizin yenilikçi düşünme becerilerini ve problem çözme yeteneklerini geliştirmeyi, onları teknoloji dünyasındaki en son trendlerle tanıştırmayı amaçlıyoruz. Vizyonumuzun bir diğer önemli parçası da, yazılım mühendisliği alanında liderlik potansiyeli taşıyan öğrencilerin kariyer yollarını şekillendirirken onlara rehberlik etmek ve sektörle daha güçlü bağlar kurmalarını sağlamaktır. Bu misyonla, ATASENG Kulübü, sadece bir topluluk olmanın ötesine geçerek, öğrencilerin kariyerlerinde sağlam bir temel oluşturmalarına yardımcı olmayı ve yazılım dünyasında fark yaratmalarını desteklemeyi hedeflemektedir.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div className="section-content">
+                    <div className="text-content">
+                        <h2>Üyelik</h2>
+                        {
+                            "ATASENG Kulübü'ne üye olarak, çeşitli etkinliklerimize katılabilir ve projelerimizde aktif rol alabilirsiniz. Üyelik sürecimiz oldukça basit ve tüm Yazılım Mühendisliği öğrencilerine açıktır. / Üyelik başvurusu için gerekli bilgileri kulüp temsilcilerimizden veya iletişim sayfamızdan edinebilirsiniz. Üyelerimiz, düzenlediğimiz etkinliklerde indirimlerden faydalanabilir ve kulübün sunduğu özel fırsatlardan yararlanabilirler.".split("/").map((item, index) => (
+                                <p key={index}>{item}</p>
+                            ))
+                        }
+                    </div>
+                    <div className="image-content">
+                        <img
+                            src={require(`../../assets/images/fourthSection.jpg`)}
+                            alt="Üyelik"
+                        />
+                    </div>
+
+                </div>
+            </section>
+        </>
+    )
 };
 
 export default About;
