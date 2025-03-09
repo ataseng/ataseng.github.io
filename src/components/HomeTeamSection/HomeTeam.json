@@ -1,14 +1,6 @@
 [
     {
         "id":1,
-        "name":"Osman DURDAĞ",
-        "departmant":"Yazılım Mühendisliği",
-        "grade":"Arş. Gör.",
-        "clubPosition":"Kulüp Danışmanı",
-        "gender" : "male"
-    },
-    {
-        "id":2,
         "name":"Alperen İLGAZ",
         "departmant":"Yazılım Mühendisliği",
         "grade":"4.Sınıf",
@@ -16,7 +8,7 @@
         "gender" : "male"
     },
     {
-        "id":3,
+        "id":2,
         "name":"Gizem Yağmur BERKER",
         "departmant":"Yazılım Mühendisliği",
         "grade":"4.Sınıf",
@@ -24,7 +16,7 @@
         "gender" : "female"
     },
     {
-        "id":4,
+        "id":3,
         "name":"Emel ÖRKEN",
         "departmant":"Yazılım Mühendisliği",
         "grade":"4.Sınıf",
