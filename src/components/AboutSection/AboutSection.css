@@ -39,6 +39,11 @@
 .about-section .about-section-inner-content{
     width: 50%;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
 
 .about-section .about-section-content .about-section-title h2 {
@@ -54,14 +59,15 @@
     line-height: 1.6rem;
     transition: color 0.5s ease;
 }
+
 .dark .about-section .about-section-content .about-section-description p{
     color: var(--pure-white);
 }
+
 .about-section .about-section-content .about-section-menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    margin-bottom: 40px;
 }
 
 .about-section .about-section-content .about-section-menu li {

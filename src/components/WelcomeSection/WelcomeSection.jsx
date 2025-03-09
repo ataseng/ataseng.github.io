@@ -2,8 +2,9 @@ import './WelcomeSection.css';
 import logo from '../../assets/images/logo2.png';
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { forwardRef } from "react";
+import Loader from '../Loader/Loader';
 
-const WelcomeSection = forwardRef((_, ref) => {
+const WelcomeSection = forwardRef((props, ref) => {
     return (
         <div ref={ref} id='welcome-section' className="welcome-section">
             <div className="welcome-content">
@@ -12,7 +13,11 @@ const WelcomeSection = forwardRef((_, ref) => {
                 </div>
                 <div className="welcome-description">
                     <p>
-                        Teknolojiye yön veren yenilikçi zihinlerin buluşma noktası. Ataseng Kulübü'ne katılın, geleceği birlikte kodlayalım.
+                        {
+                            props.text ?
+                            props.text : 
+                            <Loader color={"white"}/>
+                        }
                     </p>
                 </div>
                 <a className='arrow-down' href="#about-section">

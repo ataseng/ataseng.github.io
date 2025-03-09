@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react'
 import './homeTeamSection.css'
-import PersonImage from '../../assets/images/personImage.jpg'
+import maleAvatar from '../../assets/images/avatars/maleAvatar.png';
+import femaleAvatar from '../../assets/images/avatars/femaleAvatar.png';
 import Data from './HomeTeam.json'
 const HomeTeamSection = forwardRef((_, ref) => {
     return (
@@ -17,7 +18,13 @@ const HomeTeamSection = forwardRef((_, ref) => {
                         Data.map((item, key) => (
                             <div key={key} className="home-team-content-card">
                                 <div className="person-image">
-                                    <img src={PersonImage} alt="" />
+                                    {
+                                        item.image ? 
+                                            <img src={item.image} alt="" />
+                                            : item.gender === "male" ? 
+                                                <img src={maleAvatar} alt="" /> : 
+                                                <img src={femaleAvatar} alt="" />
+                                    }
                                 </div>
                                 <div className="person-name">
                                     <p>{item.name}</p>

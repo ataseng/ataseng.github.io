@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Big Shoulders';
+    src: url('../fonts/Big_Shoulders/BigShoulders_VariableFont.ttf');
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -31,10 +36,14 @@
 
 body{
     transition: background-color 0.5s ease, color 0.5s ease;
+    /* font-family: Garamond, serif; */
+    font-family: "Big Shoulders";
+    color: var(--dark-slate);
 }
 
 .dark{
     background-color: var(--slate-blue);
+    color: var(--pure-white);
 }
 
 .light{

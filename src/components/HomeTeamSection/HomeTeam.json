@@ -1,32 +1,34 @@
 [
     {
         "id":1,
-        "name":"Karen Jones",
+        "name":"Osman DURDAĞ",
         "departmant":"Yazılım Mühendisliği",
-        "grade":"3.Sınıf",
-        "clubPosition":"Kulüp Başkanı"
-        
+        "grade":"Arş. Gör.",
+        "clubPosition":"Kulüp Danışmanı",
+        "gender" : "male"
     },
     {
         "id":2,
-        "name":"Sadie Adler",
-        "departmant":"Bilgisayar Mühendisliği",
+        "name":"Alperen İLGAZ",
+        "departmant":"Yazılım Mühendisliği",
         "grade":"4.Sınıf",
-        "clubPosition":"Kulüp Yardımcısı"
+        "clubPosition":"Kulüp Başkanı",
+        "gender" : "male"
     },
     {
         "id":3,
-        "name":"Arthur Morgan",
+        "name":"Gizem Yağmur BERKER",
         "departmant":"Yazılım Mühendisliği",
-        "grade":"2.Sınıf",
-        "clubPosition":"Kulüp Saymanı"
+        "grade":"4.Sınıf",
+        "clubPosition":"Başkan Yardımcısı",
+        "gender" : "female"
     },
     {
         "id":4,
-        "name":"John Marston",
-        "departmant":"Bilgisayar Mühendisliği",
-        "grade":"1.Sınıf",
-        "clubPosition":"Kulüp Danışmanı"
+        "name":"Emel ÖRKEN",
+        "departmant":"Yazılım Mühendisliği",
+        "grade":"4.Sınıf",
+        "clubPosition":"Başkan Yardımcısı",
+        "gender" : "female"
     }
-
 ]

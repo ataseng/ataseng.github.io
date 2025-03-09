@@ -1,7 +1,6 @@
 [
     {
         "first":{
-            
             "id":1,
             "title":"Biz Kimiz",
             "text":"Biz Kimiz ATASENG Kulübü, Atatürk Üniversitesi Yazılım Mühendisliği öğrencileri tarafından 2023 yılında kurulmuş dinamik, yenilikçi ve hızla büyüyen bir öğrenci topluluğudur. Kulübümüz, yazılım mühendisliği alanında hem teorik hem de pratik bilgi ve deneyim paylaşımını teşvik ederek, öğrencilerin akademik ve profesyonel gelişimlerine katkıda bulunmayı amaçlamaktadır. Her geçen gün gelişen teknoloji dünyasında, ATASENG Kulübü üyeleri olarak sadece yazılım geliştirmenin ötesinde, sektörün gereksinimlerine cevap verebilecek donanımlı bireyler yetiştirmeyi hedefliyoruz. Bu doğrultuda kulübümüz, yazılım dünyasında öncü bireyler yetiştirme misyonunu benimsemiş olup, yaratıcı düşünme, problem çözme ve takım çalışması gibi önemli becerileri geliştirmeye odaklanmaktadır. Kulübümüz, çeşitli yazılım projeleri, yarışmalar, hackathonlar, seminerler ve atölye çalışmaları düzenleyerek üyelerimize zengin öğrenme fırsatları sunmaktadır.  ",
@@ -19,7 +18,6 @@
             "text":"ATASENG Kulübü, Türkiye'nin ve dünyanın en önde gelen yazılım mühendisliği öğrenci topluluklarından biri olmayı hedeflemektedir. Vizyonumuz, yazılım mühendisliği öğrencilerinin global ölçekte rekabet edebilir bilgi ve becerilere sahip olmasını sağlamaktır. Bu doğrultuda, öğrencilerimize çeşitli eğitim programları, projeler ve etkinlikler sunarak, onların profesyonel ve kişisel gelişimlerine katkıda bulunuyoruz. Aynı zamanda, üyelerimizin yenilikçi düşünme becerilerini ve problem çözme yeteneklerini geliştirmeyi, onları teknoloji dünyasındaki en son trendlerle tanıştırmayı amaçlıyoruz. Vizyonumuzun bir diğer önemli parçası da, yazılım mühendisliği alanında liderlik potansiyeli taşıyan öğrencilerin kariyer yollarını şekillendirirken onlara rehberlik etmek ve sektörle daha güçlü bağlar kurmalarını sağlamaktır. Bu misyonla, ATASENG Kulübü, sadece bir topluluk olmanın ötesine geçerek, öğrencilerin kariyerlerinde sağlam bir temel oluşturmalarına yardımcı olmayı ve yazılım dünyasında fark yaratmalarını desteklemeyi hedeflemektedir.",
             "images":"thirdSection.jpg"
         },
-        
         "fourth":{
             "id":4,
             "title":"Üyelik",
