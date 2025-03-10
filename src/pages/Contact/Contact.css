@@ -1,58 +1,82 @@
-.contact-page {
-    text-align: center;
-    padding: 120px;
-  }  
-  h2 {
-    font-size: 24px;
-    color: #00A9B8;
-    margin-bottom: 20px; 
-  }  
-  .line-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-  }  
-  .line {
-    flex-grow: 1;
-    border-top: 1px solid #00A9B8; 
-    margin: 0 50px; 
-  }  
-  .contact-form-map {
+#contact-section{
+    background-color: var(--light-gray);
+}
+
+.dark #contact-section{
+    background-color: var(--slate-blue);
+}
+
+section .section-content.contact-content {
+    flex-direction: column;
+    gap: 40px;
+}
+
+.lined-title{
+    position: relative;
+}
+
+.lined-title::before,
+.lined-title::after
+{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: var(--turquoise);
+    align-self: anchor-center;
+}
+
+.lined-title::before{
+    left: -120px;
+}
+
+.lined-title::after{
+    right: -120px;
+}
+
+.contact-inner-content{
+    width: clamp(240px, 60%, 800px);
+}
+
+.contact-form-map {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-  }  
-  .contact-form {
-    width: 45%;
+}
+
+.contact-form {
     display: flex;
     flex-direction: column;
-  }
-  .input:focus {
-    outline: none; 
-  }
-  .contact-form-row {
+}
+
+.input:focus {
+    outline: none;
+}
+
+.contact-form-row {
     display: flex;
-    gap: 10px; 
-  }  
-  .contact-form input,
-  .contact-form textarea {
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #00A9B8;
     border-radius: 2px;
     width: 100%;
     box-sizing: border-box;
-  }
-  .contact-form textarea{
+}
+
+.contact-form textarea {
     height: 75px;
-  }
-  
-  .contact-form-row input:focus {
+}
+
+.contact-form-row input:focus {
     width: 100%;
-  }
-  
-  .contact-form button {
+}
+
+.contact-form button {
     padding: 10px;
     margin-top: 10px;
     background-color: #00A9B8;
@@ -60,64 +84,89 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .map {
-    width: 50%;
-  }
-  
-  .contact-info {
+}
+
+.contact-info {
     display: flex;
     justify-content: space-around;
-    margin-top: 30px;
-    padding-top: 20px;
     border-top: 1px solid #00A9B8;
-  }
-  .icon-1 {
-    color: #00A9B8;
-    font-size: 35px;
-  }
-  .icon-2 {
+}
+
+.icon-2 {
     color: #ddd;
     font-size: 18px;
     margin: 3px;
-  }
-  
-  .info-item {
+}
+
+.info-item {
     text-align: center;
-    width: 20%;
-    padding: 0 30px;
-    margin-bottom: 20px;
-  }
-  
-  .info-item:not(:last-child) {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.info-item:not(:last-child) {
     border-right: 1px solid #00A9B8;
-  }  
-  
-  .info-item i {
-    font-size: 24px;
+}
+
+.info-item svg {
+    font-size: var(--home-title);
     color: #00A9B8;
-  }
-  
-  .info-item p {
-    margin-top: 5px;
-    font-size: 14px;
+}
+
+.info-item p {
+    margin-top: 8px;
+    font-size: var(--section-list);
     color: #333;
-  }
-  
-  .info-item a {
+}
+
+.info-item a {
     color: #00A9B8;
     text-decoration: none;
-  }
-  .dark .contact-form input,
-  .dark .contact-form textarea {
+}
+
+.dark .contact-form input,
+.dark .contact-form textarea {
     color: #fff;
     background-color: #16222c;
-  }
-  .dark .contact-form input:focus,
-  .dark .contact-form textarea:focus{
+}
+
+.dark .contact-form input:focus,
+.dark .contact-form textarea:focus {
     background-color: #16222c;
-  }
-  .dark .info-item p{
+}
+
+.dark .info-item p {
     color: #fff;
-  }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-inner-content{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section .section-content.contact-content{
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .lined-title::before,
+    .lined-title::after
+    {
+        width: 60px;
+    }
+
+    .lined-title::before{
+        left: -80px;
+    }
+
+    .lined-title::after{
+        right: -80px;
+    }
+}

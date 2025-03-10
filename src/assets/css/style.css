@@ -90,8 +90,9 @@ section .section-content{
     gap: 24px;
 }
 
-section .section-content h2{
+h2{
     font-size: var(--section-title);
+    color: var(--turquoise);
 }
 
 section .section-content .image-content,
