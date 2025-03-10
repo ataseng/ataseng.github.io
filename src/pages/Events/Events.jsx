@@ -1,16 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Events.css'
 import Data from './Data.json'
 import { Icon } from '@iconify/react/dist/iconify.js';
 
 function Events() {
+
+    const navigate = useNavigate();
+
+    const redirectToUrl = url => {
+        navigate(url);
+    }
   return (
     <section id='events-section'>
         <div className="section-content events-content">
             <div className="event-cards">
                 {
                 Data.map((item,key) => (
-                    <div key={key} className="event-card">
+                    <div key={key} className="event-card" onClick={() => redirectToUrl(item.url)}>
 
                         <div className="event-card-icon">
                             <Icon icon={item.icon} />
