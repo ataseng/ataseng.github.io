@@ -5,7 +5,7 @@
 - [ ] Credits
 - [ ] Team
 - [X] Contact
-- [ ] Events
+- [X] Events
 - [ ] Competitions
 - [ ] CompetitionDetail
 - [ ] Educations
