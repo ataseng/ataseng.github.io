@@ -1,10 +1,10 @@
 # TODO
 
 - [X] Home
-- [ ] About
+- [X] About
 - [ ] Credits
 - [ ] Team
-- [ ] Contact
+- [X] Contact
 - [ ] Events
 - [ ] Competitions
 - [ ] CompetitionDetail
