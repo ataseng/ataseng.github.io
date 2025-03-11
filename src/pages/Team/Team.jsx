@@ -1,28 +1,36 @@
 import './Team.css';
-import CardList from '../../components/TeamCard/CardList'; 
 import { Icon } from '@iconify/react';
 import teamFoto_1 from '../../assets/images/team_sections_1.jpg';
 import teamFoto_2 from '../../assets/images/team_sections_2.jpg';
-import logoLightTheme from '../../assets/images/atasengLogo_dark.png';
-import logoDarkTheme from '../../assets/images/atasengLogo_white.png';
 import JoinTeamForm from '../../components/Form/JoinTeamForm/JoinTeamForm';
+import TeamCard from '../../components/TeamCard/TeamCard';
+import { teamData } from "./teamData";
 
 const Team = () => {
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    const logoSrc = isDarkMode === 'dark-mode' ? logoDarkTheme : logoLightTheme;
   return (
-    <div className="team-page ">
-        <div className='team'>
-            <div className="header-with-lines">
-                <span className="line"></span>
-                <h1>Ekibimiz</h1>
-                <span className="line"></span>
-        </div>
+    <>
+        <section>
+            <div className="section-content team-content">
+            <h2 className='lined-title'>Ekibimiz</h2>
+            <div className="team-cards">
+                    {teamData.map((card, index) => (
+                        <TeamCard
+                            key={index}
+                            image={card.image}
+                            name={card.name}
+                            department={card.department}
+                            role={card.role}
+                            links={card.links}
+                        />
+                    ))}
+                </div>
+            </div>
+            
 
-            <CardList />
-        </div>
+            {/* <CardList /> */}
+        </section>
 
-        <div className='about'>
+        <section className='about'>
             <h2>Ekibimiz Hakkında</h2>
             <div className='about-container'>
                 <div className='about-foto'>                
@@ -59,8 +67,8 @@ const Team = () => {
                 organizasyonun gelişimini ve büyümesini sağlarlar.</p>
                 </div>
             </div>
-        </div>
-        <div className='joinTeamConditions '>
+        </section>
+        <section className='joinTeamConditions '>
             
             <div className='joinTeamConditions-contents'> 
                     <h2>Ekibimize Katılma Şartları</h2>                   
@@ -80,12 +88,11 @@ const Team = () => {
             <div className='joinTeamConditions-foto'>                
                 <img src={teamFoto_2} alt="" />
             </div>
-        </div>
+        </section>
 
-        <div className='joinTeam '>
+        <section className='joinTeam '>
             <h2>Yönetim Ekibimize Katılmak İster Misiniz?</h2>
             <div className='joinTeam-contents'>
-                <img src={logoSrc} alt="" />
                 <p>
                 Ekibimizin bir parçası olarak, dinamik ve yenilikçi 
                 bir ortamda çalışma fırsatını yakalayabilirsiniz. 
@@ -101,9 +108,10 @@ const Team = () => {
                 </p>
             </div>
             <JoinTeamForm />
-        </div>
+        </section>
       
-    </div>
+    </>
+
   );
 };
 

@@ -10,38 +10,38 @@ function Events() {
     const redirectToUrl = url => {
         navigate(url);
     }
-  return (
-    <section id='events-section'>
-        <div className="section-content events-content">
-            <div className="event-cards">
-                {
-                Data.map((item,key) => (
-                    <div key={key} className="event-card" onClick={() => redirectToUrl(item.url)}>
+    return (
+        <section id='events-section'>
+            <div className="section-content events-content">
+                <div className="event-cards">
+                    {
+                        Data.map((item, key) => (
+                            <div key={key} className="event-card" onClick={() => redirectToUrl(item.url)}>
 
-                        <div className="event-card-icon">
-                            <Icon icon={item.icon} />
-                        </div>
-            
-                        <div className="event-card-title">
-                            <h3>{item.title}</h3>
-                        </div>
-            
-                        <div className="event-card-description">
-                            <p>{item.description}</p>
-                        </div>
-            
-                        <div className="event-card-button">
-                            <Link style={{textDecoration:"none"}} to={item.url}><p>Detayları Gör</p></Link>
-                        </div>
-        
-                    </div>
-                ))
-                }
+                                <div className="event-card-icon">
+                                    <Icon icon={item.icon} />
+                                </div>
+
+                                <div className="event-card-title">
+                                    <h3>{item.title}</h3>
+                                </div>
+
+                                <div className="event-card-description">
+                                    <p>{item.description}</p>
+                                </div>
+
+                                <div className="event-card-button">
+                                    <Link style={{ textDecoration: "none" }} to={item.url}><p>Detayları Gör</p></Link>
+                                </div>
+
+                            </div>
+                        ))
+                    }
+                </div>
+
             </div>
-            
-        </div>
-    </section>
-  );
+        </section>
+    );
 }
 
 export default Events;

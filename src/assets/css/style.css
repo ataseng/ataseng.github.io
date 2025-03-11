@@ -113,6 +113,30 @@ section .section-content img{
     border-radius: 8px;
 }
 
+.instagram-icon:hover{
+    color: #F56040;
+}
+
+.twitter-icon:hover{
+    color: #1DA1F2;
+}
+
+.github-icon:hover{
+    color: #2dba4e;
+}
+
+.youtube-icon:hover{
+    color: #FF0000;
+}
+
+.linkedin-icon:hover{
+    color: #0e76a8;
+}
+
+.website-icon:hover{
+    color: #1DA1F2;
+}
+
 @media screen and (max-width:1200px) {
     :root{
         /* HomePage font size */

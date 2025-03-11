@@ -65,22 +65,6 @@
     cursor: pointer;
 }
 
-.footer-icon.instagram:hover{
-    color: #F56040;
-}
-
-.footer-icon.twitter:hover{
-    color: #1DA1F2;
-}
-
-.footer-icon.github:hover{
-    color: #2dba4e;
-}
-
-.footer-icon.youtube:hover{
-    color: #FF0000;
-}
-
 /* Links container */
 .footer-links {
     border: 1px solid var(--footer-text);

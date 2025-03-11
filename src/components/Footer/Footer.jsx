@@ -30,16 +30,16 @@ const Footer = ({ theme }) => {
                 </div>
                 <div className={`footer-icons ${theme=== 'dark' ? 'dark-mode' : ''}`}>
                     <a href="https://www.instagram.com/ataseng.club/" target='_blank' rel='noreferrer'>
-                        <Icon icon="mdi:instagram" className="footer-icon instagram" />
+                        <Icon icon="mdi:instagram" className="footer-icon instagram-icon" />
                     </a>
                     <a href="https://github.com/ataseng" target='_blank' rel='noreferrer'>
-                        <Icon icon="mdi:github" className="footer-icon github" />
+                        <Icon icon="mdi:github" className="footer-icon github-icon" />
                     </a>
                     <a href="#">
-                        <Icon icon="mdi:twitter" className="footer-icon twitter" />
+                        <Icon icon="mdi:twitter" className="footer-icon twitter-icon" />
                     </a>
                     <a href="#">
-                        <Icon icon="mdi:youtube" className="footer-icon youtube" />
+                        <Icon icon="mdi:youtube" className="footer-icon youtube-icon" />
                     </a>
                 </div>
                 {/* <div className={`footer-links ${theme=== 'dark' ? 'dark-mode' : ''}`}>
