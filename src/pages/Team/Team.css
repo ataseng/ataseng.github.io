@@ -1,234 +1,172 @@
 .team-content {
     flex-direction: column;
     gap: 40px;
+    min-height: 100vh;
 }
 
-/* About section styles */
-.about {
+.team-cards {
     display: flex;
-    flex-direction: column;
-    background-color: #eee;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-}
-
-.about h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 90%;
 }
 
 /* Flexbox layout for about section */
-.about-container {
+.team-about-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 1200px;
+    gap: 40px;
 }
 
-.about-foto {
-    flex: 1;
-    padding-right: 20px;
-    align-self: center; 
-}
-
-/* Image styling for about section */
-.about-foto img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
+.team-about-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.about-contents {
-    flex: 2;
-    padding-left: 20px;
-}
-
-/* Text styling for about section */
-.about-contents p {
-    text-indent: 20px;
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Join team conditions layout */
-.joinTeamConditions {
+.team-about-content{
+    width: 50%;
+    max-width: 600px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    text-align: justify;
+    font-size: var(--section-list);
+    line-height: 1.6;
+    padding: 0 12px;
 }
 
-.joinTeamConditions-contents {
-    flex: 2;
-    padding-right: 20px;
-}
-
-/* Heading styling for join team conditions */
-.joinTeamConditions-contents h2 {
-    color: #00A9B8;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.joinTeamConditions-contents ul {
+.team-about-container ul{
     list-style-type: none;
-    padding-left: 0;
+    width: 50%;
+    padding: 0 12px;
 }
 
 /* List item styling with icons for join team conditions */
-.joinTeamConditions-contents li {
-    color: #000;
-    font-size: 16px;
+.team-about-container li {
+    font-size: var(--section-list);
     line-height: 1.6;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
 }
 
-.joinTeamConditions-contents li svg {
+.team-about-container li svg {
     color: #00A9B8;
     margin-right: 10px;
 }
 
-.joinTeamConditions-foto {
-    flex: 1;
-    padding-left: 20px;
-    align-self: center; 
-}
-
-/* Image styling for join team conditions */
-.joinTeamConditions-foto img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/* Join team section styles */
-.joinTeam {
-
-    text-align: center;
-    background-color: #eee;
-    padding: 40px;
-    overflow: hidden;
-}
-
-.joinTeam h2 {
-    margin-bottom: 20px;
-    color: #00A9B8;
-    
-    text-align: center;
-}
-
-/* Flexbox for join team section contents */
-.joinTeam-contents {
+.join-team-content{
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    float: left;
-    width: 50%;
-    align-items: center; 
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 90%;
     text-align: center;
 }
 
-/* Image styling for join team section */
-.joinTeam img {
-    max-width: 150px;
-    margin-bottom: 20px;
-}
+@media screen and (max-width: 1200px) {
+    .team-about-container{
+        flex-direction: column-reverse;
+        width: 90%;
+    }
 
-/* Text styling for join team section */
-.joinTeam p {
-    text-indent: 20px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: #000;
-    width: 85%;
-    max-width: 700px; 
-    text-align: left;
-}
-
-/* Dark mode styles */
-.team-page.dark-mode {
-    background-color: #283C4D;
-}
-.team.dark-mode {
-    background-color: #283C4D;
-}
-.about.dark-mode {
-    background-color: #16222c;
-}
-.about.dark-mode p {
-    color: #fff;
-}
-.joinTeamConditions.dark-mode {
-    background-color: #283C4D;
-}
-.joinTeamConditions-contents.dark-mode li {
-    color: #fff;
-}
-.joinTeam.dark-mode {
-    background-color: #16222c;
-}
-.joinTeam.dark-mode p {
-    color: #fff;
-}
-
-/* Responsive styles for mobile view */
-@media screen and (max-width: 768px) {
-    .about-container {
+    .team-about-container.join-us-container{
         flex-direction: column;
     }
 
-    .about-foto {
-        justify-content: center;
-        margin: 6%;
-        padding-bottom: 20px;
-    }
-
-    .about-contents {
-        padding-left: 0;
-    }
-
-    .joinTeamConditions {
-        flex-direction: column;
-    }
-
-    .joinTeamConditions-contents {
-        padding-right: 0;
-        padding-bottom: 20px;
-    }
-
-    .joinTeamConditions-foto {
-        justify-content: center;
-        display: none;
-    }
-
-    .joinTeamConditions h2 {
-        text-align: center;
-    }
-
-    .joinTeamConditions ul {
-        padding: 0;
-        margin: 0 auto;
-    }
-
-    .joinTeamConditions li {
-        text-align: left;
-    }
-
-    .joinTeam-contents {
+    .team-about-image,
+    .team-about-content
+    {
         width: 100%;
+    }
+
+    .team-about-content
+    {
+        padding: 0;
+    }
+
+    .team-about-container ul{
+        width: 100%;
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .team-about .lined-title::before,
+    .team-our-conditions .lined-title::before,
+    .team-join-our-team .lined-title::before,
+    .team-about .lined-title::after,
+    .team-our-conditions .lined-title::after,
+    .team-join-our-team .lined-title::after{
+        width: 40px;
+    }
+
+    .team-about .lined-title::before,
+    .team-our-conditions .lined-title::before,
+    .team-join-our-team .lined-title::before{
+        left: -50px;
+    }
+
+    .team-about .lined-title::after,
+    .team-our-conditions .lined-title::after,
+    .team-join-our-team .lined-title::after{
+        right: -50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .team-cards{
+        gap: 20px;
+    }
+
+    .join-team-content{
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .team-about-container{
+        gap: 20px;
+    }
+
+    .team-about-container ul{
+        justify-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .team-about .lined-title::before,
+    .team-our-conditions .lined-title::before,
+    .team-join-our-team .lined-title::before,
+    .team-about .lined-title::after,
+    .team-our-conditions .lined-title::after,
+    .team-join-our-team .lined-title::after{
+        width: 20px;
+    }
+
+    .team-about .lined-title::before,
+    .team-our-conditions .lined-title::before,
+    .team-join-our-team .lined-title::before{
+        left: -30px;
+    }
+
+    .team-about .lined-title::after,
+    .team-our-conditions .lined-title::after,
+    .team-join-our-team .lined-title::after{
+        right: -30px;
+    }
+
+    .team-join-our-team h2{
+        text-align: center;
     }
 }

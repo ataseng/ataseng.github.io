@@ -90,6 +90,10 @@ section .section-content{
     gap: 24px;
 }
 
+section .section-content.vertical-content{
+    flex-direction: column;
+}
+
 h2{
     font-size: var(--section-title);
     color: var(--turquoise);
@@ -111,6 +115,25 @@ section .section-content img{
     height: auto;
     max-height: 400px;
     border-radius: 8px;
+}
+
+button{
+    background-color: var(--turquoise);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--turquoise);
+    font-size: var(--section-list);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+    transition: background-color 1s ease, color 1s ease, border 1s ease;
+}
+
+button:hover {
+    background-color: transparent;
+    color: var(--turquoise);
 }
 
 .instagram-icon:hover{

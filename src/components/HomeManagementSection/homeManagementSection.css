@@ -128,13 +128,12 @@
 }
 
 .managament-section-btn button:hover{
-    background-color: var(--pure-white);
+    background-color: transparent;
     border: 1px solid var(--turquoise);
     color: var(--dark-slate);
 }
 
 .dark .managament-section-btn button:hover{
-    background-color: var(--slate-blue);
     color: var(--pure-white);
 }
 

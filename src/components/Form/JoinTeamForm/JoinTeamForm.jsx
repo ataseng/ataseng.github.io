@@ -7,15 +7,14 @@ import './JoinTeamForm.css';
  * @component
  * @returns {JSX.Element} The rendered form element for joining the team.
  */
+
 const JoinTeamForm = () => {
   return (
-    <form className='joinTeamForm'>
-
-      <input type="text" placeholder='İsim Soyisim :' />
-      <input type="text" placeholder='Bölüm :' />
-      <input type="text" placeholder='Sınıf :' />
-      <input type="text" placeholder='Tel :' />      
-    
+    <form className='join-team-form'>
+      <input type="text" placeholder='İsim Soyisim' />
+      <input type="text" placeholder='Bölüm' />
+      <input type="text" placeholder='Sınıf' />
+      <input type="text" placeholder='Tel' />      
       <button>Gönder</button>
     </form>
   );

@@ -19,7 +19,6 @@ import { Icon } from '@iconify/react';
  */
 
 const TeamCard = ({ image, name, department, role, links }) => {
-    console.log(image)
     return (
         <div className="team-card">
             <img src={image} alt={name} className="team-card-image" />
