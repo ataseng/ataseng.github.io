@@ -31,7 +31,7 @@ section .section-content.events-content{
     flex-direction: column;
     justify-content: space-between;
     align-self: center;
-    padding: 20px 12px 0;
+    padding: 20px 12px 8px;
 }
 
 .event-card:hover{
@@ -97,7 +97,7 @@ section .section-content.events-content{
 
 @media screen and (max-width: 600px) {
     .event-card{
-        padding: 16px 12px 0;
+        padding: 16px 12px 4px;
         width: 160px;
         height: 200px;
     }

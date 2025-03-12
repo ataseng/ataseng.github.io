@@ -14,7 +14,7 @@ const JoinTeamForm = () => {
       <input type="text" placeholder='İsim Soyisim' />
       <input type="text" placeholder='Bölüm' />
       <input type="text" placeholder='Sınıf' />
-      <input type="text" placeholder='Tel' />      
+      <input type="text" placeholder='Tel' />   
       <button>Gönder</button>
     </form>
   );
