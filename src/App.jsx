@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router";
+import { Route, Routes } from "react-router";
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Credits from "./pages/Credits/Credits";
@@ -12,7 +12,7 @@ import Hackathons from './pages/Events/Hackathons/Hackathons'
 import CareerDays from "./pages/Events/CareerDays/CareerDays";
 import CompetitionDetail from "./pages/Events/Competitions/CompetititonDetail/CompetitionDetail";
 import BootcampsDetail from "./pages/Events/Bootcamps/BootcampsDetail/BootcampsDetail";
-import CareerDaysDetail from './pages/Events/CareerDays/CarrerDaysDetail/CareerDaysDetail'
+import CareerDaysDetail from './pages/Events/CareerDays/CarrerDaysDetail/CareerDaysDetail';
 // import EducationDetail from "./pages/Events/Educations/EducationDetail/EducationDetail";
 import HackathonsDetail from "./pages/Events/Hackathons/HackathonsDetail/HackathonsDetail";
 import ScrollToTop from "./utils/ScrollToTop";

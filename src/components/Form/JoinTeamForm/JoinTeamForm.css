@@ -14,7 +14,7 @@ form.join-team-form{
 
 form.join-team-form input{
     color: var(--dark-slate);
-    width: 90%;
+    /* width: 90%; */
     padding: 10px;
     outline: none;
     border: none;
@@ -29,6 +29,36 @@ form.join-team-form input{
 .dark form.join-team-form input{
     background-color: var(--dark-slate);
     color: var(--pure-white);
+}
+
+form.join-team-form .join-team-form-input-div{
+    width: 90%;
+    display: flex;
+    justify-content : space-between;
+    gap: 12px;
+}
+
+form.join-team-form .join-team-form-input-div label{
+    padding: 10px;
+    /* color: var(--turquoise); */
+    font-size: var(--section-text);
+    text-align: left;
+}
+
+form.join-team-form .join-team-form-input-div input{
+    width: 65%;
+}
+
+form.join-team-form .join-team-form-input-div select{
+    width : 65%;
+    padding: 10px;
+    font-size: var(--section-text);
+    border: 1px solid var(--turquoise);
+}
+
+.dark form.join-team-form .join-team-form-input-div select{
+    background-color: var(--slate-blue);
+    color: white;
 }
 
 @media screen and (max-width: 800px) {
