@@ -16,6 +16,7 @@ import CareerDaysDetail from './pages/Events/CareerDays/CarrerDaysDetail/CareerD
 // import EducationDetail from "./pages/Events/Educations/EducationDetail/EducationDetail";
 import HackathonsDetail from "./pages/Events/Hackathons/HackathonsDetail/HackathonsDetail";
 import ScrollToTop from "./utils/ScrollToTop";
+import NotFound from "./pages/NotFound";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
 
             <Route path="/etkinlikler/kariyer-gunleri" element={<CareerDays/>} />
             <Route path="/etkinlikler/kariyer-gunleri/:title" element={<CareerDaysDetail/>} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     </>
   );
