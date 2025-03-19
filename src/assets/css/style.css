@@ -136,6 +136,10 @@ button:hover {
     color: var(--turquoise);
 }
 
+button:disabled{
+    cursor: not-allowed;
+}
+
 .instagram-icon:hover{
     color: #F56040;
 }

@@ -163,9 +163,12 @@ const JoinTeamForm = () => {
             </div>
             
             <button type='submit' disabled={!recruitmentActive}>Gönder</button>
-            <div className='recruitment-not-active'>
-                <span>Üye Alım Takvimi Dışındasınız!</span>
-            </div>
+            {
+                !recruitmentActive && <div className='recruitment-not-active'>
+                    <span>Üye Alım Takvimi Dışındasınız!</span>
+                </div>
+            }
+            
         </form>
     );
 };

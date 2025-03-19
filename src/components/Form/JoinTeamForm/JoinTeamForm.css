@@ -61,6 +61,17 @@ form.join-team-form .join-team-form-input-div select{
     color: white;
 }
 
+.recruitment-not-active{
+    font-size: var(--section-text);
+    color: darkred;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dark .recruitment-not-active{
+    color: #ff8181;
+}
+
 @media screen and (max-width: 800px) {
     form.join-team-form{
         width: 90%;
