@@ -4,7 +4,7 @@ const Loader = ({ color }) => {
   return (
     <>
         <span className={`spinner ${color === "white" && 'white'}`}/>
-        <div class="loading">
+        <div className="loading">
             <span>L</span>
             <span>O</span>
             <span>A</span>

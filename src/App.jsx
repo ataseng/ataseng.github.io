@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Credits from "./pages/Credits/Credits";
@@ -15,13 +15,14 @@ import BootcampsDetail from "./pages/Events/Bootcamps/BootcampsDetail/BootcampsD
 import CareerDaysDetail from './pages/Events/CareerDays/CarrerDaysDetail/CareerDaysDetail'
 // import EducationDetail from "./pages/Events/Educations/EducationDetail/EducationDetail";
 import HackathonsDetail from "./pages/Events/Hackathons/HackathonsDetail/HackathonsDetail";
+import ScrollToTop from "./utils/ScrollToTop";
 
 
 function App() {
   
   return (
     <>
-
+        <ScrollToTop />
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/hakkimizda" element={<About />} />

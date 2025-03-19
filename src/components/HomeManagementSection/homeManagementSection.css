@@ -137,6 +137,21 @@
     color: var(--pure-white);
 }
 
+.managament-section-btn button:disabled{
+    cursor: not-allowed;
+}
+
+.form-side .recruitment-not-active{
+    font-size: var(--section-text);
+    color: darkred;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dark .form-side .recruitment-not-active{
+    color: #ff8181;
+}
+
 .sponsor-part{
     display: flex;
     justify-content: space-between;

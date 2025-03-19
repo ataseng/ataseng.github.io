@@ -10,8 +10,9 @@ const HomeManagementSection = forwardRef((_, ref) => {
             grade: "",
             phone: ""
         }
-    )
+    );
 
+    const recruitmentActive = false;
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -24,7 +25,7 @@ const HomeManagementSection = forwardRef((_, ref) => {
 
     }
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         console.log(formData);
 
         if (formData) {
@@ -36,6 +37,7 @@ const HomeManagementSection = forwardRef((_, ref) => {
             })
         }
     }
+    
     return (
         <div ref={ref} id='management-section' className="management-section">
             <div className="management-content">
@@ -66,7 +68,12 @@ const HomeManagementSection = forwardRef((_, ref) => {
                                 <input value={formData.phone} onChange={handleChange} name='phone' type="text" placeholder='Tel' />
                             </div>
                             <div className="managament-section-btn">
-                                <button type='submit'>Gönder</button>
+                                <button type='submit' disabled = {!recruitmentActive}>
+                                    <span>Gönder</span>
+                                </button>
+                            </div>
+                            <div className='recruitment-not-active'>
+                                <span>Üye Alım Takvimi Dışındasınız!</span>
                             </div>
                         </form>
                     </div>

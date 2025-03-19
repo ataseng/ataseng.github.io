@@ -3,6 +3,7 @@ import './homeTeamSection.css'
 import maleAvatar from '../../assets/images/avatars/maleAvatar.png';
 import femaleAvatar from '../../assets/images/avatars/femaleAvatar.png';
 import Data from './HomeTeam.json'
+import { Link } from 'react-router-dom';
 const HomeTeamSection = forwardRef((_, ref) => {
     return (
         <div ref={ref} id='home-team-section' className="home-team-section">
@@ -48,7 +49,7 @@ const HomeTeamSection = forwardRef((_, ref) => {
                 </div>
 
                 <div className="home-team-content-link">
-                    <a href="/takim">Diğer ekip üyeleri için <span>”Ekibimiz”</span> sayfasını ziyaret edin</a>
+                    <Link to={"/takim"}>Diğer ekip üyeleri için <span>”Ekibimiz”</span> sayfasını ziyaret edin</Link>
                 </div>
             </div>
         </div>
