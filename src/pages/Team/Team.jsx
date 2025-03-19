@@ -96,7 +96,7 @@ const Team = () => {
             
         </section>
 
-        <section className='team-join-our-team'>
+        <section id='join-team' className='team-join-our-team'>
             <div className="section-content vertical-content">
                 <h2>Yönetim Ekibimize Katılmak İster Misiniz?</h2>
                 <div className='join-team-content'>

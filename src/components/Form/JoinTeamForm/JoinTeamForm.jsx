@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './JoinTeamForm.css';
 import { isNumeric } from '../../../utils/isNumeric';
+import { useLocation } from 'react-router';
 
 /**
  * JoinTeamForm component renders a form for users to apply to join the team.
@@ -11,12 +12,15 @@ import { isNumeric } from '../../../utils/isNumeric';
 
 const JoinTeamForm = () => {
 
-    const recruitmentActive = true;
+    const recruitmentActive = false;
 
     // const [tempStudentTel, setTempStudentTel] = useState("");
     // const [studentTel, setStudentTel] = useState("0 (___) ___ __ __");
 
     const handleSubmit = e => {
+        if(!recruitmentActive){
+            return;
+        }
         e.preventDefault();
         const targetElements = e.target.elements;
         const studentNo = targetElements.studentNo.value;
@@ -91,6 +95,21 @@ const JoinTeamForm = () => {
     //         setStudentTel(`0 (${first_part}) ${second_part} ${third_part} ${fourth_part}`);
     //     }
     // }, [tempStudentTel]);
+
+    const location = useLocation();
+    
+    const scrollToElement = id => {
+        const element = document.querySelector(id);
+        if (element !== null) {
+            element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        }
+    }
+
+    useEffect(() => {
+        if(location.hash !== ""){
+            scrollToElement(location.hash);
+        }
+    }, [location]);
     
 
     return (
@@ -144,6 +163,9 @@ const JoinTeamForm = () => {
             </div>
             
             <button type='submit' disabled={!recruitmentActive}>Gönder</button>
+            <div className='recruitment-not-active'>
+                <span>Üye Alım Takvimi Dışındasınız!</span>
+            </div>
         </form>
     );
 };
