@@ -12,7 +12,7 @@ import { useLocation } from 'react-router';
 
 const JoinTeamForm = () => {
 
-    const recruitmentActive = false;
+    const recruitmentActive = true;
 
     // const [tempStudentTel, setTempStudentTel] = useState("");
     // const [studentTel, setStudentTel] = useState("0 (___) ___ __ __");
