@@ -60,7 +60,11 @@
     height: 300px;
     box-shadow: 5px 5px 5px 5px rgba(22, 22, 22, 0.4);
     background-color: var(--light-gray);
-    transition: background-color 1s ease;
+    transition: background-color 1s ease, transform 0.2s linear;
+}
+
+.home-team-content-card:hover{
+    transform: scale(1.05);
 }
 
 .dark .home-team-content-card{
