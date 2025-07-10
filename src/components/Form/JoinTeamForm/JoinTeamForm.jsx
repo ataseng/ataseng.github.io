@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './JoinTeamForm.css';
 import { isNumeric } from '../../../utils/isNumeric';
 import { useLocation } from 'react-router';
+import { useSelector } from 'react-redux';
 
 /**
  * JoinTeamForm component renders a form for users to apply to join the team.
@@ -12,13 +13,14 @@ import { useLocation } from 'react-router';
 
 const JoinTeamForm = () => {
 
-    const recruitmentActive = true;
+    const settingList = useSelector(state => state.settings);
+    const { error, loading, settings } = settingList;
 
     // const [tempStudentTel, setTempStudentTel] = useState("");
     // const [studentTel, setStudentTel] = useState("0 (___) ___ __ __");
 
     const handleSubmit = e => {
-        if(!recruitmentActive){
+        if(settings?.RegistrationActive !== '1'){
             return;
         }
         e.preventDefault();
@@ -162,9 +164,9 @@ const JoinTeamForm = () => {
             />
             </div>
             
-            <button type='submit' disabled={!recruitmentActive}>Gönder</button>
+            <button type='submit' disabled={settings?.RegistrationActive !== '1'}>Gönder</button>
             {
-                !recruitmentActive && <div className='recruitment-not-active'>
+                settings?.RegistrationActive !== '1' && <div className='recruitment-not-active'>
                     <span>Üye Alım Takvimi Dışındasınız!</span>
                 </div>
             }

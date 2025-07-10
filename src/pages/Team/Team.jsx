@@ -26,7 +26,6 @@ const Team = () => {
                 </div>
             </div>
             
-
             {/* <CardList /> */}
         </section>
 

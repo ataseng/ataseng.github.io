@@ -37,7 +37,7 @@
 }
 
 .management-content .management-side .management-description{
-    margin-top: 20px;
+    margin-top: 32px;
     text-align: left;
     transition: color 1s ease;
     line-height: 1.5rem;
@@ -93,7 +93,7 @@
     width: 100%;
 }
 
-.form-side input{
+.form-side input, .form-side select{
     border-top: none;
     border-left: none;
     border-right: none;
@@ -107,6 +107,14 @@
 
 .dark .form-side input{
     color: var(--pure-white);
+}
+
+.dark .form-side select{
+    color: var(--pure-white);
+}
+
+.dark .form-side select option{
+    background-color: var(--turquoise);
 }
 
 .managament-section-btn{
