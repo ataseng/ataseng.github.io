@@ -97,6 +97,8 @@ const Home = () => {
             <HomeBillboardSection ref={homeBillboardSectionRef} />
             <HomeTeamSection ref={homeTeamSectionRef} />
             {/* <HomeDiscordSection/> */}
+
+            {/* TODO API */}
             <HomeFeedBackSection ref={homeFeedbackSectionRef} />
             <HomeManagementSection ref={homeManagementSectionRef} />
         </>

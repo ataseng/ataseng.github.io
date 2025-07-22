@@ -17,39 +17,50 @@ import CareerDaysDetail from './pages/Events/CareerDays/CarrerDaysDetail/CareerD
 import HackathonsDetail from "./pages/Events/Hackathons/HackathonsDetail/HackathonsDetail";
 import ScrollToTop from "./utils/ScrollToTop";
 import NotFound from "./pages/NotFound";
-
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getSettings } from "./redux/actions/settingsActions";
 
 function App() {
-  
+  const dispatch = useDispatch();
+  const settingList = useSelector(state => state.settings);
+  const { error, loading, settings } = settingList;
+
+  useEffect(() => {
+
+    dispatch(getSettings());
+
+  }, [dispatch]);
+
   return (
     <>
-        <ScrollToTop />
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/hakkimizda" element={<About />} />
-            <Route path="/emegi-gecenler" element={<Credits />} />
-            <Route path="/takim" element={<Team />} />
-            <Route path="/iletisim" element={<Contact />} />
-            
-            {/* Activities Route */}
-            <Route path="/etkinlikler" element={<Events />} />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hakkimizda" element={<About />} />
+        <Route path="/emegi-gecenler" element={<Credits />} />
+        <Route path="/takim" element={<Team />} />
+        <Route path="/iletisim" element={<Contact />} />
 
-            <Route path="/etkinlikler/yarismalar" element={<Competitions />} />
-            <Route path="/etkinlikler/yarismalar/:title" element={<CompetitionDetail />} />
+        {/* Activities Route */}
+        <Route path="/etkinlikler" element={<Events />} />
 
-            <Route path="/etkinlikler/egitimler" element={<Educations/>} />
-            {/* <Route path="/etkinlikler/egitimler/:title" element={<EducationDetail/>} /> */}
+        <Route path="/etkinlikler/yarismalar" element={<Competitions />} />
+        <Route path="/etkinlikler/yarismalar/:title" element={<CompetitionDetail />} />
 
-            <Route path="/etkinlikler/bootcamps" element={<Bootcamps/>} />
-            <Route path="/etkinlikler/bootcamps/:title" element={<BootcampsDetail/>} />
+        <Route path="/etkinlikler/egitimler" element={<Educations />} />
+        {/* <Route path="/etkinlikler/egitimler/:title" element={<EducationDetail/>} /> */}
 
-            <Route path="/etkinlikler/hackathons" element={<Hackathons/>} />
-            <Route path="/etkinlikler/hackathons/:title" element={<HackathonsDetail/>} />
+        <Route path="/etkinlikler/bootcamps" element={<Bootcamps />} />
+        <Route path="/etkinlikler/bootcamps/:title" element={<BootcampsDetail />} />
 
-            <Route path="/etkinlikler/kariyer-gunleri" element={<CareerDays/>} />
-            <Route path="/etkinlikler/kariyer-gunleri/:title" element={<CareerDaysDetail/>} />
-            <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Route path="/etkinlikler/hackathons" element={<Hackathons />} />
+        <Route path="/etkinlikler/hackathons/:title" element={<HackathonsDetail />} />
+
+        <Route path="/etkinlikler/kariyer-gunleri" element={<CareerDays />} />
+        <Route path="/etkinlikler/kariyer-gunleri/:title" element={<CareerDaysDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }

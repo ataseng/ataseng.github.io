@@ -12,21 +12,20 @@ const HomeManagementSection = forwardRef((_, ref) => {
         }
     );
 
-    const recruitmentActive = false;
+    const recruitmentActive = true;
 
     const handleChange = (e) => {
         const { name, value } = e.target
+        if (value === "")
+            return;
 
         setformData(prevState => ({
             ...prevState,
             [name]: value
-        }))
-
-
+        }));
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
 
         if (formData) {
             setformData({
@@ -64,17 +63,29 @@ const HomeManagementSection = forwardRef((_, ref) => {
 
                                 <input value={formData.fullname} onChange={handleChange} name='fullname' type="text" placeholder='İsim Soyisim' />
                                 <input value={formData.departmant} onChange={handleChange} name='departmant' type="text" placeholder='Bölüm' />
-                                <input value={formData.grade} onChange={handleChange} name='grade' type="text" placeholder='Sınıf' />
-                                <input value={formData.phone} onChange={handleChange} name='phone' type="text" placeholder='Tel' />
+                                {/* <input value={formData.grade} onChange={handleChange} name='grade' type="text" placeholder='Sınıf' /> */}
+                                <select name="grade" id="grade" value={formData.grade} onChange={handleChange}>
+                                    <option value="">Sınıf</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="4+">4+</option>
+                                </select>
+                                <input value={formData.phone} onChange={handleChange} name='phone' type="tel" placeholder='Telefon'/>
                             </div>
                             <div className="managament-section-btn">
                                 <button type='submit' disabled = {!recruitmentActive}>
                                     <span>Gönder</span>
                                 </button>
                             </div>
-                            <div className='recruitment-not-active'>
-                                <span>Üye Alım Takvimi Dışındasınız!</span>
-                            </div>
+                            {
+                                !recruitmentActive &&
+                                <div className='recruitment-not-active'>
+                                    <span>Üye Alım Takvimi Dışındasınız!</span>
+                                </div>
+                            }
+                            
                         </form>
                     </div>
                 </div>
