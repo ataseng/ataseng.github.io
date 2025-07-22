@@ -164,6 +164,35 @@ button:disabled{
     color: #1DA1F2;
 }
 
+.Toastify__toast.Toastify__toast--default,
+.Toastify__toast.Toastify__toast--info{
+    background: var(--turquoise);
+    color: var(--pure-white);
+    font-size: 16px;
+}
+
+.Toastify__toast.Toastify__toast--error{
+    background: #ff8181;
+    color: var(--pure-white);
+    font-size: 16px;
+}
+
+
+.Toastify__toast.Toastify__toast--default button,
+.Toastify__toast.Toastify__toast--info button,
+.Toastify__toast.Toastify__toast--error button{
+    color: white;
+    opacity: 1;
+    border-radius: unset;
+    width: unset;
+    max-width: unset;
+}
+
+.Toastify__toast.Toastify__toast--info svg,
+.Toastify__toast.Toastify__toast--error svg{
+    fill: var(--pure-white);
+}
+
 @media screen and (max-width:1200px) {
     :root{
         /* HomePage font size */

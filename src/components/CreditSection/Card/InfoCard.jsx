@@ -19,7 +19,6 @@ const InfoCard = () => {
     );
 
     return (
-        <div className='container'>
         <div className='info-card'>
             <div className='project-image-box'>
                 <img src={logo} alt="Project Image" className="project-image" />
@@ -27,20 +26,15 @@ const InfoCard = () => {
             {renderTeam("Proje Yöneticisi", teamData.yönetici)}
             {renderTeam("Frontend Ekibi", teamData.webEkibi)}
             {renderTeam("Tasarım Ekibi", teamData.tasarımEkibi)}
-            <div className='container-lower'>
-                {renderTeam("API Ekibi", teamData.apiEkibi)}
-                {renderTeam("Mobil Ekibi", teamData.mobilEkibi)}
-                {renderTeam("Logo Tasarımcısı", teamData.logoTasarımcısı)}
-                <div className='line-dashed'></div>
-                <h2>Teşekkürler</h2>
-                <p>
-                    Bu projenin başarısında emeği geçen herkese en içten teşekkürlerimizi sunarız. Proje yöneticisinden tasarım ekibine,
-                    frontend geliştiricilerden tüm destek verenlere kadar herkesin katkılarıyla bu projeyi hayata geçirdik. Her birinizin
-                    özverili çalışması, yaratıcılığı ve profesyonelliği sayesinde bu noktaya gelebildik.
-                </p>
-            </div>
-
-        </div>
+            {renderTeam("API Ekibi", teamData.apiEkibi)}
+            {renderTeam("Logo Tasarımcısı", teamData.logoTasarımcısı)}
+            <div className='line-dashed'></div>
+            <h2>Teşekkürler</h2>
+            <p style={{textAlign: 'justify'}}>
+                Bu projenin başarısında emeği geçen herkese en içten teşekkürlerimizi sunarız. Proje yöneticisinden tasarım ekibine,
+                frontend geliştiricilerden tüm destek verenlere kadar herkesin katkılarıyla bu projeyi hayata geçirdik. Her birinizin
+                özverili çalışması, yaratıcılığı ve profesyonelliği sayesinde bu noktaya gelebildik.
+            </p>
         </div>
     );
 };

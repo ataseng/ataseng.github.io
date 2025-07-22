@@ -1,24 +1,66 @@
-import React from 'react';
 import { Icon } from "@iconify/react";
 import locationIcon from "@iconify-icons/mdi/map-marker";
 import emailIcon from "@iconify-icons/mdi/email";
 import phoneIcon from "@iconify-icons/mdi/phone";
 import './Contact.css';
+import { toast, ToastContainer } from "react-toastify";
 
 const Contact = () => {
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        const targetElements = e.target.elements;
+        const name = targetElements.name.value;
+        const surname = targetElements.surname.value;
+        const email = targetElements.email.value;
+        const message = targetElements.message.value;
+        
+        const formData = {
+            name,
+            surname,
+            email,
+            message
+        }
+
+        fetch(
+            "https://ataseng.com/api/message_post.php",
+            {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            }
+        )
+            .then(res => {
+                const status = res.status;
+                if (status === 200){
+                    toast.info('Mesajınız başarıyla iletildi!');
+                }
+                else{
+                    toast.error("Bir hata meydana geldi!");
+                }
+                // return res.json();
+            })
+            // .then(data => {
+            //     console.log(data);
+            // });
+    }
+
     return (
         <section id='contact-section'>
             <div className="section-content contact-content">
                 <h2 className='lined-title'>İLETİŞİM</h2>
-                <div className="contact-form contact-inner-content">
+                <form className="contact-form contact-inner-content" onSubmit={handleSubmit}>
                     <div className='contact-form-row'>
-                        <input type="text" placeholder="İsim" name="name" className='input' />
-                        <input type="text" placeholder="Soyisim" name="surname" className='input' />
+                        <input required type="text" placeholder="İsim" name="name" className='input' />
+                        <input required type="text" placeholder="Soyisim" name="surname" className='input' />
                     </div>
-                    <input type="email" placeholder="Email" name="email" className='input' />
-                    <textarea placeholder="Mesajınız" name="message" className='input' />
+                    <input required type="email" placeholder="Email" name="email" className='input' />
+                    <textarea required placeholder="Mesajınız" name="message" className='input' />
                     <button type="submit">Gönder</button>
-                </div>
+                </form>
                 <div className="map contact-inner-content">
                     <iframe
                         title='location'
@@ -42,7 +84,7 @@ const Contact = () => {
                     </div>
                     <div className="info-item">
                         <Icon icon={emailIcon} className='icon-1' />
-                        <p><a href="mailto:ataseng2023@gmail.com">ataseng2023@gmail.com</a></p>
+                        <p><a href="mailto:ataseng2023@gmail.com">destek@ataseng.com</a></p>
                     </div>
                     <div className="info-item">
                         <Icon icon={phoneIcon} className='icon-1' />
@@ -51,6 +93,7 @@ const Contact = () => {
                     
                 </div>
             </div>
+        <ToastContainer position="bottom-right" autoClose={false}/>
         </section>
     );
 };

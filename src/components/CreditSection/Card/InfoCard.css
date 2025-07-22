@@ -1,15 +1,19 @@
 .info-card {
-    position: absolute;
+    position: fixed;
+    top: 0;
     right: 0;
-    max-width: 250px;
-    background-color: #fff;
-    margin-top: 150px;
+    max-width: 240px;
+    background-color: #eee;
     margin-bottom: 0;
     overflow: hidden;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1;
 }
-
-
+/* 
 .info-card::before,
 .info-card::after {
     content: "";
@@ -26,60 +30,34 @@
     box-shadow: 20px 20px 0 0 #fff;
 }
 
-
 .info-card::after {
     top: -20px;
     right: -20px;
     box-shadow: -20px 20px 0 0 #fff;
-}
+} */
 
-.container-lower::before,
-.container-lower::after {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-
-
-
-.container-lower::before {
-    bottom: -20px;
-    left: -20px;
-    box-shadow: 20px -20px 0 0 #ddd;
-}
-
-
-.container-lower::after {
-    bottom: -20px;
-    right: -20px;
-    box-shadow: -20px -20px 0 0 #ddd;
-}
-
-.container-lower {
-    width: 100%;
-    background-color: #ddd;
-}
-
-.project-image-box {
+.info-card .project-image-box {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 27px 10px;
+    padding: 12px 0;
     text-align: center;
 }
 
-.project-image {
+.info-card .project-image-box .project-image {
     width: 80px;
+}
+
+.info-card h2{
+    text-align: center;
 }
 
 .line-dashed {
     border-bottom: 1px dashed #00a9b8;
     margin-top: 10px;
+    width: 100%;
 }
 
 .info-card p {
@@ -99,36 +77,31 @@ a:hover {
 }
 
 .dark .info-card {
-    background-color: #283C4D;
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
-.dark .container-lower {
-    background-color: #16222c;
-    color: #fff;
-}
-
-.dark .info-card::before,
+/* .dark .info-card::before,
 .dark .info-card::after {
     content: "";
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: #16222c;
+    background-color: transparent;
     border-radius: 50%;
 }
 
 .dark .info-card::before {
     top: -20px;
     left: -20px;
-    box-shadow: 20px 20px 0 0 #283C4D;
+    box-shadow: 20px 20px 0 0 rgba(255, 255, 255, 0.1);
 }
 
 
 .dark .info-card::after {
     top: -20px;
     right: -20px;
-    box-shadow: -20px 20px 0 0 #283C4D;
+    box-shadow: -20px 20px 0 0 rgba(255, 255, 255, 0.1);
 }
 
 .dark .container-lower::before,
@@ -139,21 +112,7 @@ a:hover {
     height: 40px;
     background-color: #283C4D;
     border-radius: 50%;
-}
-
-
-.dark .container-lower::before {
-    bottom: -20px;
-    left: -20px;
-    box-shadow: 20px -20px 0 0 #16222c;
-}
-
-
-.dark .container-lower::after {
-    bottom: -20px;
-    right: -20px;
-    box-shadow: -20px -20px 0 0 #16222c;
-}
+} */
 
 @media (max-width: 768px) {
     .info-card {
