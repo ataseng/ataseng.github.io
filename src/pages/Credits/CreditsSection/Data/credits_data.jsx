@@ -4,9 +4,12 @@ export const credits_data = {
     "yönetici": [
         {
             "name": "Osman Durdağ",
+            "title" : "Arş. Gör.",
             "role": "Proje Yöneticisi",
-            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
-            "linkedin": "https://www.linkedin.com",
+            "linkedin": "https://www.linkedin.com/in/osmandurdag/",
+            "github" : "https://github.com/zumrudu-anka",
+            "hackerrank" : "https://www.hackerrank.com/zumrudu_anka",
+            "stackoverflow" : "https://stackoverflow.com/users/12578260/osman-durdag",
             "imageUrl": osman_durdag
         }
     ],

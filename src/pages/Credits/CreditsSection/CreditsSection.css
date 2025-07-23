@@ -13,7 +13,7 @@
     top: 0;
     left: var(--sidebar-width);
     /* 240px => InfoCard */
-    width: calc(100% - var(--sidebar-width) - 240px);
+    width: calc(100% - var(--sidebar-width) - 600px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,4 +56,14 @@
 }
 .dark .credits-section:nth-of-type(2n){
     background-color: #283c4d;
+}
+
+.credits-section .credits-contributors{
+    width: calc(100vw - var(--sidebar-width) - 240px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
 }

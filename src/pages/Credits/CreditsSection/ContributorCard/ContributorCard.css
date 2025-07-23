@@ -1,0 +1,49 @@
+.contributor-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: clamp(120px, 50%, 300px);
+}
+
+.contributor-card .contributor-image {
+    width: 100%;
+    object-fit: contain;
+}
+
+.contributor-card .line {
+    width: 100%;
+    height: 1.5px;
+    background-color: #00A9B8;
+    margin-top: 12px;
+}
+
+.contributor-card h3 {
+    color: #00A9B8;
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+.contributor-card p{
+    font-size: 20px;
+}
+
+/* Dark mode */
+.dark p{
+    color: #fff;
+}
+.dark .bio p{
+    color: #fff;
+}
+/* Resposive */
+@media (max-width:768px){
+    .contributor-card{
+        display: flex;
+        flex-direction: column;
+    }
+    .bio{
+        margin-left: 0px;
+        
+    }
+}
