@@ -1,4 +1,4 @@
-import osmandurdag from "../../assets/images/our_team/osman_durdag.jpg";
+import osmandurdag from "../../assets/images/our_team/osman_durdag.png";
 import teamImage from "../../assets/images/team.jpg";
 
 export const teamData = [
