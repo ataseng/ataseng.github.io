@@ -1,5 +1,3 @@
-// src/pages/Credits.js
-import React from 'react';
 import InfoCard from '../../components/CreditSection/Card/InfoCard';
 import TeamSection from '../../components/CreditSection/TeamSection';
 import teamData from '../../components/CreditSection/Data/CreditData.json';
@@ -13,7 +11,6 @@ const Credits = () => {
         { title: 'Mobil Ekibi', members: teamData.mobilEkibi },
         { title: 'Logo Tasarımcısı', members: teamData.logoTasarımcısı }
     ];
-
 
     let cumulativeIndex = 0;
 
@@ -35,7 +32,6 @@ const Credits = () => {
 
             })}
             <InfoCard />
-
         </>
     );
 };
