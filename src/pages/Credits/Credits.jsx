@@ -1,35 +1,26 @@
 // src/pages/Credits.js
-import React from 'react';
-import InfoCard from '../../components/CreditSection/Card/InfoCard';
-import TeamSection from '../../components/CreditSection/TeamSection';
-import teamData from '../../components/CreditSection/Data/CreditData.json';
+import InfoCard from './CreditSection/InfoCard/InfoCard';
+import CreditsSection from './CreditSection/CreditsSection';
+import { credits_data } from './CreditSection/Data/credits_data';
 
 const Credits = () => {
     const teams = [
-        { title: 'Yönetici', members: teamData.yönetici },
-        { title: 'Web Ekibi', members: teamData.webEkibi },
-        { title: 'Tasarım Ekibi', members: teamData.tasarımEkibi },
-        { title: 'API Ekibi', members: teamData.apiEkibi },
-        { title: 'Mobil Ekibi', members: teamData.mobilEkibi },
-        { title: 'Logo Tasarımcısı', members: teamData.logoTasarımcısı }
+        { title: 'Yönetici', members: credits_data.yönetici },
+        { title: 'Web Ekibi', members: credits_data.webEkibi },
+        { title: 'Tasarım Ekibi', members: credits_data.tasarımEkibi },
+        { title: 'API Ekibi', members: credits_data.apiEkibi },
+        { title: 'Mobil Ekibi', members: credits_data.mobilEkibi },
+        { title: 'Logo Tasarımcısı', members: credits_data.logoTasarımcısı }
     ];
-
-
-    let cumulativeIndex = 0;
 
     return (
         <>
             {teams.map((team, index) => {
-                const currentIndex = cumulativeIndex;
-                cumulativeIndex += team.members.length;
-                const isReverse = index % 2 !== 0;
                 return (
-                    <TeamSection
-                        key={index}
+                    <CreditsSection
+                        key={`credits_section${index}`}
                         title={team.title}
                         members={team.members}
-                        globalIndexStart={currentIndex}
-                        reverse={isReverse}
                     />
                 );
 

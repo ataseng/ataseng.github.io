@@ -1,33 +1,47 @@
-.team-section {
+.credits-section {
     margin: 0;
-    padding-left: 120px;
     background-color: #ddd;
 }
-.team-section-reverse{
+
+.credits-section:nth-of-type(2n){
     background-color: #fff;
 }
-.team-title {
+
+.credits-section .credits-content{
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+    left: var(--sidebar-width);
+    /* 240px => InfoCard */
+    width: calc(100% - var(--sidebar-width) - 240px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.credits-title {
     display: flex;
     flex-direction: column;
     background-color: #00A9B8;
     border-radius: 0 0 12px 12px;
-    margin: 0 0 10px 10px;
     width: 100%;
     max-width: 180px;
+    position: absolute;
+    top: 0;
+    left: 12px;
 }
 
-.team-title .line-dashed {
+.credits-title .line-dashed {
     position: relative;    
     border-style: dashed;
     width: 100%;
-    max-width: 175px;
-    height: 0px;
     color: #fff;
     top: 30px;
-    background-color: var();
 } 
 
-.team-title h3 {
+.credits-title h3 {
     color: white;
     padding: 8px;
     font-size: 1.1rem;
@@ -37,9 +51,9 @@
     margin-top: 50px;
     text-transform: uppercase;
 }
-.dark .team-section{
+.dark .credits-section{
     background-color: #16222c;
 }
-.dark .team-section-reverse{
+.dark .credits-section:nth-of-type(2n){
     background-color: #283c4d;
 }

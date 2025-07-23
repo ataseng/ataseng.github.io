@@ -1,11 +1,13 @@
-{
+import osman_durdag from "../../../../assets/images/our_team/osman_durdag.png";
+
+export const credits_data = {
     "yönetici": [
         {
             "name": "Osman Durdağ",
             "role": "Proje Yöneticisi",
             "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://placehold.co/400"
+            "imageUrl": osman_durdag
         }
     ],
     "webEkibi": [
