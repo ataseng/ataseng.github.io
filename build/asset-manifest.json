@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e313bfa3.css",
+    "main.js": "/static/js/main.e4d61d0b.js",
+    "static/media/BigShoulders_VariableFont.ttf": "/static/media/BigShoulders_VariableFont.1164c4ebcfec96bdd67b.ttf",
+    "static/media/background.jpg": "/static/media/background.9e4cf1efdc1992ccd912.jpg",
+    "static/media/team_sections_1.jpg": "/static/media/team_sections_1.f7f3ca9cfbda6adf545d.jpg",
+    "static/media/team_sections_2.jpg": "/static/media/team_sections_2.b963f51b8e5df174dd00.jpg",
+    "static/media/firstSection.jpg": "/static/media/firstSection.2652a075081f90d39adf.jpg",
+    "static/media/fourthSection.jpg": "/static/media/fourthSection.8537e8c3750ee49f3cf7.jpg",
+    "static/media/thirdSection.jpg": "/static/media/thirdSection.a63cd47baabd395f6a44.jpg",
+    "static/media/secondSection.jpg": "/static/media/secondSection.88b25dbfc1eaa56f4b57.jpg",
+    "static/media/sponsorSection.jpg": "/static/media/sponsorSection.3b1962463315781227cc.jpg",
+    "static/media/aboutSection.jpg": "/static/media/aboutSection.a7119f8a4e1d44f3cb9f.jpg",
+    "static/media/femaleAvatar.png": "/static/media/femaleAvatar.debc348a6aac6297e60d.png",
+    "static/media/osman_durdag.png": "/static/media/osman_durdag.f36913e84e18b0a200e9.png",
+    "static/media/team.jpg": "/static/media/team.f2b0ebb632d505011004.jpg",
+    "static/media/maleAvatar.png": "/static/media/maleAvatar.2d762618f89ab438be97.png",
+    "static/media/EducatorImage.jpg": "/static/media/EducatorImage.110b2d1a08b00fd1bfa2.jpg",
+    "static/media/bootcamps-Image.jpg": "/static/media/bootcamps-Image.288e7b22a5bc8a07e3dc.jpg",
+    "static/media/ataseng_light.png": "/static/media/ataseng_light.ec36aa5411a9bb017920.png",
+    "static/media/ataseng_dark.png": "/static/media/ataseng_dark.57d474a6827a128be99e.png",
+    "static/media/universityLogo.png": "/static/media/universityLogo.fe2bee876a0df72e4780.png",
+    "static/media/universityLogo-darkTheme.png": "/static/media/universityLogo-darkTheme.71ddd993015d84d5de65.png",
+    "static/media/logo2.png": "/static/media/logo2.0e290cc7c213d773e32f.png",
+    "index.html": "/index.html",
+    "main.e313bfa3.css.map": "/static/css/main.e313bfa3.css.map",
+    "main.e4d61d0b.js.map": "/static/js/main.e4d61d0b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e313bfa3.css",
+    "static/js/main.e4d61d0b.js"
+  ]
+}
