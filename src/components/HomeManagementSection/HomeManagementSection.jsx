@@ -1,5 +1,6 @@
 import React, { forwardRef, useState } from 'react'
 import './homeManagementSection.css'
+import JoinTeamForm from '../Form/JoinTeamForm/JoinTeamForm';
 
 
 const HomeManagementSection = forwardRef((_, ref) => {
@@ -56,37 +57,11 @@ const HomeManagementSection = forwardRef((_, ref) => {
                         Teşekkür ederiz!
                     </div>
                 </div>
+                
                 <div className="form-content">
                     <div className="form-side">
-                        <form onSubmit={handleSubmit}>
-                            <div className="input-area" >
-
-                                <input value={formData.fullname} onChange={handleChange} name='fullname' type="text" placeholder='İsim Soyisim' />
-                                <input value={formData.departmant} onChange={handleChange} name='departmant' type="text" placeholder='Bölüm' />
-                                {/* <input value={formData.grade} onChange={handleChange} name='grade' type="text" placeholder='Sınıf' /> */}
-                                <select name="grade" id="grade" value={formData.grade} onChange={handleChange}>
-                                    <option value="">Sınıf</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="4+">4+</option>
-                                </select>
-                                <input value={formData.phone} onChange={handleChange} name='phone' type="tel" placeholder='Telefon'/>
-                            </div>
-                            <div className="managament-section-btn">
-                                <button type='submit' disabled = {!recruitmentActive}>
-                                    <span>Gönder</span>
-                                </button>
-                            </div>
-                            {
-                                !recruitmentActive &&
-                                <div className='recruitment-not-active'>
-                                    <span>Üye Alım Takvimi Dışındasınız!</span>
-                                </div>
-                            }
-                            
-                        </form>
+                        <JoinTeamForm />
+                        
                     </div>
                 </div>
 

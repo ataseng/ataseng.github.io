@@ -21,6 +21,7 @@
     justify-content: space-between;
     align-items: center;
     transition: background-color 1s ease;
+    gap: 16px;
 }
 
 .dark .management-content{
@@ -55,7 +56,7 @@
     transition: background-color 1s ease;
     border-radius: 5px;
     border: 1px solid var(--turquoise);
-    padding: 16px 32px;
+    /* padding: 16px 32px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,13 +73,13 @@
     align-items: center;
 }
 
-.form-side form{
+.management-content .form-side form{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    /* padding: 24px; */
     gap: 24px;
 }
 
