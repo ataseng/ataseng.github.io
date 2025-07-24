@@ -10,12 +10,12 @@ $db = new PDO($db_host_and_name, $username, $password,
     [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
 
 // Get table name for section
-$sql = "SELECT edc.*, edr.Name as Educator_Name, edr.Surname as Educator_Surname, edr.Image as Educator_Image, edr.Expertise as Educator_Expertise FROM Education as edc INNER JOIN Educator as edr ON edc.Educator_ID = edr.ID";
+$sql = "SELECT edc.*, edr.Name as Educator_Name, edr.Surname as Educator_Surname, edr.Image as Educator_Image, edr.Expertise as Educator_Expertise FROM Education as edc LEFT JOIN Educator as edr ON edc.Educator_ID = edr.ID";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 
 if ($stmt && $stmt->rowCount() > 0) {
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 if($result && $result != NULL){

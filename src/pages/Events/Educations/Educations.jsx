@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import EducationCard from '../../../components/EducationCard/EducationCard'
 import SearchFilter from '../../../components/EducationCard/EducationSearchFilter/SearchFilter'
 import EducationSelectFilter from '../../../components/EducationCard/EducationSelectFilter/EducationSelectFilter';
@@ -8,6 +8,7 @@ import "./Educations.css";
 const Educations = () => {
   const [filtered, setFiltered] = useState("");
   const [select, setSelect] = useState("all");
+  const [educations, setEducations] = useState([]);
 
   useEffect(() => {
     // setLoading(true);
@@ -16,10 +17,10 @@ const Educations = () => {
       .then(data => {
         if (data.message === "success") {
           const content = data.content;
-          console.log(data);
+          setEducations(content);
         }
         else {
-          console.log(data.message);
+            console.error(data.message);
         }
         // setLoading(false);
       });
@@ -32,7 +33,7 @@ const Educations = () => {
           <EducationSelectFilter select={select} setSelect={setSelect} />
           <SearchFilter setFiltered={setFiltered} />
         </div>
-        <EducationCard select={select} filtered={filtered} />
+        <EducationCard select={select} filtered={filtered} educations={educations}/>
       </div>
     </div>
   )

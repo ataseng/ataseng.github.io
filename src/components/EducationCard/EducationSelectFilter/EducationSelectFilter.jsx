@@ -4,37 +4,33 @@ import './EducationSelectFilter.css'
 const EducationSelectFilter = ({ select, setSelect }) => {
   const [openSelect, setOpenSelect] = useState(false)
 
-  const openModal = () => {
-    setOpenSelect(!openSelect)
-  }
-
   return (
     <>
-      <div onClick={openModal} className="selectFilter">
+      <div onClick={() => setOpenSelect(!openSelect)} className="selectFilter">
         <div className="select">
-          <p>{(select === "active" && "Aktif Yarışmalar") || (select === "deactive" && "Pasif Yarışamalar") || (select === "all" && "Hepsi")}</p>
+          <p>{(select === "active" && "Aktif Eğitimler") || (select === "passive" && "Pasif Eğitimler") || (select === "all" && "Hepsi")}</p>
           <i><MdArrowDropDown /></i>
         </div>
-
-      </div>
-      <div className={`option ${openSelect === true ? "active" : ''}`}>
+        <div className={`option ${openSelect === true ? "active" : ''}`}>
         <div className="option-menu">
           <ul>
             <li onClick={() => {
-              openModal();
+              setOpenSelect(!openSelect);
               setSelect("active")
             }}>Aktif Yarışmalar</li>
             <li onClick={() => {
-              openModal()
-              setSelect("deactive")
-            }}>Pasif Yarışamalar</li>
+              setOpenSelect(!openSelect);
+              setSelect("passive")
+            }}>Pasif Yarışmalar</li>
             <li onClick={() => {
-              openModal()
+              setOpenSelect(!openSelect);
               setSelect("all")
             }}>Hepsi</li>
           </ul>
         </div>
       </div>
+      </div>
+      
     </>
   )
 }

@@ -10,16 +10,13 @@ const EducationButton = ({ item,setmodalIsOpen,setSelectedItem }) => {
     if(item.isActive){
       setSelectedItem(item)
       setmodalIsOpen(true)
-
     }
 
-
-    
   }
   return (
     <>
       <button onClick={handleClick} className='education-btn'>
-        {`${item.isActive === true ? "Başvur" : "Sonuçları Gör"} `}
+        {`${item.Status === "active" ? "Başvur" : "Sonuçları Gör"} `}
       </button>
     </>
   );

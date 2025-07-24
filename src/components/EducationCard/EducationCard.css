@@ -1,9 +1,12 @@
 .education-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+   /* display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(580px, 1fr)); */
+   display: flex;
+   flex-wrap: wrap;
    gap: 20px;
-   margin-left: 40px;
-   padding: 35px;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
 }
 .education-card{
     width: 580px;

@@ -19,3 +19,10 @@
     padding: 36px;
     gap: 24px;
 }
+
+.educations-section .educations-content .educations-section-filter-area{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

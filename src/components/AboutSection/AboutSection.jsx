@@ -5,7 +5,6 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import Loader from '../Loader/Loader';
 
 const AboutSection = forwardRef((props, ref) => {
-    
     return (
         <>
             <div ref={ref} id='about-section' className="about-section">
