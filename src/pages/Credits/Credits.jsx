@@ -1,19 +1,20 @@
 import InfoCard from './CreditsSection/InfoCard/InfoCard';
 import CreditsSection from './CreditsSection/CreditsSection';
 import { credits_data } from './CreditsSection/Data/credits_data';
+import "./Credits.css";
 
 const Credits = () => {
     const teams = [
-        { title: 'Yönetici', contributors: credits_data.yönetici },
-        { title: 'Web Ekibi', contributors: credits_data.webEkibi },
-        { title: 'Tasarım Ekibi', contributors: credits_data.tasarımEkibi },
-        { title: 'API Ekibi', contributors: credits_data.apiEkibi },
-        { title: 'Mobil Ekibi', contributors: credits_data.mobilEkibi },
-        { title: 'Logo Tasarımcısı', contributors: credits_data.logoTasarımcısı }
+        { title: 'Project Consultant', contributors: credits_data.project_consultant },
+        { title: 'Frontend Team', contributors: credits_data.frontend_team },
+        { title: 'Backend Team', contributors: credits_data.backend_team },
+        // { title: 'Mobil Ekibi', contributors: credits_data.mobilEkibi },
+        { title: 'DESIGN TEAM', contributors: credits_data.designers },
+        { title: 'Logo DESIGNER', contributors: credits_data.logoDesigner }
     ];
 
     return (
-        <>
+        <div id='credits_page'>
             {teams.map((team, index) => {
                 return (
                     <CreditsSection
@@ -22,10 +23,9 @@ const Credits = () => {
                         contributors={team.contributors}
                     />
                 );
-
             })}
             <InfoCard />
-        </>
+        </div>
     );
 };
 

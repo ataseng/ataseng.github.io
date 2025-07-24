@@ -12,9 +12,18 @@
     object-fit: contain;
 }
 
+.contributor-card .contributor-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--section-text);
+    margin-top: 12px;
+}
+
 .contributor-card .line {
     width: 100%;
-    height: 1.5px;
+    height: 1px;
     background-color: #00A9B8;
     margin-top: 12px;
 }
@@ -22,11 +31,12 @@
 .contributor-card h3 {
     color: #00A9B8;
     margin-top: 8px;
-    font-size: 20px;
+    font-size: var(--section-text);
+    text-align: center;
 }
 
 .contributor-card p{
-    font-size: 20px;
+    font-size: var(--section-text);
 }
 
 /* Dark mode */
@@ -36,14 +46,29 @@
 .dark .bio p{
     color: #fff;
 }
-/* Resposive */
-@media (max-width:768px){
+
+/* @media (max-width:1200px){
     .contributor-card{
         display: flex;
         flex-direction: column;
     }
-    .bio{
-        margin-left: 0px;
-        
+} */
+
+/* Resposive */
+@media (max-width:800px){
+
+    .contributor-card{
+        width: fit-content;
+    }
+    .contributor-card .contributor-image{
+        width: 120px;
+    }
+
+    .contributor-card h3,
+    .contributor-card p{
+        font-size: 12px;
+    }
+    .contributor-card .contributor-social{
+        font-size: 16px;
     }
 }

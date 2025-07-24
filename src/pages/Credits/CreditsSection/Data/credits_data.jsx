@@ -1,76 +1,118 @@
 import osman_durdag from "../../../../assets/images/our_team/osman_durdag.png";
 
 export const credits_data = {
-    "yönetici": [
+    "project_consultant": [
         {
             "name": "Osman Durdağ",
-            "title" : "Arş. Gör.",
-            "role": "Proje Yöneticisi",
-            "linkedin": "https://www.linkedin.com/in/osmandurdag/",
-            "github" : "https://github.com/zumrudu-anka",
-            "hackerrank" : "https://www.hackerrank.com/zumrudu_anka",
-            "stackoverflow" : "https://stackoverflow.com/users/12578260/osman-durdag",
+            "title": "Arş. Gör.",
+            "department" : "Yazılım Mühendisliği",
+            "role": "Solution Architect & Technical Mentor",
+            social: [
+                {
+                    "href": "https://www.linkedin.com/in/osmandurdag/",
+                    "icon": "mdi:linkedin",
+                    "className": "linkedin-icon"
+                },
+                {
+                    "href": "https://github.com/zumrudu-anka",
+                    "icon": "mdi:github",
+                    "className": "github-icon"
+                },
+                {
+                    "href": "https://osmandurdag.com",
+                    "icon": "mdi:earth",
+                    "className": "website-icon"
+                }
+            ],
             "imageUrl": osman_durdag
         }
     ],
-    "webEkibi": [
+    "frontend_team": [
         {
-            "name": "Mehmet Demir",
+            "name": "Alperen İLGAZ",
+            title: "Öğrenci",
+            department: "Yazılım Mühendisliği",
             "role": "Frontend Developer",
-            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://placehold.co/400"
+            "imageUrl": ""
         },
         {
-            "name": "Ayşe Kaya",
+            "name": "Melisa YALÇİNKAYA",
+            title: "Öğrenci",
+            department: "Yazılım Mühendisliği",
             "role": "Frontend Developer",
-            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://placehold.co/400"
-            
+            "imageUrl": ""
+
         }
     ],
-    "tasarımEkibi": [
+    "backend_team": [
         {
-            "name": "Zeynep Yılmaz",
-            "role": "Tasarımcı",
-            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "name": "Şuheda KARA",
+            title: "Öğrenci",
+            department: "Yazılım Mühendisliği",
+            "role": "API Developer",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://placehold.co/400"            
+            "imageUrl": "",
+            gender : "female"
+        }
+    ],
+    // "mobilEkibi": [
+    //     {
+    //         "name": "Zeynep Yılmaz",
+    //         "role": "Logo Tasarımcısı",
+    //         "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+    //         "linkedin": "https://www.linkedin.com",
+    //         "imageUrl": "https://via.placeholder.com/400x500"
+    //     }
+    // ],
+    "designers": [
+        {
+            "name": "Alperen İLGAZ",
+            title: "Öğrenci",
+            department: "Yazılım Mühendisliği",
+            "role": "UI/UX Designer",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "",
+            gender : "male"
         },
         {
-            "name": "Zeynep Yılmaz",
-            "role": "Logo Tasarımcısı",
-            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
+            "name": "Aybuke Yıldız ŞAHİNOĞLU",
+            title: "Öğrenci",
+            department: "Yazılım Mühendisliği",
+            "role": "UI/UX Designer",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://placehold.co/400"
+            "imageUrl": "",
+            gender : "female"
+        },
+        {
+            "name": "Numan Taha KOTAN",
+            title: "Öğrenci",
+            department: "Yazılım Mühendisliği",
+            "role": "UI/UX Designer",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "",
+            gender : "male"
+        },
+        {
+            "name": "Sena BAYRAMOĞLU",
+            title: "Öğrenci",
+            department: "Yazılım Mühendisliği",
+            "role": "UI/UX Designer",
+            "linkedin": "https://www.linkedin.com",
+            "imageUrl": "",
+            gender : "female"
         }
     ],
-    "apiEkibi": [
+    "logoDesigner": [
         {
-            "name": "Zeynep Yılmaz",
+            "name": "Halil İbrahim YILMAZ",
+            title: "Arş. Gör.",
+            department: "Yazılım Mühendisliği",
             "role": "Logo Tasarımcısı",
-            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://placehold.co/400"
-        }
-    ],
-    "mobilEkibi": [
-        {
-            "name": "Zeynep Yılmaz",
-            "role": "Logo Tasarımcısı",
-            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
-            "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://via.placeholder.com/400x500"
-        }
-    ],
-    "logoTasarımcısı": [
-        {
-            "name": "Zeynep Yılmaz",
-            "role": "Logo Tasarımcısı",
-            "bio": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente molestiae alias voluptate, aliquid temporibus laborum obcaecati atque, ipsum quam, nesciunt libero totam sunt incidunt beatae omnis corrupti debitis repudiandae odio.",
-            "linkedin": "https://www.linkedin.com",
-            "imageUrl": "https://via.placeholder.com/400x500"
+            "imageUrl": "",
+            gender : "male"
         }
     ]
 }

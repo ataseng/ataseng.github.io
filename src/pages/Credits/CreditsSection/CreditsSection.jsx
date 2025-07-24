@@ -17,12 +17,11 @@ const CreditsSection = ({ title, contributors }) => {
                                 key={`contributor_${index}`}
                                 name={contributor.name}
                                 title = {contributor.title}
+                                department = {contributor.department}
                                 role={contributor.role}
                                 imageUrl={contributor.imageUrl}
-                                linkedin={contributor.linkedin}
-                                github={contributor.github}
-                                hackerrank={contributor.hackerrank}
-                                stackoverflow={contributor.stackoverflow}
+                                social = {contributor.social}
+                                gender = {contributor.gender}
                             />
                         );
                     })}

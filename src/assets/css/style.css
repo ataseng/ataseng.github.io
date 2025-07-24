@@ -32,6 +32,7 @@
 
     --feedback-star: 40px;
 
+    --info-card-width: 400px;
 }
 
 body{
@@ -150,6 +151,7 @@ button:disabled{
 
 .github-icon:hover{
     color: #2dba4e;
+    color: #0e76a8;
 }
 
 .youtube-icon:hover{
@@ -162,6 +164,7 @@ button:disabled{
 
 .website-icon:hover{
     color: #1DA1F2;
+    color: #0e76a8;
 }
 
 .Toastify__toast.Toastify__toast--default,
@@ -193,6 +196,20 @@ button:disabled{
     fill: var(--pure-white);
 }
 
+@media screen and (max-width:1400px) {
+    :root{
+        /* HomePage font size */
+        --home-title:28px;
+        --section-title:36px;
+        --section-text:16px;
+        --section-list:16px;
+
+        --feedback-star: 32px;
+
+        --info-card-width: 300px;
+    }
+}
+
 @media screen and (max-width:1200px) {
     :root{
         /* HomePage font size */
@@ -202,6 +219,8 @@ button:disabled{
         --section-list:16px;
 
         --feedback-star: 32px;
+
+        --info-card-width: 240px;
     }
 
     section .section-content{
@@ -215,7 +234,6 @@ button:disabled{
     section .section-content .text-content{
         width: 90%;
     }
-
 }
 
 @media screen and (max-width:800px) {
@@ -227,6 +245,7 @@ button:disabled{
         --section-list:14px;
 
         --feedback-star: 24px;
+
     }
 }
 
@@ -239,6 +258,8 @@ button:disabled{
         --section-list:12px;
 
         --feedback-star: 20px;
+
+        --info-card-width: 160px;
     }
 
     section .section-content{
