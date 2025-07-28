@@ -16,23 +16,29 @@ const EducationCardItem = ({ item, setmodalIsOpen, setSelectedItem }) => {
                     <h3>{item.Title}</h3>
                 </div>
                 <div className="education-content">
-                    <h4>Eğitim İçeriği :</h4>
-                    <span>{item.Content}</span>
+                    <h4>Eğitim İçeriği</h4>
+                    <span className='h4-double-dot'>:</span>
+                    <span className='education-card-inner-content'>{item.Content}</span>
                 </div>
                 <div className="education-date">
-                    <h4>Eğitim Tarihi :</h4>
-                    <span>{item.Date}</span>
+                    <h4>Eğitim Tarihi</h4>
+                    <span className='h4-double-dot'>:</span>
+                    <span className='education-card-inner-content'>{item.Date}</span>
                 </div>
                 <div className="education-location">
-                    <h4>Eğitim Adresi :</h4>
-                    <span>{item.Location}</span>
+                    <h4>Eğitim Adresi</h4>
+                    <span className='h4-double-dot'>:</span>
+                    <span className='education-card-inner-content'>{item.Location}</span>
+                </div>
+
+                <div className="education-last-date">
+                    <h4>Son Başvuru</h4>
+                    <span className='h4-double-dot'>:</span>
+                    <span className='education-card-inner-content'>{item.Last_Application}</span>
                 </div>
             </div>
 
-            <div className="education-last-date">
-                <h4>Son Başvuru :</h4>
-                <span>{item.Last_Application}</span>
-            </div>
+            
 
             <div className="education-button">
                 <EducationButton 

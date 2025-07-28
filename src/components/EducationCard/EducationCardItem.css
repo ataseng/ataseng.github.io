@@ -1,7 +1,9 @@
-.educator-image img {
-    clip-path: polygon(0 0, 100% 0, 46% 100%, 0 100%);
 
+.educator-image img {
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
     border-radius: 10px 0 0 10px;
+    height: 100%;
+    width: 200px;
 }
 
 .education-card-info {
@@ -9,21 +11,21 @@
     flex-direction: column;
     justify-content: flex-start;
     gap: 16px;
-    margin-top: 16px;
+    padding: 16px 0;
 }
 
 .education-card-title {
-    font-size: 16px;
+    font-size: var(--section-text);
     text-align: center;
     color: var(--turquoise);
 }
 
 .education-content,
 .education-date,
-.education-location {
+.education-location,
+.education-last-date {
     display: flex;
-    align-items: center;
-    margin-left: -30px;
+    align-items: flex-start;
 }
 
 .education-date span{
@@ -32,10 +34,11 @@
 
 .education-content h4,
 .education-date h4,
-.education-location h4 {
-    font-size: 14px;
+.education-location h4,
+.education-last-date h4 {
+    font-size: var(--section-list);
     flex-shrink: 0;
-    min-width: 100px;
+    width: 90px;
     color: var(--turquoise);
 }
 
@@ -43,11 +46,11 @@
 .education-date span,
 .education-last-date span,
 .education-location span {
-    font-size: 12px;
+    font-size: var(--section-list);
     transition: color 0.5s ease, color 0.5s ease;
 }
 
-.education-last-date {
+/* .education-last-date {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,26 +59,17 @@
     left: 164px;
     bottom: 8px;
     color: darkred;
-}
-
-.education-last-date h4 {
-    font-size: 14px;
-    min-width: 100px;
-    transition: color 0.5s ease, color 0.5s ease;
-}
+} */
 
 .education-last-date span {
     letter-spacing: 2px;
     font-family: monospace;
-    transition: color 0.5s ease, color 0.5s ease;
-    font-style: italic;
-    color: darkred;
 }
 
 .education-button {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 12px;
+    right: 12px;
 }
 
 .dark .education-content span,
@@ -91,4 +85,8 @@
 
 .dark .education-last-date h4 {
     color: #ff8181;
+}
+
+.education-card-inner-content{
+    padding-left: 4px;
 }

@@ -9,8 +9,8 @@
    width: 100%;
 }
 .education-card{
-    width: 580px;
-    height: 201px;
+    width: 600px;
+    height: 260px;
     background-color: var(--light-gray);
     border-radius: 10px; 
     position: relative;
@@ -19,7 +19,7 @@
 }
 .education-card-wrap{
     display: flex;
-    
+    height: 100%;
 }
 .dark .education-card{
     background-color: var(--dark-slate);
