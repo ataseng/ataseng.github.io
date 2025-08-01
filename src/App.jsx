@@ -20,6 +20,7 @@ import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSettings } from "./redux/actions/settingsActions";
+import Login from "./pages/Login/Login";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,11 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/" element={<Home />} /> */}
+
+
         <Route path="/hakkimizda" element={<About />} />
         <Route path="/emegi-gecenler" element={<Credits />} />
         <Route path="/takim" element={<Team />} />
@@ -59,6 +65,8 @@ function App() {
 
         <Route path="/etkinlikler/kariyer-gunleri" element={<CareerDays />} />
         <Route path="/etkinlikler/kariyer-gunleri/:title" element={<CareerDaysDetail />} />
+
+        
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
