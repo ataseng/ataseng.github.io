@@ -1,8 +1,13 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import "./Login.css";
+import { useGoogleLogin } from '@react-oauth/google';
 
 const Login = () => {
+
+    const login = useGoogleLogin({
+        onSuccess: tokenResponse => console.log(tokenResponse),
+    });
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -61,6 +66,9 @@ const Login = () => {
                         <input required type="password" id='password' name='password' />
                     </div>
                     <button type='submit'>Gönder</button>
+                    <button onClick={() => login()}>
+                        Google ile Giriş Yap
+                    </button>
                 </form>
             </div>
         </div>
