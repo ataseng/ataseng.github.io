@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import data from '../Data/CompetitionsData.json';
+import { competitionsData } from '../Data/CompetitionsData';
 import CompetitionsCard from '../CompetitionsCard';
 import CompetitionSearchFilter from '../CompetitionSearchFilter/CompetitionSearchFilter';
 import CompetitionSelectFilter from '../CompetitionSelectFilter/CompetitionSelectFilter';
@@ -19,7 +19,7 @@ const CompetitionList = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const filteredData = data.filter((item) => {
+    const filteredData = competitionsData.filter((item) => {
         const matchesSearch = item.title && item.title.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesStatus = (select === 'all') || (item.status && select === item.status);
         return matchesSearch && matchesStatus;

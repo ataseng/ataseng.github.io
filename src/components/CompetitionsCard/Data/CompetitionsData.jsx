@@ -1,7 +1,9 @@
-[
+import competitionsImage from "../../../assets/images/Competitons.jpg";
+
+export const competitionsData = [
     {
         "id": 1,
-        "image": "src/assets/images/Competitions.jpg",
+        "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
         "title": "Geleneksel Algoritma Yarışması 1",
         "description": "lorem lorem loreem lorem",
@@ -12,7 +14,7 @@
     },
     {
         "id": 2,
-        "image": "src/assets/images/Competitions.jpg",
+        "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
         "title": "Geleneksel Algoritma Yarışması 2",
         "description": "lorem lorem loreem lorem",
@@ -23,7 +25,7 @@
     },
     {
         "id": 3,
-        "image": "src/assets/images/Competitions.jpg",
+        "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
         "title": "Web Patikası 3",
         "description": "lorem lorem loreem lorem",
@@ -34,7 +36,7 @@
     },
     {
         "id": 4,
-        "image": "src/assets/images/Competitions.jpg",
+        "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
         "title": "Geleneksel Algoritma Yarışması 4",
         "description": "lorem lorem loreem lorem",
@@ -45,7 +47,7 @@
     },
     {      
         "id": 5,
-        "image": "src/assets/images/Competitions.jpg",
+        "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
         "title": "Geleneksel Algoritma Yarışması 5",
         "description": "lorem lorem loreem lorem",

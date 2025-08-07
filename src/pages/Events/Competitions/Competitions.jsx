@@ -1,5 +1,5 @@
 import './Competitions.css';
-import Data from '../../../components/CompetitionsCard/Data/CompetitionsData.json';
+import Data from '../../../components/CompetitionsCard/Data/CompetitionsData';
 import CompetitionList from '../../../components/CompetitionsCard/CompetitionList/CompetitionList'
 import { Link } from 'react-router-dom';
 

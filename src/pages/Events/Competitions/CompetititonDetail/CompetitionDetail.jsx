@@ -1,5 +1,5 @@
 import { useParams } from 'react-router'
-import Data from '../../../../components/CompetitionsCard/Data/CompetitionsData.json'
+import { competitionsData } from '../../../../components/CompetitionsCard/Data/CompetitionsData';
 
 const CompetitionDetail = () => {
   
@@ -11,7 +11,7 @@ const CompetitionDetail = () => {
 
   
 
-  const competition = Data.find(item => item.title === formattedTitle);
+  const competition = competitionsData.find(item => item.title === formattedTitle);
 
   if(!competition){
     return <h2>Competition Not Found</h2>;
@@ -19,13 +19,13 @@ const CompetitionDetail = () => {
 
   return (
     <>
-    <ul>
+    {/* <ul>
       <li>{competition.title}</li>
       <li>{competition.content}</li>
       <li>{competition.location}</li>
       <li>{competition.date}</li>
       <li>{competition.time}</li>
-      </ul>
+      </ul> */}
     </>
   )
 };
