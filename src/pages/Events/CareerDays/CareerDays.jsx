@@ -1,17 +1,19 @@
 import { useState } from "react";
 import CarrerDaysCard from "../../../components/CarrerDaysCard/CarrerDaysCard";
-import SearchFilter from "../../../components/EducationCard/EducationSearchFilter/SearchFilter";
-import EducationSelectFilter from "../../../components/EducationCard/EducationSelectFilter/EducationSelectFilter";
+import Filters from "../../../components/Filters/Filters";
 
 const CareerDays = () => {
     const [filtered, setFiltered] = useState("")
-    const [select, setSelect] = useState("all")
+    const [selected, setSelected] = useState("all");
+    const selectMenu = {
+        "active": "Aktif Kariyer Günleri",
+        "passive" : "Pasif Kariyer Günleri",
+        "all" : "Hepsi"
+    };
     return (
         <div className="sidebar-margin">
-            
-           <EducationSelectFilter select={select} setSelect={setSelect}/>
-            <SearchFilter setFiltered={setFiltered}/>
-            <CarrerDaysCard select={select} filtered={filtered}/>
+            <Filters selectMenu={selectMenu} selected={selected} setSelected={setSelected} setFiltered={setFiltered} searchPlaceHolder='Kariyer Günü Ara...'/>
+            <CarrerDaysCard select={selected} filtered={filtered}/>
         </div>
     )
 };

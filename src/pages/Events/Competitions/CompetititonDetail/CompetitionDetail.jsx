@@ -1,6 +1,5 @@
 import { useParams } from 'react-router'
-import { competitionsData } from '../../../../components/CompetitionsCard/Data/CompetitionsData';
-
+import { competitionsData } from '../components/Data/CompetitionsData';
 const CompetitionDetail = () => {
   
   const {title} = useParams();

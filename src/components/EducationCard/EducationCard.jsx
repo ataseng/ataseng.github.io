@@ -4,13 +4,13 @@ import './EducationCard.css';
 import EducationCardItem from './EducationCardItem';
 import EducationModal from './EducationModal/EducationModal';
 
-const EducationCard = ({ filtered, select, educations }) => {
+const EducationCard = ({ filtered, selected, educations }) => {
     const [modalIsOpen, setmodalIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
 
     const filteredData = educations.filter(item => {
         const searchFilter = item.Title.toLowerCase().includes(filtered.toLowerCase()) || item.Content.toLowerCase().includes(filtered.toLowerCase())
-        const selectFilter = select === "all" || (select === "active" && item.Status === "active") || (select === "passive" && item.Status === "passive")
+        const selectFilter = selected === "all" || (selected === "active" && item.Status === "active") || (selected === "passive" && item.Status === "passive")
         return searchFilter && selectFilter
     })
 

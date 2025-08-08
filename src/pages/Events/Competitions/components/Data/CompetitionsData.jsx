@@ -1,4 +1,4 @@
-import competitionsImage from "../../../assets/images/Competitons.jpg";
+import competitionsImage from "../../../../../assets/images/Competitons.jpg";
 
 export const competitionsData = [
     {

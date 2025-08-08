@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './CompetitionsCard.css';
 import { Icon } from '@iconify/react';
-import CompetitionForm from '../CompetitionsCard/CompetitionForm/CompetitionForm';
+import CompetitionForm from '../CompetitionForm/CompetitionForm';
 
 const CompetitionsCard = ({ data }) => {
     const [isFormOpen, setIsFormOpen] = useState(false);

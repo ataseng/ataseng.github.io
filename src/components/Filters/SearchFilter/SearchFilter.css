@@ -1,9 +1,10 @@
-.search-filter{
-display: flex;
-justify-content: center;
-align-items: center;
+.search-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.search-filter input{
+
+.search-filter input {
     background-color: var(--light-gray);
     width: 720px;
     height: 48px;
@@ -14,6 +15,7 @@ align-items: center;
     padding: 20px;
     transition: background-color 0.5s ease;
 }
-.dark .search-filter input{
+
+.dark .search-filter input {
     background-color: var(--dark-slate);
 }

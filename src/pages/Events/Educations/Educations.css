@@ -1,28 +1,63 @@
-.educations-section{
-    min-height: 100vh;
-    width: 100%;
+.education-container{
+   /* display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(580px, 1fr)); */
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+.education-card{
+    width: 600px;
+    height: 260px;
+    background-color: var(--light-gray);
+    border-radius: 10px; 
     position: relative;
-    top: 0;
-    left: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.education-card-wrap{
+    display: flex;
+    height: 100%;
+}
+.dark .education-card{
+    background-color: var(--dark-slate);
 }
 
-.educations-section .educations-content{
-    position: relative;
-    top: 0;
-    left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
-    height: 100%;
+.error-container
+{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 36px;
-    gap: 24px;
+    height: 100vh;
+    margin-left: 150px;
+    /* margin: 10px auto; */
+}
+.error-search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 400px;
+    color: #7a7a7a;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px rgba(199, 198, 198, 0.7);
+    transition: background-color 0.5s ease,box-shadow 0.5s ease;
+    
+}
+.error-search h3{
+    color: #000000;
+    font-size: 35px;
+    margin-bottom: 30px;
+    transition: color 0.5s ease
+}
+.dark .error-search{
+
+    background-color: var(--dark-slate);
+    box-shadow: 5px 5px 5px 5px rgba(15, 15, 15, 0.7)
 }
 
-.educations-section .educations-content .educations-section-filter-area{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.dark .error-search h3{
+    color: #fff;
 }

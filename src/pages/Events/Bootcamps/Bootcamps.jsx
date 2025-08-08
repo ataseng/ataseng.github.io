@@ -1,21 +1,25 @@
 import BootcampsCard from '../../../components/BootcampsCard/BootcampsCard';
-import SearchFilter from '../../../components/EducationCard/EducationSearchFilter/SearchFilter';
-import EducationSelectFilter from '../../../components/EducationCard/EducationSelectFilter/EducationSelectFilter'
+import Filters from '../../../components/Filters/Filters';
 
 import data from './Data.json'
 import { useState } from 'react';
 
 const Bootcamps = () => {
     const [filtered, setFiltered] = useState("")
-    const [select, setSelect] = useState("all")
+    const [selected, setSelected] = useState("all");
+    const selectMenu = {
+        "active": "Aktif Eğitim Kampları",
+        "passive" : "Pasif Eğitim Kampları",
+        "all": "Hepsi"
+    };
+
     return (
-        <>
-            <div className="sidebar-margin">
-                <EducationSelectFilter select={select} setSelect={setSelect}/>
-                <SearchFilter setFiltered={setFiltered}/>
-                <BootcampsCard data = {data} select={select} filtered={filtered}/>
+        <div className='events-subpage'>
+            <div className='events-subpage-content'>
+                <Filters selectMenu={selectMenu} selected={selected} setSelected={setSelected} setFiltered={setFiltered} searchPlaceHolder='Bootcamp Ara...'/>
+                <BootcampsCard data = {data} select={selected} filtered={filtered}/>
             </div>
-        </>
+        </div>
     )
 };
 
