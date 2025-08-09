@@ -1,16 +1,16 @@
 import "./SearchFilter.css";
 import PropTypes from 'prop-types';
 
-const SearchFilter = ({ setFiltered, searchPlaceHolder }) => {
+const SearchFilter = ({ setSearchText, searchPlaceHolder }) => {
     return (
         <div className="search-filter">
-            <input onChange={(e => { setFiltered(e.target.value) })} type="text" placeholder={searchPlaceHolder} />
+            <input onChange={(e => { setSearchText(e.target.value) })} type="text" placeholder={searchPlaceHolder} />
         </div>
     )
 }
 
 SearchFilter.propTypes = {
-    setFiltered: PropTypes.func.isRequired,
+    setSearchText: PropTypes.func.isRequired,
     searchPlaceHolder: PropTypes.string.isRequired
 };
 

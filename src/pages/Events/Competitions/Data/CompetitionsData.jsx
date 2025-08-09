@@ -1,60 +1,60 @@
-import competitionsImage from "../../../../../assets/images/Competitons.jpg";
+import competitionsImage from "../../../../assets/images/Competitons.jpg";
 
 export const competitionsData = [
     {
         "id": 1,
         "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
-        "title": "Geleneksel Algoritma Yarışması 1",
-        "description": "lorem lorem loreem lorem",
+        "Title": "Geleneksel Algoritma Yarışması 1",
+        "description": "lorem lorem loreem lorem lorem lorem loreem lorem lorem lorem loreem lorem",
         "location": "Online",
         "date": "10/05/2024",
         "time": "14.00",
-        "status": "active"
+        "Status": "active"
     },
     {
         "id": 2,
         "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
-        "title": "Geleneksel Algoritma Yarışması 2",
+        "Title": "Geleneksel Algoritma Yarışması 2",
         "description": "lorem lorem loreem lorem",
         "location": "İstanbul Üniversitesi",
         "date": "15/05/2024",
         "time": "10.00",
-        "status": "deactive"
+        "Status": "passive"
     },
     {
         "id": 3,
         "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
-        "title": "Web Patikası 3",
+        "Title": "Web Patikası 3",
         "description": "lorem lorem loreem lorem",
         "location": "Atatürk Üniversitesi TRSE-3",
         "date": "20/05/2024",
         "time": "12.00",
-        "status": "active"
+        "Status": "active"
     },
     {
         "id": 4,
         "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
-        "title": "Geleneksel Algoritma Yarışması 4",
+        "Title": "Geleneksel Algoritma Yarışması 4",
         "description": "lorem lorem loreem lorem",
         "location": "Atatürk Üniversitesi TRSE-3",
         "date": "20/05/2024",
         "time": "12.00",
-        "status": "active"
+        "Status": "active"
     },
     {      
         "id": 5,
         "image": competitionsImage,
         "tags": ["Yarışma", "Online", "Sertifikalı"],
-        "title": "Geleneksel Algoritma Yarışması 5",
+        "Title": "Geleneksel Algoritma Yarışması 5",
         "description": "lorem lorem loreem lorem",
         "location": "Atatürk Üniversitesi TRSE-3",
         "date": "20/05/2024",
         "time": "12.00",
-        "status": "deactive"
+        "Status": "passive"
     }
 ]
   

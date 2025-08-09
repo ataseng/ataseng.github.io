@@ -3,12 +3,12 @@
     background-color: #ddd;
 }
 
-.credits-section:nth-last-child(2) .credits-content:nth-last-child(1){
-    border-bottom: 2px solid var(--slate-blue);
+.credits-section:nth-of-type(2n){
+    background-color: #fff;
 }
 
-.credits-content:nth-of-type(2n){
-    background-color: #fff;
+.dark .credits-section:nth-last-child(2) .credits-content:nth-last-child(1){
+    border-bottom: 2px solid var(--slate-blue);
 }
 
 .credits-section .credits-content{

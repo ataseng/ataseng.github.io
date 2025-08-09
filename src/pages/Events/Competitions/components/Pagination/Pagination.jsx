@@ -1,10 +1,12 @@
 import React from 'react';
 import './Pagination.css';
 
-const Pagination = ({ totalPages, currentPage, paginate }) => {
+const Pagination = ({ totalPageCount, currentPage, setCurrentPage }) => {
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    
     return (
         <div className="pagination">
-            {[...Array(totalPages)].map((_, i) => (
+            {[...Array(totalPageCount)].map((_, i) => (
                 <button
                     key={i + 1}
                     onClick={() => paginate(i + 1)}

@@ -5,25 +5,6 @@
   padding: 120px;
 }
 
-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;  
-  justify-content: center; 
-  gap: 20px;
-}
-
-.card-container p {
-  font-size: 18px;
-}
-
 .result {
   max-width: 900px;
   height: 400px;

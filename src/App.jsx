@@ -21,56 +21,60 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSettings } from "./redux/actions/settingsActions";
 import Login from "./pages/Login/Login";
+import Dene from "./pages/Dene";
 
 function App() {
-  const dispatch = useDispatch();
-  const settingList = useSelector(state => state.settings);
-  const { error, loading, settings } = settingList;
+    const dispatch = useDispatch();
+    const settingList = useSelector(state => state.settings);
+    const { error, loading, settings } = settingList;
 
-  useEffect(() => {
+    const footerHeight = document.querySelector("footer")?.clientHeight;
+    document.querySelector(":root").style.setProperty("--client-footer-height", `${footerHeight}px`);
 
-    dispatch(getSettings());
+    useEffect(() => {
 
-  }, [dispatch]);
+        dispatch(getSettings());
 
-  return (
-    <>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
+    }, [dispatch]);
 
-        <Route path="/login" element={<Login />} />
-        {/* <Route path="/" element={<Home />} /> */}
+    return (
+        <>
+            <ScrollToTop />
+            <Routes>
+                <Route path="/" element={<Home />} />
+
+                <Route path="/login" element={<Login />} />
+                {/* <Route path="/" element={<Home />} /> */}
 
 
-        <Route path="/hakkimizda" element={<About />} />
-        <Route path="/emegi-gecenler" element={<Credits />} />
-        <Route path="/takim" element={<Team />} />
-        <Route path="/iletisim" element={<Contact />} />
+                <Route path="/hakkimizda" element={<About />} />
+                <Route path="/emegi-gecenler" element={<Credits />} />
+                <Route path="/takim" element={<Team />} />
+                <Route path="/iletisim" element={<Contact />} />
 
-        {/* Activities Route */}
-        <Route path="/etkinlikler" element={<Events />} />
+                {/* Activities Route */}
+                <Route path="/etkinlikler" element={<Events />} />
 
-        <Route path="/etkinlikler/yarismalar" element={<Competitions />} />
-        <Route path="/etkinlikler/yarismalar/:title" element={<CompetitionDetail />} />
+                <Route path="/etkinlikler/yarismalar" element={<Competitions />} />
+                <Route path="/etkinlikler/yarismalar/:title" element={<CompetitionDetail />} />
 
-        <Route path="/etkinlikler/egitimler" element={<Educations />} />
-        {/* <Route path="/etkinlikler/egitimler/:title" element={<EducationDetail/>} /> */}
+                <Route path="/etkinlikler/egitimler" element={<Educations />} />
+                {/* <Route path="/etkinlikler/egitimler/:title" element={<EducationDetail/>} /> */}
 
-        <Route path="/etkinlikler/bootcamps" element={<Bootcamps />} />
-        <Route path="/etkinlikler/bootcamps/:title" element={<BootcampsDetail />} />
+                <Route path="/etkinlikler/bootcamps" element={<Bootcamps />} />
+                <Route path="/etkinlikler/bootcamps/:title" element={<BootcampsDetail />} />
 
-        <Route path="/etkinlikler/hackathons" element={<Hackathons />} />
-        <Route path="/etkinlikler/hackathons/:title" element={<HackathonsDetail />} />
+                <Route path="/etkinlikler/hackathons" element={<Hackathons />} />
+                <Route path="/etkinlikler/hackathons/:title" element={<HackathonsDetail />} />
 
-        <Route path="/etkinlikler/kariyer-gunleri" element={<CareerDays />} />
-        <Route path="/etkinlikler/kariyer-gunleri/:title" element={<CareerDaysDetail />} />
+                <Route path="/etkinlikler/kariyer-gunleri" element={<CareerDays />} />
+                <Route path="/etkinlikler/kariyer-gunleri/:title" element={<CareerDaysDetail />} />
+                <Route path="/dene" element={<Dene />} />
 
-        
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
-  );
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </>
+    );
 }
 
 export default App;

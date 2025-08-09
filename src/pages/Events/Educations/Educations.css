@@ -1,29 +1,3 @@
-.education-container{
-   /* display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(580px, 1fr)); */
-   display: flex;
-   flex-wrap: wrap;
-   gap: 20px;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
-}
-.education-card{
-    width: 600px;
-    height: 260px;
-    background-color: var(--light-gray);
-    border-radius: 10px; 
-    position: relative;
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-.education-card-wrap{
-    display: flex;
-    height: 100%;
-}
-.dark .education-card{
-    background-color: var(--dark-slate);
-}
-
 .error-container
 {
     display: flex;

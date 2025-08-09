@@ -91,7 +91,6 @@ const Home = () => {
 
     return (
         <>
-
             <WelcomeSection ref={welcomeSectionRef} text={welcomeText} />
             <AboutSection ref={aboutSectionRef} title={aboutTitle} text={aboutText} listItems={aboutListItems} loading={loading} />
             <HomeBillboardSection ref={homeBillboardSectionRef} />

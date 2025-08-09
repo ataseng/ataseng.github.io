@@ -51,7 +51,7 @@
 }
 
 .form-content{
-    /* background-color: var(--pure-white); */
+    background-color: var(--pure-white);
     width: 45%;
     transition: background-color 1s ease;
     border-radius: 5px;

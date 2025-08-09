@@ -1,31 +1,29 @@
 import './Competitions.css';
 import { useEffect, useState } from 'react';
-import { competitionsData } from './components/Data/CompetitionsData';
+import { competitionsData } from './Data/CompetitionsData';
 import Pagination from './components/Pagination/Pagination';
-import CompetitionSelectFilter from './components/CompetitionSelectFilter/CompetitionSelectFilter';
-import CompetitionSearchFilter from './components/CompetitionSearchFilter/CompetitionSearchFilter';
 import CompetitionsCard from './components/CompetitionsCard/CompetitionsCard';
+import Filters from '../../../components/Filters/Filters';
+import { eventFilter } from '../../../utils/eventFilter';
 
 const Competitions = () => {
-    // const formatTitle = (title) => {
-    //     return title.toLowerCase().split(' ').join('-')
-    // };
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [select, setSelect] = useState('all');
+    const [searchText, setSearchText] = useState('');
+    const [selected, setSelected] = useState('all');
     const itemsPerPage = 4;
+    const selectMenu = {
+        "active": "Aktif Yarışmalar",
+        "passive": "Pasif Yarışmalar",
+        "all" : "Hepsi"
+    };
 
     useEffect(() => {
         setCurrentPage(1);
-    }, [select, searchQuery]);
-
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    }, [selected, searchText]);
 
     const filteredData = competitionsData.filter((item) => {
-        const matchesSearch = item.title && item.title.toLowerCase().includes(searchQuery.toLowerCase());
-        const matchesStatus = (select === 'all') || (item.status && select === item.status);
-        return matchesSearch && matchesStatus;
+        return eventFilter(item, selected, searchText);
     });
 
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -34,17 +32,13 @@ const Competitions = () => {
     const totalPageCount = Math.ceil(filteredData.length / itemsPerPage);
 
     return (
-        <>
-            <div className='content'>
-            <header>
-                <CompetitionSelectFilter select={select} setSelect={setSelect} />
-                <CompetitionSearchFilter searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-            </header>
-
-            <div className="card-container">
+        <div className='events-subpage'>
+            <div className='events-subpage-content'>
+            <Filters selectMenu={selectMenu} selected={selected} setSelected={setSelected} setSearchText={setSearchText} searchPlaceHolder={"Yarışma Ara..."}/>
+            <div className="events-subpage-cards">
                 {currentItems.length > 0 ? (
                     currentItems.map((item) => (
-                        <CompetitionsCard key={item.id} data={item} />
+                        <CompetitionsCard key={`competition_card_${item.id}`} data={item} />
                     ))
                 ) : (
                     <div className='result'>
@@ -52,9 +46,9 @@ const Competitions = () => {
                     </div>
                 )}
             </div>
-            <Pagination totalPages={totalPageCount} currentPage={currentPage} paginate={paginate} />
+            <Pagination totalPageCount={totalPageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </div>
-        </>
+    </div>
     )
 }
 
