@@ -7,14 +7,16 @@ const Login = () => {
 
     const login = useGoogleLogin({
         onSuccess: tokenResponse => {
-            const formData = new FormData();
-            formData.append("access_token", tokenResponse.access_token)
+            const formData = {
+                access_token : tokenResponse.access_token
+            };
             fetch(
                 "https://ataseng.com/api/google_login.php",
                 {
                     method: "POST",
                     headers: {
-
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(formData)
                 }

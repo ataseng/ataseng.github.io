@@ -14,8 +14,24 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
 $json = file_get_contents('php://input');
 $formData = json_decode($json, true);
 
-$studentNo = $formData["studentNo"];
-$password = $formData["password"];
+if (isset($formData["access_token"])){
+    $access_token = $formData["access_token"];
+
+    $user_data = json_decode(file_get_contents("https://www.googleapis.com/oauth2/v3/userinfo?access_token=" . $access_token));
+
+    if($user_data){
+        print_r($user_data);
+    }
+    else{
+        http_response_code(401);
+        die("Unauthorized");
+    }
+}
+
+
+
+// $studentNo = $formData["studentNo"];
+// $password = $formData["password"];
 
 // try {
 //     $server_db = 'mysql:host=' . $server_name . ';dbname=' . $db_name;
