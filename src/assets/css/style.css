@@ -78,6 +78,14 @@ section:nth-child(2n){
     background-color: var(--slate-blue);
 }
 
+section.post-section{
+    background-color: var(--light-gray);
+}
+
+.dark section.post-section{
+    background-color: var(--slate-blue);
+}
+
 section .section-content{
     position: relative;
     top: 0;
@@ -93,6 +101,12 @@ section .section-content{
 
 section .section-content.vertical-content{
     flex-direction: column;
+}
+
+section .section-content.post-content{
+    height: 100vh;
+    flex-direction: column;
+    gap: 40px;
 }
 
 h2{

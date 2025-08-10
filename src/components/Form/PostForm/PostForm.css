@@ -1,0 +1,81 @@
+form.post-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    gap: 20px;
+    width: 60%;
+    max-width: 600px;
+    padding: 24px 0;
+    background-color: var(--pure-white);
+    transition: background-color 1s ease;
+
+}
+
+form.post-form input{
+    color: var(--dark-slate);
+    /* width: 90%; */
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--turquoise);
+    font-size: var(--section-text);
+}
+
+.dark form.post-form{
+    background-color: var(--dark-slate);
+}
+
+.dark form.post-form input{
+    background-color: var(--dark-slate);
+    color: var(--pure-white);
+}
+
+form.post-form .post-form-input-div{
+    width: 90%;
+    display: flex;
+    justify-content : space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+form.post-form .post-form-input-div label{
+    padding: 10px;
+    /* color: var(--turquoise); */
+    font-size: var(--section-text);
+    text-align: left;
+}
+
+form.post-form .post-form-input-div input{
+    width: 65%;
+}
+
+form.post-form .post-form-input-div select{
+    width : 65%;
+    padding: 10px;
+    font-size: var(--section-text);
+    border: 1px solid var(--turquoise);
+}
+
+.dark form.post-form .post-form-input-div select{
+    background-color: var(--slate-blue);
+    color: white;
+}
+
+.post-not-active{
+    font-size: var(--section-text);
+    color: darkred;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dark .post-not-active{
+    color: #ff8181;
+}
+
+@media screen and (max-width: 800px) {
+    form.post-form{
+        width: 90%;
+        max-width: unset;
+    }
+}

@@ -4,19 +4,13 @@ define('__ROOT__', dirname(__FILE__));
 
 require_once(__ROOT__.'/config.php');
 
-// $registrationActive = TRUE;
-
-// if(!$registrationActive){
-//     echo json_encode(array(
-//         "error" => "Registration Not Active",
-//     ));
-//     exit;
-// }
+$response_message = array("message" => "success");
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
-    echo json_encode(array(
-        "error" => "Post only method",
-    ));
+    http_response_code(400);
+	$response_message["message"] = "fail";
+	$response_message["detail"] = "Post only method";
+    echo json_encode($response_message);
     exit;
 }
 

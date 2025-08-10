@@ -14,7 +14,15 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     exit;
 }
 
-// $image_extension = $image['extension'];
+$title = $_POST["title"];
+$content = $_POST["content"];
+$date = $_POST["date"] . " " . $_POST["time"];
+$location = $_POST["location"];
+$last_application_date = $_POST["last_application_date"];
+$last_application_time = $_POST["last_application_time"];
+$last_application = $last_application_date . " " . $last_application_time;
+$status = $_POST["status"];
+$educator_id = $_POST["educator_id"];
 
 $target_dir = "images/educations/";
 
@@ -22,9 +30,56 @@ if (!file_exists($target_dir)) {
     mkdir($target_dir, 0777, true);
 }
 
-$title = $_POST["title"];
-$content = $_POST["content"];
-$target_file = $target_dir . basename($_FILES["image"]["name"]);
+$image = basename($_FILES["image"]["name"]);
+$target_file = $target_dir . time() . "_" . $image;
+
+try {
+    $server_db = 'mysql:host=' . $server_name . ';dbname=' . $db_name;
+    $conn = new PDO($server_db, $username, $password,
+    [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = "SELECT PostActive FROM Settings";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    if ($stmt && $stmt->rowCount() > 0) {
+        $result = $stmt->fetchColumn();
+    }
+
+    if($result && $result == '1' ){
+        $sql = "INSERT INTO Education (Title, Content, Date, Location, Last_Application, Image, Status, Educator_ID) VALUES (:Title, :Content, :Date, :Location, :Last_Application, :Image, :Status, :Educator_ID)";
+        $query = $conn->prepare($sql);
+        $query->execute([
+            "Title" => $title,
+            "Content" => $content,
+            "Date" => $date,
+            "Location" => $location,
+            "Last_Application" => $last_application,
+            "Image" => $target_file,
+            "Status" => $status,
+            "Educator_ID" => $educator_id,
+        ]);
+        $response_message["message"] = "success";
+        $response_message["detail"] = "New education created successfully!";
+    } else {
+        $response_message["message"] = "fail";
+        $response_message["detail"] = "Post Not Active!";
+        echo json_encode($response_message);
+        exit;
+    }
+    
+} catch (PDOException $e) {
+    $response_message["message"] = "fail";
+    $response_message["detail"] = "PDO Exception!";
+    $response_message["sql"] = $sql;
+    $response_message["errors"] = $e->getMessage();
+    echo json_encode($response_message);
+    exit;
+}
+
+// $image_extension = $image['extension'];
+
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 // Check if image file is a actual image or fake image
@@ -66,7 +121,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 }
 
 if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-    $response_message["detail"] = "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded!";
+    // $response_message["detail"] = "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded!";
     echo json_encode($response_message);
 } else {
     $response_message["message"] = "fail";

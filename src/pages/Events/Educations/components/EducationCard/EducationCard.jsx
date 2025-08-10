@@ -1,9 +1,10 @@
-import educatorImage from "../../../../../assets/images/EducatorImage.jpg";
+import femaleAvatar from "../../../../../assets/images/avatars/femaleAvatar.png";
+import maleAvatar from "../../../../../assets/images/avatars/maleAvatar.png";
 import EducationButton from "../EducationButton/EducationButton";
 import "./EducationCard.css";
 
 const EducationCard = ({ item, setmodalIsOpen, setSelectedItem }) => {
-    const imgSrc = item.Educator_Image || educatorImage;
+    const imgSrc = item.Educator_Image ? item.Educator_Image : item.Educator_Gender === "female" ? femaleAvatar : maleAvatar;
 
     return (
         <div className="education-card">
