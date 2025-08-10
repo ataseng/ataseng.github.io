@@ -2,45 +2,76 @@
 
 define('__ROOT__', dirname(__FILE__));
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: *");
-header('Access-Control-Allow-Methods: *');
+require_once(__ROOT__.'/config.php');
 
-header("Content-Type: multipart/form-data; charset=UTF-8");
+$response_message = array("message" => "success");
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
     http_response_code(400);
-    echo json_encode(array(
-        "error" => "Post only method",
-    ));
+	$response_message["message"] = "fail";
+	$response_message["detail"] = "Post only method";
+    echo json_encode($response_message);
     exit;
 }
 
-// $json = file_get_contents('php://input');
-// $formData = json_decode($json, true);
+// $image_extension = $image['extension'];
 
-// var_dump($_POST);
+$target_dir = "images/educations/";
+
+if (!file_exists($target_dir)) {
+    mkdir($target_dir, 0777, true);
+}
 
 $title = $_POST["title"];
-$description = $_POST["title"];
+$content = $_POST["content"];
+$target_file = $target_dir . basename($_FILES["image"]["name"]);
+$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-$image = pathinfo($_FILES["image"]["name"]);
-$image_extension = $image['extension'];
+// Check if image file is a actual image or fake image
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  $check = getimagesize($_FILES["image"]["tmp_name"]);
+  if($check !== false) {
+    // echo "File is an image - " . $check["mime"] . ".";
+  } else {
+    $response_message["message"] = "fail";
+    $response_message["detail"] = "File is not an image!";
+    echo json_encode($response_message);
+    exit;
+  }
+}
 
-$new_image_name = "newname." . $image_extension;
+// Check if file already exists
+if (file_exists($target_file)) {
+    $response_message["message"] = "fail";
+    $response_message["detail"] = "Sorry, file already exists!";
+    echo json_encode($response_message);
+    exit;
+}
 
-$target = __ROOT__ . "/images/" . $new_image_name;
+// Check file size
+if ($_FILES["image"]["size"] > 512000) {
+    $response_message["message"] = "fail";
+    $response_message["detail"] = "Sorry, your file is too large! (Maximum Size: 512 KB)";
+    echo json_encode($response_message);
+    exit;
+}
 
-move_uploaded_file($_FILES["image"]["name"], $target);
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    $response_message["message"] = "fail";
+    $response_message["detail"] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed!";
+    echo json_encode($response_message);
+    exit;
+}
 
-echo json_encode(array(
-    "message" => "success",
-    // "a" => $info,
-    // "b" => $ext,
-    "title" => $title,
-    "description" => $description,
-    "new_image_name" => $new_image_name,
-    "target" => $target,
-));
+if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+    $response_message["detail"] = "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded!";
+    echo json_encode($response_message);
+} else {
+    $response_message["message"] = "fail";
+    $response_message["detail"] = "Sorry, there was an error uploading your file!";
+    echo json_encode($response_message);
+}
 
 ?>

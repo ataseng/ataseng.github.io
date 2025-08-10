@@ -1,0 +1,2 @@
+[10-Aug-2025 20:31:05 Europe/Istanbul] PHP Warning:  json_decode() expects parameter 1 to be string, array given in /home/atasengc/domains/ataseng.com/public_html/api/education_post.php on line 82
+[10-Aug-2025 20:31:34 Europe/Istanbul] PHP Warning:  json_decode() expects parameter 1 to be string, array given in /home/atasengc/domains/ataseng.com/public_html/api/education_post.php on line 82
