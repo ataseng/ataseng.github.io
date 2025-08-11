@@ -24,15 +24,6 @@ $last_application = $last_application_date . " " . $last_application_time;
 $status = $_POST["status"];
 $educator_id = $_POST["educator_id"];
 
-$target_dir = "images/educations/";
-
-if (!file_exists($target_dir)) {
-    mkdir($target_dir, 0777, true);
-}
-
-$image = basename($_FILES["image"]["name"]);
-$target_file = $target_dir . time() . "_" . $image;
-
 try {
     $server_db = 'mysql:host=' . $server_name . ';dbname=' . $db_name;
     $conn = new PDO($server_db, $username, $password,
@@ -48,7 +39,7 @@ try {
     }
 
     if($result && $result == '1' ){
-        $sql = "INSERT INTO Education (Title, Content, Date, Location, Last_Application, Image, Status, Educator_ID) VALUES (:Title, :Content, :Date, :Location, :Last_Application, :Image, :Status, :Educator_ID)";
+        $sql = "INSERT INTO Education (Title, Content, Date, Location, Last_Application, Status, Educator_ID) VALUES (:Title, :Content, :Date, :Location, :Last_Application, :Status, :Educator_ID)";
         $query = $conn->prepare($sql);
         $query->execute([
             "Title" => $title,
@@ -56,12 +47,12 @@ try {
             "Date" => $date,
             "Location" => $location,
             "Last_Application" => $last_application,
-            "Image" => $target_file,
             "Status" => $status,
             "Educator_ID" => $educator_id,
         ]);
         $response_message["message"] = "success";
         $response_message["detail"] = "New education created successfully!";
+        echo json_encode($response_message);
     } else {
         $response_message["message"] = "fail";
         $response_message["detail"] = "Post Not Active!";
@@ -76,57 +67,6 @@ try {
     $response_message["errors"] = $e->getMessage();
     echo json_encode($response_message);
     exit;
-}
-
-// $image_extension = $image['extension'];
-
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-// Check if image file is a actual image or fake image
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-  $check = getimagesize($_FILES["image"]["tmp_name"]);
-  if($check !== false) {
-    // echo "File is an image - " . $check["mime"] . ".";
-  } else {
-    $response_message["message"] = "fail";
-    $response_message["detail"] = "File is not an image!";
-    echo json_encode($response_message);
-    exit;
-  }
-}
-
-// Check if file already exists
-if (file_exists($target_file)) {
-    $response_message["message"] = "fail";
-    $response_message["detail"] = "Sorry, file already exists!";
-    echo json_encode($response_message);
-    exit;
-}
-
-// Check file size
-if ($_FILES["image"]["size"] > 512000) {
-    $response_message["message"] = "fail";
-    $response_message["detail"] = "Sorry, your file is too large! (Maximum Size: 512 KB)";
-    echo json_encode($response_message);
-    exit;
-}
-
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    $response_message["message"] = "fail";
-    $response_message["detail"] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed!";
-    echo json_encode($response_message);
-    exit;
-}
-
-if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-    // $response_message["detail"] = "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded!";
-    echo json_encode($response_message);
-} else {
-    $response_message["message"] = "fail";
-    $response_message["detail"] = "Sorry, there was an error uploading your file!";
-    echo json_encode($response_message);
 }
 
 ?>

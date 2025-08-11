@@ -1,46 +1,25 @@
-import { useState } from 'react'
-import axios from 'axios';
-import PostForm from '../components/Form/PostForm/PostForm';
+import { useEffect, useState } from 'react';
+import PostForm from '../../../components/Form/PostForm/PostForm';
 
-const Dene = () => {
+const EducationPost = () => {
 
-    const currentDate = new Date().toISOString().slice(0, 10);
+    const [educators, setEducators] = useState([]);
 
-    const [image, setImage] = useState(null);
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
-    const [date, setDate] = useState(currentDate);
-    const [time, setTime] = useState("08:00");
-    const [location, setLocation] = useState("");
-    const [last_application_date, setLastApplicationDate] = useState(currentDate);
-    const [last_application_time, setLastApplicationTime] = useState("08:00");
-    const [status, setStatus] = useState(false);
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append("image", image);
-        formData.append("title", title);
-        formData.append("content", content);
-        formData.append("date", date);
-        formData.append("time", time);
-        formData.append("location", location);
-        formData.append("last_application_date", last_application_date);
-        formData.append("last_application_time", last_application_time);
-        formData.append("status", status);
-
-        // axios.post("https://ataseng.com/api/education_post.php", formData)
-        // .then(response => console.log(response))
-
-        fetch("https://ataseng.com/api/education_post.php",
-            {
-                method: "post",
-                body: formData,
-            }
-        )
-        .then(res => res.json())
-        .then(res => console.log(res));
-    }
+    useEffect(() => {
+        // setLoading(true);
+        fetch("https://ataseng.com/api/educators_get.php?for_select=true")
+            .then(res => res.json())
+            .then(data => {
+                if (data.message === "success") {
+                    const content = data.content;
+                    setEducators(content);
+                }
+                else {
+                    console.error(data.message);
+                }
+                // setLoading(false);
+            });
+    }, []);
 
     const inputs = [
         {
@@ -86,12 +65,6 @@ const Dene = () => {
             isRequired: true
         },
         {
-            name: "image",
-            type: "file",
-            label: "Görüntü",
-            isRequired: true
-        },
-        {
             name: "status",
             type: "select",
             label: "Durum",
@@ -99,11 +72,11 @@ const Dene = () => {
             options: [
                 {
                     value: "active",
-                    text : "Aktif"
+                    text: "Aktif"
                 },
                 {
                     value: "passive",
-                    text : "Pasif"
+                    text: "Pasif"
                 }
             ]
         },
@@ -112,16 +85,7 @@ const Dene = () => {
             type: "select",
             label: "Eğitimci",
             isRequired: true,
-            options: [
-                {
-                    value: 1,
-                    text : "Osman DURDAĞ"
-                },
-                {
-                    value: 2,
-                    text : "Deneme"
-                }
-            ]
+            options: educators.map(educator => ({value : educator.ID, text: `${educator.Name} ${educator.Surname}`}))
         },
     ];
 
@@ -142,10 +106,10 @@ const Dene = () => {
                     <button type="submit">Gönder</button>
                 </form> */}
 
-                <PostForm inputs = {inputs}/>
-        </div>
+                <PostForm inputs={inputs} url={"https://ataseng.com/api/education_post.php"} />
+            </div>
         </section>
     )
 }
 
-export default Dene
+export default EducationPost

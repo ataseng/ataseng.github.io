@@ -32,6 +32,11 @@ const EducationCard = ({ item, setmodalIsOpen, setSelectedItem }) => {
                         <span className='h4-double-dot'>:</span>
                         <span className='education-card-inner-content'>{item.Location}</span>
                     </div>
+                    <div className="education-educator">
+                        <h4>Eğitmen</h4>
+                        <span className='h4-double-dot'>:</span>
+                        <span className='education-card-inner-content'>{item.Educator_Name} {item.Educator_Surname}</span>
+                    </div>
 
                     <div className="education-last-date">
                         <h4>Son Başvuru</h4>

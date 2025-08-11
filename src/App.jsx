@@ -21,7 +21,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSettings } from "./redux/actions/settingsActions";
 import Login from "./pages/Login/Login";
-import Dene from "./pages/Dene";
+import EducationPost from "./pages/Admin/Educations/EducationPost";
+import EducatorPost from "./pages/Admin/Educators/EducatorPost";
 
 function App() {
     const dispatch = useDispatch();
@@ -69,7 +70,9 @@ function App() {
 
                 <Route path="/etkinlikler/kariyer-gunleri" element={<CareerDays />} />
                 <Route path="/etkinlikler/kariyer-gunleri/:title" element={<CareerDaysDetail />} />
-                <Route path="/dene" element={<Dene />} />
+
+                <Route path="/admin/egitim-ekle" element={<EducationPost />} />
+                <Route path="/admin/egitimci-ekle" element={<EducatorPost />} />
 
                 <Route path="*" element={<NotFound />} />
             </Routes>

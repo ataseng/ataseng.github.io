@@ -23,4 +23,6 @@ $db_name = $env["DB_NAME"];
 $username = $env["USERNAME"];
 $password = $env["PASSWORD"];
 
+$base_url = "https://ataseng.com/api/";
+
 ?>

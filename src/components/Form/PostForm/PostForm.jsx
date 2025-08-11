@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 import "./PostForm.css";
 
-const PostForm = ({ inputs }) => {
+const PostForm = ({ inputs, url }) => {
 
     const settingList = useSelector(state => state.settings);
     const { error, loading, settings } = settingList;
@@ -19,7 +19,7 @@ const PostForm = ({ inputs }) => {
 
         const formData = new FormData(form.current);
 
-        fetch("https://ataseng.com/api/education_post.php",
+        fetch(url,
             {
                 method: "post",
                 body: formData,

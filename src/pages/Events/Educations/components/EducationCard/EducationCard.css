@@ -2,6 +2,7 @@
     width: 600px;
     height: 260px;
     background-color: var(--light-gray);
+    border: 1px solid var(--light-gray);
     border-radius: 10px; 
     position: relative;
     transition: background-color 0.5s ease, color 0.5s ease;
@@ -14,6 +15,7 @@
 
 .dark .education-card{
     background-color: var(--dark-slate);
+    border: 1px solid var(--dark-slate);
 }
 
 .educator-image img {
@@ -40,19 +42,17 @@
 .education-content,
 .education-date,
 .education-location,
-.education-last-date {
+.education-last-date,
+.education-educator {
     display: flex;
     align-items: flex-start;
-}
-
-.education-date span{
-    letter-spacing: 2px;
 }
 
 .education-content h4,
 .education-date h4,
 .education-location h4,
-.education-last-date h4 {
+.education-last-date h4,
+.education-educator h4 {
     font-size: var(--section-list);
     flex-shrink: 0;
     width: 90px;
@@ -62,7 +62,8 @@
 .education-content span,
 .education-date span,
 .education-last-date span,
-.education-location span {
+.education-location span,
+.education-educator span {
     font-size: var(--section-list);
     transition: color 0.5s ease, color 0.5s ease;
 }
@@ -78,11 +79,6 @@
     color: darkred;
 } */
 
-.education-last-date span {
-    letter-spacing: 2px;
-    font-family: monospace;
-}
-
 .education-button {
     position: absolute;
     bottom: 12px;
@@ -91,9 +87,17 @@
 
 .dark .education-content span,
 .dark .education-date span,
-.dark .education-location span {
+.dark .education-location span,
+.dark .education-educator span {
     color: var(--light-gray);
+}
 
+.education-last-date span {
+    color: darkred;
+}
+
+.education-last-date h4 {
+    color: darkred;
 }
 
 .dark .education-last-date span {
@@ -106,4 +110,30 @@
 
 .education-card-inner-content{
     padding-left: 4px;
+}
+
+@media screen and (max-width: 720px) {
+    .education-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: unset;
+    }
+
+    .education-card-wrap{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 12px;
+    }
+
+    .educator-image{
+        display: none;
+    }
+
+    .education-button{
+        position: unset;
+    }
+    
 }
