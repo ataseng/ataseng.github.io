@@ -4,23 +4,29 @@ import emailIcon from "@iconify-icons/mdi/email";
 import phoneIcon from "@iconify-icons/mdi/phone";
 import './Contact.css';
 import { toast, ToastContainer } from "react-toastify";
+import { tempMailCheck } from "../../utils/tempMailCheck";
 
 const Contact = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+
         const targetElements = e.target.elements;
         const name = targetElements.name.value;
         const surname = targetElements.surname.value;
         const email = targetElements.email.value;
         const message = targetElements.message.value;
-        
+
+        if (tempMailCheck(email)){
+            return;
+        }
+
         const formData = {
             name,
             surname,
             email,
             message
-        }
+        };
 
         fetch(
             "https://ataseng.com/api/message_post.php",
@@ -84,7 +90,7 @@ const Contact = () => {
                     </div>
                     <div className="info-item">
                         <Icon icon={emailIcon} className='icon-1' />
-                        <p><a href="mailto:ataseng2023@gmail.com">destek@ataseng.com</a></p>
+                        <p><a href="mailto:destek@ataseng.com">destek@ataseng.com</a></p>
                     </div>
                     <div className="info-item">
                         <Icon icon={phoneIcon} className='icon-1' />
