@@ -12,13 +12,11 @@ const WelcomeSection = forwardRef((props, ref) => {
                     <img src={logo} alt="Ataseng Logo" />
                 </div>
                 <div className="welcome-description">
-                    <p>
-                        {
-                            props.text ?
-                            props.text : 
-                            <Loader color={"white"}/>
-                        }
-                    </p>
+                    {
+                        props.text ?
+                        props.text : 
+                        <Loader color={"white"}/>
+                    }
                 </div>
                 <a className='arrow-down' href="#about-section">
                     <MdKeyboardDoubleArrowDown/>

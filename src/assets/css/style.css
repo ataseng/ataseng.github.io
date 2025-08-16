@@ -22,6 +22,9 @@
     --home-text:#CACACA;
     --footer-icon:#ACA6A6;
 
+    --error-color: darkred;
+    --dark-error-color: #ff8181;
+
     /* HomePage font size */
     --home-title:32px;
     --section-title:40px;
@@ -292,4 +295,9 @@ button:disabled{
 
         --feedback-star: 20px;
     }
+}
+
+*::selection{
+    background-color: var(--turquoise);
+    color: white;
 }

@@ -53,11 +53,8 @@ const Educations = () => {
                                 />
                             ))
                             :
-                            <div className="error-container">
-                                <div className="error-search">
-                                    <h3>Aradığınız Eğitim Bulunamadı!</h3>
-                                    <p>Lütfen başlığa göre arama yapınız.</p>
-                                </div>
+                            <div className='filter-not-found-area'>
+                                <p>Gösterilecek eğitim bulunmamaktadır.</p>
                             </div>
                     }
                 </div>

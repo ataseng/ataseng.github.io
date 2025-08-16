@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import './CompetitionsCard.css';
-import { Icon } from '@iconify/react';
-import CompetitionForm from '../CompetitionForm/CompetitionForm';
+import { Icon } from '@iconify/react'
+import { useState } from 'react';
 
-const CompetitionsCard = ({ item }) => {
+const HackathonCard = ({ item }) => {
+
     const [isFormOpen, setIsFormOpen] = useState(false);
 
     const handleButtonClick = () => {
@@ -50,13 +48,8 @@ const CompetitionsCard = ({ item }) => {
             <button className="card-button" onClick={handleButtonClick}>
                 {item.Status === 'active' ? 'Kayıt' : 'Sonuçlar'}
             </button>
-
-            {isFormOpen && ReactDOM.createPortal(
-                <CompetitionForm onClose={handleCloseForm} />,
-                document.getElementById('modal-root')
-            )}
         </div>
-    );
-};
+    )
+}
 
-export default CompetitionsCard;
+export default HackathonCard

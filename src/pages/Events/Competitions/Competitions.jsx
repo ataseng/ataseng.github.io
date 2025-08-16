@@ -15,7 +15,7 @@ const Competitions = () => {
     const selectMenu = {
         "active": "Aktif Yarışmalar",
         "passive": "Pasif Yarışmalar",
-        "all" : "Hepsi"
+        "all": "Hepsi"
     };
 
     useEffect(() => {
@@ -34,21 +34,24 @@ const Competitions = () => {
     return (
         <div className='events-subpage'>
             <div className='events-subpage-content'>
-            <Filters selectMenu={selectMenu} selected={selected} setSelected={setSelected} setSearchText={setSearchText} searchPlaceHolder={"Yarışma Ara..."}/>
-            <div className="events-subpage-cards">
-                {currentItems.length > 0 ? (
-                    currentItems.map((item) => (
-                        <CompetitionsCard key={`competition_card_${item.id}`} data={item} />
-                    ))
-                ) : (
-                    <div className='result'>
-                        <p>Gösterilecek yarışma bulunmamaktadır.</p>
-                    </div>
-                )}
+                <Filters selectMenu={selectMenu} selected={selected} setSelected={setSelected} setSearchText={setSearchText} searchPlaceHolder={"Yarışma Ara..."} />
+                <div className="events-subpage-cards">
+                    {currentItems.length > 0 ? (
+                        currentItems.map(item => (
+                            <CompetitionsCard key={`competition_card_${item.id}`} item={item} />
+                        ))
+                    ) : (
+                        <div className='filter-not-found-area'>
+                            <p>Gösterilecek yarışma bulunmamaktadır.</p>
+                        </div>
+                    )}
+                </div>
+                {
+                    totalPageCount <= 1 ? 
+                    <></> : <Pagination totalPageCount={totalPageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                }
             </div>
-            <Pagination totalPageCount={totalPageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </div>
-    </div>
     )
 }
 

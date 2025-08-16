@@ -67,7 +67,7 @@ const Contact = () => {
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.8148761392195!2d41.241007775748265!3d39.90077687152707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406e5ee0b01ab1ff%3A0x25b3641256a294f3!2sAtat%C3%BCrk%20%C3%9Cniversitesi%20M%C3%BChendislik%20Fak%C3%BCltesi!5e0!3m2!1str!2str!4v1730535741892!5m2!1str!2str"
                         width="100%"
                         height="300"
-                        allowfullscreen=""
+                        allowFullScreen=""
                         loading="lazy"
                     />
                 </div>

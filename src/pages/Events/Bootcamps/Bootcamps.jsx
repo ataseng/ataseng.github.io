@@ -1,23 +1,56 @@
-import BootcampsCard from '../../../components/BootcampsCard/BootcampsCard';
+import BootcampCard from './components/BootcampCard/BootcampCard';
 import Filters from '../../../components/Filters/Filters';
-
-import data from './Data.json'
-import { useState } from 'react';
+import { eventFilter } from '../../../utils/eventFilter';
+import { bootcamp_data } from './bootcamp_data';
+import { useEffect, useState } from 'react';
+import Pagination from '../Competitions/components/Pagination/Pagination';
 
 const Bootcamps = () => {
-    const [filtered, setFiltered] = useState("")
-    const [selected, setSelected] = useState("all");
+
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [searchText, setSearchText] = useState('');
+    const [selected, setSelected] = useState('all');
+    const itemsPerPage = 4;
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selected, searchText]);
+
+    const filteredData = bootcamp_data.filter((item) => {
+        return eventFilter(item, selected, searchText);
+    });
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPageCount = Math.ceil(filteredData.length / itemsPerPage);
+
     const selectMenu = {
         "active": "Aktif Eğitim Kampları",
-        "passive" : "Pasif Eğitim Kampları",
+        "passive": "Pasif Eğitim Kampları",
         "all": "Hepsi"
     };
 
     return (
         <div className='events-subpage'>
             <div className='events-subpage-content'>
-                <Filters selectMenu={selectMenu} selected={selected} setSelected={setSelected} setFiltered={setFiltered} searchPlaceHolder='Bootcamp Ara...'/>
-                <BootcampsCard data = {data} select={selected} filtered={filtered}/>
+                <Filters selectMenu={selectMenu} selected={selected} setSelected={setSelected} setSearchText={setSearchText} searchPlaceHolder={"Yarışma Ara..."} />
+                <div className="events-subpage-cards">
+                    {currentItems.length > 0 ? (
+                        currentItems.map(item => (
+                            <BootcampCard key={`bootcamp_card_${item.id}`} item={item} />
+                        ))
+                    ) : (
+                        <div className='filter-not-found-area'>
+                            <p>Gösterilecek yarışma bulunmamaktadır.</p>
+                        </div>
+                    )}
+                </div>
+                {
+                    totalPageCount <= 1 ?
+                    <></> : <Pagination totalPageCount={totalPageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                }
             </div>
         </div>
     )

@@ -1,26 +1,17 @@
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 120px;
+.filter-not-found-area{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: var(--section-text);
 }
 
-.result {
-  max-width: 900px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  background-color: #00A9B8;
-  border-radius: 5px;
+.filter-not-found-area p{
+    color: var(--error-color);
 }
 
-.result p {
-  font-size: 20px;
-  margin: 10px;
-  color: #fff;
-}
-
-.dark .result {
-  background-color: #16222c;
+.dark .filter-not-found-area p{
+    color: var(--dark-error-color);
 }
