@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PostForm from "../../../components/Form/PostForm/PostForm";
 
 const Register = () => {
@@ -71,9 +72,12 @@ const Register = () => {
 
     return (
         <section className='post-section'>
-            <div className="section-content post-content">
+            <div className="section-content post-content" style={{gap: 16}}>
                 <h2>Kayıt Ol</h2>
                 <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent />
+                <p>
+                    Zaten Kayıtlı Mısın? <Link to={"/giris"}>Giriş Yap</Link>
+                </p>
             </div>
         </section>
     )

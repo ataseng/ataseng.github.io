@@ -35,6 +35,11 @@
       "name": "Yapımcılar",
       "icon": "clarity:employee-group-solid",
       "link": "/emegi-gecenler"
+    },
+    {
+      "name": "Giriş Yap",
+      "icon": "entypo:login",
+      "link": "/giris"
     }
   ]
   

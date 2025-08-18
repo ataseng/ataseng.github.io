@@ -110,7 +110,7 @@ section .section-content.vertical-content{
 section .section-content.post-content{
     height: 100%;
     flex-direction: column;
-    gap: 40px;
+    gap: 24px;
 }
 
 h2{

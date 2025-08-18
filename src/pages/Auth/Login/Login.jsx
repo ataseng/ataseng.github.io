@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 import "./Login.css";
 import { useGoogleLogin } from '@react-oauth/google';
 import PostForm from '../../../components/Form/PostForm/PostForm';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -75,6 +76,9 @@ const Login = () => {
             <div className="section-content post-content">
                 <h2>Giriş Yap</h2>
                 <PostForm inputs = {inputs} url={"https://ataseng.com/api/auth/login.php"} jsonContent/>
+                <p>
+                    Hesabın mı yok? <Link to={"/kayit"}>Kayıt Ol</Link>
+                </p>
             </div>
         </section>
     );

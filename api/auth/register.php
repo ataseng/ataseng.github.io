@@ -31,7 +31,7 @@ try {
 		]
 	);
 } catch (Throwable $e) {
-  http_response_code(500); echo json_encode(['error'=>'db_connect_failed']); exit;
+  http_response_code(500); echo json_encode(['error'=>'Veri Tabanı Bağlantı Hatası!']); exit;
 }
 
 try {
@@ -55,14 +55,14 @@ try {
 	if ($department === '') $errors['department'] = 'required';
 	if ($errors) {
 		http_response_code(422);
-		echo json_encode(['error'=>'validation','fields'=>$errors]); exit;
+		echo json_encode(['error'=>'Form Hatası','fields'=>$errors]); exit;
 	}
 
 	$stmt = $pdo->prepare('SELECT ID FROM Users WHERE Email = :Email LIMIT 1');
 	$stmt->execute([
 		"Email" => $email
 	]);
-	if ($stmt->fetch()) { http_response_code(409); echo json_encode(['error'=>'email_in_use']); exit; }
+	if ($stmt->fetch()) { http_response_code(409); echo json_encode(['error'=>'Email Kullanılmaktadır!']); exit; }
 
 	$hash = password_hash($password, PASSWORD_DEFAULT);
 
@@ -92,7 +92,7 @@ try {
 	$pdo->commit();
 
 	http_response_code(201);
-	echo json_encode(['ok'=>true, 'message'=>'registered']);
+	echo json_encode(['ok'=>true, 'message'=>'Kayıt Başarılı!']);
 
 } catch (JsonBodyException $e) {
 	http_response_code($e->status);
