@@ -20,9 +20,10 @@ import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSettings } from "./redux/actions/settingsActions";
-import Login from "./pages/Login/Login";
 import EducationPost from "./pages/Admin/Educations/EducationPost";
 import EducatorPost from "./pages/Admin/Educators/EducatorPost";
+import Login from "./pages/Auth/Login/Login";
+import Register from "./pages/Auth/Register/Register";
 
 function App() {
     const dispatch = useDispatch();
@@ -44,7 +45,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
 
-                <Route path="/login" element={<Login />} />
+                <Route path="/kayit" element={<Register />} />
+                <Route path="/giris" element={<Login />} />
                 {/* <Route path="/" element={<Home />} /> */}
 
 

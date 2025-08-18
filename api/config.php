@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 $debug = TRUE;
 
 if ($debug) {
@@ -9,11 +11,10 @@ if ($debug) {
 }
 else{
     header("Access-Control-Allow-Origin: https://ataseng.com");
-    header("Access-Control-Allow-Headers: https://ataseng.com");
-    header('Access-Control-Allow-Methods: https://ataseng.com');
+    // header("Access-Control-Allow-Headers: https://ataseng.com");
+    // header('Access-Control-Allow-Methods: https://ataseng.com');
 }
 
-// header('Content-Type: application/json');
 header("Content-Type: application/json; charset=UTF-8");
 
 $env = parse_ini_file('.env');
@@ -22,6 +23,7 @@ $server_name = $env["SERVER_NAME"];
 $db_name = $env["DB_NAME"];
 $username = $env["USERNAME"];
 $password = $env["PASSWORD"];
+$JWT_SECRET = $env["JWT_SECRET"];
 
 $base_url = "https://ataseng.com/api/";
 

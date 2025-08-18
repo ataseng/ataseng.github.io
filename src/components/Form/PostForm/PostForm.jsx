@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 import "./PostForm.css";
 
-const PostForm = ({ inputs, url }) => {
+const PostForm = ({ inputs, url, jsonContent=false }) => {
 
     const settingList = useSelector(state => state.settings);
     const { error, loading, settings } = settingList;
@@ -18,13 +18,19 @@ const PostForm = ({ inputs, url }) => {
         e.preventDefault();
 
         const formData = new FormData(form.current);
+        const post_options = {
+            method: "post",
+            body: jsonContent ? JSON.stringify(Object.fromEntries(formData)) : formData
+        };
 
-        fetch(url,
-            {
-                method: "post",
-                body: formData,
-            }
-        )
+        if(jsonContent){
+            post_options.headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            };
+        }
+
+        fetch(url, post_options)
         .then(res => res.json())
         .then(res => console.log(res));
     }
@@ -34,7 +40,7 @@ const PostForm = ({ inputs, url }) => {
             {
                 inputs.map((input, index) => (
                     <div className='post-form-input-div' key={`post_form_input_${index}`}>
-                        <label htmlFor={input.name}>{input.label}: </label>
+                        <label htmlFor={input.name}>{input.isRequired ? <span className='required'>*</span> : ""} {input.label}: </label>
                         {
                             input.type === "select" ? 
                             <select required={input.isRequired} id={input.name} name={input.name}>

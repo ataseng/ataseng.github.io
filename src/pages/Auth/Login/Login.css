@@ -1,4 +1,4 @@
-div#login{
+div.auth-content-wrapper{
     width: 100%;
     height: calc(100vh - 176px);
     position: relative;
@@ -6,7 +6,7 @@ div#login{
     left: 0;
 }
 
-div.login-content{
+div.auth-content{
     position: absolute;
     top: 0;
     left: var(--sidebar-width);
@@ -89,18 +89,18 @@ form.login-form .login-form-input-div select{
 }
 
 @media screen and (max-width:600px) {
-    div#login{
+    div.auth-content-wrapper{
         height: calc(100vh - 156px);
     }
 
-    div.login-content{
+    div.auth-content{
         left: 0;
         width: 100%;
     }
 }
 
 @media screen and (max-width:400px) {
-    div#login{
+    div.auth-content-wrapper{
         height: calc(100vh - 136px);
     }
 }

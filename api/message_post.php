@@ -19,18 +19,27 @@ $surname = $formData["surname"];
 $email = $formData["email"];
 $message = $formData["message"];
 
+$remote_ip = $_SERVER["REMOTE_ADDR"];
+$proxy_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+$client_ip = $_SERVER['HTTP_CLIENT_IP'];
+
+require_once(__ROOT__.'/utils/temp_mail_check.php');
+
 try {
     $server_db = 'mysql:host=' . $server_name . ';dbname=' . $db_name;
     $conn = new PDO($server_db, $username, $password,
     [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO Messages (Name, Surname, Email, Message) VALUES (:Name, :Surname, :Email, :Message)";
+    $sql = "INSERT INTO Messages (Name, Surname, Email, Message, Remote_IP, Proxy_IP, Client_IP) VALUES (:Name, :Surname, :Email, :Message, :Remote_IP, :Proxy_IP, :Client_IP)";
     $query = $conn->prepare($sql);
     $query->execute([
         "Name" => $name,
         "Surname" => $surname,
         "Email" => $email,
-        "Message" => $message
+        "Message" => $message,
+        "Remote_IP" => $remote_ip,
+        "Proxy_IP" => $proxy_ip,
+        "Client_IP" => $client_ip
     ]);
     echo json_encode(array(
         "message" => "Mesajınız başarıyla iletildi!"

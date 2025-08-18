@@ -18,6 +18,7 @@ const Contact = () => {
         const message = targetElements.message.value;
 
         if (tempMailCheck(email)){
+            toast.error("Lütfen geçerli bir mail adresi girin!");
             return;
         }
 
@@ -39,16 +40,16 @@ const Contact = () => {
                 body: JSON.stringify(formData)
             }
         )
-            .then(res => {
-                const status = res.status;
-                if (status === 200){
-                    toast.info('Mesajınız başarıyla iletildi!');
-                }
-                else{
-                    toast.error("Bir hata meydana geldi!");
-                }
-                // return res.json();
-            })
+        .then(res => {
+            const status = res.status;
+            if (status === 200){
+                toast.info('Mesajınız başarıyla iletildi!');
+            }
+            else{
+                toast.error("Bir hata meydana geldi!");
+            }
+            // return res.json();
+        })
             // .then(data => {
             //     console.log(data);
             // });
@@ -99,7 +100,7 @@ const Contact = () => {
                     
                 </div>
             </div>
-        <ToastContainer position="bottom-right" autoClose={false}/>
+        <ToastContainer position="bottom-right" autoClose={5000} pauseOnFocusLoss pauseOnHover/>
         </section>
     );
 };

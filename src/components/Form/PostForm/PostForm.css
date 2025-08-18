@@ -46,6 +46,14 @@ form.post-form .post-form-input-div label{
     text-align: left;
 }
 
+form.post-form .post-form-input-div label span.required{
+    color: var(--error-color);
+}
+
+.dark form.post-form .post-form-input-div label span.required{
+    color: var(--dark-error-color);
+}
+
 form.post-form .post-form-input-div input{
     width: 65%;
 }

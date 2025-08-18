@@ -83,6 +83,7 @@ section:nth-child(2n){
 
 section.post-section{
     background-color: var(--light-gray);
+    height: calc(100vh - 176px);
 }
 
 .dark section.post-section{
@@ -107,7 +108,7 @@ section .section-content.vertical-content{
 }
 
 section .section-content.post-content{
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     gap: 40px;
 }
@@ -213,6 +214,14 @@ button:disabled{
     fill: var(--pure-white);
 }
 
+.Toastify__toast.Toastify__toast--info .Toastify__progress-bar--info{
+    background: var(--dark-slate);
+}
+
+.dark .Toastify__toast.Toastify__toast--info .Toastify__progress-bar--info{
+    background: white;
+}
+
 @media screen and (max-width:1400px) {
     :root{
         /* HomePage font size */
@@ -283,6 +292,10 @@ button:disabled{
         left: 0;
         width: 100%;
     }
+
+    section.post-section{
+        height: calc(100vh - 156px);
+    }
 }
 
 @media screen and (max-width:400px) {
@@ -294,6 +307,10 @@ button:disabled{
         --section-list:10px;
 
         --feedback-star: 20px;
+    }
+
+    section.post-section{
+        height: unset;
     }
 }
 

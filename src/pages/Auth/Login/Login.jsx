@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import "./Login.css";
 import { useGoogleLogin } from '@react-oauth/google';
+import PostForm from '../../../components/Form/PostForm/PostForm';
 
 const Login = () => {
 
@@ -54,26 +55,28 @@ const Login = () => {
     //         });
     // }
 
-    return (
-        <div id='login'>
-            <div className="login-content">
-                <form className='login-form' onSubmit={null}>
-                    <div className='login-form-input-div'>
-                        <label htmlFor="studentNo">Öğrenci No: </label>
-                        <input required type="text" id='studentNo' name='studentNo' minLength={9} maxLength={9} />
-                    </div>
-                    <div className='login-form-input-div'>
-                        <label htmlFor="password">Parola: </label>
-                        <input required type="password" id='password' name='password' />
-                    </div>
-                    <button type='submit'>Gönder</button>
-                    <button onClick={() => login()}>
-                        Google ile Giriş Yap
-                    </button>
-                </form>
-            </div>
-        </div>
+    const inputs = [
+        {
+            name: "email",
+            type: "email",
+            label: "Eposta",
+            isRequired: true
+        },
+        {
+            name: "password",
+            type: "password",
+            label: "Parola",
+            isRequired: true
+        }
+    ];
 
+    return (
+        <section className='post-section'>
+            <div className="section-content post-content">
+                <h2>Giriş Yap</h2>
+                <PostForm inputs = {inputs} url={"https://ataseng.com/api/auth/login.php"} jsonContent/>
+            </div>
+        </section>
     );
 }
 
