@@ -23,7 +23,7 @@ const Educations = () => {
 
     useEffect(() => {
         // setLoading(true);
-        fetch("https://ataseng.com/api/educations_get.php")
+        fetch("https://ataseng.com/api/education/educations_get.php")
             .then(res => res.json())
             .then(data => {
                 if (data.message === "success") {

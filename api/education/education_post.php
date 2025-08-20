@@ -1,9 +1,5 @@
 <?php
 
-define('__ROOT__', dirname(__FILE__));
-
-require_once(__ROOT__.'/config.php');
-
 $response_message = array("message" => "success");
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
@@ -13,6 +9,8 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     echo json_encode($response_message);
     exit;
 }
+
+require_once(__DIR__.'/config.php');
 
 $title = $_POST["title"];
 $content = $_POST["content"];
@@ -25,8 +23,7 @@ $status = $_POST["status"];
 $educator_id = $_POST["educator_id"];
 
 try {
-    $server_db = 'mysql:host=' . $server_name . ';dbname=' . $db_name;
-    $conn = new PDO($server_db, $username, $password,
+    $conn = new PDO(DB_SERVER, DB_USERNAME, DB_PASSWORD,
     [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

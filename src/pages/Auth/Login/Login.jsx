@@ -13,7 +13,7 @@ const Login = () => {
                 access_token : tokenResponse.access_token
             };
             fetch(
-                "https://ataseng.com/api/google_login.php",
+                "https://ataseng.com/api/auth/google_login.php",
                 {
                     method: "POST",
                     headers: {
@@ -40,7 +40,7 @@ const Login = () => {
     //     }
 
     //     fetch(
-    //         "https://ataseng.com/api/registration_post.php",
+    //         "https://ataseng.com/api/member/registration_post.php",
     //         {
     //             method: 'POST',
     //             headers: {

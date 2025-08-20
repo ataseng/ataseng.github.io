@@ -49,7 +49,7 @@ const EducationPost = () => {
         <section className='post-section'>
             <div className="section-content post-content">
                 <h2>Eğitimci Ekle</h2>
-                <PostForm inputs = {inputs} url={"https://ataseng.com/api/educator_post.php"}/>
+                <PostForm inputs = {inputs} url={"https://ataseng.com/api/educator/educator_post.php"}/>
         </div>
         </section>
     )

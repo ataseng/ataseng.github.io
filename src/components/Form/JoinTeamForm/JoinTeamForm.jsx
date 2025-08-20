@@ -44,7 +44,7 @@ const JoinTeamForm = () => {
         }
 
         fetch(
-            "https://ataseng.com/api/registration_post.php",
+            "https://ataseng.com/api/member/registration_post.php",
             {
                 method: 'POST',
                 headers: {

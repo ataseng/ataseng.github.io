@@ -7,7 +7,7 @@ const EducationPost = () => {
 
     useEffect(() => {
         // setLoading(true);
-        fetch("https://ataseng.com/api/educators_get.php?for_select=true")
+        fetch("https://ataseng.com/api/educator/educators_get.php?for_select=true")
             .then(res => res.json())
             .then(data => {
                 if (data.message === "success") {
@@ -106,7 +106,7 @@ const EducationPost = () => {
                     <button type="submit">Gönder</button>
                 </form> */}
 
-                <PostForm inputs={inputs} url={"https://ataseng.com/api/education_post.php"} />
+                <PostForm inputs={inputs} url={"https://ataseng.com/api/education/education_post.php"} />
             </div>
         </section>
     )

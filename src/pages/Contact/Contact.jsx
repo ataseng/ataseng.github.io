@@ -30,7 +30,7 @@ const Contact = () => {
         };
 
         fetch(
-            "https://ataseng.com/api/message_post.php",
+            "https://ataseng.com/api/contact/message_post.php",
             {
                 method: 'POST',
                 headers: {

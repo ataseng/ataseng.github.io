@@ -1,13 +1,13 @@
 <?php
 
-require_once __DIR__ . '/../config.php';
-
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 	http_response_code(204);
 	exit;
 }
+
+require_once __DIR__ . '/../config.php';
 
 use App\Utils\JsonBodyException;
 use function App\Utils\readJson;
@@ -22,9 +22,8 @@ require_once __DIR__ . '/../utils/read_json.php';
 // }
 
 try {
-	$db_server = 'mysql:host=' . $server_name . ';dbname=' . $db_name;
 	$pdo = new PDO(
-		$db_server, $username, $password,
+		$db_server, $db_username, $db_password,
 		[
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

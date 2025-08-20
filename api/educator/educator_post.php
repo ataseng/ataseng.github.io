@@ -1,9 +1,5 @@
 <?php
 
-define('__ROOT__', dirname(__FILE__));
-
-require_once(__ROOT__.'/config.php');
-
 $response_message = array("message" => "success");
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
@@ -13,6 +9,8 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     echo json_encode($response_message);
     exit;
 }
+
+require_once(__DIR__.'/config.php');
 
 $name = $_POST["name"];
 $surname = $_POST["surname"];
@@ -30,12 +28,11 @@ $target_file = $target_dir . time() . "_" . $image;
 
 $image_path = "";
 if(strlen($image) > 0){
-    $image_path = $base_url . $target_file;
+    $image_path = BASE_URL . $target_file;
 }
 
 try {
-    $server_db = 'mysql:host=' . $server_name . ';dbname=' . $db_name;
-    $conn = new PDO($server_db, $username, $password,
+    $conn = new PDO(DB_SERVER, DB_USERNAME, DB_PASSWORD,
     [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
