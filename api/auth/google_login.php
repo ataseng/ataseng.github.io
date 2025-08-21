@@ -1,8 +1,6 @@
 <?php
 
-define('__ROOT__', dirname(__FILE__));
-
-require_once(__ROOT__.'/config.php');
+require_once __DIR__ . '/../config.php';
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
     echo json_encode(array(

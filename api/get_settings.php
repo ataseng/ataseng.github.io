@@ -1,20 +1,18 @@
 <?php
 
-define('__ROOT__', dirname(__FILE__));
-
-require_once(__ROOT__.'/config.php');
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/utils/db.php';
 
 // PDO Create
-$db = new PDO(DB_SERVER, DB_USERNAME, DB_PASSWORD,
-    [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
+$pdo = db();
 
 // Get table name for section
 $sql = "SELECT * FROM Settings";
-$stmt = $db->prepare($sql);
+$stmt = $pdo->prepare($sql);
 $stmt->execute(); 
 
 if ($stmt && $stmt->rowCount() > 0) {
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = $stmt->fetch();
 }
 
 

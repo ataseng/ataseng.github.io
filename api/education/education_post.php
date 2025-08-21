@@ -10,7 +10,8 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     exit;
 }
 
-require_once(__DIR__.'/config.php');
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../utils/db.php';
 
 $title = $_POST["title"];
 $content = $_POST["content"];
@@ -23,12 +24,10 @@ $status = $_POST["status"];
 $educator_id = $_POST["educator_id"];
 
 try {
-    $conn = new PDO(DB_SERVER, DB_USERNAME, DB_PASSWORD,
-    [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = db();
 
     $sql = "SELECT PostActive FROM Settings";
-    $stmt = $conn->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
     if ($stmt && $stmt->rowCount() > 0) {
@@ -37,7 +36,7 @@ try {
 
     if($result && $result == '1' ){
         $sql = "INSERT INTO Education (Title, Content, Date, Location, Last_Application, Status, Educator_ID) VALUES (:Title, :Content, :Date, :Location, :Last_Application, :Status, :Educator_ID)";
-        $query = $conn->prepare($sql);
+        $query = $pdo->prepare($sql);
         $query->execute([
             "Title" => $title,
             "Content" => $content,

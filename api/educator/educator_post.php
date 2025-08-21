@@ -10,7 +10,8 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     exit;
 }
 
-require_once(__DIR__.'/config.php');
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../utils/db.php';
 
 $name = $_POST["name"];
 $surname = $_POST["surname"];
@@ -32,12 +33,10 @@ if(strlen($image) > 0){
 }
 
 try {
-    $conn = new PDO(DB_SERVER, DB_USERNAME, DB_PASSWORD,
-    [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = db();
 
     $sql = "SELECT PostActive FROM Settings";
-    $stmt = $conn->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
     if ($stmt && $stmt->rowCount() > 0) {
@@ -46,7 +45,7 @@ try {
 
     if($result && $result == '1' ){
         $sql = "INSERT INTO Educator (Name, Surname, Image, Expertise, Gender) VALUES (:Name, :Surname, :Image, :Expertise, :Gender)";
-        $query = $conn->prepare($sql);
+        $query = $pdo->prepare($sql);
         $query->execute([
             "Name" => $name,
             "Surname" => $surname,

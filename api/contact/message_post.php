@@ -10,7 +10,9 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     exit;
 }
 
-require_once(__DIR__.'/config.php');
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../utils/db.php';
+require_once __DIR__ . '/../utils/temp_mail_check.php';
 
 $json = file_get_contents('php://input');
 $formData = json_decode($json, true);
@@ -24,14 +26,19 @@ $remote_ip = $_SERVER["REMOTE_ADDR"];
 $proxy_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 $client_ip = $_SERVER['HTTP_CLIENT_IP'];
 
-require_once(__ROOT__.'/utils/temp_mail_check.php');
+
+if (check_temp_mail($email)){
+    http_response_code(422);
+    $response_message["message"] = "fail";
+	$response_message["detail"] = "Geçersiz Email";
+    echo json_encode($response_message);
+    exit;
+}
 
 try {
-    $conn = new PDO(DB_SERVER, DB_USERNAME, DB_PASSWORD,
-    [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = db();
     $sql = "INSERT INTO Messages (Name, Surname, Email, Message, Remote_IP, Proxy_IP, Client_IP) VALUES (:Name, :Surname, :Email, :Message, :Remote_IP, :Proxy_IP, :Client_IP)";
-    $query = $conn->prepare($sql);
+    $query = $pdo->prepare($sql);
     $query->execute([
         "Name" => $name,
         "Surname" => $surname,

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import PostForm from "../../../components/Form/PostForm/PostForm";
+import { useState } from "react";
+import "./Register.css";
 
 const Register = () => {
 
@@ -70,14 +72,33 @@ const Register = () => {
         }
     ];
 
+    const [completed, setCompleted] = useState(false);
+
+    const resendVerificationMail = () => {
+        
+    };
+
     return (
         <section className='post-section'>
-            <div className="section-content post-content" style={{gap: 16}}>
-                <h2>Kayıt Ol</h2>
-                <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent />
-                <p>
-                    Zaten Kayıtlı Mısın? <Link to={"/giris"}>Giriş Yap</Link>
-                </p>
+            <div className="section-content post-content" style={{ gap: 16 }}>
+                {
+                    completed ?
+                    <div className="form-completed-div">
+                        <h3 className="form-completed-h3">Kayıt Başarılı!</h3>
+                        <p className="form-completed">Doğrulama E-Postası Gönderildi!</p>
+                        <p className="form-completed">Lütfen e-posta adresinizi kontrol ediniz!</p>
+                        <button onClick={() => resendVerificationMail()}>Tekrar Gönder</button>
+                    </div>
+                    :
+                    <>
+                        <h2>Kayıt Ol</h2>
+                        <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent setCompleted={setCompleted} />
+                        <p>
+                            Zaten Kayıtlı Mısın? <Link to={"/giris"}>Giriş Yap</Link>
+                        </p>
+                    </>
+                }
+
             </div>
         </section>
     )

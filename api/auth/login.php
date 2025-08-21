@@ -1,117 +1,83 @@
 <?php
 
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-	http_response_code(204);
-	exit;
-}
+declare(strict_types=1);
 
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../utils/db.php';
+require_once __DIR__ . '/../utils/jwt.php';
+require_once __DIR__ . '/../utils/auth.php';
+require_once __DIR__ . '/../utils/read_json.php';
 
 use App\Utils\JsonBodyException;
 use function App\Utils\readJson;
 
-require_once __DIR__ . '/../utils/read_json.php';
-
-// function readJson(): array {
-//   $raw = file_get_contents('php://input') ?: '';
-//   $data = json_decode($raw, true);
-//   if (!is_array($data)) { http_response_code(400); echo json_encode(['error'=>'invalid_json']); exit; }
-//   return $data;
-// }
-
-function base64url_encode(string $data): string {
-    return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
-}
-
-function jwt_encode(array $payload, string $secret): string {
-    $header = ['alg'=>'HS256','typ'=>'JWT'];
-    $h = base64url_encode(json_encode($header, JSON_UNESCAPED_SLASHES));
-    $p = base64url_encode(json_encode($payload, JSON_UNESCAPED_SLASHES));
-    $sig = hash_hmac('sha256', "$h.$p", $secret, true);
-    $s = base64url_encode($sig);
-    return "$h.$p.$s";
-}
-
 try {
-	$pdo = new PDO(
-		$db_server, $db_username, $db_password,
-		[
-			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-		]
-	);
-} catch (Throwable $e) {
-  http_response_code(500); echo json_encode(['error'=>'db_connect_failed']); exit;
-}
-
-try {
-	$postData = readJson();
-
-	$email = trim((string)($postData['email'] ?? ''));
-	$password = (string)($postData['password'] ?? '');
-
-	if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
-        http_response_code(422);
-        echo json_encode(['error'=>'validation']);
-        exit;
-    }
-
-    $stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Status, usr.Role_ID, mbr.Name, mbr.Surname FROM Users AS usr JOIN Members AS mbr ON usr.ID = mbr.User_ID WHERE email = :email LIMIT 1');
-    $stmt->execute([
-        "email" => $email
-    ]);
-    $user = $stmt->fetch();
-
-    if (!$user || !password_verify($password, $user['PasswordHash'])) {
-        http_response_code(401);
-        echo json_encode(['error'=>'invalid_credentials']);
-        exit;
-    }
-
-    if ((int)$user['Status'] !== 1) {
-        http_response_code(403);
-        echo json_encode(['error'=>'inactive_user']);
-        exit;
-    }
-
-	$hash = password_hash($password, PASSWORD_DEFAULT);
-
-	$now = time();
-    $duration = 15 * 60;
-    $exp = $now + $duration; // 15 dk
-    $payload = [
-        'iss' => $base_url,
-        'aud' => "https://" . $server_name,
-        'iat' => $now,
-        'nbf' => $now,
-        'exp' => $exp,
-        'sub' => (string)$user['ID'],
-        'name'=> $user['Name'],
-        'email'=> $user['Email'],
-        'role'=> $user['Role_ID'] == 1 ? "Admin" : "Member"
-    ];
-    $accessToken = jwt_encode($payload, JWT_SECRET);
-
-	http_response_code(200);
-	echo json_encode([
-        'ok' => true,
-        'access_token' => $accessToken,
-        'token_type' => 'Bearer',
-        'expires_in' => $duration,
-        'user' => [
-            'id' => (int)$user['ID'],
-            'name' => $user['Name'],
-            'surname' => $user['Surname'],
-            'email' => $user['Email'],
-            'role' => $user['Role_ID'] == 1 ? "Admin" : "Member",
-        ]
-    ]);
-
+    $postData = readJson();
 } catch (JsonBodyException $e) {
-	http_response_code($e->status);
-	echo json_encode(['error' => $e->getMessage()]);
+    http_response_code($e->status); echo json_encode(['error'=>$e->getMessage()]); exit;
 }
+
+$email = trim((string)($postData['email'] ?? ''));
+$password = (string)($postData['password'] ?? '');
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
+    http_response_code(422);
+    echo json_encode(['error'=>'Geçersiz Email!']);
+    exit;
+}
+
+$pdo = db();
+$stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, usr.Role_ID, mbr.Name, mbr.Surname FROM Users AS usr JOIN Members AS mbr ON usr.ID = mbr.User_ID WHERE usr.Email = :email LIMIT 1');
+$stmt->execute([
+    "email" => $email
+]);
+$user = $stmt->fetch();
+
+if (!$user || !password_verify($password, $user['PasswordHash'])) {
+    http_response_code(401);
+    echo json_encode(['error'=>'Hatalı Giriş!']);
+    exit;
+}
+
+if ((int)$user['Is_Active'] !== 1) {
+    http_response_code(403);
+    echo json_encode(['error'=>'Aktif Olmayan Kullanıcı!']);
+    exit;
+}
+
+$user_id = $user["ID"];
+$user_name = $user["Name"];
+$user_email = $user["Email"];
+$user_role = $user['Role_ID'] == 1 ? "Admin" : "Member";
+$access = make_access_token((int)$user_id, $user_email, $user_role);
+
+// --- Refresh token (DB + Cookie)
+$rawRefresh = new_refresh_token();
+$hash = hash('sha256', $rawRefresh);
+$exp  = date('Y-m-d H:i:s', time() + REFRESH_TTL_SEC);
+
+$ins = $pdo->prepare('INSERT INTO RefreshTokens (User_ID, Token_Hash, Expires_At, Created_by_IP, User_Agent) VALUES (:user_id, :token_hash, :expires_at, :created_by_ip, :user_agent)');
+$ins->execute([
+    "user_id" => (int)$user_id,
+    "token_hash" => $hash,
+    "expires_at" => $exp,
+    "created_by_ip" => $_SERVER['REMOTE_ADDR'] ?? null,
+    "user_agent" => $_SERVER['HTTP_USER_AGENT'] ?? null
+]);
+
+set_refresh_cookie($rawRefresh);
+
+echo json_encode([
+    'ok'=>true,
+    'access_token'=>$access,
+    'token_type'=>'Bearer',
+    'expires_in'=>ACCESS_TTL_SEC,
+    'user'=>[
+        'id'=>(int)$user_id,
+        'name'=>$user_name,
+        'email'=>$user_email,
+        'role'=>$user_role
+    ]
+]);
 
 ?>

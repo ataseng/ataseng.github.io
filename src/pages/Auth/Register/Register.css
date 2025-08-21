@@ -1,0 +1,32 @@
+.form-completed-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.form-completed-h3{
+    font-size: var(--section-title);
+    color: var(--turquoise);
+}
+
+.form-completed-p{
+    font-size: var(--section-text);
+}
+
+.redirect-text{
+    animation: lightupdown 2s ease-in-out infinite;
+}
+
+@keyframes lightupdown {
+    from{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

@@ -1,8 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 function cors_preflight(): void {
-    if(DEBUG){
+    if(DEBUG_STATUS){
         header("Access-Control-Allow-Origin: *");
     }
     else{
@@ -15,7 +16,7 @@ function cors_preflight(): void {
 }
 
 function cors_headers(): void {
-    if(DEBUG){
+    if(DEBUG_STATUS){
         header("Access-Control-Allow-Origin: *");
     }
     else{

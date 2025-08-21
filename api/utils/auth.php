@@ -1,12 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 /** Access token üret */
 function make_access_token(int $userId, string $email, string $role): string {
     $now = time();
     $payload = [
-        'iss'=> API_ISS,
-        'aud'=> API_AUD,
+        'iss'=> BASE_URL,
+        'aud'=> FRONTEND_ORIGIN,
         'iat'=> $now,
         'nbf'=> $now,
         'exp'=> $now + ACCESS_TTL_SEC,
@@ -14,7 +15,7 @@ function make_access_token(int $userId, string $email, string $role): string {
         'email'=> $email,
         'role'=> $role,
     ];
-    return jwt_encode($payload, JWT_ACCESS_SECRET);
+    return jwt_encode($payload, JWT_SECRET);
 }
 
 /** Rastgele refresh token üretir (raw) */

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import "./PostForm.css";
 import { toast, ToastContainer } from 'react-toastify';
 
-const PostForm = ({ inputs, url, jsonContent=false }) => {
+const PostForm = ({ inputs, url, jsonContent = false, setCompleted=null }) => {
 
     const settingList = useSelector(state => state.settings);
     const { error, loading, settings } = settingList;
@@ -34,9 +34,18 @@ const PostForm = ({ inputs, url, jsonContent=false }) => {
         .then(res => {
             if(res.ok){
                 toast.info(res.message);
+                form.current.reset();
+                if (setCompleted !== null) {
+                    setCompleted(true);
+                }
             }
             if(res.error){
-                toast.error(res.error);
+                if(res.fields){
+                    Object.values(res.fields).forEach(error => toast.error(error));
+                }
+                else{
+                    toast.error(res.error);
+                }
             }
         });
     }
