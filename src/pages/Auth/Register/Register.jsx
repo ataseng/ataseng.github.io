@@ -73,9 +73,24 @@ const Register = () => {
     ];
 
     const [completed, setCompleted] = useState(false);
+    const [email, setEmail] = useState("");
 
     const resendVerificationMail = () => {
-        
+
+        const post_options = {
+            method: "post",
+            body: JSON.stringify({
+                email
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        };
+
+        fetch("https://ataseng.com/api/auth/resend_verification.php", post_options)
+        .then(res => res.json())
+        .then(res => console.log(res));
     };
 
     return (
@@ -92,7 +107,7 @@ const Register = () => {
                     :
                     <>
                         <h2>Kayıt Ol</h2>
-                        <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent setCompleted={setCompleted} />
+                        <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent setCompleted={setCompleted} setEmail={setEmail}/>
                         <p>
                             Zaten Kayıtlı Mısın? <Link to={"/giris"}>Giriş Yap</Link>
                         </p>

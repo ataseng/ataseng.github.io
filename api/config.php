@@ -28,8 +28,8 @@ define("REFRESH_COOKIE_SAMESITE", "Lax"); // farklı site ise 'None' + HTTPS sar
 define("VERIFY_TOKEN_DURATION", 3);
 define("VERIFY_TOKEN_TTL_SEC", 60 * 60 * VERIFY_TOKEN_DURATION); // 3 saat
 define("VERIFY_URL_BACKEND", 'https://ataseng.com/api/auth/verify.php'); // doğrulama endpoint’i
-define("VERIFY_REDIRECT_OK", 'https://ataseng.com');        // doğrulama sonrası yönlendir
-define("VERIFY_REDIRECT_FAIL", 'https://app.yoursite.example/verify-failed');
+define("VERIFY_REDIRECT_OK", 'https://ataseng.com/email_verified.html');        // doğrulama sonrası yönlendir
+define("VERIFY_REDIRECT_FAIL", 'https://ataseng.com/email_verify_failed.html');
 
 define("SMTP_HOST", $env["SMTP_HOST"]);
 define("SMTP_PORT", $env["SMTP_PORT"]); // 465 kullanıyorsanız SMTPS
