@@ -26,7 +26,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 $pdo = db();
-$stmt = $pdo->prepare('SELECT usr.ID, mbr.Name, usr.Is_Active FROM Users as usr JOIN Members as mbr ON usr.ID = mbr.User_ID WHERE Email=:email LIMIT 1');
+$stmt = $pdo->prepare('SELECT usr.ID, mbr.Name, mbr.Surname, usr.Is_Active FROM Users as usr JOIN Members as mbr ON usr.ID = mbr.User_ID WHERE Email=:email LIMIT 1');
 $stmt->execute(["email" => $email]);
 $user = $stmt->fetch();
 
@@ -72,7 +72,7 @@ $pdo->prepare('INSERT INTO EmailVerifications (User_ID, Token_Hash, Expires_At, 
     ]);
 
 $url = build_verify_url((int)$user['ID'], $token);
-send_verification_email_phpmailer($email, $user['Name'], $url);
+send_verification_email_phpmailer($email, $user['Name'], $user["Surname"], $url);
 
 echo json_encode(['ok'=>true]);
 

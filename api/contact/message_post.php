@@ -37,7 +37,7 @@ if (check_temp_mail($email)){
 
 try {
     $pdo = db();
-    $sql = "INSERT INTO Messages (Name, Surname, Email, Message, Remote_IP, Proxy_IP, Client_IP) VALUES (:Name, :Surname, :Email, :Message, :Remote_IP, :Proxy_IP, :Client_IP)";
+    $sql = "INSERT INTO ContactMessages (Name, Surname, Email, Message, Remote_IP, Proxy_IP, Client_IP) VALUES (:Name, :Surname, :Email, :Message, :Remote_IP, :Proxy_IP, :Client_IP)";
     $query = $pdo->prepare($sql);
     $query->execute([
         "Name" => $name,
@@ -54,8 +54,6 @@ try {
 } catch (PDOException $e) {
     http_response_code(400);
     echo json_encode(array(
-        "sql" => $sql,
-        "errors" => $e->getMessage(),
         "message" => "Bir hata meydana geldi!"
     ));
 }

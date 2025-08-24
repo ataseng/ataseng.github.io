@@ -1,20 +1,19 @@
 import './WelcomeSection.css';
 import logo from '../../assets/images/logo2.png';
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
-import { forwardRef } from "react";
 import Loader from '../Loader/Loader';
 
-const WelcomeSection = forwardRef((props, ref) => {
-    return (
-        <div ref={ref} id='welcome-section' className="welcome-section">
+const WelcomeSection = ({ text }) => {
+  return (
+    <div id='welcome-section' className="welcome-section">
             <div className="welcome-content">
                 <div className="welcome-logo">
                     <img src={logo} alt="Ataseng Logo" />
                 </div>
                 <div className="welcome-description">
                     {
-                        props.text ?
-                        props.text : 
+                        text ?
+                        text : 
                         <Loader color={"white"}/>
                     }
                 </div>
@@ -23,7 +22,7 @@ const WelcomeSection = forwardRef((props, ref) => {
                 </a>
             </div>
         </div>
-    );
-});
+  )
+}
 
 export default WelcomeSection

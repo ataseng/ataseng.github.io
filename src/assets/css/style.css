@@ -185,6 +185,16 @@ button:disabled{
     color: #0e76a8;
 }
 
+.error-text{
+    color: var(--error-color);
+    padding: 0 24px;
+    text-align: center;
+}
+
+.dark .error-text{
+    color: var(--dark-error-color);
+}
+
 .Toastify__toast.Toastify__toast--default,
 .Toastify__toast.Toastify__toast--info{
     background: var(--turquoise);

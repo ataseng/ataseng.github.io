@@ -1,9 +1,9 @@
-import React, { forwardRef, useState } from 'react'
+import { useState } from 'react'
 import './homeManagementSection.css'
 import JoinTeamForm from '../Form/JoinTeamForm/JoinTeamForm';
 
 
-const HomeManagementSection = forwardRef((_, ref) => {
+const HomeManagementSection = () => {
     const [formData, setformData] = useState(
         {
             fullname: "",
@@ -39,7 +39,7 @@ const HomeManagementSection = forwardRef((_, ref) => {
     }
     
     return (
-        <div ref={ref} id='management-section' className="management-section">
+        <div id='management-section' className="management-section">
             <div className="management-content">
                 <div className="management-side">
                     <div className="management-title">
@@ -82,6 +82,6 @@ const HomeManagementSection = forwardRef((_, ref) => {
 
         </div>
     )
-});
+};
 
 export default HomeManagementSection

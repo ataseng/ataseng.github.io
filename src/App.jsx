@@ -24,8 +24,10 @@ import EducationPost from "./pages/Admin/Educations/EducationPost";
 import EducatorPost from "./pages/Admin/Educators/EducatorPost";
 import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
+import { ToastContainer } from "react-toastify";
 
 function App() {
+    
     const dispatch = useDispatch();
     const settingList = useSelector(state => state.settings);
     const { error, loading, settings } = settingList;
@@ -48,7 +50,6 @@ function App() {
                 <Route path="/kayit" element={<Register />} />
                 <Route path="/giris" element={<Login />} />
                 {/* <Route path="/" element={<Home />} /> */}
-
 
                 <Route path="/hakkimizda" element={<About />} />
                 <Route path="/emegi-gecenler" element={<Credits />} />
@@ -78,6 +79,7 @@ function App() {
 
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            <ToastContainer position="bottom-right" autoClose={5000} pauseOnFocusLoss pauseOnHover/>
         </>
     );
 }

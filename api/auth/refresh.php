@@ -8,17 +8,19 @@ require_once __DIR__ . '/../utils/jwt.php';
 require_once __DIR__ . '/../utils/auth.php';
 
 $raw = $_COOKIE[REFRESH_COOKIE_NAME] ?? null;
+
 if (!$raw) {
     http_response_code(401);
     echo json_encode(['error'=>'no_refresh_cookie']);
     exit;
 }
 
-$pdo = db();
-$hash = hash('sha256', $raw);
-$pdo->beginTransaction();
-
 try {
+
+    $pdo = db();
+    $hash = hash('sha256', $raw);
+    $pdo->beginTransaction();
+
     // Kayıt var mı?
     $q = $pdo->prepare('SELECT * FROM RefreshTokens WHERE Token_Hash=:token_hash LIMIT 1 FOR UPDATE');
     $q->execute([
@@ -36,11 +38,11 @@ try {
     }
 
     // Kullanıcıyı çek
-    $u = $pdo->prepare('SELECT ID, Email, Role_ID FROM Isers WHERE ID=:id LIMIT 1');
-    $u->execute([
-        "id " => (int)$rt['User_ID']
+    $select_user_sql = $pdo->prepare('SELECT usr.ID, usr.Email, rl.Name AS Role FROM Users AS usr JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.ID=:id LIMIT 1');
+    $select_user_sql->execute([
+        "id" => (int)$rt['User_ID']
     ]);
-    $user = $u->fetch();
+    $user = $select_user_sql->fetch();
     if (!$user) {
         throw new RuntimeException('user_missing');
     }
@@ -55,6 +57,8 @@ try {
             "replaced_by_token_hash" => $newHash, 
             "id" => (int)$rt['ID']
         ]);
+
+    
     $pdo->prepare('INSERT INTO RefreshTokens (User_ID, Token_Hash, Expires_At, Created_by_IP, User_Agent) VALUES (:user_id, :token_hash, :expires_at, :created_by_ip, :user_agent)')
         ->execute([
             "user_id" => (int)$rt['User_ID'],
@@ -65,8 +69,7 @@ try {
         ]);
 
     // Yeni access
-    $user_role = $user['Role_ID'] == 1 ? "Admin" : "Member";
-    $access = make_access_token((int)$user['ID'], $user['Email'], $user_role);
+    $access = make_access_token((int)$user['ID'], $user['Email'], $user["Role"]);
 
     // Yeni cookie
     set_refresh_cookie($newRaw);
@@ -83,9 +86,11 @@ try {
 } catch (Throwable $e) {
     $pdo->rollBack();
     // Eski cookie’yi de temizleyelim
-    clear_refresh_cookie();
+    // clear_refresh_cookie();
     http_response_code(401);
-    echo json_encode(['error'=>'refresh_invalid','detail'=>$e->getMessage()]);
+    echo json_encode([
+        'error'=>'refresh_invalid',
+        'detail'=>$e->getMessage()]);
 }
 
 ?>

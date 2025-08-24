@@ -81,6 +81,11 @@ form.login-form .login-form-input-div select{
     color: white;
 }
 
+.login-verify-again-button{
+    width: unset;
+    max-width: unset;
+}
+
 @media screen and (max-width: 800px) {
     form.login-form{
         width: 90%;

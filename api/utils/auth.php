@@ -33,13 +33,14 @@ function set_refresh_cookie(string $rawToken): void {
         'httponly' => true,
         'samesite' => REFRESH_COOKIE_SAMESITE,     // 'Lax' genelde yeterli; cross-site ise 'None'
     ];
+
     setcookie(REFRESH_COOKIE_NAME, $rawToken, $opts);
 }
 
 /** Cookie'yi temizler */
 function clear_refresh_cookie(): void {
     setcookie(REFRESH_COOKIE_NAME, '', [
-        'expires'=> time()-3600,
+        'expires'=> time() - 3600,
         'path'=> REFRESH_COOKIE_PATH,
         'domain'=> REFRESH_COOKIE_DOMAIN ?: '',
         'secure'=> true,

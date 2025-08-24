@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
+// TODO Delete local host
+
 function cors_preflight(): void {
     if(DEBUG_STATUS){
-        header("Access-Control-Allow-Origin: *");
+        // header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Origin: http://localhost:3000");
     }
     else{
         header("Access-Control-Allow-Origin: " . FRONTEND_ORIGIN);
@@ -17,7 +20,8 @@ function cors_preflight(): void {
 
 function cors_headers(): void {
     if(DEBUG_STATUS){
-        header("Access-Control-Allow-Origin: *");
+        // header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Origin: http://localhost:3000");
     }
     else{
         header('Access-Control-Allow-Origin: ' . FRONTEND_ORIGIN);

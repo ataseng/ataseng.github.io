@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import PostForm from "../../../components/Form/PostForm/PostForm";
 import { useState } from "react";
 import "./Register.css";
+import { toast } from "react-toastify";
 
 const Register = () => {
 
@@ -43,6 +44,10 @@ const Register = () => {
             isRequired: true,
             options: [
                 {
+                    value: "",
+                    text: "---"
+                },
+                {
                     value: "1",
                     text: "1"
                 },
@@ -61,6 +66,14 @@ const Register = () => {
                 {
                     value: "4+",
                     text: "4+"
+                },
+                {
+                    value: "Yüksek Lisans",
+                    text: "Yüksek Lisans"
+                },
+                {
+                    value: "Doktora",
+                    text: "Doktora"
                 }
             ]
         },
@@ -75,8 +88,11 @@ const Register = () => {
     const [completed, setCompleted] = useState(false);
     const [email, setEmail] = useState("");
 
+    const [tooManyRequest, setTooManyRequest] = useState(false);
+    const [resendOk, setResendOk] = useState(false);
+    
     const resendVerificationMail = () => {
-
+        setResendOk(false);
         const post_options = {
             method: "post",
             body: JSON.stringify({
@@ -90,7 +106,17 @@ const Register = () => {
 
         fetch("https://ataseng.com/api/auth/resend_verification.php", post_options)
         .then(res => res.json())
-        .then(res => console.log(res));
+        .then(res => {
+            if(res.ok){
+                toast.info("E-posta Gönderildi!");
+                setTooManyRequest(false);
+            }
+            if(res.error){
+                toast.error("Çok fazla istek atıldı!");
+                setTooManyRequest(true);
+            }
+            setResendOk(true);
+        });
     };
 
     return (
@@ -112,6 +138,13 @@ const Register = () => {
                             Zaten Kayıtlı Mısın? <Link to={"/giris"}>Giriş Yap</Link>
                         </p>
                     </>
+                }
+                {
+                    resendOk && tooManyRequest ?
+                    <p className='error-text too-many-request'>Bu işlemi bu kadar sık gerçekleştiremezsiniz! Lütfen bir süre bekleyip tekrar deneyiniz!</p>
+                    :
+                    resendOk && !tooManyRequest ?
+                    <p>Doğrulama bağlantısı e-posta adresinize  tekrar gönderildi!</p> : ""
                 }
 
             </div>

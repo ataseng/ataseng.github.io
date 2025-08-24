@@ -15,25 +15,54 @@ import './Sidebar.css';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import menuData from './menu.json';
+import { useSelector } from 'react-redux';
 
-const HamburgerMenu = ({ isOpen, toggleMenu, toggleTheme, themeName }) => {
-  return (
-    <div className={`hamburger-menu ${isOpen ? 'open' : ''} ${themeName === 'dark' ? 'dark-mode' : ''}`}>
-      <div className="icon moon-sun" onClick={toggleTheme}>
-        <Icon icon={themeName === 'dark' ? 'ph:sun' : 'ph:moon'} cursor={"pointer"}/>
-      </div>
-      <ul>
-        {menuData.map((item, index) => (
-          <li key={index} onClick={toggleMenu}>
-            <Link to={item.link}>
-              <Icon icon={item.icon} className="icon" />
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+const HamburgerMenu = ({ isOpen, toggleMenu, toggleTheme, themeName, logoutHandler }) => {
+
+    const userLogin = useSelector(state => state.userLogin);
+    const { error, loading, userInfo } = userLogin;
+
+    return (
+        <div className={`hamburger-menu ${isOpen ? 'open' : ''} ${themeName === 'dark' ? 'dark-mode' : ''}`}>
+            <div className="icon moon-sun" onClick={toggleTheme}>
+                <Icon icon={themeName === 'dark' ? 'ph:sun' : 'ph:moon'} cursor={"pointer"} />
+            </div>
+            <ul>
+                {menuData.map((item, index) => (
+                    <li key={index} onClick={toggleMenu}>
+                        <Link to={item.link}>
+                            <Icon icon={item.icon} className="icon" />
+                            {item.name}
+                        </Link>
+                    </li>
+                ))}
+                {
+                        userInfo ?
+                            <>
+                                <li onClick={toggleMenu}>
+                                    <Link to={"/profil"}>
+                                        <Icon icon={"healthicons:ui-user-profile"} className="icon" />
+                                        Profil
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link onClick={logoutHandler}>
+                                        <Icon icon={"entypo:log-out"} className="icon" />
+                                        Çıkış Yap
+                                    </Link>
+                                </li>
+                            </>
+                            :
+                            <li onClick={toggleMenu}>
+                                <Link to={"/giris"}>
+                                    <Icon icon={"entypo:login"} className="icon" />
+                                    Giriş Yap
+                                </Link>
+                            </li>
+                    }
+            </ul>
+        </div>
+    );
 };
 
 export default HamburgerMenu;

@@ -69,7 +69,7 @@ require_once __DIR__ . "/../vendors/PHPMailer/SMTP.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-function send_verification_email_phpmailer(string $toEmail, string $toName, string $verifyUrl): bool {
+function send_verification_email_phpmailer(string $toEmail, string $toName, string $toSurname, string $verifyUrl): bool {
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
@@ -85,9 +85,9 @@ function send_verification_email_phpmailer(string $toEmail, string $toName, stri
         $mail->addAddress($toEmail, $toName);
 
         $mail->isHTML(true);
-        $mail->Subject = 'E-posta Doğrulama';
-        $mail->Body = "Merhaba {$toName},<br><br>Hesabınızı doğrulamak için <a href=\"{$verifyUrl}\">buraya tıklayın</a>.<br><br>Bağlantı " . VERIFY_TOKEN_DURATION . " saat geçerlidir.";
-        $mail->AltBody = "Merhaba {$toName},\n\nDoğrulama linki: {$verifyUrl}\n(" . VERIFY_TOKEN_DURATION . " saat geçerli)";
+        $mail->Subject = 'Ataseng - E-posta Doğrulama';
+        $mail->Body = "Merhaba {$toName} {$toSurname},<br><br>Hesabınızı doğrulamak için <a href=\"{$verifyUrl}\">buraya tıklayın</a>.<br><br>Doğrulama bağlantısı " . VERIFY_TOKEN_DURATION . " saat geçerlidir.<br><br>Saygılarımızla...<br><br><a href=\"https://ataseng.com\"><h1 style=\"color: #00A9B8; margin:0; padding:0;font-size:16px;\">ATASENG Ekibi</h1></a>Atatürk Üniversitesi - Yazılım Mühendisliği<br>Erzurum, Türkiye";
+        $mail->AltBody = "Merhaba {$toName} {$toSurname},\n\nDoğrulama linki: {$verifyUrl}\n(" . VERIFY_TOKEN_DURATION . " saat geçerli)";
 
         return $mail->send();
     } catch (Exception $e) {

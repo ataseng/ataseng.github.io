@@ -58,12 +58,8 @@ try {
         exit;
     }
     
-    
 } catch (PDOException $e) {
-    echo json_encode(array(
-        "sql" => $sql,
-        "errors" => $e->getMessage()
-    ));
+    echo json_encode(['error'=>'???']);
 }
 
 ?>

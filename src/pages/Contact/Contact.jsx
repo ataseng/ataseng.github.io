@@ -3,7 +3,7 @@ import locationIcon from "@iconify-icons/mdi/map-marker";
 import emailIcon from "@iconify-icons/mdi/email";
 import phoneIcon from "@iconify-icons/mdi/phone";
 import './Contact.css';
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { tempMailCheck } from "../../utils/tempMailCheck";
 
 const Contact = () => {
@@ -100,7 +100,6 @@ const Contact = () => {
                     
                 </div>
             </div>
-        <ToastContainer position="bottom-right" autoClose={5000} pauseOnFocusLoss pauseOnHover/>
         </section>
     );
 };

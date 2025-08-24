@@ -14,7 +14,11 @@ use function App\Utils\readJson;
 try {
     $postData = readJson();
 } catch (JsonBodyException $e) {
-    http_response_code($e->status); echo json_encode(['error'=>$e->getMessage()]); exit;
+    http_response_code($e->status);
+    echo json_encode([
+        'error' => $e->getMessage(),
+        "message" => $e->getMessage()
+    ]); exit;
 }
 
 $email = trim((string)($postData['email'] ?? ''));
@@ -22,7 +26,10 @@ $password = (string)($postData['password'] ?? '');
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
     http_response_code(422);
-    echo json_encode(['error'=>'Geçersiz Email!']);
+    echo json_encode([
+        'error' => 'invalid_email',
+        "message" => "Geçersiz Email!"
+    ]);
     exit;
 }
 
@@ -35,13 +42,19 @@ $user = $stmt->fetch();
 
 if (!$user || !password_verify($password, $user['PasswordHash'])) {
     http_response_code(401);
-    echo json_encode(['error'=>'Hatalı Giriş!']);
+    echo json_encode([
+        'error'=>'invalid_credentials',
+        "message" => "Hatalı Giriş!"
+    ]);
     exit;
 }
 
 if ((int)$user['Is_Active'] !== 1) {
     http_response_code(403);
-    echo json_encode(['error'=>'Aktif Olmayan Kullanıcı!']);
+    echo json_encode([
+        'error' => 'inactive_user',
+        "message" => "Aktif Olmayan Kullanıcı!"
+    ]);
     exit;
 }
 

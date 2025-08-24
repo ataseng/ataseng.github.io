@@ -1,12 +1,13 @@
-import React, { forwardRef } from 'react'
 import './homeTeamSection.css'
 import maleAvatar from '../../assets/images/avatars/maleAvatar.png';
 import femaleAvatar from '../../assets/images/avatars/femaleAvatar.png';
-import Data from './HomeTeam.json'
 import { Link } from 'react-router-dom';
-const HomeTeamSection = forwardRef((_, ref) => {
+import Loader from '../Loader/Loader';
+
+const HomeTeamSection = ({ our_team }) => {
+    
     return (
-        <div ref={ref} id='home-team-section' className="home-team-section">
+        <div id='home-team-section' className="home-team-section">
             <div className="home-team-content">
                 <div className="home-team-content-title">
                     <div className="left-line"></div>
@@ -14,9 +15,9 @@ const HomeTeamSection = forwardRef((_, ref) => {
                     <div className="right-line"></div>
                 </div>
                 <div className="home-team-content-card-wrap">
-
                     {
-                        Data.map((item, key) => (
+                        our_team.length > 0 ?
+                        our_team.map((item, key) => (
                             <div key={key} className="home-team-content-card">
                                 <div className="person-image">
                                     {
@@ -28,23 +29,25 @@ const HomeTeamSection = forwardRef((_, ref) => {
                                     }
                                 </div>
                                 <div className="person-name">
-                                    <p>{item.name}</p>
+                                    <p>{item.Name} {item.Surname}</p>
                                 </div>
 
                                 <div className="departmant-info">
                                     <div className="departmant">
-                                        <p>{item.departmant}</p>
+                                        <p>{item.Department}</p>
                                     </div>
                                     <div className="grade">
-                                        <p>{item.grade}</p>
+                                        <p>{item.Grade}. Sınıf</p>
                                     </div>
                                 </div>
 
                                 <div className="club-positions">
-                                    <p>{item.clubPosition}</p>
+                                    <p>{item.Position}</p>
                                 </div>
                             </div>
                         ))
+                        :
+                        <Loader />
                     }
                 </div>
 
@@ -54,6 +57,6 @@ const HomeTeamSection = forwardRef((_, ref) => {
             </div>
         </div>
     )
-});
+};
 
 export default HomeTeamSection

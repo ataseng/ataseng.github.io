@@ -26,8 +26,6 @@ if (isset($formData["access_token"])){
     }
 }
 
-
-
 // $studentNo = $formData["studentNo"];
 // $password = $formData["password"];
 
@@ -50,8 +48,6 @@ if (isset($formData["access_token"])){
 // } catch (PDOException $e) {
 //     http_response_code(400);
 //     echo json_encode(array(
-//         "sql" => $sql,
-//         "errors" => $e->getMessage(),
 //         "message" => "Bir hata meydana geldi!"
 //     ));
 // }

@@ -22,8 +22,18 @@ define("ACCESS_TTL_SEC", 15 * 60); // 15 dk
 define("REFRESH_TTL_SEC", 60 * 60 * 24 * 30); // 30 gun
 define("REFRESH_COOKIE_NAME", "refresh_token");
 define("REFRESH_COOKIE_PATH", '/');
-define("REFRESH_COOKIE_DOMAIN", ''); // genellikle bos birak (API domaini); cross-subdomain icin ".example.com"
-define("REFRESH_COOKIE_SAMESITE", "Lax"); // farklı site ise 'None' + HTTPS sart
+define("REFRESH_COOKIE_DOMAIN", 'ataseng.com'); // genellikle bos birak (API domaini); cross-subdomain icin ".example.com"
+// define("REFRESH_COOKIE_DOMAIN", ''); // genellikle bos birak (API domaini); cross-subdomain icin ".example.com"
+
+// TODO Change Lax to Strict
+// define("REFRESH_COOKIE_SAMESITE", "Strict"); // farklı site ise 'None' + HTTPS sart, 
+// define("REFRESH_COOKIE_SAMESITE", "Lax"); // farklı site ise 'None' + HTTPS sart,
+if(DEBUG_STATUS){
+    define("REFRESH_COOKIE_SAMESITE", "None"); // farklı site ise 'None' + HTTPS sart,
+}
+else{
+    define("REFRESH_COOKIE_SAMESITE", "Strict");
+}
 
 define("VERIFY_TOKEN_DURATION", 3);
 define("VERIFY_TOKEN_TTL_SEC", 60 * 60 * VERIFY_TOKEN_DURATION); // 3 saat

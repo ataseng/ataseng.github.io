@@ -114,7 +114,7 @@ try {
 	$pdo->commit();
 
     $url = build_verify_url($userId, $token);
-    if (!send_verification_email_phpmailer($email, $name, $url)) {
+    if (!send_verification_email_phpmailer($email, $name, $surname, $url)) {
         // gönderim hatası: kullanıcı var, ama kullanıcıya “tekrar dene” akışı göster
         // (istersen burada token kaydını silip tekrar deneyebilirsin)
     }
