@@ -82,6 +82,12 @@ const Register = () => {
             type: "text",
             label: "Bölüm",
             isRequired: true
+        },
+        {
+            name: "policy_confirm",
+            type: "checkbox",
+            label: "",
+            isRequired: true
         }
     ];
 
@@ -133,7 +139,7 @@ const Register = () => {
                     :
                     <>
                         <h2>Kayıt Ol</h2>
-                        <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent setCompleted={setCompleted} setEmail={setEmail}/>
+                        <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent setCompleted={setCompleted} setEmail={setEmail} submitButtonText={"Kayıt Ol"}/>
                         <p>
                             Zaten Kayıtlı Mısın? <Link to={"/giris"}>Giriş Yap</Link>
                         </p>

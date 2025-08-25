@@ -6,6 +6,7 @@ import atasengLight from '../../assets/images/ataseng_light.png';
 
 import universityLogo from '../../assets/images/universityLogo.png'; 
 import universityLogoDark from '../../assets/images/universityLogo-darkTheme.png';
+import { Link } from 'react-router-dom';
 
 /**
  * Footer component that displays information and logos at the bottom of the page.
@@ -24,9 +25,15 @@ const Footer = ({ theme }) => {
         <footer className={`footer ${theme=== 'dark' ? 'dark-mode' : ''}`}>
             <div className="footer-content">
                 <div className="footer-logos">
-                    
                     <img src={atasengSrc} alt="Ataseng Logo" className="footer-logo" />
                     <img src={logoSrc} alt="University Logo" className="footer-logo" />
+                </div>
+                <div className={`footer-links ${theme=== 'dark' ? 'dark-mode' : ''}`}>
+                    {/* <h3>Yardımcı Linkler</h3> */}
+                    <Link to="/kosullar-ve-sartlar">Koşullar ve Şartlar</Link>
+                    <Link to="/gizlilik-politikasi">Gizlilik Politikası</Link>
+                    <Link to="/cerez-politikasi">Çerez Politikası</Link>
+                    <a href="mailto:destek@ataseng.com">destek@ataseng.com</a>
                 </div>
                 <div className={`footer-icons ${theme=== 'dark' ? 'dark-mode' : ''}`}>
                     <a href="https://www.instagram.com/ataseng.club/" target='_blank' rel='noreferrer'>
@@ -42,15 +49,6 @@ const Footer = ({ theme }) => {
                         <Icon icon="mdi:youtube" className="footer-icon youtube-icon" />
                     </a>
                 </div>
-                {/* <div className={`footer-links ${theme=== 'dark' ? 'dark-mode' : ''}`}>
-                    <a href="/">Projemiz</a>
-                    <a href="/">Ekibimiz</a>
-                    <a href="/">İletişim</a>
-                    <a href="mailto:ataseng2023@gmail.com">ataseng2023@gmail.com</a>
-                    <a href="/">Etkinlikler</a>
-                    <a href="/">Kayıt Ol</a>
-                    <a href="/">Hizmetlerimiz</a>
-                </div> */}
             </div>
         </footer>
     );

@@ -1,0 +1,46 @@
+section .section-content.vertical-content.terms-and-policies-section{
+    gap: 1em;
+}
+
+section .section-content.vertical-content.terms-and-policies-section section{
+    background-color: unset;
+    padding: 0 12px;
+}
+
+.terms-and-policies-section nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* padding: 0 12px; */
+}
+
+.terms-and-policies-section nav h3{
+    margin-bottom: 8px;
+}
+
+/* .terms-and-policies-section h3,
+.terms-and-policies-section h4,
+.terms-and-policies-section p,
+.terms-and-policies-section ul{
+    width: 100%;
+    padding: 0 12px;
+} */
+
+section .section-content.vertical-content.terms-and-policies-section section ul,
+section .section-content.vertical-content.terms-and-policies-section section p{
+    margin: 12px 0;
+}
+
+.terms-and-policies-section ul li{
+    margin-left: 1em;
+}
+
+.terms-and-policies-section .muted{
+    color: gray;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.dark .terms-and-policies-section .muted{
+    color: var(--footer-text);
+}

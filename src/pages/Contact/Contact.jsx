@@ -5,6 +5,7 @@ import phoneIcon from "@iconify-icons/mdi/phone";
 import './Contact.css';
 import { toast } from "react-toastify";
 import { tempMailCheck } from "../../utils/tempMailCheck";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
 
@@ -67,6 +68,7 @@ const Contact = () => {
                     <input required type="email" placeholder="Email" name="email" className='input' />
                     <textarea required placeholder="Mesajınız" name="message" className='input' />
                     <button type="submit">Gönder</button>
+                    <p>Bu form aracılığıyla ilettiğiniz bilgiler (ad, soyad, e-posta, mesaj içeriği ve IP adresiniz) yalnızca iletişim kurulması, güvenliğin sağlanması ve kötüye kullanımın önlenmesi amacıyla kaydedilmektedir. Detaylı bilgi için <Link to="/gizlilik-politikasi">Gizlilik Politikası</Link> sayfamızı inceleyebilirsiniz.</p>
                 </form>
                 <div className="map contact-inner-content">
                     <iframe

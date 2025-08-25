@@ -1,5 +1,9 @@
 <?php
 
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../utils/db.php';
+require_once __DIR__ . '/../utils/temp_mail_check.php';
+
 $response_message = array("message" => "success");
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
@@ -9,10 +13,6 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     echo json_encode($response_message);
     exit;
 }
-
-require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/../utils/db.php';
-require_once __DIR__ . '/../utils/temp_mail_check.php';
 
 $json = file_get_contents('php://input');
 $formData = json_decode($json, true);

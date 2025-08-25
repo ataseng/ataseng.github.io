@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     position: relative;
     top: 0;
     left: var(--sidebar-width);
@@ -68,28 +68,33 @@
 /* Links container */
 .footer-links {
     border: 1px solid var(--footer-text);
-    margin: 0 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
+    width: clamp(240px, 100%, 480px);
+}
+
+.footer-links h3{
+    margin: 8px 0;
 }
 
 /* Link styles */
 .footer-links a {
-    margin: 5px 20px;
+    margin: 4px 20px;
     color: var(--footer-text);
     text-decoration: none;
     font-size: 14px;
 }
 
 /* Dark mode link styles */
-.footer-links.dark-mode a {
+.dark .footer-links a {
     color: #eee;
 }
 
 /* Link hover effect */
 .footer-links a:hover {
     text-decoration: underline;
+    color: var(--turquoise);
 }
 
 @media screen and (max-width:600px) {

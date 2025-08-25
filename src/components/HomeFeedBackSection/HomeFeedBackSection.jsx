@@ -48,8 +48,6 @@ const HomeFeedBackSection = () => {
 
         const result = await api.post_with_auth(url, body, userInfo.access_token);
 
-        console.log(result);
-
         if (result.status === 200){
             toast.info("Teşekkür Ederiz!");
         }

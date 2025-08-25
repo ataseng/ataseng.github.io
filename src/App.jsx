@@ -25,6 +25,9 @@ import EducatorPost from "./pages/Admin/Educators/EducatorPost";
 import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
 import { ToastContainer } from "react-toastify";
+import PrivacyPolicy from "./pages/TermsAndPolicies/PrivacyPolicy";
+import CookiePolicy from "./pages/TermsAndPolicies/CookiePolicy";
+import TermsOfUse from "./pages/TermsAndPolicies/TermsOfUse";
 
 function App() {
     
@@ -73,6 +76,10 @@ function App() {
 
                 <Route path="/etkinlikler/kariyer-gunleri" element={<CareerDays />} />
                 <Route path="/etkinlikler/kariyer-gunleri/:title" element={<CareerDaysDetail />} />
+
+                <Route path="/kosullar-ve-sartlar" element={<TermsOfUse />} />
+                <Route path="/gizlilik-politikasi" element={<PrivacyPolicy />} />
+                <Route path="/cerez-politikasi" element={<CookiePolicy />} />
 
                 <Route path="/admin/egitim-ekle" element={<EducationPost />} />
                 <Route path="/admin/egitimci-ekle" element={<EducatorPost />} />

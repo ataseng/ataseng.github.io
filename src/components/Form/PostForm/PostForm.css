@@ -70,6 +70,18 @@ form.post-form .post-form-input-div select{
     color: white;
 }
 
+form.post-form .post-form-input-div .policy-confirm{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+form.post-form .post-form-input-div .policy-confirm input{
+    width: unset;
+}
+
 .post-not-active{
     font-size: var(--section-text);
     color: darkred;
