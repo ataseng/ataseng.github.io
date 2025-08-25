@@ -73,7 +73,7 @@ const PostForm = ({ inputs, url, jsonContent = false, setUserVerified = null, se
                                 <div className='policy-confirm'>
                                     <input required={input.isRequired} type={input.type} id={input.name} name={input.name} onChange={input.setFunction ?? null}/> 
                                     <p>
-                                        <Link to={"/kosullar"}>Koşullar</Link>, <Link to={"/gizlilik-politikasi"}>Gizlilik Politikası</Link> ve <Link to={"/cerez-politikasi"}>Çerez Politikasını</Link> okudum, kabul ediyorum.
+                                        <Link to={"/kosullar-ve-sartlar"}>Koşullar</Link>, <Link to={"/gizlilik-politikasi"}>Gizlilik Politikası</Link> ve <Link to={"/cerez-politikasi"}>Çerez Politikasını</Link> okudum, kabul ediyorum.
                                     </p>
                                 </div>
                                 :

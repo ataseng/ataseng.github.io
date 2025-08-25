@@ -80,6 +80,7 @@ form.post-form .post-form-input-div .policy-confirm{
 
 form.post-form .post-form-input-div .policy-confirm input{
     width: unset;
+    accent-color: var(--turquoise);
 }
 
 .post-not-active{
