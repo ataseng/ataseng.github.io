@@ -83,7 +83,7 @@ section:nth-child(2n){
 
 section.post-section{
     background-color: var(--light-gray);
-    height: calc(100vh - 176px);
+    min-height: calc(100vh - 176px);
 }
 
 .dark section.post-section{

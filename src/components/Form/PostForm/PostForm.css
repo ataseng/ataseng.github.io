@@ -83,6 +83,12 @@ form.post-form .post-form-input-div .policy-confirm input{
     accent-color: var(--turquoise);
 }
 
+form.post-form .post-form-input-div span.disabled{
+    width: 65%;
+    color: var(--footer-text);
+    cursor: not-allowed;
+}
+
 .post-not-active{
     font-size: var(--section-text);
     color: darkred;

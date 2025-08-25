@@ -28,6 +28,7 @@ import { ToastContainer } from "react-toastify";
 import PrivacyPolicy from "./pages/TermsAndPolicies/PrivacyPolicy";
 import CookiePolicy from "./pages/TermsAndPolicies/CookiePolicy";
 import TermsOfUse from "./pages/TermsAndPolicies/TermsOfUse";
+import UserProfile from "./pages/UserProfile/UserProfile";
 
 function App() {
     
@@ -52,6 +53,8 @@ function App() {
 
                 <Route path="/kayit" element={<Register />} />
                 <Route path="/giris" element={<Login />} />
+
+                <Route path="/profil" element={<UserProfile />} />
                 {/* <Route path="/" element={<Home />} /> */}
 
                 <Route path="/hakkimizda" element={<About />} />

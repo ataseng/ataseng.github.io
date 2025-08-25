@@ -151,7 +151,7 @@ const Login = () => {
         <section className='post-section'>
             <div className="section-content post-content">
                 <h2>Giriş Yap</h2>
-                <PostForm inputs = {inputs} url={"https://ataseng.com/api/auth/login.php"} jsonContent setUserVerified = {setUserVerified} submitHandler={submitHandler}/>
+                <PostForm inputs = {inputs} url={"https://ataseng.com/api/auth/login.php"} jsonContent submitHandler={submitHandler}/>
                 <p>
                     Hesabın mı yok? <Link to={"/kayit"}>Kayıt Ol</Link>
                 </p>

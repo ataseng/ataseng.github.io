@@ -3,6 +3,7 @@ import PostForm from "../../../components/Form/PostForm/PostForm";
 import { useState } from "react";
 import "./Register.css";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 
 const Register = () => {
 
@@ -96,6 +97,48 @@ const Register = () => {
 
     const [tooManyRequest, setTooManyRequest] = useState(false);
     const [resendOk, setResendOk] = useState(false);
+
+    const dispatch = useDispatch();
+
+    const submitHandler = e => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        
+        const body = JSON.stringify(Object.fromEntries(formData));
+        
+        const post_options = {
+            method: "post",
+            body,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        };
+
+        fetch("https://ataseng.com/api/auth/register.php", post_options)
+        .then(res => res.json())
+        .then(res => {
+            if(res.ok){
+                toast.info(res.message);
+                // form.current.reset();
+                setCompleted(true);
+                setEmail(Object.fromEntries(formData).email);
+                // if(url.includes("login.php"))
+            }
+            if(res.error){
+                if(res.fields){
+                    Object.values(res.fields).forEach(error => toast.error(error));
+                }
+                else{
+                    toast.error(res.message);
+                }
+            }
+        }).catch(error => {
+            toast.error(error);
+        });
+        // dispatch(login(email, password, setUserVerified));
+    }
     
     const resendVerificationMail = () => {
         setResendOk(false);
@@ -139,7 +182,7 @@ const Register = () => {
                     :
                     <>
                         <h2>Kayıt Ol</h2>
-                        <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent setCompleted={setCompleted} setEmail={setEmail} submitButtonText={"Kayıt Ol"}/>
+                        <PostForm inputs={inputs} url={"https://ataseng.com/api/auth/register.php"} jsonContent submitButtonText={"Kayıt Ol"} submitHandler={submitHandler}/>
                         <p>
                             Zaten Kayıtlı Mısın? <Link to={"/giris"}>Giriş Yap</Link>
                         </p>

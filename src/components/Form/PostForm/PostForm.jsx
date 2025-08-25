@@ -4,7 +4,7 @@ import "./PostForm.css";
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 
-const PostForm = ({ inputs, url, jsonContent = false, setUserVerified = null, setCompleted=null, setEmail=null, submitHandler = null, submitButtonText = "Gönder" }) => {
+const PostForm = ({ inputs, url, jsonContent = false, submitHandler = null, submitButtonText = "Gönder" }) => {
 
     const settingList = useSelector(state => state.settings);
     const { error, loading, settings } = settingList;
@@ -38,11 +38,6 @@ const PostForm = ({ inputs, url, jsonContent = false, setUserVerified = null, se
             if(res.ok){
                 toast.info(res.message);
                 form.current.reset();
-                if (setCompleted !== null)
-                    setCompleted(true);
-                if(setEmail !== null)
-                    setEmail(Object.fromEntries(formData).email);
-                // if(url.includes("login.php"))
             }
             if(res.error){
                 if(res.fields){
@@ -50,11 +45,6 @@ const PostForm = ({ inputs, url, jsonContent = false, setUserVerified = null, se
                 }
                 else{
                     toast.error(res.message);
-                }
-                
-                if(url.includes("login.php") && res.error === "inactive_user"){
-                    console.log("asd")
-                    setUserVerified(false);
                 }
             }
         }).catch(error => {
@@ -89,6 +79,7 @@ const PostForm = ({ inputs, url, jsonContent = false, setUserVerified = null, se
                                             }
                                         </select>
                                         :
+                                        input.disabled ? <span className='disabled'>{input.value}</span> :
                                         <input required={input.isRequired} type={input.type} id={input.name} name={input.name} onChange={input.setFunction ?? null}/>
                                     }
                                 </>

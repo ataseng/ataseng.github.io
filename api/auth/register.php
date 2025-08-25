@@ -15,7 +15,10 @@ try {
     $postData = readJson();
 } catch (JsonBodyException $e) {
 	http_response_code($e->status);
-	echo json_encode(['error' => $e->getMessage()]);
+	echo json_encode([
+        'error' => "json_body_error",
+        "message" => $e->getMessage()
+    ]);
     exit;
 }
 
@@ -61,9 +64,15 @@ try {
 		if($user_exists || $member_exists){
 			http_response_code(409);
 			if($user_exists)
-				echo json_encode(['error'=>'Email Kullanılmaktadır!']);
+				echo json_encode([
+                    'error'=>'email_already_used',
+                    "message" => "Email Kullanılmaktadır!"
+                ]);
 			else if($member_exists)
-				echo json_encode(['error'=>'Öğrenci Numarası Zaten Kayıtlı!']);
+				echo json_encode([
+                    'error'=>'student_number_already_registered',
+                    "message" => "Öğrenci Numarası Zaten Kayıtlı!"
+                ]);
 			exit;
 		}
 	}
@@ -126,7 +135,10 @@ try {
     if ($pdo->inTransaction()) $pdo->rollBack();
 	// http_response_code($e->status);
     http_response_code(500);
-	echo json_encode(['error' => $e->getMessage()]);
+	echo json_encode([
+        'error' => "an_error_occured",
+        "message" => $e->getMessage()
+    ]);
 }
 
 ?>

@@ -1,0 +1,5 @@
+.user-profile-section{
+    min-height: 100vh;
+    flex-direction: column;
+    border-bottom: 1px solid var(--footer-text);
+}
