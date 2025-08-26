@@ -23,23 +23,22 @@ $department = $formData["department"];
 $grade = $formData["grade"];
 $interest = $formData["interest"];
 $email = $formData["email"];
-$telephone = $formData["telephone"];
+$phone = $formData["phone"];
 
 try {
     $pdo = db();
 
-    $sql = "SELECT RegistrationActive FROM Settings";
+    $sql = "SELECT RegistrationActive FROM Settings LIMIT 1";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    if ($stmt && $stmt->rowCount() > 0) {
-        $result = $stmt->fetchColumn();
-    }
+    $postActive = $stmt->fetchColumn();
 
-    if($result && $result == '1' ){
-        $sql = "INSERT INTO Registration (StudentNo, Name, Surname, Department, Grade, Interest, Email, Telephone) VALUES (:student_no, :name, :surname, :department, :grade, :interest, :email, :telephone)";
-        $query = $pdo->prepare($sql);
-        $query->execute([
+    if($postActive && $postActive == 1 ){
+
+        $check_duplication_sql = "INSERT INTO Registration (StudentNo, Name, Surname, Department, Grade, Interest, Email, Phone) SELECT :student_no, :name, :surname, :department, :grade, :interest, :email, :phone WHERE NOT EXISTS(SELECT 1 FROM Members m WHERE m.StudentNo = :student_no2) OR NOT EXISTS(SELECT 1 FROM Members m WHERE m.Phone = :phone2) OR NOT EXISTS(SELECT 1 FROM Users u WHERE u.Email = :email2)";
+        $query = $pdo->prepare($check_duplication_sql);
+        $stmt = $query->execute([
             "student_no" => $studentNo,
             "name" => $name,
             "surname" => $surname,
@@ -47,12 +46,29 @@ try {
             "grade" => $grade,
             "interest" => $interest,
             "email" => $email,
-            "telephone" => $telephone,
+            "phone" => $phone,
+            "student_no2" => $studentNo,
+            "phone2" => $phone,
+            "email2" => $email
         ]);
-        http_response_code(200);
-        echo json_encode(array(
-            "message" => "Başvurunuz Alınmıştır",
-        ));
+
+        $lastInsertId = (int)$pdo->lastInsertId();
+
+        if ($lastInsertId != 0){
+            http_response_code(200);
+            echo json_encode(array(
+                "message" => "Başvurunuz Alınmıştır",
+            ));
+        }
+        else{
+            http_response_code(400);
+            echo json_encode(array(
+                "error" => "duplicate_fields",
+                "message" => "Öğrenci No, E-posta veya Telefon Zaten Kayıtlı!"
+            ));
+            exit;
+        }
+        
     } else {
         http_response_code(400);
         echo json_encode(array(

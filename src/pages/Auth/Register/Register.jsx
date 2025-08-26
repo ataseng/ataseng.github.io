@@ -29,13 +29,13 @@ const Register = () => {
         {
             name: "name",
             type: "text",
-            label: "Ad",
+            label: "İsim",
             isRequired: true
         },
         {
             name: "surname",
             type: "text",
-            label: "Soyad",
+            label: "Soyisim",
             isRequired: true
         },
         {
@@ -195,7 +195,6 @@ const Register = () => {
                     resendOk && !tooManyRequest ?
                     <p>Doğrulama bağlantısı e-posta adresinize  tekrar gönderildi!</p> : ""
                 }
-
             </div>
         </section>
     )

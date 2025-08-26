@@ -157,8 +157,8 @@ const JoinTeamForm = () => {
                 <input required type="email" id='email' name='email' />
             </div>
             <div className='join-team-form-input-div'>
-                <label htmlFor="telephone">Telefon: </label>
-                <input required type="tel" id='telephone' name='telephone' maxLength={20}
+                <label htmlFor="phone">Telefon: </label>
+                <input required type="tel" id='phone' name='phone' maxLength={20}
                 // onKeyDown={telephoneHandle}
                 // value={studentTel}
             />

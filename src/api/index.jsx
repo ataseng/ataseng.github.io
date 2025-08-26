@@ -12,7 +12,6 @@ export const api = {
             method: "post",
             body,
             headers: {
-                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
         }
@@ -26,6 +25,10 @@ export const api = {
             toast.info(response.message);
         }
         else{
+            if (response.message.includes("Duplicate")) {
+                toast.error("");
+
+            }
             toast.error(response.message);
         }
     },
