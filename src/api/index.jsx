@@ -3,7 +3,32 @@
 //   withCredentials: true, // refresh cookie için şart
 // });
 
+import { toast } from "react-toastify";
+
 export const api = {
+
+    post : async (url, body) => {
+        const options = {
+            method: "post",
+            body,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        }
+
+        const result = await fetch(url, options);
+        const response = await result.json();
+
+        console.log(result);
+
+        if(result.status === 200){
+            toast.info(response.message);
+        }
+        else{
+            toast.error(response.message);
+        }
+    },
 
     post_with_credentials: async (url, body) => {
         body = JSON.stringify(body);

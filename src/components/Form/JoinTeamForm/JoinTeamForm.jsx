@@ -3,6 +3,7 @@ import './JoinTeamForm.css';
 import { isNumeric } from '../../../utils/isNumeric';
 import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
+import { api } from '../../../api';
 
 /**
  * JoinTeamForm component renders a form for users to apply to join the team.
@@ -19,45 +20,40 @@ const JoinTeamForm = () => {
     // const [tempStudentTel, setTempStudentTel] = useState("");
     // const [studentTel, setStudentTel] = useState("0 (___) ___ __ __");
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         if(settings?.RegistrationActive !== '1'){
             return;
         }
         e.preventDefault();
-        const targetElements = e.target.elements;
-        const studentNo = targetElements.studentNo.value;
-        const studentFullName = targetElements.studentFullName.value;
-        const studentDepartment = targetElements.studentDepartment.value;
-        const studentClass = targetElements.studentClass.value;
-        const studentInterest = targetElements.studentInterest.value;
-        const studentEmail = targetElements.studentEmail.value;
-        const studentTel = targetElements.studentTel.value;
-        
-        const formData = {
-            studentNo,
-            studentFullName,
-            studentDepartment,
-            studentClass,
-            studentInterest,
-            studentEmail,
-            studentTel
-        }
 
-        fetch(
+        const formData = new FormData(e.target);
+        const body = JSON.stringify(Object.fromEntries(formData));
+
+        const result = api.post(
             "https://ataseng.com/api/member/registration_post.php",
-            {
-                method: 'POST',
-                headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            }
-        )
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-        });
+            body
+        );
+        
+        // const targetElements = e.target.elements;
+        // const studentNo = targetElements.studentNo.value;
+        // const name = targetElements.name.value;
+        // const surname = targetElements.surname.value;
+        // const department = targetElements.department.value;
+        // const grade = targetElements.grade.value;
+        // const interest = targetElements.interest.value;
+        // const email = targetElements.email.value;
+        // const telephone = targetElements.telephone.value;
+        
+        // const formData = {
+        //     studentNo,
+        //     name,
+        //     surname,
+        //     department,
+        //     grade,
+        //     interest,
+        //     email,
+        //     telephone
+        // }
     }
 
     // const telephoneHandle = e => {
@@ -121,16 +117,20 @@ const JoinTeamForm = () => {
                 <input required type="text" id='studentNo' name='studentNo' minLength={9} maxLength={9}/>
             </div>
             <div className='join-team-form-input-div'>
-                <label htmlFor="studentFullName">İsim Soyisim: </label>
-                <input required type="text" id='studentFullName' name='studentFullName'/>
+                <label htmlFor="name">İsim: </label>
+                <input required type="text" id='name' name='name'/>
             </div>
             <div className='join-team-form-input-div'>
-                <label htmlFor="studentDepartment">Bölüm: </label>
-                <input required type="text" id='studentDepartment' name='studentDepartment'/>
+                <label htmlFor="surname">Soyisim: </label>
+                <input required type="text" id='surname' name='surname'/>
             </div>
             <div className='join-team-form-input-div'>
-                <label htmlFor="studentClass">Sınıf: </label>
-                <select required name="studentClass" id="studentClass">
+                <label htmlFor="department">Bölüm: </label>
+                <input required type="text" id='department' name='department'/>
+            </div>
+            <div className='join-team-form-input-div'>
+                <label htmlFor="grade">Sınıf: </label>
+                <select required name="grade" id="grade">
                     <option value="">--</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -140,8 +140,8 @@ const JoinTeamForm = () => {
                 </select>
             </div>
             <div className='join-team-form-input-div'>
-                <label htmlFor="studentInterest">Başvurulan Pozisyon: </label>
-                <select required name="studentInterest" id="studentInterest">
+                <label htmlFor="interest">Başvurulan Pozisyon: </label>
+                <select required name="interest" id="interest">
                     <option value="">--</option>
                     <option value="Front-End">Front-End</option>
                     <option value="Back-End">Back-End</option>
@@ -153,12 +153,12 @@ const JoinTeamForm = () => {
                 </select>
             </div>
             <div className='join-team-form-input-div'>
-                <label htmlFor="studentEmail">E-Posta: </label>
-                <input required type="email" id='studentEmail' name='studentEmail' />
+                <label htmlFor="email">E-Posta: </label>
+                <input required type="email" id='email' name='email' />
             </div>
             <div className='join-team-form-input-div'>
-                <label htmlFor="studentTel">Telefon: </label>
-                <input required type="tel" id='studentTel' name='studentTel' maxLength={20}
+                <label htmlFor="telephone">Telefon: </label>
+                <input required type="tel" id='telephone' name='telephone' maxLength={20}
                 // onKeyDown={telephoneHandle}
                 // value={studentTel}
             />

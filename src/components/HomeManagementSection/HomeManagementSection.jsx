@@ -1,42 +1,41 @@
-import { useState } from 'react'
 import './homeManagementSection.css'
 import JoinTeamForm from '../Form/JoinTeamForm/JoinTeamForm';
 
 
 const HomeManagementSection = () => {
-    const [formData, setformData] = useState(
-        {
-            fullname: "",
-            departmant: "",
-            grade: "",
-            phone: ""
-        }
-    );
+    // const [formData, setformData] = useState(
+    //     {
+    //         fullname: "",
+    //         departmant: "",
+    //         grade: "",
+    //         phone: ""
+    //     }
+    // );
 
-    const recruitmentActive = true;
+    // const recruitmentActive = true;
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        if (value === "")
-            return;
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target
+    //     if (value === "")
+    //         return;
 
-        setformData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    //     setformData(prevState => ({
+    //         ...prevState,
+    //         [name]: value
+    //     }));
+    // }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
 
-        if (formData) {
-            setformData({
-                fullName: "",
-                departmant: "",
-                grade: "",
-                phone: ""
-            })
-        }
-    }
+    //     if (formData) {
+    //         setformData({
+    //             fullName: "",
+    //             departmant: "",
+    //             grade: "",
+    //             phone: ""
+    //         })
+    //     }
+    // }
     
     return (
         <div id='management-section' className="management-section">
@@ -61,7 +60,6 @@ const HomeManagementSection = () => {
                 <div className="form-content">
                     <div className="form-side">
                         <JoinTeamForm />
-                        
                     </div>
                 </div>
 

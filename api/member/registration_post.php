@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../utils/db.php';
+
 $response_message = array("message" => "success");
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
@@ -10,19 +13,17 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     exit;
 }
 
-require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/../utils/db.php';
-
 $json = file_get_contents('php://input');
 $formData = json_decode($json, true);
 
 $studentNo = $formData["studentNo"];
-$studentFullName = $formData["studentFullName"];
-$studentDepartment = $formData["studentDepartment"];
-$studentClass = $formData["studentClass"];
-$studentInterest = $formData["studentInterest"];
-$studentEmail = $formData["studentEmail"];
-$studentTel = $formData["studentTel"];
+$name = $formData["name"];
+$surname = $formData["surname"];
+$department = $formData["department"];
+$grade = $formData["grade"];
+$interest = $formData["interest"];
+$email = $formData["email"];
+$telephone = $formData["telephone"];
 
 try {
     $pdo = db();
@@ -36,30 +37,37 @@ try {
     }
 
     if($result && $result == '1' ){
-        $sql = "INSERT INTO Registration (No, FullName, Department, Class, Interest, Email, Telephone) VALUES (:No, :FullName, :Department, :Class, :Interest, :Email, :Telephone)";
+        $sql = "INSERT INTO Registration (StudentNo, Name, Surname, Department, Grade, Interest, Email, Telephone) VALUES (:student_no, :name, :surname, :department, :grade, :interest, :email, :telephone)";
         $query = $pdo->prepare($sql);
         $query->execute([
-            "No" => $studentNo,
-            "FullName" => $studentFullName,
-            "Department" => $studentDepartment,
-            "Class" => $studentClass,
-            "Interest" => $studentInterest,
-            "Email" => $studentEmail,
-            "Telephone" => $studentTel,
+            "student_no" => $studentNo,
+            "name" => $name,
+            "surname" => $surname,
+            "department" => $department,
+            "grade" => $grade,
+            "interest" => $interest,
+            "email" => $email,
+            "telephone" => $telephone,
         ]);
+        http_response_code(200);
         echo json_encode(array(
-            "message" => "New record created successfully",
+            "message" => "Başvurunuz Alınmıştır",
         ));
     } else {
+        http_response_code(400);
         echo json_encode(array(
-            "error" => "Registration Not Active",
-            "message" => $result
+            "error" => "registration_not_active",
+            "message" => "Registration Not Active"
         ));
         exit;
     }
     
 } catch (PDOException $e) {
-    echo json_encode(['error'=>'???']);
+    http_response_code(400);
+    echo json_encode([
+        'error'=> "an_error_occured",
+        'message'=> $e->getMessage(),
+    ]);
 }
 
 ?>
