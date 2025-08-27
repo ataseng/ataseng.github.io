@@ -17,6 +17,9 @@ const JoinTeamForm = () => {
     const settingList = useSelector(state => state.settings);
     const { error, loading, settings } = settingList;
 
+    const userLogin = useSelector(state => state.userLogin);
+    const { userInfo } = userLogin;
+
     // const [tempStudentTel, setTempStudentTel] = useState("");
     // const [studentTel, setStudentTel] = useState("0 (___) ___ __ __");
 
@@ -29,7 +32,7 @@ const JoinTeamForm = () => {
         const formData = new FormData(e.target);
         const body = JSON.stringify(Object.fromEntries(formData));
 
-        const result = api.post(
+        api.post(
             "https://ataseng.com/api/member/registration_post.php",
             body
         );
@@ -112,33 +115,38 @@ const JoinTeamForm = () => {
 
     return (
         <form className='join-team-form' onSubmit={handleSubmit}>
-            <div className='join-team-form-input-div'>
-                <label htmlFor="studentNo">Öğrenci No: </label>
-                <input required type="text" id='studentNo' name='studentNo' minLength={9} maxLength={9}/>
-            </div>
-            <div className='join-team-form-input-div'>
-                <label htmlFor="name">İsim: </label>
-                <input required type="text" id='name' name='name'/>
-            </div>
-            <div className='join-team-form-input-div'>
-                <label htmlFor="surname">Soyisim: </label>
-                <input required type="text" id='surname' name='surname'/>
-            </div>
-            <div className='join-team-form-input-div'>
-                <label htmlFor="department">Bölüm: </label>
-                <input required type="text" id='department' name='department'/>
-            </div>
-            <div className='join-team-form-input-div'>
-                <label htmlFor="grade">Sınıf: </label>
-                <select required name="grade" id="grade">
-                    <option value="">--</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="0">4+</option>
-                </select>
-            </div>
+            {
+                !userInfo && 
+                <>
+                    <div className='join-team-form-input-div'>
+                        <label htmlFor="studentNo">Öğrenci No: </label>
+                        <input required type="text" id='studentNo' name='studentNo' minLength={9} maxLength={9}/>
+                    </div>
+                    <div className='join-team-form-input-div'>
+                        <label htmlFor="name">İsim: </label>
+                        <input required type="text" id='name' name='name'/>
+                    </div>
+                    <div className='join-team-form-input-div'>
+                        <label htmlFor="surname">Soyisim: </label>
+                        <input required type="text" id='surname' name='surname'/>
+                    </div>
+                    <div className='join-team-form-input-div'>
+                        <label htmlFor="department">Bölüm: </label>
+                        <input required type="text" id='department' name='department'/>
+                    </div>
+                    <div className='join-team-form-input-div'>
+                        <label htmlFor="grade">Sınıf: </label>
+                        <select required name="grade" id="grade">
+                            <option value="">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="0">4+</option>
+                        </select>
+                    </div>
+                </>
+            }
             <div className='join-team-form-input-div'>
                 <label htmlFor="interest">Başvurulan Pozisyon: </label>
                 <select required name="interest" id="interest">
@@ -152,17 +160,24 @@ const JoinTeamForm = () => {
                     <option value="Etkinlik Düzenleme ve Organizasyon">Etkinlik Düzenleme ve Organizasyon</option>
                 </select>
             </div>
-            <div className='join-team-form-input-div'>
-                <label htmlFor="email">E-Posta: </label>
-                <input required type="email" id='email' name='email' />
-            </div>
-            <div className='join-team-form-input-div'>
-                <label htmlFor="phone">Telefon: </label>
-                <input required type="tel" id='phone' name='phone' maxLength={20}
-                // onKeyDown={telephoneHandle}
-                // value={studentTel}
-            />
-            </div>
+            {
+                !userInfo && 
+                <div className='join-team-form-input-div'>
+                    <label htmlFor="email">E-Posta: </label>
+                    <input required type="email" id='email' name='email' />
+                </div>
+            }
+
+            {
+                !userInfo?.user?.phone && 
+                <div className='join-team-form-input-div'>
+                    <label htmlFor="phone">Telefon: </label>
+                    <input required type="tel" id='phone' name='phone' maxLength={20}
+                    // onKeyDown={telephoneHandle}
+                    // value={studentTel}
+                />
+                </div>
+            }
             
             <button type='submit' disabled={settings?.RegistrationActive !== '1'}>Gönder</button>
             {

@@ -34,7 +34,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
 }
 
 $pdo = db();
-$stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, usr.Role_ID, mbr.Name, mbr.Surname FROM Users AS usr JOIN Members AS mbr ON usr.ID = mbr.User_ID WHERE usr.Email = :email LIMIT 1');
+$stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, rl.Name as Role, mbr.StudentNo, mbr.Name, mbr.Surname, mbr.Grade, mbr.Position, mbr.Task, mbr.Department, mbr.BirthDate, mbr.Gender, mbr.Phone FROM Users AS usr JOIN Members AS mbr ON usr.ID = mbr.User_ID JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.Email = :email LIMIT 1');
 $stmt->execute([
     "email" => $email
 ]);
@@ -59,9 +59,19 @@ if ((int)$user['Is_Active'] !== 1) {
 }
 
 $user_id = $user["ID"];
-$user_name = $user["Name"];
 $user_email = $user["Email"];
-$user_role = $user['Role_ID'] == 1 ? "Admin" : "Member";
+$user_role = $user['Role'];
+$user_studentNo = $user["StudentNo"];
+$user_name = $user["Name"];
+$user_surname = $user["Surname"];
+$user_grade = $user["Grade"];
+$user_position = $user["Position"];
+$user_task = $user["Task"];
+$user_department = $user["Department"];
+$user_birthdate = $user["BirthDate"];
+$user_gender = $user["Gender"];
+$user_phone = $user["Phone"];
+
 $access = make_access_token((int)$user_id, $user_email, $user_role);
 
 // --- Refresh token (DB + Cookie)
@@ -87,9 +97,18 @@ echo json_encode([
     'expires_in'=>ACCESS_TTL_SEC,
     'user'=>[
         'id'=>(int)$user_id,
-        'name'=>$user_name,
         'email'=>$user_email,
-        'role'=>$user_role
+        'role'=>$user_role,
+        'student_no' => $user_studentNo,
+        'name'=>$user_name,
+        'surname'=>$user_surname,
+        'grade'=>$user_grade,
+        'position'=>$user_position,
+        'task' => $user_task,
+        'department' => $user_department,
+        'birthdate' => $user_birthdate,
+        'gender' => $user_gender,
+        'phone' => $user_phone
     ]
 ]);
 

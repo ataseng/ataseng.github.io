@@ -30,37 +30,6 @@ const Login = () => {
         }
     });
 
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-    //     const targetElements = e.target.elements;
-    //     const studentNo = targetElements.studentNo.value;
-    //     const password = targetElements.password.value;
-
-    //     const formData = {
-    //         studentNo,
-    //         password
-    //     }
-
-    //     fetch(
-    //         "https://ataseng.com/api/member/registration_post.php",
-    //         {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Accept': 'application/json',
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify(formData)
-    //         }
-    //     )
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //         });
-    // }
-
-    // const parseJwt = (t: string) => JSON.parse(atob(t.split(".")[1]));
-
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -112,13 +81,6 @@ const Login = () => {
         e.preventDefault();
         dispatch(login(email, password, setUserVerified));
     }
-
-    // useEffect(() => {
-    //     if(userVerified === false){
-
-    //     }
-    // }, [userVerified])
-    
 
     const resendVerificationMail = () => {
 
