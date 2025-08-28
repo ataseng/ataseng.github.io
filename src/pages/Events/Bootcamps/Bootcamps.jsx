@@ -54,7 +54,7 @@ const Bootcamps = () => {
                         ))
                     ) : (
                         <div className='filter-not-found-area'>
-                            <p>Gösterilecek yarışma bulunmamaktadır.</p>
+                            <p>Gösterilecek bootcamp bulunmamaktadır.</p>
                         </div>
                     )}
                 </div>

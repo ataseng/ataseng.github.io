@@ -34,7 +34,8 @@ const Educations = () => {
 
     const getEducations = async () => {
         const result = await api.get("https://ataseng.com/api/educations/get.php");
-        setEducations(result.content);
+        if(result && result.content && result.content.length > 0)
+            setEducations(result.content);
     }
 
     useEffect(() => {

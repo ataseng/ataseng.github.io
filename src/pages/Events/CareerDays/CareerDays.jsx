@@ -62,7 +62,7 @@ const CareerDays = () => {
                             ))
                             :
                             <div className='filter-not-found-area'>
-                                <p>Gösterilecek sonuç bulunmamaktadır.</p>
+                                <p>Gösterilecek etkinlik bulunmamaktadır.</p>
                             </div>
                     }
                 </div>

@@ -1,34 +1,46 @@
 import { useEffect, useState } from "react";
-import { hackathon_data } from './hackathon_data';
 import Filters from "../../../components/Filters/Filters";
 import { eventFilter } from "../../../utils/eventFilter";
 import Pagination from "../Competitions/components/Pagination/Pagination";
 import EventVerticalCard from "../../../components/EventVerticalCard/EventVerticalCard";
+import { api } from "../../../api";
 const Hackathons = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [searchText, setSearchText] = useState('');
     const [selected, setSelected] = useState('all');
+    const [hackathons, setHackathons] = useState([]);
+
     const itemsPerPage = 4;
-
-    useEffect(() => {
-        setCurrentPage(1);
-    }, [selected, searchText]);
-
-    const filteredData = hackathon_data.filter((item) => {
-        return eventFilter(item, selected, searchText);
-    });
-
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
-    const totalPageCount = Math.ceil(filteredData.length / itemsPerPage);
 
     const selectMenu = {
         "active": "Aktif Yazılım Yarışmaları",
         "passive": "Pasif Yazılım Yarışmaları",
         "all": "Hepsi"
     };
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selected, searchText]);
+
+    const filteredData = hackathons.filter((item) => {
+        return eventFilter(item, selected, searchText);
+    });
+
+    const getHackathons = async () => {
+            const result = await api.get("https://ataseng.com/api/hackathons/get.php");
+            if(result && result.content && result.content.length > 0)
+                setHackathons(result.content);
+        }
+    
+        useEffect(() => {
+            getHackathons();
+        }, []);
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPageCount = Math.ceil(filteredData.length / itemsPerPage);
 
     return (
         <div className='events-subpage'>
@@ -41,7 +53,7 @@ const Hackathons = () => {
                         ))
                     ) : (
                         <div className='filter-not-found-area'>
-                            <p>Gösterilecek yarışma bulunmamaktadır.</p>
+                            <p>Gösterilecek hackathon bulunmamaktadır.</p>
                         </div>
                     )}
                 </div>
