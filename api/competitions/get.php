@@ -31,8 +31,8 @@ try {
     // }
 
 
-    $select_competitions_sql = "SELECT Competitions.Title, Competitions.`Description`, Competitions.Location, Competitions.Date, Competitions.Last_Application, Competitions.`Status`, Competitions.Image, Tags.`Name` AS `Tag` FROM Competitions CROSS JOIN Tags LEFT JOIN Competition_Tag
-  ON Competition_Tag.Competition_ID = Competitions.ID AND Competition_Tag.Tag_ID = Tags.ID";
+    $select_competitions_sql = "SELECT Competition.Title, Competition.`Description`, Competition.Location, Competition.Date, Competition.Last_Application, Competition.`Status`, Competition.Image, Tags.`Name` AS `Tag` FROM Competition CROSS JOIN Tags LEFT JOIN Competition_Tag
+  ON Competition_Tag.Competition_ID = Competition.ID AND Competition_Tag.Tag_ID = Tags.ID";
     $stmt = $pdo->prepare($select_competitions_sql);
     $stmt->execute();
 

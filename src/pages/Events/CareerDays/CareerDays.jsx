@@ -4,6 +4,7 @@ import Pagination from "../Competitions/components/Pagination/Pagination";
 import { eventFilter } from "../../../utils/eventFilter";
 import CareerDaysCard from "./CareerDaysCard/CareerDaysCard";
 import { careerDaysData } from "./Data/CareerDaysData";
+import EventHorizontalCard from "../../../components/EventHorizontalCard/EventHorizontalCard";
 
 const CareerDays = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -41,9 +42,10 @@ const CareerDays = () => {
                     {
                         currentItems.length !== 0 ?
                             currentItems.map((item, key) => (
-                                <CareerDaysCard
+                                <EventHorizontalCard
                                     key={key}
                                     item={item}
+                                    curatorTitle={"Konuşmacı"}
                                     setmodalIsOpen={setmodalIsOpen}
                                     setSelectedItem={setSelectedItem}
                                 />

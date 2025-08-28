@@ -5,6 +5,7 @@ import EducationCard from './components/EducationCard/EducationCard';
 import { eventFilter } from '../../../utils/eventFilter';
 import Pagination from '../Competitions/components/Pagination/Pagination';
 import { api } from '../../../api';
+import EventHorizontalCard from '../../../components/EventHorizontalCard/EventHorizontalCard';
 
 const Educations = () => {
     
@@ -12,7 +13,7 @@ const Educations = () => {
     const [searchText, setSearchText] = useState("");
     const [selected, setSelected] = useState("all");
     const [educations, setEducations] = useState([]);
-    const [modalIsOpen, setmodalIsOpen] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
     
     const selectMenu = {
@@ -53,10 +54,11 @@ const Educations = () => {
                     {
                         currentItems.length !== 0 ?
                             currentItems.map((item, key) => (
-                                <EducationCard
+                                <EventHorizontalCard
                                     key={key}
                                     item={item}
-                                    setmodalIsOpen={setmodalIsOpen}
+                                    curatorTitle={"Eğitmen"}
+                                    setModalIsOpen={setModalIsOpen}
                                     setSelectedItem={setSelectedItem}
                                 />
                             ))

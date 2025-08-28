@@ -3,7 +3,7 @@ import './About.css';
 const About = () => {
     return (
         <>
-            <section>
+            <section className='about-section'>
                 <div className="section-content">
                     <div className="image-content">
                         <img
@@ -14,16 +14,16 @@ const About = () => {
 
                     <div className="text-content">
                         <h2>Biz Kimiz</h2>
-                        <p>Biz Kimiz ATASENG Kulübü, Atatürk Üniversitesi Yazılım Mühendisliği öğrencileri tarafından 2023 yılında kurulmuş dinamik, yenilikçi ve hızla büyüyen bir öğrenci topluluğudur. Kulübümüz, yazılım mühendisliği alanında hem teorik hem de pratik bilgi ve deneyim paylaşımını teşvik ederek, öğrencilerin akademik ve profesyonel gelişimlerine katkıda bulunmayı amaçlamaktadır. Her geçen gün gelişen teknoloji dünyasında, ATASENG Kulübü üyeleri olarak sadece yazılım geliştirmenin ötesinde, sektörün gereksinimlerine cevap verebilecek donanımlı bireyler yetiştirmeyi hedefliyoruz. Bu doğrultuda kulübümüz, yazılım dünyasında öncü bireyler yetiştirme misyonunu benimsemiş olup, yaratıcı düşünme, problem çözme ve takım çalışması gibi önemli becerileri geliştirmeye odaklanmaktadır. Kulübümüz, çeşitli yazılım projeleri, yarışmalar, hackathonlar, seminerler ve atölye çalışmaları düzenleyerek üyelerimize zengin öğrenme fırsatları sunmaktadır.</p>
+                        <p>ATASENG Kulübü, Atatürk Üniversitesi Yazılım Mühendisliği öğrencileri tarafından 2023 yılında kurulmuş dinamik, yenilikçi ve hızla büyüyen bir öğrenci topluluğudur. Kulübümüz, yazılım mühendisliği alanında hem teorik hem de pratik bilgi ve deneyim paylaşımını teşvik ederek, öğrencilerin akademik ve profesyonel gelişimlerine katkıda bulunmayı amaçlamaktadır. Her geçen gün gelişen teknoloji dünyasında, ATASENG Kulübü üyeleri olarak sadece yazılım geliştirmenin ötesinde, sektörün gereksinimlerine cevap verebilecek donanımlı bireyler yetiştirmeyi hedefliyoruz. Bu doğrultuda kulübümüz, yazılım dünyasında öncü bireyler yetiştirme misyonunu benimsemiş olup, yaratıcı düşünme, problem çözme ve takım çalışması gibi önemli becerileri geliştirmeye odaklanmaktadır. Kulübümüz, çeşitli yazılım projeleri, yarışmalar, hackathonlar, seminerler ve atölye çalışmaları düzenleyerek üyelerimize zengin öğrenme fırsatları sunmaktadır.</p>
                     </div>
                 </div>
             </section>
 
-            <section>
+            <section className='about-section'>
                 <div className="section-content">
                     <div className="text-content">
                         <h2>Misyonumuz</h2>
-                        <ul>
+                        <ul className='mission-ul'>
                             {
 
                                 "Yazılım mühendisliği alanında farkındalık yaratmak ve bu alanda kariyer yapmak isteyen öğrencilere yol göstermek. Öğrenciler arasında bilgi paylaşımını ve iş birliğini teşvik ederek, kolektif öğrenme ve dayanışma kültürü oluşturmak. Yenilikçi projeler ve etkinlikler düzenleyerek, öğrencilerin sektöre yönelik hazırlıklarını desteklemek ve mesleki yeterliliklerini artırmak. Bu süreçte, öğrencilere teknik becerilerin yanı sıra soft skill geliştirme fırsatları sunarak, onların daha donanımlı bireyler olmalarını sağlıyoruz. Teknolojinin hızla geliştiği dünyada, öğrencilerimize en güncel bilgi ve uygulama imkanlarını sunarak, onları geleceğin yazılım mühendisleri olarak hazırlamak. Amacımız, her öğrencinin potansiyelini keşfetmesine ve kariyerinde başarılı olmasına katkıda bulunmaktır.".split(".").map((sentence, index) => (
@@ -42,7 +42,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section>
+            <section className='about-section'>
                 <div className="section-content third-content">
                     <div className="image-content">
                         <img
@@ -58,7 +58,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section>
+            <section className='about-section'>
                 <div className="section-content">
                     <div className="text-content">
                         <h2>Üyelik</h2>

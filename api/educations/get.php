@@ -6,7 +6,7 @@ require_once __DIR__ . '/../utils/db.php';
 $pdo = db();
 
 // Get table name for section
-$sql = "SELECT edc.*, edr.Name as Educator_Name, edr.Surname as Educator_Surname, edr.Image as Educator_Image, edr.Expertise as Educator_Expertise, edr.Gender as Educator_Gender FROM Education as edc LEFT JOIN Educator as edr ON edc.Educator_ID = edr.ID WHERE edc.Status = 'active'";
+$sql = "SELECT edc.*, edr.Name as Curator_Name, edr.Surname as Curator_Surname, edr.Image as Curator_Image, edr.Expertise as Curator_Expertise, edr.Gender as Curator_Gender FROM Education as edc LEFT JOIN Educator as edr ON edc.Educator_ID = edr.ID";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
