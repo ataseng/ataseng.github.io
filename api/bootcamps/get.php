@@ -6,7 +6,7 @@ require_once __DIR__ . '/../utils/db.php';
 try {
     $pdo = db();
 
-    $select_bootcamps_sql = "SELECT Bootcamp.Title, Bootcamp.`Description`, Bootcamp.Location, Bootcamp.Date, Bootcamp.Last_Application, Bootcamp.`Status`, Bootcamp.Card_Image, Tags.`Name` AS `Tag` FROM Bootcamp CROSS JOIN Tags LEFT JOIN Bootcamp_Tag
+    $select_bootcamps_sql = "SELECT Bootcamp.Title, Bootcamp.`Description`, Bootcamp.Location, Bootcamp.Date, Bootcamp.Last_Application, Bootcamp.`Status`, Bootcamp.Card_Image, Tags.`Name` AS `Tag` FROM Bootcamp CROSS JOIN Tags JOIN Bootcamp_Tag
   ON Bootcamp_Tag.Bootcamp_ID = Bootcamp.ID AND Bootcamp_Tag.Tag_ID = Tags.ID";
     $stmt = $pdo->prepare($select_bootcamps_sql);
     $stmt->execute();

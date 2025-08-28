@@ -6,7 +6,7 @@ require_once __DIR__ . '/../utils/db.php';
 try {
     $pdo = db();
 
-    $select_hackathons_sql = "SELECT Hackathon.Title, Hackathon.`Description`, Hackathon.Location, Hackathon.Date, Hackathon.Last_Application, Hackathon.`Status`, Hackathon.Card_Image, Tags.`Name` AS `Tag` FROM Hackathon CROSS JOIN Tags LEFT JOIN Hackathon_Tag
+    $select_hackathons_sql = "SELECT Hackathon.Title, Hackathon.`Description`, Hackathon.Location, Hackathon.Date, Hackathon.Last_Application, Hackathon.`Status`, Hackathon.Card_Image, Tags.`Name` AS `Tag` FROM Hackathon CROSS JOIN Tags JOIN Hackathon_Tag
   ON Hackathon_Tag.Hackathon_ID = Hackathon.ID AND Hackathon_Tag.Tag_ID = Tags.ID";
     $stmt = $pdo->prepare($select_hackathons_sql);
     $stmt->execute();
