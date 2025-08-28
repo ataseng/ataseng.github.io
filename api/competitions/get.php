@@ -31,7 +31,7 @@ try {
     // }
 
 
-    $select_competitions_sql = "SELECT Competition.Title, Competition.`Description`, Competition.Location, Competition.Date, Competition.Last_Application, Competition.`Status`, Competition.Image, Tags.`Name` AS `Tag` FROM Competition CROSS JOIN Tags LEFT JOIN Competition_Tag
+    $select_competitions_sql = "SELECT Competition.Title, Competition.`Description`, Competition.Location, Competition.Date, Competition.Last_Application, Competition.`Status`, Competition.Card_Image, Tags.`Name` AS `Tag` FROM Competition CROSS JOIN Tags LEFT JOIN Competition_Tag
   ON Competition_Tag.Competition_ID = Competition.ID AND Competition_Tag.Tag_ID = Tags.ID";
     $stmt = $pdo->prepare($select_competitions_sql);
     $stmt->execute();
@@ -60,19 +60,25 @@ try {
         // $competitions[$key] = $competition;
     }
     
-    if($result && $result != NULL){
-        echo json_encode(array(
-            "message" => "success",
-            "content" => $result
-        ));
+    // if($result && $result != NULL){
+    //     echo json_encode(array(
+    //         "message" => "success",
+    //         "content" => $result
+    //     ));
         
-    } else {
-        http_response_code(400);
-        echo json_encode(array(
-            "error" => "an_error_occured",
-            "message" => "Bir Hata Meydana Geldi!"
-        ));
-    }
+    // } else {
+    //     http_response_code(400);
+    //     echo json_encode(array(
+    //         "error" => "an_error_occured",
+    //         "message" => "Bir Hata Meydana Geldi!"
+    //     ));
+    // }
+
+    http_response_code(200);
+    echo json_encode(array(
+        "message" => "success",
+        "content" => $result
+    ));
 } catch (PDOException $e) {
     http_response_code(400);
     error_log('DB connect error: ' . $e->getMessage());

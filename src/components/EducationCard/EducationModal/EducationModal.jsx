@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './EducationModal.css';
-import EducationFormButton from '../../Button/EducationButton/EducationFormButton';
+// import EducationFormButton from '../../Button/EducationButton/EducationFormButton';
 
 const EducationModal = ({ modalIsOpen, setmodalIsOpen, selectedItem }) => {
     const [formData, setFormData] = useState({
@@ -64,7 +64,7 @@ const EducationModal = ({ modalIsOpen, setmodalIsOpen, selectedItem }) => {
                       <input value={formData.Email} onChange={handleChange} name='Email' type="email" placeholder='Email' />
                 </div>
                 <div className="education-modal-btn">
-                    <EducationFormButton />
+                    {/* <EducationFormButton /> */}
                 </div>
                 </form>
                

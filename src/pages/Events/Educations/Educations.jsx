@@ -15,6 +15,7 @@ const Educations = () => {
     const [educations, setEducations] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
+    const itemsPerPage = 4;
     
     const selectMenu = {
         "active": "Aktif Eğitimler",
@@ -22,7 +23,6 @@ const Educations = () => {
         "all" : "Hepsi"
     };
 
-    const itemsPerPage = 4;
 
     useEffect(() => {
         setCurrentPage(1);

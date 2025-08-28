@@ -1,6 +1,6 @@
 .event-horizontal-card{
     width: 600px;
-    height: 300px;
+    height: 340px;
     background-color: var(--light-gray);
     border: 1px solid var(--light-gray);
     border-radius: 10px; 
@@ -85,10 +85,12 @@
     color: darkred;
 } */
 
-.event-horizontal-card-button {
+.event-horizontal-card-buttons {
     position: absolute;
     bottom: 12px;
     right: 12px;
+    display: flex;
+    gap: 12px;
 }
 
 .dark .event-horizontal-card-content span,
@@ -143,7 +145,7 @@
         display: none;
     }
 
-    .event-horizontal-card-button{
+    .event-horizontal-card-buttons{
         position: unset;
     }
     

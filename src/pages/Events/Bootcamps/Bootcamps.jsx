@@ -1,26 +1,36 @@
-import BootcampCard from './components/BootcampCard/BootcampCard';
 import Filters from '../../../components/Filters/Filters';
 import { eventFilter } from '../../../utils/eventFilter';
-import { bootcamp_data } from './bootcamp_data';
 import { useEffect, useState } from 'react';
 import Pagination from '../Competitions/components/Pagination/Pagination';
 import EventVerticalCard from '../../../components/EventVerticalCard/EventVerticalCard';
+import { api } from '../../../api';
 
 const Bootcamps = () => {
-
 
     const [currentPage, setCurrentPage] = useState(1);
     const [searchText, setSearchText] = useState('');
     const [selected, setSelected] = useState('all');
+    const [bootcamps, setBootcamps] = useState([]);
+
     const itemsPerPage = 4;
 
     useEffect(() => {
         setCurrentPage(1);
     }, [selected, searchText]);
 
-    const filteredData = bootcamp_data.filter((item) => {
+    const filteredData = bootcamps.filter((item) => {
         return eventFilter(item, selected, searchText);
     });
+
+    const getBootcamps = async () => {
+        const result = await api.get("https://ataseng.com/api/bootcamps/get.php");
+        if(result && result.content && result.content.length > 0)
+            setBootcamps(result.content);
+    }
+
+    useEffect(() => {
+        getBootcamps();
+    }, []);
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;

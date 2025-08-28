@@ -18,7 +18,7 @@ $surname = $_POST["surname"];
 $expertise = $_POST["expertise"];
 $gender = $_POST["gender"];
 
-$target_dir = "images/educators/";
+$target_dir = "assets/images/educators/";
 
 if (!file_exists($target_dir)) {
     mkdir($target_dir, 0777, true);

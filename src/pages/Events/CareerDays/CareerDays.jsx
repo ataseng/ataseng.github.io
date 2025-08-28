@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import Filters from "../../../components/Filters/Filters";
 import Pagination from "../Competitions/components/Pagination/Pagination";
 import { eventFilter } from "../../../utils/eventFilter";
-import CareerDaysCard from "./CareerDaysCard/CareerDaysCard";
-import { careerDaysData } from "./Data/CareerDaysData";
 import EventHorizontalCard from "../../../components/EventHorizontalCard/EventHorizontalCard";
+import { api } from "../../../api";
 
 const CareerDays = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchText, setSearchText] = useState('');
     const [selected, setSelected] = useState('all');
+    const [careerDays, setCareerDays] = useState([]);
     const [modalIsOpen, setmodalIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
     const itemsPerPage = 4;
@@ -24,9 +24,19 @@ const CareerDays = () => {
         "all" : "Hepsi"
     };
 
-    const filteredData = careerDaysData.filter((item) => {
+    const filteredData = careerDays.filter((item) => {
         return eventFilter(item, selected, searchText);
     });
+
+    const getCareerDays = async () => {
+        const result = await api.get("https://ataseng.com/api/career_days/get.php");
+        if(result && result.content && result.content.length > 0)
+            setCareerDays(result.content);
+    }
+
+    useEffect(() => {
+        getCareerDays();
+    }, []);
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;

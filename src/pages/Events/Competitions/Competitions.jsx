@@ -37,7 +37,8 @@ const Competitions = () => {
 
     const getCompetitions = async () => {
         const result = await api.get("https://ataseng.com/api/competitions/get.php");
-        setCompetitions(result?.content);
+        if(result && result.content && result.content.length > 0)
+            setCompetitions(result.content);
     }
 
     useEffect(() => {

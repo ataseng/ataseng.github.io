@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 export const api = {
 
     get : async (url) => {
-
         try {
             const result = await fetch(url);
             const response = await result.json();
@@ -22,8 +21,6 @@ export const api = {
         } catch (error) {
             console.log(error)
         }
-
-        
     },
 
     post : async (url, body) => {

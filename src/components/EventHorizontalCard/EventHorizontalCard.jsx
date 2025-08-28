@@ -1,5 +1,4 @@
-import React from 'react'
-import EventButton from '../Button/EventButton/EventButton'
+import EventButton from '../EventButton/EventButton'
 import competitionImage from "../../assets/images/Competitons.jpg";
 import "./EventHorizontalCard.css";
 
@@ -43,8 +42,15 @@ const EventHorizontalCard = ({ item, curatorTitle, setModalIsOpen, setSelectedIt
                     </div>
                 </div>
 
-                <div className="event-horizontal-card-button">
+                <div className="event-horizontal-card-buttons">
                     <EventButton
+                        text={"Detaylar"}
+                        item={item}
+                        setmodalIsOpen={setModalIsOpen}
+                        setSelectedItem={setSelectedItem}
+                    />
+                    <EventButton
+                        text={"Başvur"}
                         item={item}
                         setmodalIsOpen={setModalIsOpen}
                         setSelectedItem={setSelectedItem}
