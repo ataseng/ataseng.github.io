@@ -72,6 +72,11 @@ form.join-team-form .join-team-form-input-div select{
     color: #ff8181;
 }
 
+.require-phone{
+    font-size: var(--section-list);
+    color: var(--turquoise);
+}
+
 @media screen and (max-width: 800px) {
     form.join-team-form{
         width: 90%;

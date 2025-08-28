@@ -7,6 +7,25 @@ import { toast } from "react-toastify";
 
 export const api = {
 
+    get : async (url) => {
+
+        try {
+            const result = await fetch(url);
+            const response = await result.json();
+
+            if (result.status === 200){
+                return response;
+            }
+            else{
+                console.error(response.message)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+
+        
+    },
+
     post : async (url, body) => {
         const options = {
             method: "post",
@@ -18,8 +37,6 @@ export const api = {
 
         const result = await fetch(url, options);
         const response = await result.json();
-
-        console.log(result);
 
         if(result.status === 200){
             toast.info(response.message);

@@ -180,6 +180,9 @@ const JoinTeamForm = () => {
             }
             
             <button type='submit' disabled={settings?.RegistrationActive !== '1'}>Gönder</button>
+            <div className='require-phone'>
+                <span>Telefon numaranızı doğru girdiğinizden emin olunuz!</span>
+            </div>
             {
                 settings?.RegistrationActive !== '1' && <div className='recruitment-not-active'>
                     <span>Üye Alım Takvimi Dışındasınız!</span>

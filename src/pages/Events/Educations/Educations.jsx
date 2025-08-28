@@ -3,8 +3,12 @@ import "./Educations.css";
 import Filters from '../../../components/Filters/Filters';
 import EducationCard from './components/EducationCard/EducationCard';
 import { eventFilter } from '../../../utils/eventFilter';
+import Pagination from '../Competitions/components/Pagination/Pagination';
+import { api } from '../../../api';
 
 const Educations = () => {
+    
+    const [currentPage, setCurrentPage] = useState(1);
     const [searchText, setSearchText] = useState("");
     const [selected, setSelected] = useState("all");
     const [educations, setEducations] = useState([]);
@@ -17,34 +21,38 @@ const Educations = () => {
         "all" : "Hepsi"
     };
 
+    const itemsPerPage = 4;
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selected, searchText]);
+
     const filteredData = educations.filter(item => {
         return eventFilter(item, selected, searchText);
     });
 
-    useEffect(() => {
-        // setLoading(true);
-        fetch("https://ataseng.com/api/education/educations_get.php")
-            .then(res => res.json())
-            .then(data => {
-                if (data.message === "success") {
-                    const content = data.content;
-                    setEducations(content);
-                }
-                else {
-                    console.error(data.message);
-                }
-                // setLoading(false);
-            });
+    const getEducations = async () => {
+        const result = await api.get("https://ataseng.com/api/educations/get.php");
+        setEducations(result.content);
+    }
 
+    useEffect(() => {
+        getEducations();
     }, []);
+    
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPageCount = Math.ceil(filteredData.length / itemsPerPage);
+
     return (
         <div className='events-subpage'>
             <div className='events-subpage-content'>
                 <Filters selectMenu={selectMenu} selected={selected} setSelected={setSelected} setSearchText={setSearchText} searchPlaceHolder={"Eğitim Ara..."}/>
                 <div className="events-subpage-cards">
                     {
-                        filteredData.length !== 0 ?
-                            filteredData.map((item, key) => (
+                        currentItems.length !== 0 ?
+                            currentItems.map((item, key) => (
                                 <EducationCard
                                     key={key}
                                     item={item}
@@ -58,10 +66,14 @@ const Educations = () => {
                             </div>
                     }
                 </div>
+                {
+                    totalPageCount <= 1 ? 
+                    <></> : <Pagination totalPageCount={totalPageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                }
                 {/* <EducationCard selected={selected} filtered={filtered} educations={educations} /> */}
             </div>
         </div>
     )
-}
+};
 
-export default Educations
+export default Educations;

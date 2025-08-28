@@ -4,6 +4,7 @@ import { eventFilter } from '../../../utils/eventFilter';
 import { bootcamp_data } from './bootcamp_data';
 import { useEffect, useState } from 'react';
 import Pagination from '../Competitions/components/Pagination/Pagination';
+import EventVerticalCard from '../../../components/EventVerticalCard/EventVerticalCard';
 
 const Bootcamps = () => {
 
@@ -39,7 +40,7 @@ const Bootcamps = () => {
                 <div className="events-subpage-cards">
                     {currentItems.length > 0 ? (
                         currentItems.map(item => (
-                            <BootcampCard key={`bootcamp_card_${item.id}`} item={item} />
+                            <EventVerticalCard key={`bootcamp_card_${item.id}`} item={item}/>
                         ))
                     ) : (
                         <div className='filter-not-found-area'>

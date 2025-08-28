@@ -1,0 +1,10 @@
+[28-Aug-2025 02:48:39 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 43
+[28-Aug-2025 02:48:39 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 43
+[28-Aug-2025 02:48:39 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 43
+[28-Aug-2025 02:48:39 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 43
+[28-Aug-2025 02:48:39 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 43
+[28-Aug-2025 02:48:39 Europe/Istanbul] PHP Notice:  Array to string conversion in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 43
+[28-Aug-2025 03:21:17 Europe/Istanbul] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 57
+[28-Aug-2025 03:21:17 Europe/Istanbul] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 57
+[28-Aug-2025 03:21:17 Europe/Istanbul] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 57
+[28-Aug-2025 03:21:17 Europe/Istanbul] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/atasengc/domains/ataseng.com/public_html/api/competitions/get.php on line 57

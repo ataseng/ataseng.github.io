@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { hackathon_data } from './hackathon_data';
 import Filters from "../../../components/Filters/Filters";
 import { eventFilter } from "../../../utils/eventFilter";
-import HackathonCard from "./components/HackathonCard/HackathonCard";
 import Pagination from "../Competitions/components/Pagination/Pagination";
+import EventVerticalCard from "../../../components/EventVerticalCard/EventVerticalCard";
 const Hackathons = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -37,7 +37,7 @@ const Hackathons = () => {
                 <div className="events-subpage-cards">
                     {currentItems.length > 0 ? (
                         currentItems.map(item => (
-                            <HackathonCard key={`hackathon_card_${item.id}`} item={item} />
+                            <EventVerticalCard key={`hackathon_card_${item.id}`} item={item}/>
                         ))
                     ) : (
                         <div className='filter-not-found-area'>

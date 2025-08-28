@@ -5,6 +5,7 @@ const Pagination = ({ totalPageCount, currentPage, setCurrentPage }) => {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
     
     return (
+        totalPageCount && totalPageCount > 1 ? 
         <div className="pagination">
             {[...Array(totalPageCount)].map((_, i) => (
                 <button
@@ -15,7 +16,7 @@ const Pagination = ({ totalPageCount, currentPage, setCurrentPage }) => {
                     {i + 1}
                 </button>
             ))}
-        </div>
+        </div> : <></>
     );
 };
 

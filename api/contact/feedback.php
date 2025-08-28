@@ -44,12 +44,14 @@ try {
         "content" => $content,
         "user_id" => $user_id
     ]);
+    http_response_code(200);
     echo json_encode(array(
         "message" => "Mesajınız başarıyla iletildi!"
     ));
 } catch (PDOException $e) {
     http_response_code(400);
     echo json_encode(array(
+        "error" => "an_error_occured",
         "message" => "Bir hata meydana geldi!"
     ));
 }
