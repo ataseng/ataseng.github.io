@@ -37,29 +37,29 @@ const HamburgerMenu = ({ isOpen, toggleMenu, toggleTheme, themeName, logoutHandl
                     </li>
                 ))}
                 {
-                        userInfo ?
-                            <>
-                                <li onClick={toggleMenu}>
-                                    <Link to={"/profil"}>
-                                        <Icon icon={"healthicons:ui-user-profile"} className="icon" />
-                                        Profil
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link onClick={logoutHandler}>
-                                        <Icon icon={"entypo:log-out"} className="icon" />
-                                        Çıkış Yap
-                                    </Link>
-                                </li>
-                            </>
-                            :
+                    userInfo ?
+                        <>
                             <li onClick={toggleMenu}>
-                                <Link to={"/giris"}>
-                                    <Icon icon={"entypo:login"} className="icon" />
-                                    Giriş Yap
+                                <Link to={"/profil"}>
+                                    <Icon icon={"healthicons:ui-user-profile"} className="icon" />
+                                    Profil
                                 </Link>
                             </li>
-                    }
+                            <li>
+                                <Link onClick={logoutHandler}>
+                                    <Icon icon={"entypo:log-out"} className="icon" />
+                                    Çıkış Yap
+                                </Link>
+                            </li>
+                        </>
+                        :
+                        <li onClick={toggleMenu}>
+                            <Link to={"/giris"}>
+                                <Icon icon={"entypo:login"} className="icon" />
+                                Giriş Yap
+                            </Link>
+                        </li>
+                }
             </ul>
         </div>
     );

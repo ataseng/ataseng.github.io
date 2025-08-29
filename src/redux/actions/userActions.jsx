@@ -50,7 +50,7 @@ export const login = (email, password, setUserVerified) => async (dispatch) => {
             payload: data
         });
 
-        // localStorage.setItem("userInfo", JSON.stringify(data));
+        localStorage.setItem("userInfo", JSON.stringify(data));
 
     } catch (error) {
         if(error.response.data.error === "inactive_user"){

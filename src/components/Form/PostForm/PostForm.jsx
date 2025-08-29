@@ -4,7 +4,7 @@ import "./PostForm.css";
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 
-const PostForm = ({ inputs, url, jsonContent = false, submitHandler = null, submitButtonText = "Gönder" }) => {
+const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null, submitButtonText = "Gönder" }) => {
 
     const settingList = useSelector(state => state.settings);
     const { error, loading, settings } = settingList;
@@ -71,7 +71,7 @@ const PostForm = ({ inputs, url, jsonContent = false, submitHandler = null, subm
                                     <label htmlFor={input.name}>{input.isRequired ? <span className='required'>*</span> : ""} {input.label}: </label>
                                     {
                                         input.type === "select" ? 
-                                        <select required={input.isRequired} id={input.name} name={input.name}>
+                                        <select required={input.isRequired} id={input.name} name={input.name} value={input.value} onChange={input.setFunction ?? null}>
                                             {
                                                 input.options.map((option, option_index) =>(
                                                     <option key={`post_form_select_option_${option_index}`} value={option.value}>{option.text}</option>
@@ -80,7 +80,7 @@ const PostForm = ({ inputs, url, jsonContent = false, submitHandler = null, subm
                                         </select>
                                         :
                                         input.disabled ? <span className='disabled'>{input.value}</span> :
-                                        <input required={input.isRequired} type={input.type} id={input.name} name={input.name} onChange={input.setFunction ?? null}/>
+                                        <input required={input.isRequired} type={input.type} id={input.name} name={input.name} value={input.value} onChange={input.setFunction ?? null}/>
                                     }
                                 </>
                             }

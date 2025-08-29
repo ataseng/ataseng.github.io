@@ -93,6 +93,31 @@ export const api = {
         }
     },
 
+    put_with_auth: async (url, body, access_token) => {
+        body = JSON.stringify(body);
+        const options = {
+            method: "put",
+            body,
+            headers: {
+                Authorization : `Bearer ${access_token}`
+            },
+            credentials: "include"
+        }
+        const result = await fetch(url, options);
+
+        if (result.status === 401){
+            const refresh_result = await api.try_refresh();
+            const refresh_data = await refresh_result.json();
+            
+            options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
+            
+            return fetch(url, options); // second_try
+        }
+        else{
+            return result;
+        }
+    },
+
     try_refresh : () => {
         const url = "https://ataseng.com/api/auth/refresh.php";
         const options = {
