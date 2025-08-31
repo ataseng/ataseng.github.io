@@ -70,6 +70,7 @@ const Sidebar = ({ setTheme, theme }) => {
                                             "link": "/profil"
                                         }}
                                         onClick={menuOpen ? toggleMobileMenu : undefined}
+                                        user = {userInfo.user}
                                     />
                                 </li>
                                 <li>

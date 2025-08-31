@@ -109,7 +109,7 @@ const PrivacyPolicy = () => {
 
                 <section id="haklariniz">
                     <h3>7. Haklarınız</h3>
-                    <p>
+                    <div>
                         KVKK m.11 ve GDPR m.15-22 kapsamında şu haklara sahipsiniz:
                         <ul>
                             <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
                             <li>İşlenen verilerinizin yurt içinde veya yurt dışında kimlere aktarıldığını öğrenme,</li>
                             <li>İşlemenin hukuka aykırı olması halinde zararın giderilmesini talep etme.</li>
                         </ul>
-                    </p>
+                    </div>
                     <p>KVKK m.11 ve GDPR m.15–22 kapsamındaki haklarınızı <a href="mailto:destek@ataseng.com">destek@ataseng.com</a> adresine başvurarak kullanabilirsiniz.</p>
                 </section>
 

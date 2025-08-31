@@ -12,11 +12,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
-const MenuItem = ({ item, onClick }) => (
+const MenuItem = ({ item, onClick, user = null }) => (
     <div className="menu-item">
         <Link to={item.link} onClick={onClick}>
-            <Icon icon={item.icon} className="icon" />
-            <span>{item.name}</span>
+            {
+                user ?
+                <>
+                    <img src={user.image} alt="user-profile" className='profile-image' />
+                    <span>{user.name} {user.surname}</span>
+                </>
+                : 
+                <>
+                    <Icon icon={item.icon} className="icon" />
+                    <span>{item.name}</span>
+                </>
+            }
+            
         </Link>
         {item.submenu && (
             <div className="submenu">

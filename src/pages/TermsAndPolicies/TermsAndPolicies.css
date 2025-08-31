@@ -26,6 +26,7 @@ section .section-content.vertical-content.terms-and-policies-section section{
     padding: 0 12px;
 } */
 
+section .section-content.vertical-content.terms-and-policies-section section div,
 section .section-content.vertical-content.terms-and-policies-section section ul,
 section .section-content.vertical-content.terms-and-policies-section section p{
     margin: 12px 0;

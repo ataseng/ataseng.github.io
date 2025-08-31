@@ -198,6 +198,11 @@
     display: none;
 }
 
+.sidebar .menu-item .profile-image{
+    width: 32px;
+    border-radius: 100%;
+}
+
 /* Responsive styling for mobile devices */
 @media (max-width: 600px) {
     .sidebar {
