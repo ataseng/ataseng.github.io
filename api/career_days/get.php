@@ -7,7 +7,7 @@ try {
     $pdo = db();
 
     // Get table name for section
-    $sql = "SELECT cd.*, sp.Name as Curator_Name, sp.Surname as Curator_Surname, sp.Image as Curator_Image, sp.Expertise as Curator_Expertise, sp.Gender as Curator_Gender FROM CareerDays as cd LEFT JOIN Speaker as sp ON cd.Speaker_ID = sp.ID";
+    $sql = "SELECT cd.*, sp.Name as Curator_Name, sp.Surname as Curator_Surname, sp.Image as Curator_Image, sp.Expertise as Curator_Expertise, sp.Gender as Curator_Gender FROM CareerDay as cd LEFT JOIN Speaker as sp ON cd.Speaker_ID = sp.ID";
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute();

@@ -29,6 +29,9 @@ import PrivacyPolicy from "./pages/TermsAndPolicies/PrivacyPolicy";
 import CookiePolicy from "./pages/TermsAndPolicies/CookiePolicy";
 import TermsOfUse from "./pages/TermsAndPolicies/TermsOfUse";
 import UserProfile from "./pages/UserProfile/UserProfile";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import EditProfile from "./pages/UserProfile/EditProfile/EditProfile";
+import EventHistory from "./pages/UserProfile/EventHistory/EventHistory";
 
 function App() {
     
@@ -54,7 +57,11 @@ function App() {
                 <Route path="/kayit" element={<Register />} />
                 <Route path="/giris" element={<Login />} />
 
-                <Route path="/profil" element={<UserProfile />} />
+                <Route element={<ProtectedRoute />}>
+                    <Route path="/profil" element={<UserProfile />} />
+                    <Route path="/profil/guncelle" element={<EditProfile />} />
+                    <Route path="/profil/etkinlik-gecmisi" element={<EventHistory />} />
+                </Route>
                 {/* <Route path="/" element={<Home />} /> */}
 
                 <Route path="/hakkimizda" element={<About />} />

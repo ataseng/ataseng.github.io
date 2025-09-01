@@ -1,5 +1,7 @@
-.user-profile-section{
-    min-height: 100vh;
-    flex-direction: column;
-    border-bottom: 1px solid var(--footer-text);
+.user-profile-section .section-content img{
+    width: 80px;
+}
+
+.user-profile-section .section-content h3{
+    color: var(--turquoise);
 }

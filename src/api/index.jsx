@@ -23,6 +23,32 @@ export const api = {
         }
     },
 
+    get_with_auth : async (url, access_token) => {
+        try {
+            const options = {
+                headers: {
+                    Authorization : `Bearer ${access_token}`
+                },
+            }
+            const result = await fetch(url, options);
+            const response = await result.json();
+
+            if (result.status === 401){
+                const refresh_result = await api.try_refresh();
+                const refresh_data = await refresh_result.json();
+                
+                options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
+                
+                return fetch(url, options); // second_try
+            }
+            else{
+                return response;
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
     post : async (url, body) => {
         const options = {
             method: "post",

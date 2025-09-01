@@ -1,197 +1,24 @@
 import { useSelector } from "react-redux";
-import PostForm from "../../components/Form/PostForm/PostForm";
 import "./UserProfile.css";
-import { useEffect, useState } from "react";
-import { api } from "../../api";
+import { useNavigate } from "react-router";
 
 const UserProfile = () => {
 
     const userLogin = useSelector(state => state.userLogin);
     const { error, loading, userInfo } = userLogin;
 
-    const [user, setUser] = useState(userInfo?.user ?? {});
-
-    useEffect(() => {
-        if(userInfo && userInfo !== null){
-            setUser(userInfo.user);
-        }
-    }, [userInfo]);
-
-    const changeUserHandler = e => {
-        setUser(prevState => ({
-            ...prevState, [e.target.name] : e.target.value
-        }));
-    }
-
-    const submitHandler = e => {
-        e.preventDefault();
-
-        delete user.email;
-        delete user.position;
-        delete user.role;
-        delete user.task;
-        
-        api.put_with_auth("https://ataseng.com/api/member/update.php", user, userInfo.access_token)
-    }
-
-    const inputs = [
-        {
-            setFunction: changeUserHandler,
-            name: "image",
-            type: "file",
-            label: "Fotoğraf",
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "email",
-            type: "email",
-            label: "Eposta",
-            disabled: true,
-            value: user?.email
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "old_password",
-            type: "password",
-            label: "Eski Parola",
-            // setFunction: passwordChangeHandler
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "new_password",
-            type: "password",
-            label: "Yeni Parola",
-            // setFunction: passwordChangeHandler
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "student_no",
-            type: "text",
-            label: "Öğrenci No",
-            value: user?.student_no
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "name",
-            type: "text",
-            label: "Adı",
-            value: user?.name
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "surname",
-            type: "text",
-            label: "Soyadı",
-            value: user?.surname
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "grade",
-            type: "select",
-            label: "Sınıf",
-            value: user?.grade,
-            options: [
-                {
-                    value: "",
-                    text: "---"
-                },
-                {
-                    value: "1",
-                    text: "1"
-                },
-                {
-                    value: "2",
-                    text: "2"
-                },
-                {
-                    value: "3",
-                    text: "3"
-                },
-                {
-                    value: "4",
-                    text: "4"
-                },
-                {
-                    value: "4+",
-                    text: "4+"
-                },
-                {
-                    value: "Yüksek Lisans",
-                    text: "Yüksek Lisans"
-                },
-                {
-                    value: "Doktora",
-                    text: "Doktora"
-                }
-            ]
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "position",
-            type: "text",
-            label: "Kulüpteki Rolü",
-            disabled: true,
-            value: user?.position
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "task",
-            type: "text",
-            label: "Görevi",
-            disabled: true,
-            value: user?.task ?? "Üye"
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "department",
-            type: "text",
-            label: "Bölümü",
-            value: user?.department
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "birthdate",
-            type: "date",
-            label: "Doğum Tarihi",
-            value: user?.birthdate === "0000-00-00" ? "" : user?.birthdate
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "gender",
-            type: "select",
-            label: "Cinsiyeti",
-            value: user?.gender,
-            options: [
-                {
-                    value: "",
-                    text: "---"
-                },
-                {
-                    value: "female",
-                    text: "Kadın"
-                },
-                {
-                    value: "male",
-                    text: "Erkek"
-                }
-            ]
-        },
-        {
-            setFunction: changeUserHandler,
-            name: "phone",
-            type: "text",
-            label: "Telefon Numarası",
-            vale: user?.phone
-        }
-    ];
+    const navigate = useNavigate();
+    
     return (
-        <section className='post-section'>
+        <section className='post-section user-profile-section'>
             <div className="section-content post-content">
-                <h2>Profil</h2>
-                <PostForm inputs = {inputs} jsonContent submitHandler = {submitHandler}/>
+                <img src={userInfo.user.image} alt="profile-image" />
+                <h3>{userInfo.user.name} {userInfo.user.surname}</h3>
+                <button onClick={() => navigate("/profil/guncelle")}>Profili Düzenle</button>
+                <button onClick={() => navigate("/profil/etkinlik-gecmisi")}>Etkinlik Geçmişim</button>
             </div>
         </section>
     )
 }
 
-export default UserProfile
+export default UserProfile;
