@@ -27,15 +27,15 @@ $putData = json_decode($json, true);
 $payload_user_id = (int) $payload["sub"];
 $payload_email = $payload["email"];
 
-$put_user_id = $putData["id"];
-$put_user_student_no = $putData["student_no"];
-$put_user_name = $putData["name"];
-$put_user_surname = $putData["surname"];
-$put_user_department = $putData["department"];
-$put_user_grade = $putData["grade"];
-$put_user_birthdate = $putData["birthdate"];
-$put_user_gender = $putData["gender"];
-$put_user_phone = $putData["phone"];
+$put_user_id = (int)$putData["ID"];
+$put_user_student_no = $putData["StudentNo"];
+$put_user_name = $putData["Name"];
+$put_user_surname = $putData["Surname"];
+$put_user_department = $putData["Department"];
+$put_user_grade = $putData["Grade"];
+$put_user_birthdate = $putData["BirthDate"];
+$put_user_gender = $putData["Gender"];
+$put_user_phone = $putData["Phone"];
 
 try {
     $pdo = db();
@@ -46,19 +46,20 @@ try {
         "id" => $payload_user_id
     ]);
     $user = $select_user_query->fetch();
-    $selected_user_id = $user["ID"];
+    $selected_user_id = (int)$user["ID"];
+
     if($selected_user_id !== $payload_user_id || $selected_user_id !== $put_user_id){
         http_response_code(400);
         echo json_encode(array(
             "error" => "an_error_occured",
-            "message" => "Tehlikeli İstek!"
+            "message" => "Authentication fail!"
         ));
         exit;
     }
 
     $pdo->beginTransaction();
 
-    $update_sql = "UPDATE Members SET StudentNo=:student_no, Name=:name, Surname=:surname, Grade=:grade, Department=:department, BirthDate=:birthdate, Gender=:gender, Phone=:phone WHERE User_ID = :user_id";
+    $update_sql = "UPDATE Member SET StudentNo=:student_no, Name=:name, Surname=:surname, Grade=:grade, Department=:department, BirthDate=:birthdate, Gender=:gender, Phone=:phone WHERE User_ID = :user_id";
     $query = $pdo->prepare($update_sql);
     $query->execute([
         "student_no" => $put_user_student_no,
@@ -71,11 +72,15 @@ try {
         "phone" => $put_user_phone,
         "user_id" => $selected_user_id
     ]);
-    http_response_code(200);
+
+	$pdo->commit();
+
+    http_response_code(204);
     echo json_encode(array(
-        "message" => "Mesajınız başarıyla iletildi!"
+        "message" => "Başarıyla Güncellendi!"
     ));
 } catch (PDOException $e) {
+    if ($pdo->inTransaction()) $pdo->rollBack();
     http_response_code(400);
     echo json_encode(array(
         "error" => "an_error_occured",

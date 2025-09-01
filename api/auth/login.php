@@ -35,7 +35,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
 
 $pdo = db();
 // $stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, rl.Name as Role, mbr.StudentNo, mbr.Name, mbr.Surname, mbr.Grade, mbr.Position, mbr.Task, mbr.Department, mbr.BirthDate, mbr.Gender, mbr.Phone FROM Users AS usr JOIN Members AS mbr ON usr.ID = mbr.User_ID JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.Email = :email LIMIT 1');
-$stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, rl.Name as Role, mbr.Name, mbr.Surname, mbr.Image FROM Users AS usr JOIN Members AS mbr ON usr.ID = mbr.User_ID JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.Email = :email LIMIT 1');
+$stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, rl.Name as Role, mbr.Name, mbr.Surname, mbr.Image FROM Users AS usr JOIN Member AS mbr ON usr.ID = mbr.User_ID JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.Email = :email LIMIT 1');
 $stmt->execute([
     "email" => $email
 ]);

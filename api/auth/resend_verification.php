@@ -26,7 +26,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 $pdo = db();
-$stmt = $pdo->prepare('SELECT usr.ID, mbr.Name, mbr.Surname, usr.Is_Active FROM Users as usr JOIN Members as mbr ON usr.ID = mbr.User_ID WHERE Email=:email LIMIT 1');
+$stmt = $pdo->prepare('SELECT usr.ID, mbr.Name, mbr.Surname, usr.Is_Active FROM Users as usr JOIN Member as mbr ON usr.ID = mbr.User_ID WHERE Email=:email LIMIT 1');
 $stmt->execute(["email" => $email]);
 $user = $stmt->fetch();
 

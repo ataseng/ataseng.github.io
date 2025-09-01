@@ -36,7 +36,7 @@ try {
 
     if($postActive && $postActive == 1 ){
 
-        $check_duplication_sql = "INSERT INTO Registration (StudentNo, Name, Surname, Department, Grade, Interest, Email, Phone) SELECT :student_no, :name, :surname, :department, :grade, :interest, :email, :phone WHERE NOT EXISTS(SELECT 1 FROM Members m WHERE m.StudentNo = :student_no2) OR NOT EXISTS(SELECT 1 FROM Members m WHERE m.Phone = :phone2) OR NOT EXISTS(SELECT 1 FROM Users u WHERE u.Email = :email2)";
+        $check_duplication_sql = "INSERT INTO Registration (StudentNo, Name, Surname, Department, Grade, Interest, Email, Phone) SELECT :student_no, :name, :surname, :department, :grade, :interest, :email, :phone WHERE NOT EXISTS(SELECT 1 FROM Member m WHERE m.StudentNo = :student_no2) OR NOT EXISTS(SELECT 1 FROM Member m WHERE m.Phone = :phone2) OR NOT EXISTS(SELECT 1 FROM Users u WHERE u.Email = :email2)";
         $query = $pdo->prepare($check_duplication_sql);
         $stmt = $query->execute([
             "student_no" => $studentNo,

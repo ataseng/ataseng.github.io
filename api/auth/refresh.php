@@ -38,7 +38,7 @@ try {
     }
 
     // Kullanıcıyı çek
-    $select_user_sql = $pdo->prepare('SELECT usr.ID, usr.Email, rl.Name AS Role FROM Users AS usr JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.ID=:id LIMIT 1');
+    $select_user_sql = $pdo->prepare('SELECT usr.ID, usr.Email, usr.Name, usr.Surname, usr.Image, rl.Name AS Role FROM Users AS usr JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.ID=:id LIMIT 1');
     $select_user_sql->execute([
         "id" => (int)$rt['User_ID']
     ]);
@@ -46,6 +46,13 @@ try {
     if (!$user) {
         throw new RuntimeException('user_missing');
     }
+
+    $user_id = (int)$user["ID"];
+    $user_email = $user["Email"];
+    $user_role = $user['Role'];
+    $user_name = $user["Name"];
+    $user_surname = $user["Surname"];
+    $user_image = $user["Image"];
 
     // Rotasyon: mevcut refresh'i revoke et + yenisini üret
     $newRaw = new_refresh_token();
@@ -69,7 +76,7 @@ try {
         ]);
 
     // Yeni access
-    $access = make_access_token((int)$user['ID'], $user['Email'], $user["Role"]);
+    $access = make_access_token($user_id, $user_email, $user_role);
 
     // Yeni cookie
     set_refresh_cookie($newRaw);
@@ -80,7 +87,15 @@ try {
         'ok'=>true,
         'access_token'=>$access,
         'token_type'=>'Bearer',
-        'expires_in'=>ACCESS_TTL_SEC
+        'expires_in'=>ACCESS_TTL_SEC,
+        'user'=>[
+            'id'=>(int)$user_id,
+            'email'=>$user_email,
+            'role'=>$user_role,
+            'name'=>$user_name,
+            'surname'=>$user_surname,
+            'image'=>$user_image,
+        ]
     ]);
 
 } catch (Throwable $e) {

@@ -23,14 +23,20 @@ if($_SERVER["REQUEST_METHOD"] != "GET"){
 
 $payload = require_auth();
 
-print_r($payload); exit;
-
 $user_id = $_GET["id"];
+
+if($user_id !== $payload["sub"]){
+    http_response_code(400);
+	$response_message["message"] = "fail";
+	$response_message["detail"] = "Authentication fail";
+    echo json_encode($response_message);
+    exit;
+}
 
 try {
     $pdo = db();
 
-    $stmt = $pdo->prepare('SELECT usr.ID, usr.Email, mbr.StudentNo, mbr.Name, mbr.Surname, mbr.Grade, mbr.Position, mbr.Task, mbr.Department, mbr.BirthDate, mbr.Gender, mbr.Phone, mbr.Image FROM Users AS usr JOIN Members AS mbr ON usr.ID = mbr.User_ID WHERE usr.ID = :id LIMIT 1');
+    $stmt = $pdo->prepare('SELECT usr.ID, usr.Email, mbr.StudentNo, mbr.Name, mbr.Surname, mbr.Grade, mbr.Position, mbr.Task, mbr.Department, mbr.BirthDate, mbr.Gender, mbr.Phone, mbr.Image FROM Users AS usr JOIN Member AS mbr ON usr.ID = mbr.User_ID WHERE usr.ID = :id LIMIT 1');
     $stmt->execute([
         "id" => $user_id
     ]);
@@ -48,9 +54,5 @@ try {
         "message" => "Bir hata meydana geldi!"
     ));
 }
-
-
-
-
 
 ?>

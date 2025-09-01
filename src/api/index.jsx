@@ -36,6 +36,8 @@ export const api = {
             if (result.status === 401){
                 const refresh_result = await api.try_refresh();
                 const refresh_data = await refresh_result.json();
+
+                localStorage.setItem("userInfo", JSON.stringify(refresh_data));
                 
                 options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
                 
@@ -109,6 +111,8 @@ export const api = {
         if (result.status === 401){
             const refresh_result = await api.try_refresh();
             const refresh_data = await refresh_result.json();
+
+            localStorage.setItem("userInfo", JSON.stringify(refresh_data));
             
             options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
             
@@ -134,12 +138,15 @@ export const api = {
         if (result.status === 401){
             const refresh_result = await api.try_refresh();
             const refresh_data = await refresh_result.json();
+
+            localStorage.setItem("userInfo", JSON.stringify(refresh_data));
             
             options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
             
             return fetch(url, options); // second_try
         }
         else{
+            toast.info("Başarıyla Güncellendi");
             return result;
         }
     },

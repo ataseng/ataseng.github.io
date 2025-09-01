@@ -57,13 +57,6 @@ function App() {
                 <Route path="/kayit" element={<Register />} />
                 <Route path="/giris" element={<Login />} />
 
-                <Route element={<ProtectedRoute />}>
-                    <Route path="/profil" element={<UserProfile />} />
-                    <Route path="/profil/guncelle" element={<EditProfile />} />
-                    <Route path="/profil/etkinlik-gecmisi" element={<EventHistory />} />
-                </Route>
-                {/* <Route path="/" element={<Home />} /> */}
-
                 <Route path="/hakkimizda" element={<About />} />
                 <Route path="/emegi-gecenler" element={<Credits />} />
                 <Route path="/takim" element={<Team />} />
@@ -93,6 +86,12 @@ function App() {
 
                 <Route path="/admin/egitim-ekle" element={<EducationPost />} />
                 <Route path="/admin/egitimci-ekle" element={<EducatorPost />} />
+
+                <Route element={<ProtectedRoute />}>
+                    <Route path="/profil" element={<UserProfile />} />
+                    <Route path="/profil/guncelle" element={<EditProfile />} />
+                    <Route path="/profil/etkinlik-gecmisi" element={<EventHistory />} />
+                </Route>
 
                 <Route path="*" element={<NotFound />} />
             </Routes>

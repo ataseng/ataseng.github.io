@@ -49,7 +49,7 @@ try {
     // $check_sql_with_union = "SELECT User AS SOURCE, ID FROM Users WHERE Email = :email UNION SELECT 'Member' AS SOURCE, StudentNo FROM Members WHERE StudentNo = :student_no";
 
     $check_sql_with_count = "SELECT (SELECT COUNT(*) FROM Users WHERE Email = :email) AS user_exists,
-  (SELECT COUNT(*) FROM Members WHERE StudentNo = :student_no) AS member_exists";
+  (SELECT COUNT(*) FROM Member WHERE StudentNo = :student_no) AS member_exists";
 
   	$stmt = $pdo->prepare($check_sql_with_count);
 	$stmt->execute([
@@ -96,7 +96,7 @@ try {
 	$userId = (int)$pdo->lastInsertId();
 
 	$stmt = $pdo->prepare(
-        "INSERT INTO Members (StudentNo, Name, Surname, Grade, Department, User_ID) VALUES (:studentNo, :name, :surname, :grade, :department, :user_id)"
+        "INSERT INTO Member (StudentNo, Name, Surname, Grade, Department, User_ID) VALUES (:studentNo, :name, :surname, :grade, :department, :user_id)"
     );
 
 	$stmt->execute([
