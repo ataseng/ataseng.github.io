@@ -84,6 +84,7 @@ $ins->execute([
 
 set_refresh_cookie($rawRefresh);
 
+http_response_code(200);
 echo json_encode([
     'ok'=>true,
     'access_token'=>$access,

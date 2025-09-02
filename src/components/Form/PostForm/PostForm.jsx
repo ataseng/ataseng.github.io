@@ -67,6 +67,11 @@ const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null,
                                     </p>
                                 </div>
                                 :
+                                input.type === "file" && input.name === "Image" ?
+                                <div className='post-form-image-div'>
+                                    <img src={input.src} alt="" />
+                                </div>
+                                :
                                 <>
                                     <label htmlFor={input.name}>{input.isRequired ? <span className='required'>*</span> : ""} {input.label}: </label>
                                     {

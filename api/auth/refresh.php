@@ -38,7 +38,7 @@ try {
     }
 
     // Kullanıcıyı çek
-    $select_user_sql = $pdo->prepare('SELECT usr.ID, usr.Email, usr.Name, usr.Surname, usr.Image, rl.Name AS Role FROM Users AS usr JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.ID=:id LIMIT 1');
+    $select_user_sql = $pdo->prepare('SELECT usr.ID, usr.Email, mbr.Naame, mbr.Surname, mbr.Image, rl.Name AS Role FROM Users AS usr JOIN Member AS mbr ON usr.ID = mbr.User_ID JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.ID=:id LIMIT 1');
     $select_user_sql->execute([
         "id" => (int)$rt['User_ID']
     ]);
@@ -83,6 +83,7 @@ try {
 
     $pdo->commit();
 
+    http_response_code(200);
     echo json_encode([
         'ok'=>true,
         'access_token'=>$access,
@@ -101,11 +102,13 @@ try {
 } catch (Throwable $e) {
     $pdo->rollBack();
     // Eski cookie’yi de temizleyelim
-    // clear_refresh_cookie();
+    clear_refresh_cookie();
     http_response_code(401);
     echo json_encode([
         'error'=>'refresh_invalid',
-        'detail'=>$e->getMessage()]);
+        'message' => 'Hatalı İstek!'
+        // 'detail'=>$e->getMessage()
+    ]);
 }
 
 ?>

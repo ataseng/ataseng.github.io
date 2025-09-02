@@ -1,0 +1,9 @@
+[02-Sep-2025 14:36:35 Europe/Istanbul] PHP Notice:  Undefined index: old_password in /home/atasengc/domains/ataseng.com/public_html/api/member/update.php on line 32
+[02-Sep-2025 14:36:35 Europe/Istanbul] PHP Notice:  Undefined index: new_password in /home/atasengc/domains/ataseng.com/public_html/api/member/update.php on line 33
+[02-Sep-2025 14:39:52 Europe/Istanbul] PHP Notice:  Undefined variable: old_password in /home/atasengc/domains/ataseng.com/public_html/api/member/update.php on line 73
+[02-Sep-2025 14:39:52 Europe/Istanbul] PHP Notice:  Undefined variable: selected_user_password_hash in /home/atasengc/domains/ataseng.com/public_html/api/member/update.php on line 73
+[02-Sep-2025 14:39:52 Europe/Istanbul] PHP Fatal error:  Uncaught TypeError: password_verify() expects parameter 1 to be string, null given in /home/atasengc/domains/ataseng.com/public_html/api/member/update.php:73
+Stack trace:
+#0 /home/atasengc/domains/ataseng.com/public_html/api/member/update.php(73): password_verify(NULL, NULL)
+#1 {main}
+  thrown in /home/atasengc/domains/ataseng.com/public_html/api/member/update.php on line 73

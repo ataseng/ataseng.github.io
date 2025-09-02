@@ -34,11 +34,8 @@ export const api = {
             const response = await result.json();
 
             if (result.status === 401){
-                const refresh_result = await api.try_refresh();
-                const refresh_data = await refresh_result.json();
+                const refresh_data = await api.try_refresh();
 
-                localStorage.setItem("userInfo", JSON.stringify(refresh_data));
-                
                 options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
                 
                 return fetch(url, options); // second_try
@@ -90,10 +87,6 @@ export const api = {
         if(result.status === 200){
             return result.json();
         }
-        // else if (result.status === 401){
-        //     const refresh_result = await api.try_refresh();
-        //     console.error(refresh_result);
-        // }
     },
 
     post_with_auth : async (url, body, access_token) => {
@@ -109,10 +102,7 @@ export const api = {
         const result = await fetch(url, options);
 
         if (result.status === 401){
-            const refresh_result = await api.try_refresh();
-            const refresh_data = await refresh_result.json();
-
-            localStorage.setItem("userInfo", JSON.stringify(refresh_data));
+            const refresh_data = await api.try_refresh();
             
             options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
             
@@ -136,14 +126,17 @@ export const api = {
         const result = await fetch(url, options);
 
         if (result.status === 401){
-            const refresh_result = await api.try_refresh();
-            const refresh_data = await refresh_result.json();
+            const refresh_data = await api.try_refresh();
 
-            localStorage.setItem("userInfo", JSON.stringify(refresh_data));
+            if(refresh_data.ok){
+                options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
             
-            options.headers.Authorization = `Bearer ${refresh_data.access_token}`;
+                return fetch(url, options); // second_try
+            }
+            else{
+                toast.error(refresh_data.message);
+            }
             
-            return fetch(url, options); // second_try
         }
         else{
             toast.info("Başarıyla Güncellendi");
@@ -151,11 +144,27 @@ export const api = {
         }
     },
 
-    try_refresh : () => {
+    try_refresh : async () => {
         const url = "https://ataseng.com/api/auth/refresh.php";
         const options = {
             credentials: "include"
         };
-        return fetch(url, options);
+        const refresh_result = await fetch(url, options);
+        const refresh_data = await refresh_result.json();
+
+        return refresh_data;
+
+        // if(refresh_result.status === 200){
+        //     // const refresh_data = await refresh_result.json();
+
+        //     if(refresh_data.ok){
+        //         localStorage.setItem("userInfo", JSON.stringify(refresh_data));
+        //         return refresh_data;
+        //     }
+        // }
+        // else{
+        //     return refresh_result;
+        // }
+        
     }
 }

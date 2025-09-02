@@ -20,7 +20,7 @@ const EditProfile = () => {
 
     useEffect(() => {
         getUser();
-    }, [getUser]);
+    }, []);
 
     const changeUserHandler = e => {
         setUser(prevState => ({
@@ -52,7 +52,7 @@ const EditProfile = () => {
                         role: userInfo.user.role,
                         name: user.Name,
                         surname: user.Surname,
-                        image: userInfo.user.Image
+                        image: userInfo.user.image
                     }
                 }
             });
@@ -63,12 +63,12 @@ const EditProfile = () => {
     const inputs = [
         {
             setFunction: changeUserHandler,
-            name: "image",
+            name: "Image",
             type: "file",
             label: "Fotoğraf",
+            src: user?.Image
         },
         {
-            setFunction: changeUserHandler,
             name: "Email",
             type: "email",
             label: "Eposta",
@@ -152,7 +152,6 @@ const EditProfile = () => {
             ]
         },
         {
-            setFunction: changeUserHandler,
             name: "Position",
             type: "text",
             label: "Kulüpteki Rolü",
@@ -160,7 +159,6 @@ const EditProfile = () => {
             value: user?.Position
         },
         {
-            setFunction: changeUserHandler,
             name: "Task",
             type: "text",
             label: "Görevi",

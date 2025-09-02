@@ -89,6 +89,18 @@ form.post-form .post-form-input-div span.disabled{
     cursor: not-allowed;
 }
 
+form.post-form .post-form-input-div .post-form-image-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form.post-form .post-form-input-div .post-form-image-div img{
+    width: 120px;
+    border-radius: 100%;
+}
+
 .post-not-active{
     font-size: var(--section-text);
     color: darkred;

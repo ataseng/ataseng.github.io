@@ -29,6 +29,8 @@ $payload_email = $payload["email"];
 
 $put_user_id = (int)$putData["ID"];
 $put_user_student_no = $putData["StudentNo"];
+$put_user_old_password = $putData["old_password"];
+$put_user_new_password = $putData["new_password"];
 $put_user_name = $putData["Name"];
 $put_user_surname = $putData["Surname"];
 $put_user_department = $putData["Department"];
@@ -37,10 +39,20 @@ $put_user_birthdate = $putData["BirthDate"];
 $put_user_gender = $putData["Gender"];
 $put_user_phone = $putData["Phone"];
 
+if (!is_null($put_user_new_password)) {
+    if (strlen($put_user_new_password) < 8){
+        http_response_code(422);
+        echo json_encode([
+            'error'=>'Form Hatası',
+            'message'=>'Parola En Az 8 Karakter Olmalıdır!'
+        ]); exit;
+    }
+}
+
 try {
     $pdo = db();
 
-    $select_user_sql = "SELECT ID, Email FROM Users WHERE ID=:id";
+    $select_user_sql = "SELECT ID, Email, PasswordHash FROM Users WHERE ID=:id";
     $select_user_query = $pdo->prepare($select_user_sql);
     $select_user_query->execute([
         "id" => $payload_user_id
@@ -52,10 +64,44 @@ try {
         http_response_code(400);
         echo json_encode(array(
             "error" => "an_error_occured",
-            "message" => "Authentication fail!"
+            "message" => "Doğrulama Hatası!"
         ));
         exit;
     }
+
+    if(!is_null($put_user_new_password) && !is_null($put_user_old_password)){
+
+        $selected_user_password_hash = $user["PasswordHash"];
+	    if(!password_verify($put_user_old_password, $selected_user_password_hash)){
+            http_response_code(400);
+            echo json_encode(array(
+                "error" => "an_error_occured",
+                "message" => "Parola Yanlış!"
+            ));
+            exit;
+        }
+    }
+
+    $check_sql_with_count = "SELECT COUNT(*) AS member_exists FROM Member WHERE StudentNo = :student_no";
+
+  	$stmt = $pdo->prepare($check_sql_with_count);
+	$stmt->execute([
+		"student_no" => $put_user_student_no
+	]);
+	$result = $stmt->fetch();
+
+	if($result && $result != NULL){
+		$member_exists= (int)$result["member_exists"] == 1;
+        if($member_exists)
+        {
+            http_response_code(409);
+            echo json_encode([
+                'error'=>'student_number_already_registered',
+                "message" => "Öğrenci Numarası Zaten Kayıtlı!"
+            ]);
+            exit;
+        }
+	}
 
     $pdo->beginTransaction();
 

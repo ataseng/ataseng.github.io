@@ -45,12 +45,13 @@ export const login = (email, password, setUserVerified) => async (dispatch) => {
 
         const data = await api.post_with_credentials(url, body);
 
-        dispatch({
-            type: USER_LOGIN_SUCCESS,
-            payload: data
-        });
-
-        localStorage.setItem("userInfo", JSON.stringify(data));
+        if (data.ok){
+            dispatch({
+                type: USER_LOGIN_SUCCESS,
+                payload: data
+            });
+            localStorage.setItem("userInfo", JSON.stringify(data));
+        }
 
     } catch (error) {
         if(error.response.data.error === "inactive_user"){
