@@ -335,6 +335,7 @@ ul li::marker {
 
     section.post-section {
         height: unset;
+        min-height: unset;
     }
 }
 

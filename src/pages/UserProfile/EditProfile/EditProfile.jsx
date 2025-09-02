@@ -3,24 +3,39 @@ import { useDispatch, useSelector } from "react-redux";
 import PostForm from "../../../components/Form/PostForm/PostForm";
 import { api } from "../../../api";
 import { USER_LOGIN_SUCCESS } from "../../../redux/constants/userConstants";
+import { useNavigate, useOutletContext } from "react-router";
+import { logout } from "../../../redux/actions/userActions";
 
 const EditProfile = () => {
 
     const dispatch = useDispatch();
-    const userLogin = useSelector(state => state.userLogin);
-    const { error, loading, userInfo } = userLogin;
+    // const userLogin = useSelector(state => state.userLogin);
+    // const { error, loading, userInfo } = userLogin;
+    const navigate = useNavigate();
 
-    const [user, setUser] = useState({});
+    const userctx = useOutletContext();
 
-    const getUser = useCallback(async() => {
-        const result = await api.get_with_auth(`https://ataseng.com/api/member/get.php?id=${userInfo.user?.id}`, userInfo.access_token);
+    if(Object.keys(userctx).length === 0){
+        dispatch(logout());
+        navigate("/giris");
+    }
+
+    const [user, setUser] = useState(userctx);
+
+    // const getUser = useCallback(async() => {
+    //     const result = await api.get_with_auth(`https://ataseng.com/api/member/get.php?id=${userInfo.user?.id}`, userInfo.access_token);
+
+    //     if (result.status === 401){
+    //         dispatch(logout());
+    //         navigate("/giris");
+    //     }
         
-        setUser(result.content);
-    }, [userInfo.user?.id, userInfo.access_token]);
+    //     setUser(result.content);
+    // }, [userInfo.user?.id, userInfo.access_token, dispatch, navigate]);
 
-    useEffect(() => {
-        getUser();
-    }, []);
+    // useEffect(() => {
+    //    getUser();
+    // }, []);
 
     const changeUserHandler = e => {
         setUser(prevState => ({
@@ -28,37 +43,37 @@ const EditProfile = () => {
         }));
     }
 
-    const submitHandler = async e => {
-        e.preventDefault();
+    // const submitHandler = async e => {
+    //     e.preventDefault();
 
-        // delete user.email;
-        // delete user.position;
-        // delete user.role;
-        // delete user.task;
+    //     // delete user.email;
+    //     // delete user.position;
+    //     // delete user.role;
+    //     // delete user.task;
         
-        const response = await api.put_with_auth("https://ataseng.com/api/member/update.php", user, userInfo.access_token);
+    //     const response = await api.put_with_auth("https://ataseng.com/api/member/update.php", user, userInfo.access_token);
 
-        if(response.status === 204){
+    //     if(response.status === 204){
 
-            dispatch({
-                type: USER_LOGIN_SUCCESS,
-                payload: {
-                    ok: userInfo.ok,
-                    access_token: userInfo.access_token,
-                    token_type: userInfo.token_type,
-                    expires_in: userInfo.expires_in,
-                    user: {
-                        email: user.Email,
-                        role: userInfo.user.role,
-                        name: user.Name,
-                        surname: user.Surname,
-                        image: userInfo.user.image
-                    }
-                }
-            });
-        }
+    //         dispatch({
+    //             type: USER_LOGIN_SUCCESS,
+    //             payload: {
+    //                 ok: userInfo.ok,
+    //                 access_token: userInfo.access_token,
+    //                 token_type: userInfo.token_type,
+    //                 expires_in: userInfo.expires_in,
+    //                 user: {
+    //                     email: user.Email,
+    //                     role: userInfo.user.role,
+    //                     name: user.Name,
+    //                     surname: user.Surname,
+    //                     image: userInfo.user.image
+    //                 }
+    //             }
+    //         });
+    //     }
         
-    }
+    // }
 
     const inputs = [
         {
@@ -213,7 +228,7 @@ const EditProfile = () => {
         <section className='post-section'>
             <div className="section-content post-content">
                 <h2>Düzenle</h2>
-                <PostForm inputs = {inputs} jsonContent submitHandler = {submitHandler}/>
+                <PostForm inputs = {inputs} jsonContent />
             </div>
         </section>
     )

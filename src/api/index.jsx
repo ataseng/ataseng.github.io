@@ -31,7 +31,7 @@ export const api = {
                 },
             }
             const result = await fetch(url, options);
-            const response = await result.json();
+            // const response = await result.json();
 
             if (result.status === 401){
                 const refresh_data = await api.try_refresh();
@@ -41,7 +41,7 @@ export const api = {
                 return fetch(url, options); // second_try
             }
             else{
-                return response;
+                return result;
             }
         } catch (error) {
             console.log(error)
@@ -166,5 +166,6 @@ export const api = {
         //     return refresh_result;
         // }
         
-    }
+    },
+    
 }

@@ -28,7 +28,7 @@ $user_id = $_GET["id"];
 if($user_id !== $payload["sub"]){
     http_response_code(400);
 	$response_message["message"] = "fail";
-	$response_message["detail"] = "Authentication fail";
+	$response_message["detail"] = "Bad request!";
     echo json_encode($response_message);
     exit;
 }
