@@ -102,7 +102,7 @@ function pickIndexForToday(listLen, tz = "Europe/Istanbul") {
 const DailyAyah = () => {
 
     const todayIndex = useMemo(() => pickIndexForToday(AYAH_LIST.length), []);
-    const ayah = AYAH_LIST[1];
+    const ayah = AYAH_LIST[todayIndex];
 
     return (
         <div className={"daily-ayah-card"}>
