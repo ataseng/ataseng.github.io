@@ -40,10 +40,10 @@ const AYAH_LIST = [
         textTr: "İman edip de iyi davranışlarda bulunanlara gelince, onlar için çok merhametli olan Allah, (gönüllerde) bir sevgi yaratacaktır.",
     },
     {
-        key: "112:4",
+        key: "112:3-4",
         surah: "İhlâs (112)",
-        textAr: "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
-        textTr: "O'nun hiçbir dengi yoktur.",
+        textAr: "لَمْ يَلِدْ وَلَمْ يُولَدْ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
+        textTr: "Doğurmamış ve doğurulmamıştır. O'nun hiçbir dengi yoktur.",
     },
     {
         key: "17:9",
@@ -57,12 +57,6 @@ const AYAH_LIST = [
         textAr: "فَاِنْ تَوَلَّوْا فَقُلْ حَسْبِيَ اللّٰهُۘ لَٓا اِلٰهَ اِلَّا هُوَۜ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظ۪يمِ",
         textTr: "Eğer yüz çevirirlerse de ki: 'Allah bana yeter. O'ndan başka ilah yoktur. Ben O'na tevekkül ettim. O, Büyük Arş'ın Rabb'idir.'",
     },
-    // {
-    //     key: "112:3",
-    //     surah: "İhlâs (112)",
-    //     textAr: "لَمْ يَلِدْ وَلَمْ يُولَدْ",
-    //     textTr: "Doğurmamış ve doğurulmamıştır.",
-    // },
     {
         key: "6:17",
         surah: "En'am (6)",
@@ -87,7 +81,6 @@ function dayOfYearInTZ(tz) {
     const y = Number(parts.find((p) => p.type === "year")?.value);
     const m = Number(parts.find((p) => p.type === "month")?.value);
     const d = Number(parts.find((p) => p.type === "day")?.value);
-
 
     // Yerel (İstanbul) gün başlangıcıyla bir Date üretip yılın kaçıncı günü olduğuna bakıyoruz
     const localDate = new Date(Date.UTC(y, m - 1, d));
