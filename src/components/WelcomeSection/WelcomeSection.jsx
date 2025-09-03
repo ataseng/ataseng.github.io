@@ -2,6 +2,7 @@ import './WelcomeSection.css';
 import logo from '../../assets/images/logo2.png';
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import Loader from '../Loader/Loader';
+import DailyAyah from '../DailyAyah/DailyAyah';
 
 const WelcomeSection = ({ text }) => {
   return (
@@ -17,6 +18,7 @@ const WelcomeSection = ({ text }) => {
                         <Loader color={"white"}/>
                     }
                 </div>
+                <DailyAyah />
                 <a className='arrow-down' href="#about-section">
                     <MdKeyboardDoubleArrowDown/>
                 </a>

@@ -1,0 +1,33 @@
+.daily-ayah-card {
+    margin-top: 24px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--turquoise);
+    color: var(--home-text);
+    padding: 16px 40px 40px;
+    /* border-radius: 255px 25px 225px 25px / 25px 225px 25px 255px; */
+    border-radius: 255px 0px 225px 0px / 25px 225px 25px 255px;
+    font-size: var(--home-title);
+    position: relative;
+}
+
+.daily-ayah-card img.corner{
+    width: 100px;
+}
+
+.daily-ayah-card .top-right-corner{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.daily-ayah-card .bottom-left-corner{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotateZ(180deg);
+}
