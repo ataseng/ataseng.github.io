@@ -13,6 +13,7 @@
     border-radius: 255px 0px 225px 0px / 25px 225px 25px 255px;
     font-size: var(--home-title);
     position: relative;
+    text-align: center;
 }
 
 .daily-ayah-card img.corner{

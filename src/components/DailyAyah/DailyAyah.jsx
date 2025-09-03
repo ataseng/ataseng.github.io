@@ -102,24 +102,24 @@ function pickIndexForToday(listLen, tz = "Europe/Istanbul") {
 const DailyAyah = () => {
 
     const todayIndex = useMemo(() => pickIndexForToday(AYAH_LIST.length), []);
-    const ayah = AYAH_LIST[todayIndex];
+    const ayah = AYAH_LIST[1];
 
     return (
         <div className={"daily-ayah-card"}>
             <img className='corner top-right-corner' src={ayah_corner} alt="" />
             <img className='corner bottom-left-corner' src={ayah_corner} alt="" />
-            <div className="text-xs uppercase tracking-widest text-gray-500">
+            <div>
                 Günün Ayeti
             </div>
 
-            <div className="mt-2 text-[.9rem] text-gray-600">{ayah.surah} — {ayah.key}</div>
+            <div>{ayah.surah} — {ayah.key}</div>
 
-            <div className="mt-3 text-2xl leading-relaxed text-right font-semibold">
+            <div>
                 {ayah.textAr}
             </div>
 
             {ayah.textTr && (
-                <div className="mt-3 text-base leading-7 text-gray-800">{ayah.textTr}</div>
+                <div>{ayah.textTr}</div>
             )}
         </div>
     )
