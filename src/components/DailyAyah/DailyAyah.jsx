@@ -22,22 +22,16 @@ const AYAH_LIST = [
         textTr: "Gerçekten, güçlükle beraber bir kolaylık daha vardır.",
     },
     {
-        key: "112:1",
+        key: "112:1-2",
         surah: "İhlâs (112)",
-        textAr: "قُلْ هُوَ اللَّهُ أَحَدٌ",
-        textTr: "De ki: O, Allah birdir.",
+        textAr: "قُلْ هُوَ اللَّهُ أَحَدٌ اللَّهُ الصَّمَدُ",
+        textTr: "De ki: O, Allah birdir. Allah Samed'dir (her şey O'na muhtaç, O hiçbir şeye muhtaç değildir).",
     },
     {
         key: "40:51",
         surah: "Mü'min (40)",
         textAr: "اِنَّا لَنَنْصُرُ رُسُلَنَا وَالَّذ۪ينَ اٰمَنُوا فِي الْحَيٰوةِ الدُّنْيَا وَيَوْمَ يَقُومُ الْاَشْهَادُۙ",
         textTr: "Biz, Resullerimize ve iman edenlere dünya hayatında ve tanıkların tanıklık edecekleri günde kesinlikle yardım ederiz.",
-    },
-    {
-        key: "112:2",
-        surah: "İhlâs (112)",
-        textAr: "اللَّهُ الصَّمَدُ",
-        textTr: "Allah Samed'dir (her şey O'na muhtaç, O hiçbir şeye muhtaç değildir).",
     },
     {
         key: "19:96",
