@@ -43,7 +43,7 @@ export const login = (email, password, setUserVerified) => async (dispatch) => {
             password
         }
 
-        const data = await api.post_with_credentials(url, body);
+        const data = await api.login(url, body);
 
         if (data.ok){
             dispatch({
@@ -51,6 +51,14 @@ export const login = (email, password, setUserVerified) => async (dispatch) => {
                 payload: data
             });
             localStorage.setItem("userInfo", JSON.stringify(data));
+        }
+        else if(data.error === "inactive_user"){
+            setUserVerified(false);
+            toast.error(data.message);
+            dispatch({
+            type : USER_LOGIN_FAIL,
+            payload: data.message
+        });
         }
 
     } catch (error) {

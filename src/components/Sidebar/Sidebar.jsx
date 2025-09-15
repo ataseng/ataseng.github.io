@@ -59,7 +59,7 @@ const Sidebar = ({ setTheme, theme }) => {
                             <MenuItem item={item} onClick={menuOpen ? toggleMobileMenu : undefined} />
                         </li>
                     ))}
-                    {/* {
+                    {
                         userInfo ?
                             <>
                                 <li>
@@ -104,7 +104,7 @@ const Sidebar = ({ setTheme, theme }) => {
                                 </li>
                             </>
                             
-                    } */}
+                    }
                 </ul>
                 <div className="icon moon-sun" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
                     <Icon icon={theme === 'dark' ? 'ph:sun' : 'ph:moon'} />

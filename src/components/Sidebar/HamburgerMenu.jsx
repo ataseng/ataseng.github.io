@@ -37,7 +37,7 @@ const HamburgerMenu = ({ isOpen, toggleMenu, toggleTheme, themeName, logoutHandl
                     </li>
                 ))}
                 
-                {/* {
+                {
                     userInfo ?
                         <>
                             <li onClick={toggleMenu}>
@@ -60,7 +60,7 @@ const HamburgerMenu = ({ isOpen, toggleMenu, toggleTheme, themeName, logoutHandl
                                 Giriş Yap
                             </Link>
                         </li>
-                } */}
+                }
             </ul>
         </div>
     );

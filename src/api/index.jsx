@@ -72,7 +72,7 @@ export const api = {
         }
     },
 
-    post_with_credentials: async (url, body) => {
+    login: async (url, body) => {
         body = JSON.stringify(body);
         const options = {
             method: "post",
@@ -84,9 +84,14 @@ export const api = {
         }
         const result = await fetch(url, options);
 
-        if(result.status === 200){
-            return result.json();
-        }
+        // if(result.status === 200){
+        //     return result.json();
+        // }
+        // else{
+        //     return result;
+        // }
+
+        return result.json();
     },
 
     post_with_auth : async (url, body, access_token) => {

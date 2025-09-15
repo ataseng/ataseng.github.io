@@ -18,7 +18,12 @@ const MenuItem = ({ item, onClick, user = null }) => (
             {
                 user ?
                 <>
-                    <img src={user.image} alt="user-profile" className='profile-image' />
+                    {
+                        user.image ? 
+                        <img src={user.image} alt="user-profile" className='profile-image' />
+                        :
+                        <Icon icon={item.icon} className="icon" />
+                    }
                     <span>{user.name} {user.surname}</span>
                 </>
                 : 

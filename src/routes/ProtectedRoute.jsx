@@ -8,6 +8,9 @@ const ProtectedRoute = ({ redirectTo = "/giris" }) => {
     const userLogin = useSelector(state => state.userLogin);
     const { error, loading, userInfo } = userLogin;
     const [user, setUser] = useState({});
+    const [apiOk, setApiOk] = useState(false);
+
+    console.log(user)
 
     const getUser = async () => {
         const result = await api.get_with_auth(
@@ -18,14 +21,21 @@ const ProtectedRoute = ({ redirectTo = "/giris" }) => {
         if(result.status === 200){
             const response = await result.json();
             setUser(response.content);
+            setApiOk(true);
         }
-    }
+    };
 
     useEffect(() => {
         if(userInfo && userInfo?.access_token?.length > 0){
             getUser();
         }
     }, [userInfo]);
+
+    useEffect(() => {
+        if(apiOk){
+
+        }
+    }, [apiOk]);
 
     if(loading){
         return (

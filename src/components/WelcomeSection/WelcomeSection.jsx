@@ -5,8 +5,11 @@ import Loader from '../Loader/Loader';
 import DailyAyah from '../DailyAyah/DailyAyah';
 
 const WelcomeSection = ({ text }) => {
-  return (
-    <div id='welcome-section' className="welcome-section">
+
+    const ayahMode = false;
+
+    return (
+        <div id='welcome-section' className="welcome-section">
             <div className="welcome-content">
                 <div className="welcome-logo">
                     <img src={logo} alt="Ataseng Logo" />
@@ -14,17 +17,19 @@ const WelcomeSection = ({ text }) => {
                 <div className="welcome-description">
                     {
                         text ?
-                        text : 
-                        <Loader color={"white"}/>
+                            text :
+                            <Loader color={"white"} />
                     }
                 </div>
-                <DailyAyah />
+                {
+                    ayahMode && <DailyAyah />
+                }
                 <a className='arrow-down' href="#about-section">
-                    <MdKeyboardDoubleArrowDown/>
+                    <MdKeyboardDoubleArrowDown />
                 </a>
             </div>
         </div>
-  )
+    )
 }
 
 export default WelcomeSection
