@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import "./UserProfile.css";
 import { useNavigate } from "react-router";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const UserProfile = () => {
 
@@ -12,8 +13,13 @@ const UserProfile = () => {
     return (
         <section className='post-section user-profile-section'>
             <div className="section-content post-content">
-                <img src={userInfo.user.image} alt="profile-image" />
-                <h3>{userInfo.user.name} {userInfo.user.surname}</h3>
+                {
+                    userInfo?.user?.image ? 
+                    <img src={userInfo?.user?.image} alt="profile-image" className='profile-image' />
+                    :
+                    <Icon style={{fontSize: 80}} icon={"healthicons:ui-user-profile"} className="icon" />
+                }
+                <h3>{userInfo?.user?.name} {userInfo?.user?.surname}</h3>
                 <button onClick={() => navigate("/profil/guncelle")}>Profili Düzenle</button>
                 <button onClick={() => navigate("/profil/etkinlik-gecmisi")}>Etkinlik Geçmişim</button>
             </div>

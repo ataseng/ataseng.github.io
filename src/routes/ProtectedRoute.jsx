@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Navigate, Outlet } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { Outlet, useNavigate } from 'react-router';
 import { api } from '../api';
+import { logout } from '../redux/actions/userActions';
 
 const ProtectedRoute = ({ redirectTo = "/giris" }) => {
 
     const userLogin = useSelector(state => state.userLogin);
     const { error, loading, userInfo } = userLogin;
     const [user, setUser] = useState({});
-    const [apiOk, setApiOk] = useState(false);
 
-    console.log(user)
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
 
     const getUser = async () => {
         const result = await api.get_with_auth(
@@ -21,7 +23,9 @@ const ProtectedRoute = ({ redirectTo = "/giris" }) => {
         if(result.status === 200){
             const response = await result.json();
             setUser(response.content);
-            setApiOk(true);
+        }
+        else{
+            dispatch(logout());
         }
     };
 
@@ -29,13 +33,11 @@ const ProtectedRoute = ({ redirectTo = "/giris" }) => {
         if(userInfo && userInfo?.access_token?.length > 0){
             getUser();
         }
-    }, [userInfo]);
-
-    useEffect(() => {
-        if(apiOk){
-
+        else{
+           navigate(redirectTo);
         }
-    }, [apiOk]);
+
+    }, [userInfo, navigate, redirectTo]);
 
     if(loading){
         return (

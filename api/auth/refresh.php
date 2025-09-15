@@ -102,7 +102,7 @@ try {
 } catch (Throwable $e) {
     $pdo->rollBack();
     // Eski cookie’yi de temizleyelim
-    clear_refresh_cookie();
+    // clear_refresh_cookie();
     http_response_code(401);
     echo json_encode([
         'error'=>'refresh_invalid',
