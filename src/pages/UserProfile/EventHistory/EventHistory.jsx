@@ -19,7 +19,8 @@ const EventHistory = () => {
   return (
     <section className='post-section'>
             <div className="section-content post-content">
-                Event History
+                <h2>Etkinlik Geçmişi</h2>
+                <p>Yapım Aşamasında</p>
 
             </div>
         </section>
