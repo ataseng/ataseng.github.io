@@ -32,6 +32,7 @@ import UserProfile from "./pages/UserProfile/UserProfile";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import EditProfile from "./pages/UserProfile/EditProfile/EditProfile";
 import EventHistory from "./pages/UserProfile/EventHistory/EventHistory";
+import CompetitionPost from "./pages/Admin/Competitions/CompetitionPost";
 
 function App() {
     
@@ -86,6 +87,7 @@ function App() {
 
                 <Route path="/admin/egitim-ekle" element={<EducationPost />} />
                 <Route path="/admin/egitimci-ekle" element={<EducatorPost />} />
+                <Route path="/admin/yarisma-ekle" element={<CompetitionPost />} />
 
                 <Route element={<ProtectedRoute />}>
                     <Route path="/profil" element={<UserProfile />} />

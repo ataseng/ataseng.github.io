@@ -118,3 +118,7 @@ form.post-form .post-form-input-div .post-form-image-div img{
         max-width: unset;
     }
 }
+
+form.post-form .post-form-input-div input.tag_checkbox{
+    width: unset;
+}

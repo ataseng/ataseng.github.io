@@ -19,7 +19,20 @@ const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null,
 
         const formData = new FormData(form.current);
         const body = jsonContent ? JSON.stringify(Object.fromEntries(formData)) : formData;
-        
+
+        if(inputs.find(input => input.type === "checkboxes")){
+
+            const tags = [];
+            for (let [key, _] of body.entries()) {
+                if(key.includes("tag")){
+                    tags.push(key.split("_")[1]);
+                }
+            }
+            body.append("tags", tags);
+            tags.forEach(tag => body.delete(`tag_${tag}`));
+
+        }
+
         const post_options = {
             method: "post",
             body
@@ -75,6 +88,14 @@ const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null,
                                 <>
                                     <label htmlFor={input.name}>{input.isRequired ? <span className='required'>*</span> : ""} {input.label}: </label>
                                     {
+                                        input.type === "checkboxes" ? 
+                                            input.options.map(checkbx => (
+                                                <>
+                                                    <label htmlFor={`tag_${checkbx.value}`}>{checkbx.text}</label>
+                                                    <input className='tag_checkbox' key={`${checkbx.value}_checkbx`} type="checkbox" name={`tag_${checkbx.value}`} id={`tag_${checkbx.value}`} />
+                                                </>
+                                            ))
+                                        :
                                         input.type === "select" ? 
                                         <select required={input.isRequired} id={input.name} name={input.name} value={input.value} onChange={input.setFunction ?? null}>
                                             {
