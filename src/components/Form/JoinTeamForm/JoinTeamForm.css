@@ -38,6 +38,22 @@ form.join-team-form .join-team-form-input-div{
     gap: 12px;
 }
 
+form.join-team-form .join-team-form-input-div.checkbox-div{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+form.join-team-form .join-team-form-input-div.checkbox-div input[type='checkbox']{
+    width: var(--section-text);
+    height: var(--section-text);
+    accent-color: var(--turquoise);
+}
+
+form.join-team-form .join-team-form-input-div.checkbox-div p {
+    font-size: var(--section-text);
+}
+
 form.join-team-form .join-team-form-input-div label{
     padding: 10px;
     /* color: var(--turquoise); */

@@ -3,11 +3,11 @@ import teamImage from "../../assets/images/team.jpg";
 
 export const teamData = [
     {
-        "image": osmandurdag,
-        "name": "Osman DURDAĞ",
-        "department": "Yazılım Mühendisliği",
-        "role": "Danışman",
-        "links": [
+        "Image": osmandurdag,
+        "Name": "Osman DURDAĞ",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Danışman",
+        "Social": [
             {
                 "href": "https://www.linkedin.com/in/osmandurdag/",
                 "icon": "mdi:linkedin",
@@ -31,11 +31,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Alperen İLGAZ",
-        "department": "Yazılım Mühendisliği",
-        "role": "Başkan",
-        "links": [
+        "Image": teamImage,
+        "Name": "Alperen İLGAZ",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Başkan",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -54,11 +54,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Gizem Yağmur BERKER",
-        "department": "Yazılım Mühendisliği",
-        "role": "Başkan Yardımcısı",
-        "links": [
+        "Image": teamImage,
+        "Name": "Gizem Yağmur BERKER",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Başkan Yardımcısı",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -77,11 +77,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Emel ÖRKEN",
-        "department": "Yazılım Mühendisliği",
-        "role": "Başkan Yardımcısı",
-        "links": [
+        "Image": teamImage,
+        "Name": "Emel ÖRKEN",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Başkan Yardımcısı",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -100,11 +100,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Furkan ÖZÜDOĞRU",
-        "department": "Yazılım Mühendisliği",
-        "role": "Sayman",
-        "links": [
+        "Image": teamImage,
+        "Name": "Furkan ÖZÜDOĞRU",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Sayman",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -123,11 +123,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Şüheda KARA",
-        "department": "Yazılım Mühendisliği",
-        "role": "Sayman",
-        "links": [
+        "Image": teamImage,
+        "Name": "Şüheda KARA",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Sayman",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -146,11 +146,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Aybuke Yıldız ŞAHİNOĞLU",
-        "department": "Yazılım Mühendisliği",
-        "role": "Yazman",
-        "links": [
+        "Image": teamImage,
+        "Name": "Aybuke Yıldız ŞAHİNOĞLU",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Yazman",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -169,11 +169,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Sena BAYRAMOĞLU",
-        "department": "Yazılım Mühendisliği",
-        "role": "Yazman",
-        "links": [
+        "Image": teamImage,
+        "Name": "Sena BAYRAMOĞLU",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Yazman",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -192,11 +192,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Hasan Tahsin KURT",
-        "department": "Yazılım Mühendisliği",
-        "role": "Yönetim Kurulu Üyesi",
-        "links": [
+        "Image": teamImage,
+        "Name": "Hasan Tahsin KURT",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Yönetim Kurulu Üyesi",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -215,11 +215,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Mahmut Emin ÖZKAN",
-        "department": "Yazılım Mühendisliği",
-        "role": "Yönetim Kurulu Üyesi",
-        "links": [
+        "Image": teamImage,
+        "Name": "Mahmut Emin ÖZKAN",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Yönetim Kurulu Üyesi",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -238,11 +238,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Melisa YALÇINKAYA",
-        "department": "Yazılım Mühendisliği",
-        "role": "Yönetim Kurulu Üyesi",
-        "links": [
+        "Image": teamImage,
+        "Name": "Melisa YALÇINKAYA",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Yönetim Kurulu Üyesi",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -261,11 +261,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Numan Taha KOTAN",
-        "department": "Yazılım Mühendisliği",
-        "role": "Yönetim Kurulu Üyesi",
-        "links": [
+        "Image": teamImage,
+        "Name": "Numan Taha KOTAN",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Yönetim Kurulu Üyesi",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -284,11 +284,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Zeynep Ceyda BOZOK",
-        "department": "Yazılım Mühendisliği",
-        "role": "Yönetim Kurulu Üyesi",
-        "links": [
+        "Image": teamImage,
+        "Name": "Zeynep Ceyda BOZOK",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Yönetim Kurulu Üyesi",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -307,11 +307,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Bilal DENGİZ",
-        "department": "Yazılım Mühendisliği",
-        "role": "Denetleme Kurulu Başkanı",
-        "links": [
+        "Image": teamImage,
+        "Name": "Bilal DENGİZ",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Denetleme Kurulu Başkanı",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",
@@ -330,11 +330,11 @@ export const teamData = [
         ]
     },
     {
-        "image": teamImage,
-        "name": "Mustafa SEZEN",
-        "department": "Yazılım Mühendisliği",
-        "role": "Denetleme Kurulu Üyesi",
-        "links": [
+        "Image": teamImage,
+        "Name": "Mustafa SEZEN",
+        "Department": "Yazılım Mühendisliği",
+        "Position": "Denetleme Kurulu Üyesi",
+        "Social": [
             {
                 "href": "#",
                 "icon": "mdi:github",

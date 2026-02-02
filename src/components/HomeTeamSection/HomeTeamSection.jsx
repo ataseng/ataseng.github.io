@@ -15,15 +15,53 @@ const HomeTeamSection = ({ our_team }) => {
                     <div className="right-line"></div>
                 </div>
                 <div className="home-team-content-card-wrap">
+                    
                     {
                         our_team.length > 0 ?
-                        our_team.map((item, key) => (
+                        our_team.filter(team_member => team_member.Position === "Başkan").map((item, key) => (
                             <div key={key} className="home-team-content-card">
                                 <div className="person-image">
                                     {
-                                        item.image ? 
+                                        item.Image ? 
                                             <img src={item.image} alt="" />
-                                            : item.gender === "male" ? 
+                                            : item.Gender === "M" ? 
+                                                <img src={maleAvatar} alt="" /> : 
+                                                <img src={femaleAvatar} alt="" />
+                                    }
+                                </div>
+                                <div className="person-name">
+                                    <p>{item.Name} {item.Surname}</p>
+                                </div>
+
+                                <div className="departmant-info">
+                                    <div className="departmant">
+                                        <p>{item.Department}</p>
+                                    </div>
+                                    <div className="grade">
+                                        <p>{item.Grade}. Sınıf</p>
+                                    </div>
+                                </div>
+
+                                <div className="club-positions">
+                                    <p style={{fontWeight: "bold"}}>{item.Position}</p>
+                                </div>
+                            </div>
+                        ))
+                        :
+                        <Loader />
+                    }
+
+                    <p style={{width: "100%"}}></p>
+
+                    {
+                        our_team.length > 0 ?
+                        our_team.filter(team_member => team_member.Position !== "Başkan").map((item, key) => (
+                            <div key={key} className="home-team-content-card">
+                                <div className="person-image">
+                                    {
+                                        item.Image ? 
+                                            <img src={item.image} alt="" />
+                                            : item.Gender === "M" ? 
                                                 <img src={maleAvatar} alt="" /> : 
                                                 <img src={femaleAvatar} alt="" />
                                     }

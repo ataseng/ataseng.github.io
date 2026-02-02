@@ -4,6 +4,7 @@ import { isNumeric } from '../../../utils/isNumeric';
 import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 import { api } from '../../../api';
+import { Link } from 'react-router-dom';
 
 /**
  * JoinTeamForm component renders a form for users to apply to join the team.
@@ -178,8 +179,14 @@ const JoinTeamForm = () => {
                 />
                 </div>
             }
-            
+            <div className='join-team-form-input-div checkbox-div'>
+                <input required={true} type="checkbox" id={"want_to_be_on_the_management_team"} name={"want_to_be_on_the_management_team"}/> 
+                <p>
+                    Yönetim ekibinde yer almak istiyorum!
+                </p>
+            </div>
             <button type='submit' disabled={settings?.RegistrationActive !== '1'}>Gönder</button>
+            
             <div className='require-phone'>
                 <span>Telefon numaranızı doğru girdiğinizden emin olunuz!</span>
             </div>

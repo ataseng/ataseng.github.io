@@ -35,7 +35,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
 
 $pdo = db();
 // $stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, rl.Name as Role, mbr.StudentNo, mbr.Name, mbr.Surname, mbr.Grade, mbr.Position, mbr.Task, mbr.Department, mbr.BirthDate, mbr.Gender, mbr.Phone FROM Users AS usr JOIN Members AS mbr ON usr.ID = mbr.User_ID JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.Email = :email LIMIT 1');
-$stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, rl.Name as Role, mbr.Name, mbr.Surname, mbr.Image FROM Users AS usr JOIN Member AS mbr ON usr.ID = mbr.User_ID JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.Email = :email LIMIT 1');
+$stmt = $pdo->prepare('SELECT usr.ID, usr.Email, usr.PasswordHash, usr.Is_Active, rl.Name as Role, mbr.Name, mbr.Surname, mbr.Phone, mbr.Image FROM Users AS usr JOIN Member AS mbr ON usr.ID = mbr.User_ID JOIN Roles AS rl ON usr.Role_ID = rl.ID WHERE usr.Email = :email LIMIT 1');
 $stmt->execute([
     "email" => $email
 ]);
@@ -64,6 +64,7 @@ $user_email = $user["Email"];
 $user_role = $user['Role'];
 $user_name = $user["Name"];
 $user_surname = $user["Surname"];
+$user_phone = $user["Phone"];
 $user_image = $user["Image"];
 
 $access = make_access_token((int)$user_id, $user_email, $user_role);
@@ -97,6 +98,7 @@ echo json_encode([
         // 'student_no' => $user_studentNo,
         'name'=>$user_name,
         'surname'=>$user_surname,
+        'phone' => $user_phone,
         'image'=>$user_image,
         // 'grade'=>$user_grade,
         // 'position'=>$user_position,
@@ -104,7 +106,6 @@ echo json_encode([
         // 'department' => $user_department,
         // 'birthdate' => $user_birthdate,
         // 'gender' => $user_gender,
-        // 'phone' => $user_phone
     ]
 ]);
 

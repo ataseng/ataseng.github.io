@@ -2,8 +2,8 @@
 
 - [X] Home
 - [X] About
-- [ ] Credits
-- [ ] Team
+- [X] Credits
+- [X] Team
 - [X] Contact
 - [X] Events
 - [ ] Competitions

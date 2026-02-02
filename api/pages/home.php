@@ -15,7 +15,7 @@ try {
 	$stmt->execute();
 	$homepage_content = $stmt->fetch();
 
-    $team_cards_content_sql = "SELECT Name, Surname, Department, Grade, Position FROM Member WHERE Position = 'Başkan' OR Position = 'Başkan Yardımcısı'";
+    $team_cards_content_sql = "SELECT Name, Surname, Department, Grade, Position, Gender, Image FROM Member WHERE Position = 'Başkan' OR Position = 'Başkan Yardımcısı'";
 
     $stmt = $pdo->prepare($team_cards_content_sql);
 	$stmt->execute();

@@ -34,7 +34,8 @@ export const credits_data = {
             department: "Yazılım Mühendisliği",
             "role": "Frontend Developer",
             "linkedin": "https://www.linkedin.com",
-            "imageUrl": ""
+            "imageUrl": "",
+            gender: "male"
         },
         {
             "name": "Melisa YALÇİNKAYA",

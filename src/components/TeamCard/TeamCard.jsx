@@ -1,5 +1,7 @@
 import './TeamCard.css';
 import { Icon } from '@iconify/react';
+import maleAvatar from '../../assets/images/avatars/maleAvatar_180x220.png';
+import femaleAvatar from '../../assets/images/avatars/femaleAvatar.png';
 
 /**
  * Card component represents an individual's profile with an image, logo, name, 
@@ -13,29 +15,36 @@ import { Icon } from '@iconify/react';
  * @param {string} props.name - Name of the individual.
  * @param {string} props.department - Department of the individual.
  * @param {string} props.role - Role of the individual in the team.
- * @param {Array} props.links - An array of social link objects with `href` and `icon`.
+ * @param {Array} props.social - An array of social link objects with `href` and `icon`.
  *
  * @returns {JSX.Element} The rendered Card component.
  */
 
-const TeamCard = ({ image, name, department, role, links }) => {
+const TeamCard = ({ image, fullname, department, position, gender, social = [] }) => {
     return (
         <div className="team-card">
-            <img src={image} alt={name} className="team-card-image" />
+            {
+                image ? 
+                <img src={image} alt={fullname} className="team-card-image" /> :
+                gender === "M" ? 
+                    <img src={maleAvatar} alt="" className="team-card-image" /> : 
+                    <img src={femaleAvatar} alt="" className="team-card-image" />
+            }
+            
             <div className="team-card-content">
                 <div className='team-card-text-content'>
-                    <p>{name}</p>
+                    <p>{fullname}</p>
                     <p>{department}</p>
-                    <p className='team-card-role'>{role}</p>
+                    <p className='team-card-role'>{position}</p>
                 </div>
 
                 <div className="team-card-links">
-                    {links.map((link, index) => (
-                        link.href !== "#" &&
-                        <a key={index} href={link.href}>
+                    {social?.map((sc, index) => (
+                        sc.url && sc.url !== "" &&
+                        <a key={index} href={sc.url}>
                             <Icon
-                                icon={link.icon}
-                                className={link.className}
+                                icon={sc.type ==="website" ? `mdi:earth` : `mdi:${sc.type}`}
+                                className={`${sc.type}-icon`}
                             />
                         </a>
                     ))}

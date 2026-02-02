@@ -4,33 +4,103 @@ import teamFoto_1 from '../../assets/images/team_sections_1.jpg';
 import teamFoto_2 from '../../assets/images/team_sections_2.jpg';
 import JoinTeamForm from '../../components/Form/JoinTeamForm/JoinTeamForm';
 import TeamCard from '../../components/TeamCard/TeamCard';
-import { teamData } from "./teamData";
+import {teamData} from "./teamData";
 import Loader from '../../components/Loader/Loader';
+import { useEffect, useState } from 'react';
+import { api } from '../../api';
 
 const Team = () => {
+    const [team, setTeam] = useState([]);
+
+    const getTeam = async () => {
+        const result = await api.get("https://ataseng.com/api/team/get.php");
+        if(result && result.content && result.content.length > 0)
+            setTeam(result.content);
+    }
+
+    useEffect(() => {
+        getTeam();
+    }, []);
+
     return (
         <>
             <section>
                 <div className="section-content team-content">
                     <h2 className='lined-title'>Ekibimiz</h2>
                     <div className="team-cards">
-                        {/* {
-                            teamData.map((card, index) => (
+                        {
+                            team.length > 0 ?
+                            team.filter(member => member.Position === "Danışman").map(member => (
                                 <TeamCard
-                                    key={index}
-                                    image={card.image}
-                                    name={card.name}
-                                    department={card.department}
-                                    role={card.role}
-                                    links={card.links}
+                                    key={`team_member_${member.ID}`}
+                                    image={member.Image}
+                                    fullname={`${member.Name} ${member.Surname}`}
+                                    department={member.Department}
+                                    position={member.Position}
+                                    gender={member.Gender}
+                                    social={member.Social}
                                 />
-                            ))
-                        } */}
-                        <Loader />
+                            )) : 
+                            <Loader />
+                        }
+
+                        <p style={{width: "100%"}}></p>
+                        
+                        {
+                            team.length > 0 ?
+                            team.filter(member => member.Position === "Başkan").map(member => (
+                                <TeamCard
+                                    key={`team_member_${member.ID}`}
+                                    image={member.Image}
+                                    fullname={`${member.Name} ${member.Surname}`}
+                                    department={member.Department}
+                                    position={member.Position}
+                                    gender={member.Gender}
+                                    social={member.Social}
+                                />
+                            )) : 
+                            <Loader />
+                        }
+
+                        <p style={{width: "100%"}}></p>
+
+                        {
+                            team.length > 0 ?
+                            team.filter(member => member.Position === "Başkan Yardımcısı").map(member => (
+                                <TeamCard
+                                    key={`team_member_${member.ID}`}
+                                    image={member.Image}
+                                    fullname={`${member.Name} ${member.Surname}`}
+                                    department={member.Department}
+                                    position={member.Position}
+                                    gender={member.Gender}
+                                    social={member.Social}
+                                />
+                            )) : 
+                            <Loader />
+                        }
+
+                        <p style={{width: "100%"}}></p>
+
+                        {
+                            team.length > 0 ?
+                            team.filter(member => !["Danışman", "Başkan", "Başkan Yardımcısı"].includes(member.Position)).map(member => (
+                                <TeamCard
+                                    key={`team_member_${member.ID}`}
+                                    image={member.Image}
+                                    fullname={`${member.Name} ${member.Surname}`}
+                                    department={member.Department}
+                                    position={member.Position}
+                                    gender={member.Gender}
+                                    social={member.Social}
+                                />
+                            )) : 
+                            <Loader />
+                        }
+
                     </div>
                 </div>
 
-                {/* <CardList /> */}
             </section>
 
             <section className='team-about'>
