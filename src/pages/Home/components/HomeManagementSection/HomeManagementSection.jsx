@@ -1,42 +1,8 @@
 import './homeManagementSection.css'
-import JoinTeamForm from '../Form/JoinTeamForm/JoinTeamForm';
-
+import JoinTeamForm from '../../../../components/Form/JoinTeamForm/JoinTeamForm';
 
 const HomeManagementSection = () => {
-    // const [formData, setformData] = useState(
-    //     {
-    //         fullname: "",
-    //         departmant: "",
-    //         grade: "",
-    //         phone: ""
-    //     }
-    // );
-
-    // const recruitmentActive = true;
-
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target
-    //     if (value === "")
-    //         return;
-
-    //     setformData(prevState => ({
-    //         ...prevState,
-    //         [name]: value
-    //     }));
-    // }
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     if (formData) {
-    //         setformData({
-    //             fullName: "",
-    //             departmant: "",
-    //             grade: "",
-    //             phone: ""
-    //         })
-    //     }
-    // }
-    
+       
     return (
         <div id='management-section' className="management-section">
             <div className="management-content">

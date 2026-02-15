@@ -24,6 +24,7 @@ $grade = $formData["grade"];
 $interest = $formData["interest"];
 $email = $formData["email"];
 $phone = $formData["phone"];
+$want_to_be_on_the_management_team = isset($formData["want_to_be_on_the_management_team"]) ? 1 : 0;
 
 try {
     $pdo = db();
@@ -36,7 +37,7 @@ try {
 
     if($postActive && $postActive == 1 ){
 
-        $check_duplication_sql = "INSERT INTO Registration (StudentNo, Name, Surname, Department, Grade, Interest, Email, Phone) SELECT :student_no, :name, :surname, :department, :grade, :interest, :email, :phone WHERE NOT EXISTS(SELECT 1 FROM Member m WHERE m.StudentNo = :student_no2) OR NOT EXISTS(SELECT 1 FROM Member m WHERE m.Phone = :phone2) OR NOT EXISTS(SELECT 1 FROM Users u WHERE u.Email = :email2)";
+        $check_duplication_sql = "INSERT INTO Registration (StudentNo, Name, Surname, Department, Grade, Interest, Email, Phone, WantToBePartOfManagementTeam) SELECT :student_no, :name, :surname, :department, :grade, :interest, :email, :phone, :want_to_be_on_the_management_team WHERE NOT EXISTS(SELECT 1 FROM Member m WHERE m.StudentNo = :student_no2) OR NOT EXISTS(SELECT 1 FROM Member m WHERE m.Phone = :phone2) OR NOT EXISTS(SELECT 1 FROM Users u WHERE u.Email = :email2)";
         $query = $pdo->prepare($check_duplication_sql);
         $stmt = $query->execute([
             "student_no" => $studentNo,
@@ -47,6 +48,7 @@ try {
             "interest" => $interest,
             "email" => $email,
             "phone" => $phone,
+            "want_to_be_on_the_management_team" => $want_to_be_on_the_management_team,
             "student_no2" => $studentNo,
             "phone2" => $phone,
             "email2" => $email

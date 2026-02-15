@@ -3,7 +3,7 @@ import './homeFeedBackSection.css'
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { api } from '../../api';
+import { api } from '../../../../api';
 
 const HomeFeedBackSection = () => {
 

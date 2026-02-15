@@ -59,6 +59,13 @@
     position: relative;
 }
 
+.sidebar .menu-item .user-span{
+    padding: 0 8px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .sidebar ul li .menu-item .submenu {
     display: none;
     position: absolute;

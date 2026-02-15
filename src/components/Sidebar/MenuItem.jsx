@@ -8,7 +8,6 @@
  *
  * @returns {JSX.Element} A JSX element representing the menu item.
  */
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
@@ -24,7 +23,9 @@ const MenuItem = ({ item, onClick, user = null }) => (
                         :
                         <Icon icon={item.icon} className="icon" />
                     }
-                    <span>{user.name} {user.surname}</span>
+                    <span className='user-span'>
+                        {user.name?.length > 0 && user.surname?.length > 0 ? `${user.name} ${user.surname}` : user.name?.length > 0 ? user.name : user.surname?.length > 0 ? user.surname : user.email}
+                    </span>
                 </>
                 : 
                 <>

@@ -2,28 +2,28 @@
     {
         "id":1,
         "title":"Yarışmalar",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "description":"Kısa sürede çok şey öğrenebileceğin eğlenceli yarışmalar. Baskı yok, deneyim var. Dene, öğren, kendini geliştir!",
         "icon":"solar:cup-bold",
         "url":"yarismalar"
     },
     {
         "id":2,
         "title":"Eğitimler",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "description":"Yazılım dünyasında ihtiyaç duyulan teknik konularda eğitimler ve workshop'lar. Temelden ileri seviyeye, öğrenirken uygulamaya dayalı içerikler.",
         "icon":"mdi:education-outline",
         "url":"egitimler"
     },
     {
         "id":3,
         "title":"Kariyer Günleri",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "description":"Sektör profesyonelleriyle bir araya gel, firmaları yakından tanı ve kariyerine yön verecek bağlantılar kur. Geleceğini bugünden planla.",
         "icon":"streamline:target",
         "url":"kariyer-gunleri"
     },
     {
         "id":4,
         "title":"Bootcamps",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "description":"Yoğun ve uygulamalı eğitim programlarıyla kısa sürede yeni beceriler kazan. Gerçek projeler geliştir, portföyünü güçlendir",
         "icon":"tdesign:rocket",
         "url":"bootcamps"
     },
@@ -31,7 +31,7 @@
     {
         "id":5,
         "title":"Hackathons",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "description":"Takımını kur, fikir üret ve kodla. Gerçek problemlere yaratıcı çözümler geliştirdiğimiz uzun soluklu yazılım maratonları.",
         "icon":"fluent:brain-circuit-20-filled",
         "url":"hackathons"
     }

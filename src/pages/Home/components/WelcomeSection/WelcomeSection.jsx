@@ -1,8 +1,8 @@
 import './WelcomeSection.css';
-import logo from '../../assets/images/logo2.png';
+import logo from '../../../../assets/images/logo2.png';
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
-import Loader from '../Loader/Loader';
-import DailyAyah from '../DailyAyah/DailyAyah';
+import Loader from '../../../../components/Loader/Loader';
+import DailyAyah from '../../../../components/DailyAyah/DailyAyah';
 
 const WelcomeSection = ({ text }) => {
 

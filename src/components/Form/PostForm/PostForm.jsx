@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import "./PostForm.css";
 import { toast } from 'react-toastify';
@@ -18,6 +18,7 @@ const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null,
         e.preventDefault();
 
         const formData = new FormData(form.current);
+
         const body = jsonContent ? JSON.stringify(Object.fromEntries(formData)) : formData;
 
         if(inputs.find(input => input.type === "checkboxes")){
@@ -64,7 +65,7 @@ const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null,
             toast.error(error);
         });
     }
-    
+
     return (
         <>
             <form ref={form} className='post-form' onSubmit={submitHandler ? submitHandler : handleSubmit}>
@@ -74,7 +75,7 @@ const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null,
                             {
                                 input.type === "checkbox" && input.name === "policy_confirm" ? 
                                 <div className='policy-confirm'>
-                                    <input required={input.isRequired} type={input.type} id={input.name} name={input.name} onChange={input.setFunction ?? null}/> 
+                                    <input required={input.isRequired} type={input.type} id={input.name} name={input.name} onChange={input.setFunction ?? null} /> 
                                     <p>
                                         <Link to={"/kosullar-ve-sartlar"}>Koşullar</Link>, <Link to={"/gizlilik-politikasi"}>Gizlilik Politikası</Link> ve <Link to={"/cerez-politikasi"}>Çerez Politikasını</Link> okudum, kabul ediyorum.
                                     </p>
@@ -86,15 +87,19 @@ const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null,
                                 </div>
                                 :
                                 <>
-                                    <label htmlFor={input.name}>{input.isRequired ? <span className='required'>*</span> : ""} {input.label}: </label>
+                                    <label htmlFor={input.type === "checkboxes" ? null : input.name}>{input.isRequired ? <span className='required'>*</span> : ""} {input.label}: </label>
                                     {
                                         input.type === "checkboxes" ? 
-                                            input.options.map(checkbx => (
-                                                <>
-                                                    <label htmlFor={`tag_${checkbx.value}`}>{checkbx.text}</label>
-                                                    <input className='tag_checkbox' key={`${checkbx.value}_checkbx`} type="checkbox" name={`tag_${checkbx.value}`} id={`tag_${checkbx.value}`} />
-                                                </>
-                                            ))
+                                            <div className='checkboxes_div'>
+                                                {
+                                                    input.options.map(checkbx => (
+                                                        <div key={`${checkbx.value}_checkbx`}>
+                                                            <label htmlFor={`tag_${checkbx.value}`}>{checkbx.text}</label>
+                                                            <input className='tag_checkbox' type="checkbox" name={`tag_${checkbx.value}`} id={`tag_${checkbx.value}`} />
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
                                         :
                                         input.type === "select" ? 
                                         <select required={input.isRequired} id={input.name} name={input.name} value={input.value} onChange={input.setFunction ?? null}>
@@ -106,11 +111,10 @@ const PostForm = ({ inputs, url = "", jsonContent = false, submitHandler = null,
                                         </select>
                                         :
                                         input.disabled ? <span className='disabled'>{input.value}</span> :
-                                        <input required={input.isRequired} type={input.type} id={input.name} name={input.name} value={input.value} onChange={input.setFunction ?? null}/>
+                                        <input required={input.isRequired} type={input.type} id={input.name} name={input.name} value={input.value} onChange={input.setFunction ?? null} autoComplete={input.autoComplete} className={Object.hasOwn(input, "confirmState") ? input.confirmState ? "matched" : "unmatched" : ""}/>
                                     }
                                 </>
                             }
-                            
                         </div>
                     ))
                 }

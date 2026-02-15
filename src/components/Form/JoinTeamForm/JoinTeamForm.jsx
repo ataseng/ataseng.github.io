@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './JoinTeamForm.css';
-import { isNumeric } from '../../../utils/isNumeric';
+// import { isNumeric } from '../../../utils/isNumeric';
 import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 import { api } from '../../../api';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 /**
  * JoinTeamForm component renders a form for users to apply to join the team.
@@ -180,7 +180,7 @@ const JoinTeamForm = () => {
                 </div>
             }
             <div className='join-team-form-input-div checkbox-div'>
-                <input required={true} type="checkbox" id={"want_to_be_on_the_management_team"} name={"want_to_be_on_the_management_team"}/> 
+                <input type="checkbox" id={"want_to_be_on_the_management_team"} name={"want_to_be_on_the_management_team"}/> 
                 <p>
                     Yönetim ekibinde yer almak istiyorum!
                 </p>

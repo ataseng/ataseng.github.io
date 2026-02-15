@@ -1,11 +1,30 @@
 import { Link } from "react-router-dom";
 import PostForm from "../../../components/Form/PostForm/PostForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Register.css";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 
 const Register = () => {
+
+    const [password, setPassword] = useState("");
+    const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [confirmState, setConfirmState] = useState(false);
+
+    useEffect(() => {
+        if(password !== passwordConfirm)
+            setConfirmState(false);
+        else
+            setConfirmState(true);
+    }, [password, passwordConfirm]);
+
+    const handlePasswordChange = e => {
+        setPassword(e.target.value);
+    };
+
+    const handlePasswordConfirmChange = e => {
+        setPasswordConfirm(e.target.value);
+    };
 
     const inputs = [
         {
@@ -18,7 +37,18 @@ const Register = () => {
             name: "password",
             type: "password",
             label: "Parola",
-            isRequired: true
+            isRequired: true,
+            autoComplete: "new-password",
+            setFunction: handlePasswordChange
+        },
+        {
+            name: "password_again",
+            type: "password",
+            label: "Parola (Tekrar)",
+            isRequired: true,
+            autoComplete: "new-password",
+            setFunction: handlePasswordConfirmChange,
+            confirmState
         },
         {
             name: "student_no",
@@ -105,8 +135,11 @@ const Register = () => {
 
         const formData = new FormData(e.target);
         
-        const body = JSON.stringify(Object.fromEntries(formData));
+        formData.delete("password_again"); 
         
+
+        const body = JSON.stringify(Object.fromEntries(formData));
+
         const post_options = {
             method: "post",
             body,
@@ -138,7 +171,7 @@ const Register = () => {
             toast.error(error);
         });
         // dispatch(login(email, password, setUserVerified));
-    }
+    };
     
     const resendVerificationMail = () => {
         setResendOk(false);
@@ -198,6 +231,6 @@ const Register = () => {
             </div>
         </section>
     )
-}
+};
 
-export default Register
+export default Register;

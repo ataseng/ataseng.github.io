@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Sidebar.css';
 import { Icon } from '@iconify/react';
 import menuData from './menu.json';
@@ -7,7 +6,8 @@ import MenuItem from './MenuItem';
 import HamburgerMenu from './HamburgerMenu';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/actions/userActions';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 /**
  * Sidebar component that displays a navigation menu with a theme toggle.
  *

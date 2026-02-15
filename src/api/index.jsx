@@ -5,6 +5,8 @@
 
 import { toast } from "react-toastify";
 
+const API_URL = "https://ataseng.com/api";
+
 export const api = {
 
     get : async (url) => {

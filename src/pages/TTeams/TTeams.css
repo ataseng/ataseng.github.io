@@ -1,0 +1,174 @@
+#tteams-section{
+    background-color: var(--light-gray);
+}
+
+.dark #tteams-section{
+    background-color: var(--slate-blue);
+}
+
+section .section-content.tteams-content{
+    padding: 56px 0;
+    flex-direction: column;
+}
+
+.tteam-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: clamp(240px, 90%, 800px);
+}
+
+.tteam-card {
+    background-color: var(--light-gray);
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    width: 240px;
+    height: 360px;
+    transition: background-color 1s ease,transform 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    padding: 20px 12px 8px;
+}
+
+.tteam-card:hover{
+    transform: translateY(-12px);
+    transition: 0.5s all;
+}
+
+.dark .tteam-card {
+    background-color: var(--dark-slate);
+}
+
+.tteam-card-icon {
+    font-size: calc(var(--section-title) + 12px);
+    text-align: center;
+    color: var(--turquoise);
+}
+
+.tteam-card-title h3 {
+    font-size: var(--home-title);
+    text-align: center;
+    color: var(--turquoise);
+}
+
+.tteam-card-description p {
+    font-size: var(--section-list);
+    transition: color 1s ease;
+    text-align: center;
+}
+
+.dark .tteam-card-description {
+    color: var(--light-gray);
+}
+
+.tteam-card-button {
+    text-align: center;
+}
+
+.tteam-card-button p {
+    transition: background-color 1s ease, color 1s ease;
+    background-color: var(--turquoise);
+    color: var(--pure-white);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: var(--section-list);
+}
+
+.dark .tteam-card-button p {
+    color: var(--dark-slate);
+}
+
+.tteam-card:hover .tteam-card-button p{
+    background-color: transparent;
+    border: 1px solid var(--turquoise);
+    color: var(--turquoise);
+}
+
+.tteams-subpage{
+    min-height: calc(100vh - var(--client-footer-height));
+    /* min-height: 100vh; */
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.tteams-subpage .tteams-subpage-content{
+    position: relative;
+    top: 0;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+    gap: 24px;
+}
+
+.tteams-subpage-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .tteam-card{
+        width: 200px;
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tteam-card{
+        padding: 16px 12px 4px;
+        width: 160px;
+        height: 220px;
+    }
+
+    .tteam-card svg{
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .tteams-subpage .tteams-subpage-content{
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .tteam-cards{
+        justify-content: space-evenly;
+        gap: 24px;
+        margin-top: 20px;
+    }
+
+    .tteam-card{
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+    .tteam-card{
+        width: 120px;
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .tteam-card{
+        width: 160px;
+        height: 200px;
+    }
+}

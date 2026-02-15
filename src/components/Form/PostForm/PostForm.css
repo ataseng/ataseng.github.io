@@ -119,6 +119,25 @@ form.post-form .post-form-input-div .post-form-image-div img{
     }
 }
 
+form.post-form .post-form-input-div .checkboxes_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 65%;
+    gap: 20px;
+}
+
 form.post-form .post-form-input-div input.tag_checkbox{
     width: unset;
+}
+
+form.post-form .post-form-input-div input.unmatched{
+    background-color: var(--error-color);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+form.post-form .post-form-input-div input.matched{
+    color: var(--turquoise);
 }

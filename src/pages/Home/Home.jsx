@@ -1,23 +1,23 @@
 import './Home.css';
 
-import AboutSection from '../../components/AboutSection/AboutSection';
-import WelcomeSection from '../../components/WelcomeSection/WelcomeSection';
-import HomeBillboardSection from '../../components/HomeBillboardSection/HomeBillboardSection';
-import HomeTeamSection from '../../components/HomeTeamSection/HomeTeamSection';
+import AboutSection from './components/AboutSection/AboutSection';
+import WelcomeSection from './components/WelcomeSection/WelcomeSection';
+import HomeBillboardSection from './components/HomeBillboardSection/HomeBillboardSection';
+import HomeTeamSection from './components/HomeTeamSection/HomeTeamSection';
 // import HomeDiscordSection from '../../components/HomeDiscordSection/HomeDiscordSection';
-import HomeFeedBackSection from '../../components/HomeFeedBackSection/HomeFeedBackSection';
-import HomeManagementSection from '../../components/HomeManagementSection/HomeManagementSection';
+import HomeFeedBackSection from './components/HomeFeedBackSection/HomeFeedBackSection';
+import HomeManagementSection from './components/HomeManagementSection/HomeManagementSection';
 import { useEffect, useRef, useState } from 'react';
 import { homepage_default_content } from './homepage_default_content';
 
 const Home = () => {
 
-    const welcomeSectionRef = useRef(null);
+    // const welcomeSectionRef = useRef(null);
     const aboutSectionRef = useRef(null);
-    const homeBillboardSectionRef = useRef(null);
-    const homeTeamSectionRef = useRef(null);
-    const homeFeedbackSectionRef = useRef(null);
-    const homeManagementSectionRef = useRef(null);
+    // const homeBillboardSectionRef = useRef(null);
+    // const homeTeamSectionRef = useRef(null);
+    // const homeFeedbackSectionRef = useRef(null);
+    // const homeManagementSectionRef = useRef(null);
 
     const [our_team, setOurTeam] = useState([]);
 

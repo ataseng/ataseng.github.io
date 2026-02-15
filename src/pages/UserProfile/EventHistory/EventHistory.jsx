@@ -8,7 +8,7 @@ const EventHistory = () => {
     const { error, loading, userInfo } = userLogin;
 
     const getUser = async () => {
-        const result = await api.get_with_auth(`https://ataseng.com/api/member/get.php?id=${userInfo.user.id}`, userInfo.access_token);
+        const result = await api.get_with_auth(`https://ataseng.com/api/member/get.php?id=${userInfo?.user?.id}`, userInfo?.access_token);
 
         // console.log(result)
     }

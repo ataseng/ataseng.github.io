@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useNavigate } from 'react-router';
 import { api } from '../api';
 import { logout } from '../redux/actions/userActions';
-import Loader from '../components/Loader/Loader';
 
-const ProtectedRoute = ({ redirectTo = "/giris" }) => {
+const AdminRoute = ({ redirectTo = "/giris" }) => {
 
     const userLogin = useSelector(state => state.userLogin);
     const { error, loading, userInfo } = userLogin;
@@ -42,11 +41,13 @@ const ProtectedRoute = ({ redirectTo = "/giris" }) => {
 
     if(loading){
         return (
-            <Loader />
+            <div className="p-6 text-center">
+                <span className="animate-pulse">Yükleniyor…</span>
+            </div>
         );
     }
 
     return <Outlet context={user}/>
 }
 
-export default ProtectedRoute
+export default AdminRoute

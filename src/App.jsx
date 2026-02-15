@@ -33,6 +33,9 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import EditProfile from "./pages/UserProfile/EditProfile/EditProfile";
 import EventHistory from "./pages/UserProfile/EventHistory/EventHistory";
 import CompetitionPost from "./pages/Admin/Competitions/CompetitionPost";
+import AdminRoute from "./routes/AdminRoute";
+import TTeams from "./pages/TTeams/TTeams";
+import TTeamsDetail from "./pages/TTeams/TTeamsDetail/TTeamsDetail";
 
 function App() {
     
@@ -60,8 +63,11 @@ function App() {
 
                 <Route path="/hakkimizda" element={<About />} />
                 <Route path="/emegi-gecenler" element={<Credits />} />
-                <Route path="/takim" element={<Team />} />
+                <Route path="/ekibimiz" element={<Team />} />
                 <Route path="/iletisim" element={<Contact />} />
+
+                <Route path="/takimlarimiz" element={<TTeams />} />
+                <Route path="/takimlarimiz/:slug" element={<TTeamsDetail />} />
 
                 {/* Activities Route */}
                 <Route path="/etkinlikler" element={<Events />} />
@@ -85,9 +91,11 @@ function App() {
                 <Route path="/gizlilik-politikasi" element={<PrivacyPolicy />} />
                 <Route path="/cerez-politikasi" element={<CookiePolicy />} />
 
-                <Route path="/admin/egitim-ekle" element={<EducationPost />} />
-                <Route path="/admin/egitimci-ekle" element={<EducatorPost />} />
-                <Route path="/admin/yarisma-ekle" element={<CompetitionPost />} />
+                <Route element={<AdminRoute />}>
+                    <Route path="/admin/egitim-ekle" element={<EducationPost />} />
+                    <Route path="/admin/egitimci-ekle" element={<EducatorPost />} />
+                    <Route path="/admin/yarisma-ekle" element={<CompetitionPost />} />
+                </Route>
 
                 <Route element={<ProtectedRoute />}>
                     <Route path="/profil" element={<UserProfile />} />

@@ -5,6 +5,11 @@
       "link": "/"
     },
     {
+        "name" : "Takımlarımız",
+        "icon" : "famicons:rocket-sharp",
+        "link" : "/takimlarimiz"
+    },
+    {
       "name": "Etkinlikler",
       "icon": "solar:cup-bold",
       "link": "/etkinlikler",
@@ -29,7 +34,7 @@
     {
       "name": "Ekibimiz",
       "icon": "ri:team-fill",
-      "link": "/takim"
+      "link": "/ekibimiz"
     },
     {
       "name": "Yapımcılar",

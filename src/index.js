@@ -11,12 +11,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <GoogleOAuthProvider clientId="1023553605205-qkbpdfs12sirr97gnovku3dgjshe8nrr.apps.googleusercontent.com">
         <Provider store={store}>
-        <BrowserRouter>
-            <MainLayout>
-                <App />
-            </MainLayout>
-        </BrowserRouter>
-    </Provider>
+            <BrowserRouter>
+                <MainLayout>
+                    <App />
+                </MainLayout>
+            </BrowserRouter>
+        </Provider>
     </GoogleOAuthProvider>
     // <Provider store={store}>
     //     <BrowserRouter>

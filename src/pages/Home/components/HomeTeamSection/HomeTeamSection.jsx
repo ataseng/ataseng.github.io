@@ -1,8 +1,8 @@
 import './homeTeamSection.css'
-import maleAvatar from '../../assets/images/avatars/maleAvatar.png';
-import femaleAvatar from '../../assets/images/avatars/femaleAvatar.png';
+import maleAvatar from '../../../../assets/images/avatars/maleAvatar.png';
+import femaleAvatar from '../../../../assets/images/avatars/femaleAvatar.png';
 import { Link } from 'react-router-dom';
-import Loader from '../Loader/Loader';
+import Loader from '../../../../components/Loader/Loader';
 
 const HomeTeamSection = ({ our_team }) => {
     
@@ -90,7 +90,7 @@ const HomeTeamSection = ({ our_team }) => {
                 </div>
 
                 <div className="home-team-content-link">
-                    <Link to={"/takim"}>Diğer ekip üyeleri için <span>”Ekibimiz”</span> sayfasını ziyaret edin</Link>
+                    <Link to={"/ekibimiz"}>Diğer ekip üyeleri için <span>”Ekibimiz”</span> sayfasını ziyaret edin</Link>
                 </div>
             </div>
         </div>

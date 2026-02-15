@@ -1,0 +1,4 @@
+.team_detail_about{
+    text-align: justify;
+    width: clamp(240px, 100%, 600px);
+}

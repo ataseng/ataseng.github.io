@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react'
 import './AboutSection.css'
-import aboutSection from '../../assets/images/aboutSection.jpg'
+import aboutSection from '../../../../assets/images/aboutSection.jpg'
 import { Icon } from '@iconify/react/dist/iconify.js';
-import Loader from '../Loader/Loader';
+import Loader from '../../../../components/Loader/Loader';
 
 const AboutSection = forwardRef((props, ref) => {
 

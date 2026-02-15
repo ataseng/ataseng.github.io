@@ -15,3 +15,5 @@
 - [ ] HackathonsDetail
 - [ ] CareerDays
 - [ ] CareerDaysDetail
+- [ ] Register
+- [ ] Login
