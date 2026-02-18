@@ -78,6 +78,14 @@ section .section-content .team-card-image {
     color: #fff;
 }
 
+.dark_bg{
+    background-color: var(--home-text);
+}
+
+.dark .dark_bg{
+    background-color: var(--dark-slate);
+}
+
 @media screen and (max-width: 800px) {
     .team-card {
         width: 280px;

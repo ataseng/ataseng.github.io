@@ -20,9 +20,9 @@ import femaleAvatar from '../../assets/images/avatars/femaleAvatar.png';
  * @returns {JSX.Element} The rendered Card component.
  */
 
-const TeamCard = ({ image, fullname, department, position, gender, social = [] }) => {
+const TeamCard = ({ image, fullname, department, position, gender, social = [], extraClass = "" }) => {
     return (
-        <div className="team-card">
+        <div className={`team-card ${extraClass.length > 0 ? extraClass : ""}`}>
             {
                 image ? 
                 <img src={image} alt={fullname} className="team-card-image" /> :

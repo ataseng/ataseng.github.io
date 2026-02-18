@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Loader from '../../../../components/Loader/Loader';
 
 const HomeTeamSection = ({ our_team }) => {
+
+    console.log(our_team)
     
     return (
         <div id='home-team-section' className="home-team-section">
@@ -23,7 +25,7 @@ const HomeTeamSection = ({ our_team }) => {
                                 <div className="person-image">
                                     {
                                         item.Image ? 
-                                            <img src={item.image} alt="" />
+                                            <img src={item.Image} alt="" />
                                             : item.Gender === "M" ? 
                                                 <img src={maleAvatar} alt="" /> : 
                                                 <img src={femaleAvatar} alt="" />
