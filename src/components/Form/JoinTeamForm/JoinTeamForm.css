@@ -9,7 +9,6 @@ form.join-team-form{
     padding: 24px 0;
     background-color: var(--pure-white);
     transition: background-color 1s ease;
-
 }
 
 form.join-team-form input{

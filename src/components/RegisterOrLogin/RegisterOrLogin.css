@@ -1,0 +1,25 @@
+.register_or_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    gap: 40px;
+    width: 80%;
+    max-width: 600px;
+    padding: 24px 0;
+    background-color: var(--pure-white);
+    transition: background-color 1s ease;
+}
+
+.dark .register_or_login{
+    background-color: var(--dark-slate);
+}
+
+.register_or_login .button_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}

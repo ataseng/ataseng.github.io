@@ -1,8 +1,13 @@
 import './homeManagementSection.css'
 import JoinTeamForm from '../../../../components/Form/JoinTeamForm/JoinTeamForm';
+import { useSelector } from 'react-redux';
+import RegisterOrLogin from '../../../../components/RegisterOrLogin/RegisterOrLogin';
 
 const HomeManagementSection = () => {
-       
+
+    const userLogin = useSelector(state => state.userLogin);
+    const { error, loading, userInfo } = userLogin;
+
     return (
         <div id='management-section' className="management-section">
             <div className="management-content">
@@ -22,10 +27,13 @@ const HomeManagementSection = () => {
                         Teşekkür ederiz!
                     </div>
                 </div>
-                
+
                 <div className="form-content">
                     <div className="form-side">
-                        <JoinTeamForm />
+
+                        {
+                            userInfo ? <JoinTeamForm /> : <RegisterOrLogin />
+                        }
                     </div>
                 </div>
 
